@@ -1,0 +1,52 @@
+@startuml architecture
+left to right direction
+
+abstract class "Imaging Measurement Core" as ImagingMeasurementCore <<Observation>> #d5e8d4 ##[dashed]green
+abstract class "ROI Measurement" as ROIMeasurement <<Observation>> #d5e8d4 ##[dashed]green
+class "Planar ROI Measurement" as PlanarMeasurement <<Observation>> #d5e8d4 ##green
+class "Volumetric ROI Measurement" as VolumetricMeasurement <<Observation>> #d5e8d4 ##green
+class "Imaging Measurement" as ImagingMeasurement <<Observation>> #d5e8d4 ##green
+class "Derived Measurement" as DerivedMeasurement <<Observation>> #d5e8d4 ##green
+class "Qualitative Evaluation" as QualitativeEvaluation <<Observation>> #d5e8d4 ##green
+
+class ImagingStudy #a3e7ff ##34b1eb
+class Patient #a3e7ff ##34b1eb
+class Practitioner #a3e7ff ##34b1eb
+class Device #a3e7ff ##34b1eb
+class ImagingSelection #a3e7ff ##34b1eb
+
+
+package TID.1500.measurement.report #EEEEEE {
+    package imaging.measurements {
+    }
+    package derived.imaging.measurements {
+    }
+    package qualitative.evaluations {
+    }
+}
+
+.ROIMeasurement <|-- PlanarMeasurement
+.ROIMeasurement <|-- VolumetricMeasurement
+.ImagingMeasurementCore <|-- ROIMeasurement
+.ImagingMeasurementCore <|-- ImagingMeasurement
+.ImagingMeasurementCore <|-- DerivedMeasurement
+.ImagingMeasurementCore <|-- QualitativeEvaluation
+
+imaging.measurements --> PlanarMeasurement : contains[0..*]
+imaging.measurements --> VolumetricMeasurement : contains[0..*]
+imaging.measurements --> ImagingMeasurement : contains[0..*]
+derived.imaging.measurements --> DerivedMeasurement : contains[0..*]
+DerivedMeasurement --> PlanarMeasurement : XOR derivedFrom[0..*]
+DerivedMeasurement --> VolumetricMeasurement : XOR derivedFrom[0..*]
+qualitative.evaluations --> QualitativeEvaluation : contains[0..*]
+ROIMeasurement --> ImagingSelection : derivedFrom[0..*]
+ImagingMeasurement --> ImagingSelection : derivedFrom[0..*]
+
+ImagingMeasurementCore --> ImagingStudy : partOf[1..1]
+ImagingMeasurementCore --> Patient : subject[1..1]
+ImagingMeasurementCore --> Practitioner : performer[0..1]
+ImagingMeasurementCore --> Device : device[0..1]
+
+
+
+@enduml
