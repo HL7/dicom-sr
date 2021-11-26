@@ -25,7 +25,7 @@ Usage: #definition
     * display = "status"
     * comment = "DICOM values shall be converted to lowercase. e.g. 'PRELIMINARY' to 'preliminary'."
 
-// Participant Sequence (0040,A07A) -- Performer
+// Participant Sequence (0040,A07A)
 * group.element[2]
   * code = #DICOM.ParticipantSequence-Performer
   * display = "Preliminary Flag (0040,A496) -- PSN"
@@ -39,8 +39,6 @@ Usage: #definition
     * dependsOn[1]
       * property = "macro-map"
       * value = "identified-person-or-device"
-
-// Participant Sequence (0040,A07A) -- Device
 * group.element[3]
   * code = #DICOM.ParticipantSequence-Device
   * display = "Preliminary Flag (0040,A496) -- DEV"
@@ -88,19 +86,102 @@ Usage: #definition
 
 // Content Sequence (0040,A730)
 * group.element[6]
-  * code = #DICOM.ContentSequence
-  * display = "Content Sequence (0040,A730)"
+  * code = #DICOM.ContentSequence.TID1410
+  * display = "Content Sequence (0040,A730) -- TID 1410"
   * target
     * equivalence = #narrower
     * code = #issued
     * display = "issued"
-    * comment = "DICOM DateTime format shall be converted to FHIR instant format."
     * dependsOn[0]
       * property = "DICOM.ConceptNameCodeSequence.CodingSchemeDesignator"
       * value = "DCM"
     * dependsOn[1]
       * property = "DICOM.ConceptNameCodeSequence.CodeValue"
-      * value = "DTID 1500"
+      * value = "DTID 1410"
     * dependsOn[2]
-      * property = "tid-map"
-      * value = "tid-1500"
+      * property = "content-map"
+      * value = "tid-1410"
+
+// Content Sequence (0040,A730)
+* group.element[6]
+  * code = #DICOM.ContentSequence.TID1410
+  * display = "Content Sequence (0040,A730) -- Planar ROI Measurements and Qualitative Evaluations"
+  * target
+    * equivalence = #narrower
+    * code = #issued
+    * display = "issued"
+    * dependsOn[0]
+      * property = "DICOM.ConceptNameCodeSequence.CodingSchemeDesignator"
+      * value = "DCM"
+    * dependsOn[1]
+      * property = "DICOM.ConceptNameCodeSequence.CodeValue"
+      * value = "DTID 1410"
+    * dependsOn[2]
+      * property = "content-map"
+      * value = "dtid-1410"
+* group.element[7]
+  * code = #DICOM.ContentSequence.TID1411
+  * display = "Content Sequence (0040,A730) -- Volumetric ROI Measurements and Qualitative Evaluations"
+  * target
+    * equivalence = #narrower
+    * code = #issued
+    * display = "issued"
+    * dependsOn[0]
+      * property = "DICOM.ConceptNameCodeSequence.CodingSchemeDesignator"
+      * value = "DCM"
+    * dependsOn[1]
+      * property = "DICOM.ConceptNameCodeSequence.CodeValue"
+      * value = "DTID 1411"
+    * dependsOn[2]
+      * property = "content-map"
+      * value = "dtid-1411"
+* group.element[8]
+  * code = #DICOM.ContentSequence.TID1420
+  * display = "Content Sequence (0040,A730) -- Measurements Derived From Multiple ROI Measurements"
+  * target
+    * equivalence = #narrower
+    * code = #issued
+    * display = "issued"
+    * comment = "A Derived Imaging Measurement may result in the creation of one or more Planar ROI Measurements or Volumetric ROI Measurements"
+    * dependsOn[0]
+      * property = "DICOM.ConceptNameCodeSequence.CodingSchemeDesignator"
+      * value = "DCM"
+    * dependsOn[1]
+      * property = "DICOM.ConceptNameCodeSequence.CodeValue"
+      * value = "DTID 1420"
+    * dependsOn[2]
+      * property = "content-map"
+      * value = "dtid-1420"
+* group.element[9]
+  * code = #DICOM.ContentSequence.TID1501
+  * display = "Content Sequence (0040,A730) -- Measurement and Qualitative Evaluation Group"
+  * target
+    * equivalence = #narrower
+    * code = #issued
+    * display = "issued"
+    * dependsOn[0]
+      * property = "DICOM.ConceptNameCodeSequence.CodingSchemeDesignator"
+      * value = "DCM"
+    * dependsOn[1]
+      * property = "DICOM.ConceptNameCodeSequence.CodeValue"
+      * value = "DTID 1501"
+    * dependsOn[2]
+      * property = "content-map"
+      * value = "dtid-1501"
+* group.element[10]
+  * code = #DICOM.ContentSequence.C0034375
+  * display = "Content Sequence (0040,A730) -- Qualitative Evaluations"
+  * target
+    * equivalence = #narrower
+    * code = #issued
+    * display = "issued"
+    * comment = "Each child item of this Content Sequence item will be mapped to its own FHIR Observation"
+    * dependsOn[0]
+      * property = "DICOM.ConceptNameCodeSequence.CodingSchemeDesignator"
+      * value = "UMLS"
+    * dependsOn[1]
+      * property = "DICOM.ConceptNameCodeSequence.CodeValue"
+      * value = "C0034375"
+    * dependsOn[2]
+      * property = "content-map"
+      * value = "umls-c0034375"
