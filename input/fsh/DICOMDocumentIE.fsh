@@ -44,14 +44,15 @@ Usage: #definition
   * display = "Preliminary Flag (0040,A496) -- DEV"
   * target
     * equivalence = #equivalent
-    * code = #performer
-    * display = "performer"
+    * code = #Device[1]
+    * display = "Device[1]"
     * dependsOn[0]
       * property = "DICOM.ParticipantSequence.ObserverType"
       * value = "DEV"
     * dependsOn[1]
       * property = "macro-map"
       * value = "identified-person-or-device"
+    * comment = "If this device matches the Equipment IE device an additional device resource does not need to be created."
 
 // Document Content Module
 * group.element[4]
@@ -90,8 +91,8 @@ Usage: #definition
   * display = "Content Sequence (0040,A730) -- TID 1410"
   * target
     * equivalence = #narrower
-    * code = #issued
-    * display = "issued"
+    * code = #Observation[1]
+    * display = "Observation[1]"
     * dependsOn[0]
       * property = "DICOM.ConceptNameCodeSequence.CodingSchemeDesignator"
       * value = "DCM"
@@ -108,8 +109,8 @@ Usage: #definition
   * display = "Content Sequence (0040,A730) -- Planar ROI Measurements and Qualitative Evaluations"
   * target
     * equivalence = #narrower
-    * code = #issued
-    * display = "issued"
+    * code = #Observation[1]
+    * display = "Observation[1]"
     * dependsOn[0]
       * property = "DICOM.ConceptNameCodeSequence.CodingSchemeDesignator"
       * value = "DCM"
@@ -118,14 +119,14 @@ Usage: #definition
       * value = "DTID 1410"
     * dependsOn[2]
       * property = "content-map"
-      * value = "dtid-1410"
+      * value = "dicom-dtid-1410"
 * group.element[7]
   * code = #DICOM.ContentSequence.TID1411
   * display = "Content Sequence (0040,A730) -- Volumetric ROI Measurements and Qualitative Evaluations"
   * target
     * equivalence = #narrower
-    * code = #issued
-    * display = "issued"
+    * code = #Observation[1]
+    * display = "Observation[1]"
     * dependsOn[0]
       * property = "DICOM.ConceptNameCodeSequence.CodingSchemeDesignator"
       * value = "DCM"
@@ -134,14 +135,14 @@ Usage: #definition
       * value = "DTID 1411"
     * dependsOn[2]
       * property = "content-map"
-      * value = "dtid-1411"
+      * value = "dicom-dtid-1411"
 * group.element[8]
   * code = #DICOM.ContentSequence.TID1420
   * display = "Content Sequence (0040,A730) -- Measurements Derived From Multiple ROI Measurements"
   * target
     * equivalence = #narrower
-    * code = #issued
-    * display = "issued"
+    * code = #Observation[1]
+    * display = "Observation[1]"
     * comment = "A Derived Imaging Measurement may result in the creation of one or more Planar ROI Measurements or Volumetric ROI Measurements"
     * dependsOn[0]
       * property = "DICOM.ConceptNameCodeSequence.CodingSchemeDesignator"
@@ -151,14 +152,14 @@ Usage: #definition
       * value = "DTID 1420"
     * dependsOn[2]
       * property = "content-map"
-      * value = "dtid-1420"
+      * value = "dicom-dtid-1420"
 * group.element[9]
   * code = #DICOM.ContentSequence.TID1501
   * display = "Content Sequence (0040,A730) -- Measurement and Qualitative Evaluation Group"
   * target
     * equivalence = #narrower
-    * code = #issued
-    * display = "issued"
+    * code = #Observation[1]
+    * display = "Observation[1]"
     * dependsOn[0]
       * property = "DICOM.ConceptNameCodeSequence.CodingSchemeDesignator"
       * value = "DCM"
@@ -167,14 +168,14 @@ Usage: #definition
       * value = "DTID 1501"
     * dependsOn[2]
       * property = "content-map"
-      * value = "dtid-1501"
+      * value = "dicom-dtid-1501"
 * group.element[10]
   * code = #DICOM.ContentSequence.C0034375
   * display = "Content Sequence (0040,A730) -- Qualitative Evaluations"
   * target
     * equivalence = #narrower
-    * code = #issued
-    * display = "issued"
+    * code = #Observation[1]
+    * display = "Observation[1]"
     * comment = "Each child item of this Content Sequence item will be mapped to its own FHIR Observation"
     * dependsOn[0]
       * property = "DICOM.ConceptNameCodeSequence.CodingSchemeDesignator"
@@ -184,4 +185,4 @@ Usage: #definition
       * value = "C0034375"
     * dependsOn[2]
       * property = "content-map"
-      * value = "umls-c0034375"
+      * value = "dicom-umls-c0034375"
