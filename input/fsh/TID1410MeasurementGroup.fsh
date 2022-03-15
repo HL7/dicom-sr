@@ -1,7 +1,7 @@
 Alias: DCM = http://dicom.nema.org/resources/ontology/DCM
 Alias: SCT = http://snomed.info/sct
 Alias: LOINC =  http://loinc.org
-Alias: DCMIdType = http://hl7.org/fhir/uv/radiation-dose-summary/CodeSystem/dicom-identifier-type
+Alias: DCMIdType = http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-identifier-type
 Alias: HL7IdType = http://terminology.hl7.org/CodeSystem/v2-0203
 
 Profile:        TID1410MeasurementGroupProfile
@@ -55,10 +55,10 @@ Description:    "DICOM SR Planar ROI Measurement Group Mapping to Observation"
 * partOf[imagingStudyRef].identifier ^short = "Identifier related to Study Instance UID"
 
 * category MS
-* category = DCM#125007 "Measurement Group
+* category.coding = DCM#125007 "Measurement Group"
 
 * code MS
-* code -> "Value of DTID 1410 Content Item with Concept Name 121071, DCM, 'Finding'"
+* code -> "Value of DTID 1410 Content Item with Concept Name 121071, DCM, Finding"
 
 * subject only Reference(Patient)
 * subject 1..1 MS
@@ -80,8 +80,8 @@ Description:    "DICOM SR Planar ROI Measurement Group Mapping to Observation"
 * focus contains imageRegion 0..* MS
 * focus[imageRegion] only Reference(ImagingSelection)
 * focus[imageRegion] ^short = "Image Region"
-* focus[imageRegion].category = DCM#111030 "Image Region"
-* focus[imageRegion].code -> "Value of DTID 1410 Content Item with Concept Name 130400, DCM, 'Geometric Purpose of Region'"
+* focus[imageRegion].category.coding = DCM#111030 "Image Region"
+* focus[imageRegion].code -> "Value of DTID 1410 Content Item with Concept Name 130400, DCM, Geometric Purpose of Region"
 * focus[imageRegion].instance.uid -> "Referenced SOP Instance UID (0008,1155)"
 * focus[imageRegion].imageRegion.regionType -> "Graphic Type (0070,0023)"
 * focus[imageRegion].imageRegion.coordinateType = "2D"
@@ -90,8 +90,8 @@ Description:    "DICOM SR Planar ROI Measurement Group Mapping to Observation"
 * focus contains referencedSegmentationFrame 0..* MS
 * focus[referencedSegmentationFrame] only Reference(ImagingSelection)
 * focus[referencedSegmentationFrame] ^short = "Referenced Segmentation Frame"
-* focus[referencedSegmentationFrame].category = DCM#121214 "Referenced Segmentation Frame"
-* focus[referencedSegmentationFrame].code -> "Value of DTID 1410 Content Item with Concept Name 130400, DCM, 'Geometric Purpose of Region'"
+* focus[referencedSegmentationFrame].category.coding = DCM#121214 "Referenced Segmentation Frame"
+* focus[referencedSegmentationFrame].code -> "Value of DTID 1410 Content Item with Concept Name 130400, DCM, Geometric Purpose of Region"
 * focus[referencedSegmentationFrame].instance.uid -> "Referenced SOP Instance UID (0008,1155)"
 * focus[referencedSegmentationFrame].instance.sopClass = sopClass = 1.2.840.10008.5.1.4.1.1.66.4 // Segmentation Storage
 * focus[referencedSegmentationFrame].instance.segmentList -> "Referenced Segment Number (0062,000B)"
