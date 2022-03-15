@@ -4,11 +4,11 @@ Alias: LOINC =  http://loinc.org
 Alias: DCMIdType = http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-identifier-type
 Alias: HL7IdType = http://terminology.hl7.org/CodeSystem/v2-0203
 
-Profile:        DICOMSRObservationProfile
+Profile:        DICOMSRROIMeasurementProfile
 Parent:         Observation
-Id:             dicom-sr-observation
-Title:          "DICOM SR Mapping to Observation"
-Description:    "DICOM SR Mapping to Observation"
+Id:             dicom-sr-planar-roi-measurement
+Title:          "DICOM SR Planar ROI Measurements and Qualitative Evaluations Mapping to Observation"
+Description:    "DICOM SR Planar ROI Measurements and Qualitative Evaluations Mapping to Observation"
 
 * ^abstract = true
 * insert DICOMSRStructureDefinitionContent
@@ -17,7 +17,7 @@ Description:    "DICOM SR Mapping to Observation"
 * identifier ^slicing.discriminator.path = "type"
 * identifier ^slicing.rules = #open
 * identifier ^slicing.ordered = false
-* identifier ^slicing.description = "Identifiers for the imaging observation"
+* identifier ^slicing.description = "Identifiers for the planar ROI measurement"
 
 * identifier contains observationUID 0..1 and trackingUID 0..1 and trackingID 0..1
 * identifier[observationUID].type = DCMIdType#observation-uid "Observation UID"
