@@ -1,4 +1,4 @@
-This chapter describes the scope of this guide, provides background information, key concepts,
+RadiationDoseSummary.fshThis chapter describes the scope of this guide, provides background information, key concepts,
 and describes the use cases supported by this implementation guide.
 
 1. [Problem](#Problem) - Description of the Problem
