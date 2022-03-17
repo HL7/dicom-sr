@@ -14,7 +14,7 @@ Usage: #definition
   * code = #DICOM.ContentSequence.C0034375
   * display = "Content Sequence (0040,A730) -- Qualitative Evaluations"
   * target
-    * equivalence = #narrower
+    * relationship = #source-is-narrower-than-target
     * code = #issued
     * display = "issued"
     * comment = "Each child item of this Content Sequence item will be mapped to its own FHIR Observation"
@@ -33,7 +33,7 @@ Usage: #definition
   * code = #DICOM.ContentSequence.TID4109
   * display = "Content Sequence (0040,A730) -- Algorithm Identification"
   * target
-    * equivalence = #equivalent
+    * relationship = #equivalent
     * comment = "TO BE DETERMINED."
     * dependsOn[0]
       * property = "DICOM.ConceptNameCodeSequence.CodingSchemeDesignator"
@@ -47,7 +47,7 @@ Usage: #definition
   * code = #DICOM.ContentSequence.QualitativeEvaluation.Code
   * display = "Content Sequence (0040,A730) -- Algorithm Identification"
   * target
-    * equivalence = #equivalent
+    * relationship = #equivalent
     * code = #valueCodeableConcept.coding
     * display = "valueCodeableConcept.coding"
     * comment = "Each child item of this Content Sequence item will be mapped to its own FHIR Observation"
@@ -63,7 +63,7 @@ Usage: #definition
   * code = #DICOM.ContentSequence.QualitativeEvaluation.Code
   * display = "Content Sequence (0040,A730) -- Algorithm Identification"
   * target
-    * equivalence = #equivalent
+    * relationship = #equivalent
     * code = #valueCodeableConcept.coding
     * display = "valueCodeableConcept.coding"
     * comment = "Each child item of this Content Sequence item will be mapped to its own FHIR Observation"
@@ -79,7 +79,7 @@ Usage: #definition
   * code = #DICOM.ContentSequence.QualitativeEvaluation.Text
   * display = "Content Sequence (0040,A730) -- Algorithm Identification"
   * target
-    * equivalence = #equivalent
+    * relationship = #equivalent
     * code = #valueCodeableConcept.text
     * display = "valueCodeableConcept.text"
     * comment = "Each child item of this Content Sequence item will be mapped to its own FHIR Observation"

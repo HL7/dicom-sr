@@ -13,14 +13,15 @@ Usage: #definition
 * group.element[0]
   * code = #DICOM.Document.General
   * display = "Document General Module"
-  * target.equivalence = #unmatched
+  * target
+    * relationship = #not-related-to
 
 // Preliminary Flag (0040,A496)
 * group.element[1]
   * code = #DICOM.PreliminaryFlag
   * display = "Preliminary Flag (0040,A496)"
   * target
-    * equivalence = #equivalent
+    * relationship = #equivalent
     * code = #status
     * display = "status"
     * comment = "DICOM values shall be converted to lowercase. e.g. 'PRELIMINARY' to 'preliminary'."
@@ -30,7 +31,7 @@ Usage: #definition
   * code = #DICOM.ParticipantSequence-Performer
   * display = "Preliminary Flag (0040,A496) -- PSN"
   * target
-    * equivalence = #equivalent
+    * relationship = #equivalent
     * code = #performer
     * display = "performer"
     * dependsOn[0]
@@ -43,7 +44,7 @@ Usage: #definition
   * code = #DICOM.ParticipantSequence-Device
   * display = "Preliminary Flag (0040,A496) -- DEV"
   * target
-    * equivalence = #equivalent
+    * relationship = #equivalent
     * code = #Device[1]
     * display = "Device[1]"
     * dependsOn[0]
@@ -58,14 +59,14 @@ Usage: #definition
 * group.element[4]
   * code = #DICOM.Document.Content
   * display = "Document Content Module"
-  * target.equivalence = #unmatched
+  * target.relationship = #not-related-to
 
 // Observation DateTime (0040,A032)
 * group.element[5]
   * code = #DICOM.ObservationDateTime
   * display = "Observation DateTime (0040,A032)"
   * target
-    * equivalence = #equivalent
+    * relationship = #equivalent
     * code = #issued
     * display = "issued"
     * comment = "DICOM DateTime format shall be converted to FHIR instant format."
@@ -75,7 +76,7 @@ Usage: #definition
   * code = #DICOM.ObservationUID
   * display = "Observation UID (0040,A171)"
   * target
-    * equivalence = #equivalent
+    * relationship = #equivalent
     * code = #identifier[1]
     * display = "identifier[1]"
     * dependsOn[0]
@@ -90,7 +91,7 @@ Usage: #definition
   * code = #DICOM.ContentSequence.TID1410
   * display = "Content Sequence (0040,A730) -- TID 1410"
   * target
-    * equivalence = #narrower
+    * relationship = #source-is-narrower-than-target
     * code = #Observation[1]
     * display = "Observation[1]"
     * dependsOn[0]
@@ -108,7 +109,7 @@ Usage: #definition
   * code = #DICOM.ContentSequence.TID1410
   * display = "Content Sequence (0040,A730) -- Planar ROI Measurements and Qualitative Evaluations"
   * target
-    * equivalence = #narrower
+    * relationship = #source-is-narrower-than-target
     * code = #Observation[1]
     * display = "Observation[1]"
     * dependsOn[0]
@@ -124,7 +125,7 @@ Usage: #definition
   * code = #DICOM.ContentSequence.TID1411
   * display = "Content Sequence (0040,A730) -- Volumetric ROI Measurements and Qualitative Evaluations"
   * target
-    * equivalence = #narrower
+    * relationship = #source-is-narrower-than-target
     * code = #Observation[1]
     * display = "Observation[1]"
     * dependsOn[0]
@@ -140,7 +141,7 @@ Usage: #definition
   * code = #DICOM.ContentSequence.TID1420
   * display = "Content Sequence (0040,A730) -- Measurements Derived From Multiple ROI Measurements"
   * target
-    * equivalence = #narrower
+    * relationship = #source-is-narrower-than-target
     * code = #Observation[1]
     * display = "Observation[1]"
     * comment = "A Derived Imaging Measurement may result in the creation of one or more Planar ROI Measurements or Volumetric ROI Measurements"
@@ -157,7 +158,7 @@ Usage: #definition
   * code = #DICOM.ContentSequence.TID1501
   * display = "Content Sequence (0040,A730) -- Measurement and Qualitative Evaluation Group"
   * target
-    * equivalence = #narrower
+    * relationship = #source-is-narrower-than-target
     * code = #Observation[1]
     * display = "Observation[1]"
     * dependsOn[0]
@@ -173,7 +174,7 @@ Usage: #definition
   * code = #DICOM.ContentSequence.C0034375
   * display = "Content Sequence (0040,A730) -- Qualitative Evaluations"
   * target
-    * equivalence = #narrower
+    * relationship = #source-is-narrower-than-target
     * code = #Observation[1]
     * display = "Observation[1]"
     * comment = "Each child item of this Content Sequence item will be mapped to its own FHIR Observation"
