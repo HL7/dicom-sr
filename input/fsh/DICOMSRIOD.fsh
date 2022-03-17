@@ -14,7 +14,7 @@ Usage: #definition
   * code = #DICOM.Patient
   * display = "Patient IE"
   * target
-    * equivalence = #equivalent
+    * relationship = #equivalent
     * code = #Patient[1]
     * display = "Patient[1]"
     * comment = "Processing of the Patient IE may result in the creation of a new Patient resource"
@@ -24,7 +24,7 @@ Usage: #definition
   * code = #DICOM.Study
   * display = "Study IE"
   * target
-    * equivalence = #equivalent
+    * relationship = #equivalent
     * code = #ImagingStudy[1]
     * display = "ImagingStudy[1]"
     * comment = "Processing of the Study IE may result in the creation of a new ImagingStudy resource"
@@ -34,7 +34,7 @@ Usage: #definition
   * code = #DICOM.Series
   * display = "Series IE"
   * target
-    * equivalence = #unmatched
+    * relationship = #not-related-to
     * comment = "Series IE is not mapped"
 
 // Frame of Reference IE Mapping
@@ -42,7 +42,7 @@ Usage: #definition
   * code = #DICOM.FrameOfReference
   * display = "Frame of Reference IE"
   * target
-    * equivalence = #unmatched
+    * relationship = #not-related-to
     * comment = "Frame of Reference IE is not mapped"
 
 // Equipment IE Mapping
@@ -50,7 +50,7 @@ Usage: #definition
   * code = #DICOM.Equipment
   * display = "Equipment IE"
   * target
-    * equivalence = #equivalent
+    * relationship = #equivalent
     * code = #Device[1]
     * display = "Device[1]"
     * comment = "Processing of the Equipment IE may result in the creation of a new Device resource"
@@ -60,7 +60,7 @@ Usage: #definition
   * code = #DICOM.Document
   * display = "Document IE"
   * target
-    * equivalence = #narrower
+    * relationship = #source-is-narrower-than-target
     * code = #Observation[1]
     * display = "Observation[1]"
     * comment = "Processing of the Document IE will result in the creation one or more new Observation resources"
@@ -69,4 +69,4 @@ Usage: #definition
       * value = "dicom-document-ie-to-fhir"
     * dependsOn[1]
       * property = "references"
-      * value = "Observation.subject.reference=Patient[1].id; Observation.basedOn.reference=ImagingStudy[1].id; Observation.device.reference=Device[1]"
+      * value = "Observation.subject.reference=Patient[1].id; Observation.partOf.reference=ImagingStudy[1].id; Observation.device.reference=Device[1]"

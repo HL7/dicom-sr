@@ -55,10 +55,11 @@ Description:    "DICOM SR Planar ROI Measurement Group Mapping to Observation"
 * partOf[imagingStudyRef].identifier ^short = "Identifier related to Study Instance UID"
 
 * category MS
-* category.coding = DCM#125007 "Measurement Group"
+* category = DCM#125007 "Measurement Group"
 
 * code MS
-* code -> "Value of DTID 1410 Content Item with Concept Name 121071, DCM, Finding"
+// * code -> "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1410" "EV (121071, DCM, \"Finding\")"
+//* code.coding  ->  "code.coding" "Value of DTID 1410 Content Item with Concept Name 121071, DCM, Finding"
 
 * subject only Reference(Patient)
 * subject 1..1 MS
@@ -70,39 +71,36 @@ Description:    "DICOM SR Planar ROI Measurement Group Mapping to Observation"
 * focus ^slicing.description = "Observation foci"
 
 * focus contains bodyStructure 0..* MS
-* focus[bodyStructure] only Reference(ImagingSelection)
+* focus[bodyStructure] only Reference(BodyStructure)
 * focus[bodyStructure].identifier.type 1..1
 * focus[bodyStructure].identifier.type = DCMIdType#tracking-uid "Tracking UID"
-* partOf[imagingStudyRef].identifier.system = "urn:dicom:uid"
-* partOf[imagingStudyRef].identifier.value 1..1
-* partOf[imagingStudyRef].identifier ^short = "A unique identifier used for tracking a finding or feature, potentially across multiple reporting objects, over time"
+* focus[bodyStructure].identifier.system = "urn:dicom:uid"
+* focus[bodyStructure].identifier.value 1..1
+* focus[bodyStructure].identifier ^short = "A unique identifier used for tracking a finding or feature, potentially across multiple reporting objects, over time"
 
 * focus contains imageRegion 0..* MS
-* focus[imageRegion] only Reference(ImagingSelection)
+* focus[imageRegion] only Reference(ImagingSelectionImageRegionProfile)
 * focus[imageRegion] ^short = "Image Region"
-* focus[imageRegion].category.coding = DCM#111030 "Image Region"
-* focus[imageRegion].code -> "Value of DTID 1410 Content Item with Concept Name 130400, DCM, Geometric Purpose of Region"
-* focus[imageRegion].instance.uid -> "Referenced SOP Instance UID (0008,1155)"
-* focus[imageRegion].imageRegion.regionType -> "Graphic Type (0070,0023)"
-* focus[imageRegion].imageRegion.coordinateType = "2D"
-* focus[imageRegion].imageRegion.coordinates -> "Graphic Data (0070,0022)"
 
-* focus contains referencedSegmentationFrame 0..* MS
-* focus[referencedSegmentationFrame] only Reference(ImagingSelection)
-* focus[referencedSegmentationFrame] ^short = "Referenced Segmentation Frame"
-* focus[referencedSegmentationFrame].category.coding = DCM#121214 "Referenced Segmentation Frame"
-* focus[referencedSegmentationFrame].code -> "Value of DTID 1410 Content Item with Concept Name 130400, DCM, Geometric Purpose of Region"
-* focus[referencedSegmentationFrame].instance.uid -> "Referenced SOP Instance UID (0008,1155)"
-* focus[referencedSegmentationFrame].instance.sopClass = sopClass = 1.2.840.10008.5.1.4.1.1.66.4 // Segmentation Storage
-* focus[referencedSegmentationFrame].instance.segmentList -> "Referenced Segment Number (0062,000B)"
+* focus contains imageRegion 0..* MS
+* focus[imageRegion] only Reference(ImagingSelectionReferencedSegmentationFrameProfile)
+* focus[imageRegion] ^short = "Referenced Segmentation Frame"
+
+// * focus contains referencedSegmentationFrame 0..* MS
+// * focus[referencedSegmentationFrame] only Reference(ImagingSelection)
+// * focus[referencedSegmentationFrame] ^short = "Referenced Segmentation Frame"
+// * focus[referencedSegmentationFrame].category = DCM#121214 "Referenced Segmentation Frame"
+// * focus[referencedSegmentationFrame].code -> "Value of DTID 1410 Content Item with Concept Name 130400, DCM, Geometric Purpose of Region"
+// * focus[referencedSegmentationFrame].instance.uid -> "Referenced SOP Instance UID (0008,1155)"
+// * focus[referencedSegmentationFrame].instance.sopClass = 1.2.840.10008.5.1.4.1.1.66.4 // Segmentation Storage
+// * focus[referencedSegmentationFrame].instance.segmentList -> "Referenced Segment Number (0062,000B)"
 
 // Repeat for other image reference types
 
 // Observation Date Time
-* effective[x] only dateTime
-* effective[x] 1..1 MS
-* effective[x] ^short = "Irradiation Start Date Time"
-* effective[x] -> "Observation DateTime (0040,A032)"
+* issued 1..1 MS
+* issued ^short = "Irradiation Start Date Time"
+// * issued -> "Observation DateTime (0040,A032)" // Consider using value from higher-level observations or Content Datetime as fall-back
 
 * interpretation MS
-* interpretation -> "$QualType, $QualModType"
+// * interpretation -> "$QualType, $QualModType"

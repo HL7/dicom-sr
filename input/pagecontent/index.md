@@ -5,7 +5,7 @@ This Implementation Guide defines the use of FHIR resources to convey measuremen
 This IG is organized into three main sections:
 
 * [Chapter I](background.html): Background - Introduction and overview
-    * [Problematic](background.html#problematic) - Description of the problem
+    * [Problem](background.html#problem) - Description of the problem
     * [Scope](background.html#scope) - Scope of the IG
     * [Use cases](background.html#usecases) - Key use cases covered by the IG
     * [Glossary](background.html#glossary) - Glossary
