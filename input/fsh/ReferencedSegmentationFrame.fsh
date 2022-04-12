@@ -42,16 +42,20 @@ Description:    "DICOM SR Referenced Segmentation Frame Mapping to ImagingSelect
 * derivedFrom[imagingStudyRef].identifier.value 1..1
 * derivedFrom[imagingStudyRef].identifier ^short = "Identifier related to Study Instance UID"
 
-* category MS
-* category.coding = DCM#121214 "Referenced Segmentation Frame"
-
 * code MS
-// * code -> "Value of DTID 1410 Content Item with Concept Name 130400, DCM, Geometric Purpose of Region"
+* code.coding = DCM#121214 "Referenced Segmentation Frame"
 
 * subject only Reference(Patient)
 * subject 1..1 MS
 
-* instance MS
+* instance ^slicing.discriminator.type = #pattern
+* instance ^slicing.discriminator.path = "type"
+* instance ^slicing.rules = #open
+* instance ^slicing.ordered = false
+* instance ^slicing.description = "Selected Segmentation Instance"
+
+* instance contains referencedSegment 0..*
+// * instance[referencedSegment].uid -> "Referenced SOP Instance UID (0008,1155)"
 // * instance.uid -> "Referenced SOP Instance UID (0008,1155)"
-* instance.sopClass = urn:oid:1.2.840.10008.5.1.4.1.1.66.4 // Segmentation Storage
-// * instance.segmentList -> "Referenced Segment Number (0062,000B)"
+* instance[referencedSegment].sopClass = urn:ietf:rfc:3986#urn:oid:1.2.840.10008.5.1.4.1.1.66.4 "Segmentation Storage"
+// * instance[referencedSegment].segmentList -> "Referenced Segment Number (0062,000B)"

@@ -82,24 +82,15 @@ Description:    "DICOM SR Planar ROI Measurement Group Mapping to Observation"
 * focus[imageRegion] only Reference(ImagingSelectionImageRegionProfile)
 * focus[imageRegion] ^short = "Image Region"
 
-* focus contains imageRegion 0..* MS
-* focus[imageRegion] only Reference(ImagingSelectionReferencedSegmentationFrameProfile)
-* focus[imageRegion] ^short = "Referenced Segmentation Frame"
-
-// * focus contains referencedSegmentationFrame 0..* MS
-// * focus[referencedSegmentationFrame] only Reference(ImagingSelection)
-// * focus[referencedSegmentationFrame] ^short = "Referenced Segmentation Frame"
-// * focus[referencedSegmentationFrame].category = DCM#121214 "Referenced Segmentation Frame"
-// * focus[referencedSegmentationFrame].code -> "Value of DTID 1410 Content Item with Concept Name 130400, DCM, Geometric Purpose of Region"
-// * focus[referencedSegmentationFrame].instance.uid -> "Referenced SOP Instance UID (0008,1155)"
-// * focus[referencedSegmentationFrame].instance.sopClass = 1.2.840.10008.5.1.4.1.1.66.4 // Segmentation Storage
-// * focus[referencedSegmentationFrame].instance.segmentList -> "Referenced Segment Number (0062,000B)"
+* focus contains referencedSegmentationFrame 0..* MS
+* focus[referencedSegmentationFrame] only Reference(ImagingSelectionReferencedSegmentationFrameProfile)
+* focus[referencedSegmentationFrame] ^short = "Referenced Segmentation Frame"
 
 // Repeat for other image reference types
 
 // Observation Date Time
 * issued 1..1 MS
-* issued ^short = "Irradiation Start Date Time"
+* issued ^short = "Imaging Selection Date Time"
 // * issued -> "Observation DateTime (0040,A032)" // Consider using value from higher-level observations or Content Datetime as fall-back
 
 * interpretation MS
