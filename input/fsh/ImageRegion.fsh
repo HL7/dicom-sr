@@ -42,18 +42,22 @@ Description:    "DICOM SR Image Region Mapping to ImagingSelection"
 * derivedFrom[imagingStudyRef].identifier.value 1..1
 * derivedFrom[imagingStudyRef].identifier ^short = "Identifier related to Study Instance UID"
 
-* category MS
-* category.coding = DCM#111030 "Image Region"
-
 * code MS
-// * code -> "Value of DTID 1410 Content Item with Concept Name 130400, DCM, Geometric Purpose of Region"
+* code.coding = DCM#111030 "Image Region"
 
 * subject only Reference(Patient)
 * subject 1..1 MS
 
-// * instance.uid -> "Referenced SOP Instance UID (0008,1155)"
+* instance ^slicing.discriminator.type = #pattern
+* instance ^slicing.discriminator.path = "type"
+* instance ^slicing.rules = #open
+* instance ^slicing.ordered = false
+* instance ^slicing.description = "Selected Image Instance"
 
-* imageRegion MS
+* instance contains imageInstance 0..*
+// * instance[imageInstance].uid -> "Referenced SOP Instance UID (0008,1155)"
+
+* imageRegion 1..1 MS
 // * imageRegion.regionType -> "Graphic Type (0070,0023)"
-* imageRegion.coordinateType = 2d
+* imageRegion.coordinateType = #2d
 // * imageRegion.coordinates -> "Graphic Data (0070,0022)"
