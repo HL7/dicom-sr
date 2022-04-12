@@ -29,7 +29,7 @@ Usage: #definition
     * display = "ImagingStudy[1]"
     * comment = "Processing of the Study IE may result in the creation of a new ImagingStudy resource"
 
-// Study IE Mapping
+// Series IE Mapping
 * group.element[2]
   * code = #DICOM.Series
   * display = "Series IE"

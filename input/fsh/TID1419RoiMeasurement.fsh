@@ -4,11 +4,11 @@ Alias: LOINC =  http://loinc.org
 Alias: DCMIdType = http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-identifier-type
 Alias: HL7IdType = http://terminology.hl7.org/CodeSystem/v2-0203
 
-Profile:        TID1410MeasurementGroupProfile
+Profile:        TID1419ROIMeasurementProfile
 Parent:         Observation
-Id:             tid-1410-measurement-group
-Title:          "DICOM SR Planar ROI Measurement Group Mapping to Observation"
-Description:    "DICOM SR Planar ROI Measurement Group Mapping to Observation"
+Id:             tid-1419-roi-measurement
+Title:          "DICOM SR ROI Measurement Mapping to Observation"
+Description:    "DICOM SR ROI Measurement Mapping to Observation"
 
 * ^abstract = true
 * insert DICOMSRStructureDefinitionContent
@@ -17,13 +17,13 @@ Description:    "DICOM SR Planar ROI Measurement Group Mapping to Observation"
 * identifier ^slicing.discriminator.path = "type"
 * identifier ^slicing.rules = #open
 * identifier ^slicing.ordered = false
-* identifier ^slicing.description = "Identifiers for the measurement group"
+* identifier ^slicing.description = "Identifiers for the measurement"
 
 * identifier contains observationUID 0..* MS
 * identifier[observationUID].type = DCMIdType#observation-uid "Observation UID"
 * identifier[observationUID].system = "urn:dicom:uid"
 * identifier[observationUID].value 1..1
-* identifier[observationUID] ^short = "The unique identifier for the measurement group."
+* identifier[observationUID] ^short = "The unique identifier for the measurement."
 
 // Associated ServiceRequest
 * basedOn ^slicing.discriminator.type = #type
@@ -55,7 +55,6 @@ Description:    "DICOM SR Planar ROI Measurement Group Mapping to Observation"
 * partOf[imagingStudyRef].identifier ^short = "Identifier related to Study Instance UID"
 
 * category MS
-* category = DCM#125007 "Measurement Group"
 
 * code MS
 // * code -> "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1410" "EV (121071, DCM, \"Finding\")"
@@ -78,42 +77,10 @@ Description:    "DICOM SR Planar ROI Measurement Group Mapping to Observation"
 * focus[bodyStructure].identifier.value 1..1
 * focus[bodyStructure].identifier ^short = "A unique identifier used for tracking a finding or feature, potentially across multiple reporting objects, over time"
 
-* focus contains imageRegion2d 0..* MS
-* focus[imageRegion2d] only Reference(ImagingSelection2dImageRegionProfile)
-* focus[imageRegion2d] ^short = "2D Image Region"
-
-* focus contains referencedSegmentationFrame 0..* MS
-* focus[referencedSegmentationFrame] only Reference(ImagingSelectionReferencedSegmentationFrameProfile)
-* focus[referencedSegmentationFrame] ^short = "Referenced Segmentation Frame"
-
-* focus contains imageRegion3d 0..* MS
-* focus[imageRegion3d] only Reference(ImagingSelection3dImageRegionProfile)
-* focus[imageRegion3d] ^short = "3D Image Region"
-
-* focus contains sourceImageForSegmentation 0..* MS
-* focus[sourceImageForSegmentation] only Reference(ImagingSelectionSourceImageForSegmentationProfile)
-* focus[sourceImageForSegmentation] ^short = "Source Image for Segmentation"
-
-// Still TODO
-// * focus contains regionInSpace 0..* MS
-// * focus contains illustrationOfRoi 0..* MS
-// * focus contains visualExplanation 0..* MS
-// * focus contains realWorldValueMap 0..* MS
-
 // Observation Date Time
 * issued 1..1 MS
 * issued ^short = "Observation Date Time"
 // * issued -> "Observation DateTime (0040,A032)" // Consider using value from higher-level observations or Content Datetime as fall-back
-
-* hasMember ^slicing.discriminator.type = #pattern
-* hasMember ^slicing.discriminator.path = "type"
-* hasMember ^slicing.rules = #open
-* hasMember ^slicing.ordered = false
-* hasMember ^slicing.description = "ROI Measurements"
-
-// ROI Measurements
-* hasMember contains roiMeasurement 0..* MS
-* hasMember[roiMeasurement] only Reference(TID1419ROIMeasurementProfile)
 
 * interpretation MS
 // * interpretation -> "$QualType, $QualModType"

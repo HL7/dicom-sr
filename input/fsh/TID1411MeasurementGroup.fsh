@@ -4,11 +4,11 @@ Alias: LOINC =  http://loinc.org
 Alias: DCMIdType = http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-identifier-type
 Alias: HL7IdType = http://terminology.hl7.org/CodeSystem/v2-0203
 
-Profile:        TID1410MeasurementGroupProfile
+Profile:        TID1411MeasurementGroupProfile
 Parent:         Observation
-Id:             tid-1410-measurement-group
-Title:          "DICOM SR Planar ROI Measurement Group Mapping to Observation"
-Description:    "DICOM SR Planar ROI Measurement Group Mapping to Observation"
+Id:             tid-1411-measurement-group
+Title:          "DICOM SR Volumentric ROI Measurement Group Mapping to Observation"
+Description:    "DICOM SR Volumentric ROI Measurement Group Mapping to Observation"
 
 * ^abstract = true
 * insert DICOMSRStructureDefinitionContent
@@ -58,8 +58,8 @@ Description:    "DICOM SR Planar ROI Measurement Group Mapping to Observation"
 * category = DCM#125007 "Measurement Group"
 
 * code MS
-// * code -> "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1410" "EV (121071, DCM, \"Finding\")"
-//* code.coding  ->  "code.coding" "Value of DTID 1410 Content Item with Concept Name 121071, DCM, Finding"
+// * code -> "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1411" "EV (121071, DCM, \"Finding\")"
+//* code.coding  ->  "code.coding" "Value of DTID 1411 Content Item with Concept Name 121071, DCM, Finding"
 
 * subject only Reference(Patient)
 * subject 1..1 MS
@@ -80,15 +80,15 @@ Description:    "DICOM SR Planar ROI Measurement Group Mapping to Observation"
 
 * focus contains imageRegion2d 0..* MS
 * focus[imageRegion2d] only Reference(ImagingSelection2dImageRegionProfile)
-* focus[imageRegion2d] ^short = "2D Image Region"
+* focus[imageRegion2d] ^short = "Image Region"
 
-* focus contains referencedSegmentationFrame 0..* MS
-* focus[referencedSegmentationFrame] only Reference(ImagingSelectionReferencedSegmentationFrameProfile)
-* focus[referencedSegmentationFrame] ^short = "Referenced Segmentation Frame"
+* focus contains referencedSegment 0..* MS
+* focus[referencedSegment] only Reference(ImagingSelectionReferencedSegmentProfile)
+* focus[referencedSegment] ^short = "Referenced Segment"
 
-* focus contains imageRegion3d 0..* MS
-* focus[imageRegion3d] only Reference(ImagingSelection3dImageRegionProfile)
-* focus[imageRegion3d] ^short = "3D Image Region"
+* focus contains volumeSurface 0..* MS
+* focus[volumeSurface] only Reference(ImagingSelectionVolumeSurfaceProfile)
+* focus[volumeSurface] ^short = "Volume Surface"
 
 * focus contains sourceImageForSegmentation 0..* MS
 * focus[sourceImageForSegmentation] only Reference(ImagingSelectionSourceImageForSegmentationProfile)
