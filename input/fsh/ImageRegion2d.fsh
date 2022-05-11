@@ -7,7 +7,7 @@ Alias: HL7IdType = http://terminology.hl7.org/CodeSystem/v2-0203
 Profile:        ImagingSelection2dImageRegionProfile
 Parent:         ImagingSelection
 Id:             image-region-2d
-Title:          "DICOM SR Image 2D Region Mapping to ImagingSelection"
+Title:          "Imaging Selection - DICOM SR Image 2D Region Mapping"
 Description:    "DICOM SR Image 2D Region Mapping to ImagingSelection"
 
 * ^abstract = true

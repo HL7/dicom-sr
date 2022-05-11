@@ -7,7 +7,7 @@ Alias: HL7IdType = http://terminology.hl7.org/CodeSystem/v2-0203
 Profile:        ImagingSelectionReferencedSegmentationFrameProfile
 Parent:         ImagingSelection
 Id:             referenced-segmentation-frame
-Title:          "DICOM SR Referenced Segmentation Frame Mapping to ImagingSelection"
+Title:          "Imaging Selection - DICOM SR Referenced Segmentation Frame Mapping"
 Description:    "DICOM SR Referenced Segmentation Frame Mapping to ImagingSelection"
 
 * ^abstract = true

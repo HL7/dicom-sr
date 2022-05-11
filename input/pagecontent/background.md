@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 This chapter describes the scope of this guide, provides background information, key concepts,
 and describes the use cases supported by this implementation guide.
 
@@ -9,19 +8,11 @@ and describes the use cases supported by this implementation guide.
 5. [Glossary](#glossary) - Glossary of terms used in this IG
 6. [References](#references) - Useful references
 
-<a name="Problem"></a>
-
 ### Problem
-
-![Problem](./Problem.svg){: width="800px"}
-
-<br clear="all" />
 
 DICOM Structured Report (DICOM SR) is a standard for recording clinical imaging observations made regarding a diagnostic or interventional imaging procedure. Imaging Observations are made by humans, such as a sonographer making measurements on recently acquired ultrasound image, a Radiologist recording observations on suspected lesions, or by a machine, such as an automated AI Algorithm providing qualitative and quantitative observations.
 
 DICOM SR is widely adopted by Imaging-based devices and IT systems. Non-imaging based Healthcare IT Systems, generally, do not support DICOM SR. Non-imaging healthcare systems support HL7 standards, such as FHIR. HL7 has defined Observations as the standardized method for recording clinical observations. Bridging the two standards for clinical imaging observations is necessary for interoperability between these type of systems.
-
-<a name="scope"></a>
 
 ### Scope
 
@@ -33,8 +24,6 @@ The transformation described is one direction.  Reconstruction of a complete DIC
 
 DICOM SR mapping is limited to the Observation Resource.  The resultant mapping is provided, as a minimum, a composition or bundle of Observations.  Depending on the use case, the observations may be a Diagnostic Report. Use case-specific requirements to construct a diagnostic report(e.g. Mammography) may require the transformation described by this IG.  However the specification of those use cases is not in scope for this IG.
 
-<a name="readers"></a>
-
 ### Intended Readers
 This Implementation Guide is intended for
 
@@ -42,14 +31,12 @@ This Implementation Guide is intended for
 * implementers of other health information systems wishing to use imaging data encapsulated using DICOM SR.
 * imaging device, image analysis and AI algorithm developers and imaging gateway system developers creating DICOM SR.
 
-<a name="usecases"></a>
 
 ### Use cases
 X use cases were identified.
 
 #### Use case 1: 
-
-<a name="glossary"></a>
+To be created
 
 ### Glossary
 
@@ -75,12 +62,9 @@ The following terms and acronyms are used within the Radiation Dose Summary IG:
 |UID| Unique identifier |
 |URL| Uniform Resource Locator |
 |URN| Uniform Resource Name |
-{:.table-striped .table-bordered}
-
-<a name="references"></a>
 
 ### References
 
-1. DICOM, [DICOM PS3.16: Content Mapping Resource](http://dicom.nema.org/medical/dicom/current/output/chtml/part16/PS3.16.html){:target="_blank"}
-2. DICOM, [TID 1500\. Measurement Report](https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1500){:target="_blank"}
-3. IHE Radiology (RAD), [Technical Framework Supplement, AI Results (AIR)](https://www.ihe.net/uploadedFiles/Documents/Radiology/IHE_RAD_Suppl_AIR.pdf){:target="_blank"}
+1. DICOM, [DICOM PS3.16: Content Mapping Resource](http://dicom.nema.org/medical/dicom/current/output/chtml/part16/PS3.16.html)
+2. DICOM, [TID 1500\. Measurement Report](https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1500)
+3. IHE Radiology (RAD), [Technical Framework Supplement, AI Results (AIR)](https://www.ihe.net/uploadedFiles/Documents/Radiolog

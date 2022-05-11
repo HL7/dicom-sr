@@ -4,7 +4,7 @@ left to right direction
 abstract class "Imaging Measurement" as ImagingMeasurementCore <<Observation>> #d5e8d4 ##[dashed]green
 class "TID 1410 Planar ROI Measurement Group" as PlanarMeasurementGroup <<Observation>> #d5e8d4 ##green
 class "TID 1411 Volumetric ROI Measurement Group" as VolumetricMeasurementGroup <<Observation>> #d5e8d4 ##green
-class "TID 1500 Measurement and Qualitative Evaluation Group" as MeasurementGroup <<Observation>> #d5e8d4 ##green
+class "TID 1501 Measurement and Qualitative Evaluation Group" as MeasurementGroup <<Observation>> #d5e8d4 ##green
 class "TID 1420 Derived Measurement" as DerivedMeasurement <<Observation>> #d5e8d4 ##green
 class "TID 1419 ROI Measurement" as ROIMeasurement <<Observation>> #d5e8d4 ##green
 class "TID 300 Measurement" as Measurement <<Observation>> #d5e8d4 ##green

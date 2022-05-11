@@ -7,8 +7,8 @@ Alias: HL7IdType = http://terminology.hl7.org/CodeSystem/v2-0203
 Profile:        ImagingSelectionReferencedSegmentProfile
 Parent:         ImagingSelection
 Id:             referenced-segment
-Title:          "DICOM SR Referenced SegmentMapping to ImagingSelection"
-Description:    "DICOM SR Referenced SegmentMapping to ImagingSelection"
+Title:          "Imaging Selection - DICOM SR Referenced Segment Mapping"
+Description:    "DICOM SR Referenced Segment Mapping to ImagingSelection"
 
 * ^abstract = true
 * insert DICOMSRStructureDefinitionContent

@@ -4,11 +4,11 @@ Alias: LOINC =  http://loinc.org
 Alias: DCMIdType = http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-identifier-type
 Alias: HL7IdType = http://terminology.hl7.org/CodeSystem/v2-0203
 
-Profile:        TID1411MeasurementGroupProfile
+Profile:        TID1411VolumetricROIMeasurementGroupProfile
 Parent:         Observation
-Id:             tid-1411-measurement-group
-Title:          "DICOM SR Volumentric ROI Measurement Group Mapping to Observation"
-Description:    "DICOM SR Volumentric ROI Measurement Group Mapping to Observation"
+Id:             tid-1411-volumetric-roi-measurement-group
+Title:          "Observation - DICOM SR Volumetric ROI Measurement Group Mapping"
+Description:    "DICOM SR TID 1411 Volumetric ROI Measurement Group Mapping to Observation"
 
 * ^abstract = true
 * insert DICOMSRStructureDefinitionContent
@@ -33,7 +33,7 @@ Description:    "DICOM SR Volumentric ROI Measurement Group Mapping to Observati
 
 * basedOn contains serviceRequestRef 0..1 MS
 * basedOn[serviceRequestRef] only Reference(ServiceRequest)
-* basedOn[serviceRequestRef] ^short = "Description of the related ServiceRequest"
+* basedOn[serviceRequestRef] ^short = "Description of the related Servi ceRequest"
 * basedOn[serviceRequestRef].identifier.type 1..1
 * basedOn[serviceRequestRef].identifier.type = HL7IdType#ACSN "Accession ID"
 * basedOn[serviceRequestRef].identifier.value 1..1
@@ -117,3 +117,16 @@ Description:    "DICOM SR Volumentric ROI Measurement Group Mapping to Observati
 
 * interpretation MS
 // * interpretation -> "$QualType, $QualModType"
+
+Mapping: dicom-sr-for-TID1411VolumetricROIMeasurementGroup
+Id: dicom-sr
+Title: "DICOM SR TID 1411 Volumetric ROI Measurement Group"
+Source: TID1411VolumetricROIMeasurementGroupProfile
+Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1410"
+Description: "The TID1411PlanarROIMeasurementGroup can be extracted from TID 1411 - Volumetric ROI Measurements and Qualitative Evaluations."
+* -> "TID1411(Volumetric ROI Measurements and Qualitative Evaluations)"
+* identifier[observationUID] -> "tag(0040,A171) [Observation UID]"
+* subject -> "tag(0010,0020) [Patient ID]"
+* code -> "TID1411.EV(121071, DCM, Finding)"
+* issued -> "tag(0040,A032) [Observation DateTime]"
+* interpretation -> "TID1411.$QualType, TID.1411QualModType$"
