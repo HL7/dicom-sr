@@ -7,7 +7,7 @@ Alias: HL7IdType = http://terminology.hl7.org/CodeSystem/v2-0203
 Profile:        ImagingSelectionSourceImageForSegmentationProfile
 Parent:         ImagingSelection
 Id:             source-image-for-segmentation
-Title:          "DICOM SR Source Image For Segmentation Mapping to ImagingSelection"
+Title:          "Imaging Selection - DICOM SR Source Image For Segmentation Mapping"
 Description:    "DICOM SR Source Image For Segmentation Mapping to ImagingSelection"
 
 * ^abstract = true

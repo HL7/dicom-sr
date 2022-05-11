@@ -7,7 +7,7 @@ Alias: HL7IdType = http://terminology.hl7.org/CodeSystem/v2-0203
 Profile:        ImagingSelectionVolumeSurfaceProfile
 Parent:         ImagingSelection
 Id:             volume-surface
-Title:          "DICOM SR Image Volume Surface Mapping to ImagingSelection"
+Title:          "Imaging Selection - DICOM SR Image Volume Surface Mapping"
 Description:    "DICOM SR Image Volume Surface Mapping to ImagingSelection"
 
 * ^abstract = true

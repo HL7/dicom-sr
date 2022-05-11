@@ -4,11 +4,11 @@ Alias: LOINC =  http://loinc.org
 Alias: DCMIdType = http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-identifier-type
 Alias: HL7IdType = http://terminology.hl7.org/CodeSystem/v2-0203
 
-Profile:        TID1410MeasurementGroupProfile
+Profile:        TID1410PlanarROIMeasurementGroupProfile
 Parent:         Observation
-Id:             tid-1410-measurement-group
-Title:          "DICOM SR Planar ROI Measurement Group Mapping to Observation"
-Description:    "DICOM SR Planar ROI Measurement Group Mapping to Observation"
+Id:             tid-1410-planar-roi-measurement-group
+Title:          "Observation - DICOM SR TID 1410 Planar ROI Measurement Group Mapping"
+Description:    "DICOM SR TID 1410 Planar ROI Measurement Group Mapping to Observation"
 
 * ^abstract = true
 * insert DICOMSRStructureDefinitionContent
@@ -58,8 +58,6 @@ Description:    "DICOM SR Planar ROI Measurement Group Mapping to Observation"
 * category = DCM#125007 "Measurement Group"
 
 * code MS
-// * code -> "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1410" "EV (121071, DCM, \"Finding\")"
-//* code.coding  ->  "code.coding" "Value of DTID 1410 Content Item with Concept Name 121071, DCM, Finding"
 
 * subject only Reference(Patient)
 * subject 1..1 MS
@@ -103,7 +101,6 @@ Description:    "DICOM SR Planar ROI Measurement Group Mapping to Observation"
 // Observation Date Time
 * issued 1..1 MS
 * issued ^short = "Observation Date Time"
-// * issued -> "Observation DateTime (0040,A032)" // Consider using value from higher-level observations or Content Datetime as fall-back
 
 * hasMember ^slicing.discriminator.type = #pattern
 * hasMember ^slicing.discriminator.path = "type"
@@ -116,4 +113,18 @@ Description:    "DICOM SR Planar ROI Measurement Group Mapping to Observation"
 * hasMember[roiMeasurement] only Reference(TID1419ROIMeasurementProfile)
 
 * interpretation MS
-// * interpretation -> "$QualType, $QualModType"
+
+* value[x] 0..0
+
+Mapping: dicom-sr-for-TID1410PlanarROIMeasurementGroup
+Id: dicom-sr
+Title: "DICOM SR TID 1410 Planar ROI Measurement Group"
+Source: TID1410PlanarROIMeasurementGroupProfile
+Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1410"
+Description: "The TID1410PlanarROIMeasurementGroup can be extracted from TID 1410 - Planar ROI Measurements and Qualitative Evaluations."
+* -> "TID1410(Planar ROI Measurements and Qualitative Evaluations)"
+* identifier[observationUID] -> "tag(0040,A171) [Observation UID]"
+* subject -> "tag(0010,0020) [Patient ID]"
+* code -> "TID1410.EV(121071, DCM, Finding)"
+* issued -> "tag(0040,A032) [Observation DateTime]"
+* interpretation -> "TID1410.$QualType, TID.1410QualModType$"
