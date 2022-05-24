@@ -80,13 +80,19 @@ Description:    "DICOM SR TID 300 Measurement Mapping to Observation"
 * issued 1..1 MS
 * issued ^short = "Observation Date Time"
 
+* method 0..1 MS
+
 * device 0..1 MS
 * device only Reference(TID4019AlgorithmIdentificationProfile)
 * device ^short = "Algorithm Identification"
 
 * interpretation MS
+* referenceRange MS
 
-* value[x] 0..0
+* bodyStructure MS
+
+* valueQuantity MS
+
 
 Mapping: dicom-sr-for-TID300MeasurementProfile
 Id: dicom-sr
@@ -97,6 +103,10 @@ Description: "The TID300Measurement can be extracted from TID 300 - Measurement.
 * -> "TID300(Measurement)"
 * identifier[observationUID] -> "tag(0040,A171) [Observation UID]"
 * subject -> "tag(0010,0020) [Patient ID]"
+* code -> "TID300.$Measurement" // Specify that this is the $Measurement code itself and not the value of the content item with this concept name
 * issued -> "tag(0040,A032) [Observation DateTime]"
+* method -> "TID1501.EV(370129005, SCT, Measurement Method)"
 * device -> "TID1501.EV(121071, DCM, Finding)"
-* value[x] -> "TID300.TID4019"
+* valueQuantity -> "TID300.$Measurement" // Value of content item
+// Add mapping of finding site and laterality to body structure
+// Map MeasurementProperties to interpretation and reference range
