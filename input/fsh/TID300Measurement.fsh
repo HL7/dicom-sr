@@ -90,6 +90,7 @@ Description:    "DICOM SR TID 300 Measurement Mapping to Observation"
 * referenceRange MS
 
 * bodyStructure MS
+* bodyStructure only Reference(DICOMSRFindingSiteBodyStructureProfile)
 
 * valueQuantity MS
 
@@ -108,5 +109,3 @@ Description: "The TID300Measurement can be extracted from TID 300 - Measurement.
 * method -> "TID1501.EV(370129005, SCT, Measurement Method)"
 * device -> "TID1501.EV(121071, DCM, Finding)"
 * valueQuantity -> "TID300.$Measurement" // Value of content item
-// Add mapping of finding site and laterality to body structure
-// Map MeasurementProperties to interpretation and reference range
