@@ -7,7 +7,7 @@ Alias: HL7IdType = http://terminology.hl7.org/CodeSystem/v2-0203
 Profile:        ImagingSelection2dImageRegionProfile
 Parent:         ImagingSelection
 Id:             image-region-2d
-Title:          "Imaging Selection - DICOM SR Image 2D Region Mapping"
+Title:          "Imaging Selection - DICOM SR 2D Image Region Mapping"
 Description:    "DICOM SR Image 2D Region Mapping to ImagingSelection"
 
 * ^abstract = true
@@ -55,9 +55,17 @@ Description:    "DICOM SR Image 2D Region Mapping to ImagingSelection"
 * instance ^slicing.description = "Selected Image Instance"
 
 * instance contains imageInstance 0..*
-// * instance[imageInstance].uid -> "Referenced SOP Instance UID (0008,1155)"
 
 * imageRegion 1..1 MS
-// * imageRegion.regionType -> "Graphic Type (0070,0023)"
 * imageRegion.coordinateType = #2d
-// * imageRegion.coordinates -> "Graphic Data (0070,0022)"
+
+Mapping: dicom-sr-for-2dImageRegionProfile
+Id: dicom-sr
+Title: "DICOM SR 2D Image Region"
+Source: ImagingSelection2dImageRegionProfile
+Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1410"
+Description: "The ImagingSelection2dImageRegion can be extracted from TID 1410.EV(111030, DCM, Image Region)."
+* -> "TID1410(2DImageRegion)"
+* instance[imageInstance].uid -> "tag(0008,1155) [Referenced SOP Instance UID]"
+* instance[imageInstance].imageRegion.regionType -> "tag(0070,0023) [Graphic Type]"
+* instance[imageInstance].imageRegion.coordinates -> "tag(0070,0022) [Graphic Data]"

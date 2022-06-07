@@ -24,6 +24,8 @@ The transformation described is one direction.  Reconstruction of a complete DIC
 
 DICOM SR mapping is limited to the Observation Resource.  The resultant mapping is provided, as a minimum, a composition or bundle of Observations.  Depending on the use case, the observations may be a Diagnostic Report. Use case-specific requirements to construct a diagnostic report(e.g. Mammography) may require the transformation described by this IG.  However the specification of those use cases is not in scope for this IG.
 
+![Architecture](./architecture.svg)
+
 ### Intended Readers
 This Implementation Guide is intended for
 
