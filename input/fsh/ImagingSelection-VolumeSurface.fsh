@@ -53,7 +53,7 @@ Description:    "DICOM SR Image Volume Surface Mapping to ImagingSelection"
 * imageRegion 1..1 MS
 
 Mapping: dicom-sr-for-VolumeSurfaceProfile
-Id: dicom-sr
+Id: dicom-sr-volume-surface
 Title: "DICOM SR Volume Surface"
 Source: ImagingSelectionVolumeSurfaceProfile
 Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1411"

@@ -8,7 +8,7 @@ Profile:        DICOMSRFindingSiteBodyStructureProfile
 Parent:         BodyStructure
 Id:             dicom-sr-finding-site-body-structure
 Title:          "Body Structure - DICOM SR Finding Site Mapping"
-Description:    "DICOM SR Finding Site Mapping to BodyStrucutre"
+Description:    "DICOM SR Finding Site Mapping to BodyStructure"
 
 * ^abstract = true
 * insert DICOMSRStructureDefinitionContent
@@ -22,4 +22,4 @@ Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapte
 Description: "The FindingSiteBodyStructure can be extracted from TID 300 EV(363698007, SCT, Finding Site) and EV (272741003, SCT, Laterality)."
 * -> "TID300(FindingSite)"
 * includedStructure.structure.coding -> "TID300.EV(363698007, SCT, Finding Site)"
-* includedStructure.structure.laterality -> "TID300.EV(272741003, SCT, Laterality)"
+* includedStructure.laterality -> "TID300.EV(272741003, SCT, Laterality)"
