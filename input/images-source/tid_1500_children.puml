@@ -1,0 +1,31 @@
+@startuml architecture
+left to right direction
+
+class "Imaging Measurement Group" as ImagingMeasurementGroup <<Observation>> #d5e8d4 ##green
+class "Imaging Measurement" as ImagingMeasurement <<Observation>> #d5e8d4 ##green
+class "Derived Imaging Measurement" as DerivedImagingMeasurement <<Observation>> #d5e8d4 ##green
+class "Imaging Qualitative Evaluation" as ImagingQualitativeEvaluation <<Observation>> #d5e8d4 ##green
+
+class ImagingSelection #a3e7ff ##34b1eb
+
+
+package TID.1500.measurement.report #EEEEEE {
+    package CONTAINER.imaging.measurements {
+    }
+    package CONTAINER.derived.imaging.measurements {
+    }
+    package CONTAINER.qualitative.evaluations {
+    }
+}
+
+CONTAINER.imaging.measurements --> ImagingMeasurementGroup : contains[0..*]
+CONTAINER.derived.imaging.measurements --> DerivedImagingMeasurement : contains[0..*]
+CONTAINER.qualitative.evaluations --> ImagingQualitativeEvaluation : contains[0..*]
+
+ImagingMeasurementGroup --> ImagingMeasurement : contains[0..*]
+ImagingMeasurementGroup --> ImagingQualitativeEvaluation : contains[0..*]
+DerivedImagingMeasurement --> ImagingMeasurementGroup : derivedFrom[0..*]
+
+ImagingMeasurement --> ImagingSelection: focus[0..*]
+ImagingMeasurementGroup --> ImagingSelection: focus[0..*]
+@enduml

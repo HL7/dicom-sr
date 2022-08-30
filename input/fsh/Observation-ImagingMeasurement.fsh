@@ -4,11 +4,11 @@ Alias: LOINC =  http://loinc.org
 Alias: DCMIdType = http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-identifier-type
 Alias: HL7IdType = http://terminology.hl7.org/CodeSystem/v2-0203
 
-Profile:        TID300MeasurementProfile
+Profile:        ImagingMeasurementProfile
 Parent:         Observation
-Id:             tid-300-measurement
-Title:          "Observation - TID 300 Measurement" 
-Description:    "DICOM SR TID 300 Measurement Mapping to Observation"
+Id:             imaging-measurement
+Title:          "Observation - DICOM SR Imaging Measurement Mapping to Observation"
+Description:    "DICOM SR Imaging Measurement Mapping to Observation"
 
 * ^abstract = true
 * insert DICOMSRStructureDefinitionContent
@@ -68,13 +68,13 @@ Description:    "DICOM SR TID 300 Measurement Mapping to Observation"
 * focus ^slicing.ordered = false
 * focus ^slicing.description = "Observation foci"
 
-* focus contains bodyStructure 0..* MS
-* focus[bodyStructure] only Reference(BodyStructure)
-* focus[bodyStructure].identifier.type 1..1
-* focus[bodyStructure].identifier.type = DCMIdType#tracking-uid "Tracking UID"
-* focus[bodyStructure].identifier.system = "urn:dicom:uid"
-* focus[bodyStructure].identifier.value 1..1
-* focus[bodyStructure].identifier ^short = "A unique identifier used for tracking a finding or feature, potentially across multiple reporting objects, over time"
+* focus contains trackingUidBodyStructure 0..* MS
+* focus[trackingUidBodyStructure] only Reference(BodyStructure)
+* focus[trackingUidBodyStructure].identifier.type 1..1
+* focus[trackingUidBodyStructure].identifier.type = DCMIdType#tracking-uid "Tracking UID"
+* focus[trackingUidBodyStructure].identifier.system = "urn:dicom:uid"
+* focus[trackingUidBodyStructure].identifier.value 1..1
+* focus[trackingUidBodyStructure].identifier ^short = "A unique identifier used for tracking a finding or feature, potentially across multiple reporting objects, over time"
 
 // Observation Date Time
 * issued 1..1 MS
@@ -89,23 +89,52 @@ Description:    "DICOM SR TID 300 Measurement Mapping to Observation"
 * interpretation MS
 * referenceRange MS
 
-* bodyStructure MS
-* bodyStructure only Reference(DICOMSRFindingSiteBodyStructureProfile)
+// * bodyStructure MS
+// * bodyStructure only Reference(DICOMSRFindingSiteBodyStructureProfile)
 
 * valueQuantity MS
 
-
 Mapping: dicom-sr-for-TID300MeasurementProfile
-Id: dicom-sr
+Id: dicom-sr-tid-300
 Title: "DICOM SR TID 300 Measurement"
-Source: TID300MeasurementProfile
-Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1410"
+Source: ImagingMeasurementProfile
+Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_300"
 Description: "The TID300Measurement can be extracted from TID 300 - Measurement."
 * -> "TID300(Measurement)"
 * identifier[observationUID] -> "tag(0040,A171) [Observation UID]"
 * subject -> "tag(0010,0020) [Patient ID]"
-* code -> "TID300.$Measurement" // Specify that this is the $Measurement code itself and not the value of the content item with this concept name
+* code -> "TID300.$Measurement.tag(0040,A043) [Concept Name Code Sequence]"
 * issued -> "tag(0040,A032) [Observation DateTime]"
 * method -> "TID1501.EV(370129005, SCT, Measurement Method)"
 * device -> "TID1501.EV(121071, DCM, Finding)"
-* valueQuantity -> "TID300.$Measurement" // Value of content item
+* valueQuantity -> "TID300.$Measurement.tag(0040,A300) [Measured Value Sequence]"
+
+Mapping: dicom-sr-for-TID1419MeasurementProfile
+Id: dicom-sr-tid-1419
+Title: "DICOM SR TID 1419 Measurement"
+Source: ImagingMeasurementProfile
+Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1419"
+Description: "The TID1419Measurement can be extracted from TID 1419 - ROI Measurements."
+* -> "TID1419(ROIMeasurement)"
+* identifier[observationUID] -> "tag(0040,A171) [Observation UID]"
+* subject -> "tag(0010,0020) [Patient ID]"
+* code -> "TID1419.$Measurement.tag(0040,A043) [Concept Name Code Sequence]"
+* issued -> "tag(0040,A032) [Observation DateTime]"
+* method -> "TID1501.EV(370129005, SCT, Measurement Method)"
+* device -> "TID1501.EV(121071, DCM, Finding)"
+* valueQuantity -> "TID1419.$Measurement.tag(0040,A300) [Measured Value Sequence]"
+
+Mapping: dicom-sr-for-TID1420MeasurementProfile
+Id: dicom-sr-tid-1420
+Title: "DICOM SR TID 1420 Measurement"
+Source: ImagingMeasurementProfile
+Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1420"
+Description: "The TID1419Measurement can be extracted from TID 1420 - Measurements Derived From Multiple ROI Measurements."
+* -> "TID1420(DerivedMeasurement)"
+* identifier[observationUID] -> "tag(0040,A171) [Observation UID]"
+* subject -> "tag(0010,0020) [Patient ID]"
+* code -> "TID1420.CID7465.tag(0040,A043) [Concept Name Code Sequence]"
+* issued -> "tag(0040,A032) [Observation DateTime]"
+* method -> "TID1501.EV(370129005, SCT, Measurement Method)"
+* device -> "TID1501.EV(121071, DCM, Finding)"
+* valueQuantity -> "TID1420.CID7465.tag(0040,A300) [Measured Value Sequence]"

@@ -52,7 +52,7 @@ Description:    "DICOM SR Image 3D Region Mapping to ImagingSelection"
 * imageRegion 1..1 MS
 
 Mapping: dicom-sr-for-3dImageRegionProfile
-Id: dicom-sr
+Id: dicom-sr-3d-image-region
 Title: "DICOM SR 3D Image Region"
 Source: ImagingSelection2dImageRegionProfile
 Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1410"
