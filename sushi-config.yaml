@@ -28,7 +28,7 @@ contact:
 description: Provides guidance for extracting key content from DICOM Structured Report (SR) objects into FHIR Observations  to make use of the results with  the larger hospital enterprise. 
 jurisdiction: "http://unstats.un.org/unsd/methods/m49/m49.htm#001"
 license: CC0-1.0
-fhirVersion: 5.0.0-snapshot1
+fhirVersion: 5.0.0-snapshot2
 dependencies:
 parameters:
   show-inherited-invariants: false
@@ -44,6 +44,9 @@ pages:
   background.md:
     title: Background
     generation: markdown
+  architecture.md:
+    title: Architecture
+    generation: markdown
 
 
 # ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
@@ -53,4 +56,5 @@ menu:
   IG Home: index.html
   Contents: toc.html
   Background: background.html
+  Architecture: architecture.html
   Artifact Index: artifacts.html
