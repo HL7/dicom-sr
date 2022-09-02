@@ -1,4 +1,4 @@
-@startuml architecture
+@startuml tid_1500_measurement_report
 left to right direction
 
 class "Imaging Measurement Group" as ImagingMeasurementGroup <<Observation>> #d5e8d4 ##green

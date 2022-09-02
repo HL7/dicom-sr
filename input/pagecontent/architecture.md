@@ -47,7 +47,7 @@ All mapped content items are children of the following `CONTAINER` content items
 
 e.g. the children of the `CONTAINER` with a Concept Name of (126010, DCM, "Imaging Measurements") are mapped to [Measurement Group](StructureDefinition-imaging-measurement-group.html) Observations.
 
-!(./tid_1500_children.svg){: width="110%"}
+!(./tid_1500_measurement_report.svg){: width="110%"}
 
 <a name="measurementgroup"></a>
 ##### Imaging Measurement Group relationship
