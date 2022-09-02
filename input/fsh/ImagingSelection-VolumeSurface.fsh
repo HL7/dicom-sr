@@ -61,4 +61,4 @@ Description: "The ImagingSelectionVolumeSurface can be extracted from TID 1411.E
 * -> "TID1411(VolumeSurface)"
 * frameOfReferenceUid -> "tag(3006,0024) [Referenced Frame of Reference UID]"
 * imageRegion.regionType -> "tag(0070,0023) [Graphic Type]"
-* imageRegion.coordinates -> "tag(0070,0022) [Graphic Data]"
+// * imageRegion.coordinates -> "tag(0070,0022) [Graphic Data]"

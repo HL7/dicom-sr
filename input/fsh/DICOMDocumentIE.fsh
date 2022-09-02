@@ -6,8 +6,8 @@ Usage: #definition
 * description = "Mapping between DICOM Document IE and FHIR Resources"
 // * url = http://hl7.org/fhir/uv/dicom-sr/dicom-document-ie-to-fhir
 * status = #draft
-* sourceUri = "DICOM-Document"
-* targetUri = "Observation"
+* sourceScopeUri = "DICOM-Document"
+* targetScopeUri = "Observation"
 
 // Document General Module
 * group.element[0]
@@ -36,10 +36,11 @@ Usage: #definition
     * display = "performer"
     * dependsOn[0]
       * property = "DICOM.ParticipantSequence.ObserverType"
-      * value = "PSN"
+      * valueCode = #PSN
     * dependsOn[1]
       * property = "macro-map"
-      * value = "identified-person-or-device"
+      * valueUri = "identified-person-or-device"
+
 * group.element[3]
   * code = #DICOM.ParticipantSequence-Device
   * display = "Preliminary Flag (0040,A496) -- DEV"
@@ -49,10 +50,10 @@ Usage: #definition
     * display = "Device[1]"
     * dependsOn[0]
       * property = "DICOM.ParticipantSequence.ObserverType"
-      * value = "DEV"
+      * valueCode = #DEV
     * dependsOn[1]
       * property = "macro-map"
-      * value = "identified-person-or-device"
+      * valueUri = "identified-person-or-device"
     * comment = "If this device matches the Equipment IE device an additional device resource does not need to be created."
 
 // Document Content Module
@@ -72,7 +73,7 @@ Usage: #definition
     * comment = "DICOM DateTime format shall be converted to FHIR instant format."
 
 // Observation UID (0040,A171)
-* group.element[5]
+* group.element[6]
   * code = #DICOM.ObservationUID
   * display = "Observation UID (0040,A171)"
   * target
@@ -81,109 +82,52 @@ Usage: #definition
     * display = "identifier[1]"
     * dependsOn[0]
       * property = "type"
-      * value = "DCMIdType#observation-uid 'Observation UID'"
+      * valueCoding = DCMIdType#observation-uid "Observation UID"
     * dependsOn[1]
       * property = "system"
-      * value = "urn:dicom:uid"
+      * valueUri = "urn:dicom:uid"
 
 // Content Sequence (0040,A730)
-* group.element[6]
-  * code = #DICOM.ContentSequence.TID1410
-  * display = "Content Sequence (0040,A730) -- TID 1410"
-  * target
-    * relationship = #source-is-narrower-than-target
-    * code = #Observation[1]
-    * display = "Observation[1]"
-    * dependsOn[0]
-      * property = "DICOM.ConceptNameCodeSequence.CodingSchemeDesignator"
-      * value = "DCM"
-    * dependsOn[1]
-      * property = "DICOM.ConceptNameCodeSequence.CodeValue"
-      * value = "DTID 1410"
-    * dependsOn[2]
-      * property = "content-map"
-      * value = "tid-1410"
-
-// Content Sequence (0040,A730)
-* group.element[6]
-  * code = #DICOM.ContentSequence.TID1410
-  * display = "Content Sequence (0040,A730) -- Planar ROI Measurements and Qualitative Evaluations"
-  * target
-    * relationship = #source-is-narrower-than-target
-    * code = #Observation[1]
-    * display = "Observation[1]"
-    * dependsOn[0]
-      * property = "DICOM.ConceptNameCodeSequence.CodingSchemeDesignator"
-      * value = "DCM"
-    * dependsOn[1]
-      * property = "DICOM.ConceptNameCodeSequence.CodeValue"
-      * value = "DTID 1410"
-    * dependsOn[2]
-      * property = "content-map"
-      * value = "dicom-dtid-1410"
 * group.element[7]
-  * code = #DICOM.ContentSequence.TID1411
-  * display = "Content Sequence (0040,A730) -- Volumetric ROI Measurements and Qualitative Evaluations"
+  * code = #DICOM.ContentSequence.ImagingMeasurements
+  * display = "Content Sequence (0040,A730) -- Imaging Measurements"
   * target
     * relationship = #source-is-narrower-than-target
     * code = #Observation[1]
     * display = "Observation[1]"
     * dependsOn[0]
-      * property = "DICOM.ConceptNameCodeSequence.CodingSchemeDesignator"
-      * value = "DCM"
+      * property = "DICOM.ConceptNameCodeSequence"
+      * valueCoding = DCM#126010 "Imaging Measurements"
     * dependsOn[1]
-      * property = "DICOM.ConceptNameCodeSequence.CodeValue"
-      * value = "DTID 1411"
-    * dependsOn[2]
       * property = "content-map"
-      * value = "dicom-dtid-1411"
+      * valueUri = "dicom-imaging-measurement-group"
+
+// Content Sequence (0040,A730)
 * group.element[8]
-  * code = #DICOM.ContentSequence.TID1420
-  * display = "Content Sequence (0040,A730) -- Measurements Derived From Multiple ROI Measurements"
+  * code = #DICOM.ContentSequence.DerivedImagingMeasurements
+  * display = "Content Sequence (0040,A730) -- Derived Imaging Measurements"
   * target
     * relationship = #source-is-narrower-than-target
     * code = #Observation[1]
     * display = "Observation[1]"
-    * comment = "A Derived Imaging Measurement may result in the creation of one or more Planar ROI Measurements or Volumetric ROI Measurements"
     * dependsOn[0]
-      * property = "DICOM.ConceptNameCodeSequence.CodingSchemeDesignator"
-      * value = "DCM"
+      * property = "DICOM.ConceptNameCodeSequence"
+      * valueCoding = DCM#126011 "Derived Imaging Measurements"
     * dependsOn[1]
-      * property = "DICOM.ConceptNameCodeSequence.CodeValue"
-      * value = "DTID 1420"
-    * dependsOn[2]
       * property = "content-map"
-      * value = "dicom-dtid-1420"
+      * valueUri = "dicom-derived-imaging-measurements"
+
+// Content Sequence (0040,A730)
 * group.element[9]
-  * code = #DICOM.ContentSequence.TID1501
-  * display = "Content Sequence (0040,A730) -- Measurement and Qualitative Evaluation Group"
-  * target
-    * relationship = #source-is-narrower-than-target
-    * code = #Observation[1]
-    * display = "Observation[1]"
-    * dependsOn[0]
-      * property = "DICOM.ConceptNameCodeSequence.CodingSchemeDesignator"
-      * value = "DCM"
-    * dependsOn[1]
-      * property = "DICOM.ConceptNameCodeSequence.CodeValue"
-      * value = "DTID 1501"
-    * dependsOn[2]
-      * property = "content-map"
-      * value = "dicom-dtid-1501"
-* group.element[10]
-  * code = #DICOM.ContentSequence.C0034375
+  * code = #DICOM.ContentSequence.QualitativeEvaluations
   * display = "Content Sequence (0040,A730) -- Qualitative Evaluations"
   * target
     * relationship = #source-is-narrower-than-target
     * code = #Observation[1]
     * display = "Observation[1]"
-    * comment = "Each child item of this Content Sequence item will be mapped to its own FHIR Observation"
     * dependsOn[0]
-      * property = "DICOM.ConceptNameCodeSequence.CodingSchemeDesignator"
-      * value = "UMLS"
+      * property = "DICOM.ConceptNameCodeSequence"
+      * valueCoding = http://terminology.hl7.org/NamingSystem/umls#C0034375 "Qualitative Evaluations"
     * dependsOn[1]
-      * property = "DICOM.ConceptNameCodeSequence.CodeValue"
-      * value = "C0034375"
-    * dependsOn[2]
       * property = "content-map"
-      * value = "dicom-umls-c0034375"
+      * valueUri = "dicom-qualitative-evaluations"
