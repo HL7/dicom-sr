@@ -6,8 +6,8 @@ Usage: #definition
 * description = "Mapping between DICOM SR IOD and FHIR Resources"
 // * url = http://hl7.org/fhir/uv/dicom-sr/dicom-sr-iod-to-fhir
 * status = #draft
-* sourceUri = "DICOM-SR-IOD"
-* targetUri = "Bundle"
+* sourceScopeUri = "DICOM-SR-IOD"
+* targetScopeUri = "Bundle"
 
 // Patient IE Mapping
 * group.element[0]
@@ -66,7 +66,13 @@ Usage: #definition
     * comment = "Processing of the Document IE will result in the creation one or more new Observation resources"
     * dependsOn[0]
       * property = "ie-map"
-      * value = "dicom-document-ie-to-fhir"
+      * valueUri = "dicom-document-ie-to-fhir"
     * dependsOn[1]
       * property = "references"
-      * value = "Observation.subject.reference=Patient[1].id; Observation.partOf.reference=ImagingStudy[1].id; Observation.device.reference=Device[1]"
+      * valueString = "Observation.subject.reference=Patient[1].id"
+    * dependsOn[2]
+      * property = "references"
+      * valueString = "Observation.partOf.reference=ImagingStudy[1].id"
+    * dependsOn[3]
+      * property = "references"
+      * valueString = "Observation.device.reference=Device[1]"
