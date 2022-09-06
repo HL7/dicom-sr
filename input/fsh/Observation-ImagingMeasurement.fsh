@@ -89,8 +89,8 @@ Description:    "DICOM SR Imaging Measurement Mapping to Observation"
 * interpretation MS
 * referenceRange MS
 
-// * bodyStructure MS
-// * bodyStructure only Reference(DICOMSRFindingSiteBodyStructureProfile)
+* bodyStructure MS
+* bodyStructure only Reference(DICOMSRFindingSiteBodyStructureProfile)
 
 * valueQuantity MS
 
