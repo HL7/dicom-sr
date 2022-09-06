@@ -55,7 +55,7 @@ Description:    "DICOM SR Image 2D Region Mapping to ImagingSelection"
 * instance ^slicing.description = "Selected Image Instance"
 
 * instance contains imageInstance 0..*
-// * instance[imageInstance].imageRegion 1..1 MS
+* instance[imageInstance].imageRegion 1..1 MS
 
 Mapping: dicom-sr-for-2dImageRegionProfile
 Id: dicom-sr-2d-image-region
@@ -65,5 +65,5 @@ Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapte
 Description: "The ImagingSelection2dImageRegion can be extracted from TID 1410.EV(111030, DCM, Image Region)."
 * -> "TID1410(2DImageRegion)"
 * instance[imageInstance].uid -> "tag(0008,1155) [Referenced SOP Instance UID]"
-// * instance[imageInstance].imageRegion.regionType -> "tag(0070,0023) [Graphic Type]"
-// * instance[imageInstance].imageRegion.coordinate -> "tag(0070,0022) [Graphic Data]"
+* instance[imageInstance].imageRegion.regionType -> "tag(0070,0023) [Graphic Type]"
+* instance[imageInstance].imageRegion.coordinate -> "tag(0070,0022) [Graphic Data]"

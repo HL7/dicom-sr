@@ -55,7 +55,13 @@ Description:    "DICOM SR Referenced Segment Mapping to ImagingSelection"
 * instance ^slicing.description = "Selected Segmentation Instance"
 
 * instance contains referencedSegment 0..*
-// * instance[referencedSegment].uid -> "Referenced SOP Instance UID (0008,1155)"
-// * instance.uid -> "Referenced SOP Instance UID (0008,1155)"
 * instance[referencedSegment].sopClass = urn:ietf:rfc:3986#urn:oid:1.2.840.10008.5.1.4.1.1.66.4 "Segmentation Storage"
-// * instance[referencedSegment].segmentList -> "Referenced Segment Number (0062,000B)"
+
+Mapping: dicom-sr-for-referencedSegmentProfile
+Id: dicom-sr-referenced-segment
+Title: "DICOM SR Referenced Segment"
+Source: ImagingSelectionReferencedSegmentProfile
+Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1411"
+Description: "The ImagingSelectionReferencedSegment can be extracted from TID 1411.EV(121191, DCM, Referenced Segment)."
+* instance[referencedSegment].uid -> "Referenced SOP Instance UID (0008,1155)"
+* instance[referencedSegment].subset -> "Referenced Segment Number (0062,000B)"
