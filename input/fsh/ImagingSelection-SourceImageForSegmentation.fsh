@@ -60,10 +60,20 @@ Description:    "DICOM SR Source Image For Segmentation Mapping to ImagingSelect
 * instance contains sourceInstances 0..*
 * instance[sourceInstances].sopClass = urn:ietf:rfc:3986#urn:oid:1.2.840.10008.5.1.4.1.1.66.4 "Segmentation Storage"
 
-Mapping: dicom-sr-for-sourceImageForSegmentation
-Id: dicom-sr-source-segmentation-image
-Title: "DICOM SR Source Image for Segmentation"
+Mapping: dicom-tid-1410-for-sourceImageForSegmentation
+Id: dicom-tid-1410-source-segmentation-image
+Title: "DICOM TID 1410 Source Image for Segmentation"
 Source: ImagingSelectionSourceImageForSegmentationProfile
 Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1410"
-Description: "The ImagingSelectionReferencedSegment can be extracted from TID 1410.EV(121233, DCM, Source Image for Segmentation)."
-* instance[sourceInstances].uid -> "Referenced SOP Instance UID (0008,1155)"
+Description: "The ImagingSelectionSourceImageForSegmentation can be extracted from TID 1410.EV(121233, DCM, Source Image for Segmentation)."
+* -> "TID1410(SourceImageForSegmentation)"
+* instance[sourceInstances].uid -> "tag(0008,1155) [Referenced SOP Instance UID]"
+
+Mapping: dicom-tid-1411-for-sourceImageForSegmentation
+Id: dicom-tid-1411-source-segmentation-image
+Title: "DICOM TID 1411 Source Image for Segmentation"
+Source: ImagingSelectionSourceImageForSegmentationProfile
+Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1411"
+Description: "The ImagingSelectionSourceImageForSegmentation can be extracted from TID 1411.EV(121233, DCM, Source Image for Segmentation)."
+* -> "TID1411(SourceImageForSegmentation)"
+* instance[sourceInstances].uid -> "tag(0008,1155) [Referenced SOP Instance UID]"

@@ -96,15 +96,29 @@ Description:    "DICOM SR TID Imaging Measurement Group Mapping to Observation"
 * focus[sourceImageForSegmentation] only Reference(ImagingSelectionSourceImageForSegmentationProfile)
 * focus[sourceImageForSegmentation] ^short = "Source Image for Segmentation"
 
+* focus contains sourceSeriesForSegmentation 0..* MS
+* focus[sourceSeriesForSegmentation] only Reference(ImagingSelectionSourceSeriesForSegmentationProfile)
+* focus[sourceSeriesForSegmentation] ^short = "Source Series for Segmentation"
+
+* focus contains regionInSpace 0..* MS
+* focus[regionInSpace] only Reference(ImagingSelectionRegionInSpaceProfile)
+* focus[regionInSpace] ^short = "RegionInSpace"
+
 * focus contains volumeSurface 0..* MS
 * focus[volumeSurface] only Reference(ImagingSelectionVolumeSurfaceProfile)
 * focus[volumeSurface] ^short = "Volume Surface"
 
-// Still TODO
-// * focus contains regionInSpace 0..* MS
-// * focus contains illustrationOfRoi 0..* MS
-// * focus contains visualExplanation 0..* MS
-// * focus contains realWorldValueMap 0..* MS
+* focus contains realWorldValueMap 0..* MS
+* focus[realWorldValueMap] only Reference(ImagingSelectionRealWorldValueMapProfile)
+* focus[realWorldValueMap] ^short = "Real World Value Map"
+
+* focus contains illustrationOfRoi 0..* MS
+* focus[illustrationOfRoi] only Reference(ImagingSelectionIllustrationOfROIProfile)
+* focus[illustrationOfRoi] ^short = "Illustration of ROI"
+
+* focus contains visualExplanation 0..* MS
+* focus[visualExplanation] only Reference(ImagingSelectionVisualExplanationProfile)
+* focus[visualExplanation] ^short = "VisualExplanation"
 
 // Observation Date Time
 * issued 1..1 MS

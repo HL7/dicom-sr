@@ -4,11 +4,11 @@ Alias: LOINC =  http://loinc.org
 Alias: DCMIdType = http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-identifier-type
 Alias: HL7IdType = http://terminology.hl7.org/CodeSystem/v2-0203
 
-Profile:        ImagingSelectionReferencedSegmentProfile
+Profile:        ImagingSelectionRealWorldValueMapProfile
 Parent:         ImagingSelection
-Id:             referenced-segment
-Title:          "Imaging Selection - DICOM SR Referenced Segment Mapping"
-Description:    "DICOM SR Referenced Segment Mapping to ImagingSelection"
+Id:             real-world-value-map
+Title:          "Imaging Selection - DICOM SR Real World Value Map"
+Description:    "DICOM SRReal World Value Map Mapping to ImagingSelection"
 
 * ^abstract = true
 * insert DICOMSRStructureDefinitionContent
@@ -43,7 +43,7 @@ Description:    "DICOM SR Referenced Segment Mapping to ImagingSelection"
 * derivedFrom[imagingStudyRef].identifier ^short = "Identifier related to Study Instance UID"
 
 * code MS
-* code.coding = DCM#121191 "Referenced Segment"
+* code.coding = DCM#126100 "Real World Value Map used for measurement"
 
 * subject only Reference(Patient)
 * subject 1..1 MS
@@ -52,17 +52,26 @@ Description:    "DICOM SR Referenced Segment Mapping to ImagingSelection"
 * instance ^slicing.discriminator.path = "type"
 * instance ^slicing.rules = #open
 * instance ^slicing.ordered = false
-* instance ^slicing.description = "Selected Segmentation Instance"
+* instance ^slicing.description = "Selected Image Instance"
 
-* instance contains referencedSegment 0..*
-* instance[referencedSegment].sopClass = urn:ietf:rfc:3986#urn:oid:1.2.840.10008.5.1.4.1.1.66.4 "Segmentation Storage"
+* instance contains valueMapInstance 0..*
+* instance[valueMapInstance].subset 0..* MS
+* instance[valueMapInstance].sopClass = urn:ietf:rfc:3986#urn:oid:1.2.840.10008.5.1.4.1.1.67 "Real World Value Mapping Storage"
 
-Mapping: dicom-tid-1411-for-referencedSegmentProfile
-Id: dicom-tid-1411-referenced-segment
-Title: "DICOM TID 1411 Referenced Segment"
-Source: ImagingSelectionReferencedSegmentProfile
+Mapping: dicom-tid-1410-for-realWorldValueMapProfile
+Id: dicom-tid-1410-real-world-value-map
+Title: "DICOM TID 1410 Real World Value Map"
+Source: ImagingSelectionRealWorldValueMapProfile
+Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1410"
+Description: "The ImagingSelectionRealWorldValueMap can be extracted from TID 1410.EV(126100, DCM, Real World Value Map used for measurement)."
+* -> "TID1410(RealWorldValueMap)"
+* instance[valueMapInstance].uid -> "tag(0008,1155) [Referenced SOP Instance UID]"
+
+Mapping: dicom-tid-1411-for-realWorldValueMapProfile
+Id: dicom-tid-1411-real-world-value-map
+Title: "DICOM TID 1411 Real World Value Map"
+Source: ImagingSelectionRealWorldValueMapProfile
 Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1411"
-Description: "The ImagingSelectionReferencedSegment can be extracted from TID 1411.EV(121191, DCM, Referenced Segment)."
-* -> "TID1411(ReferencedSegment)"
-* instance[referencedSegment].uid -> "tag(0008,1155) [Referenced SOP Instance UID]"
-* instance[referencedSegment].subset -> "tag(0062,000B) [Referenced Segment Number]"
+Description: "The ImagingSelectionRealWorldValueMap can be extracted from TID 1411.EV(126100, DCM, Real World Value Map used for measurement)."
+* -> "TID1411(RealWorldValueMap)"
+* instance[valueMapInstance].uid -> "tag(0008,1155) [Referenced SOP Instance UID]"
