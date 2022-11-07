@@ -57,11 +57,12 @@ Description:    "DICOM SR Referenced Segmentation Frame Mapping to ImagingSelect
 * instance contains referencedSegmentationFrame 0..*
 * instance[referencedSegmentationFrame].sopClass = urn:ietf:rfc:3986#urn:oid:1.2.840.10008.5.1.4.1.1.66.4 "Segmentation Storage"
 
-Mapping: dicom-sr-for-referencedSegmentationFrame
-Id: dicom-sr-referenced-segmentation-frame
-Title: "DICOM SR Referenced Segmentation Frame"
+Mapping: dicom-tid-1410-for-referencedSegmentationFrame
+Id: dicom-tid-1410-referenced-segmentation-frame
+Title: "DICOM TID 1410 Referenced Segmentation Frame"
 Source: ImagingSelectionReferencedSegmentationFrameProfile
 Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1410"
-Description: "The ImagingSelectionReferencedSegment can be extracted from TID 1410.EV(121214, DCM, Referenced Segmentation Frame)."
-* instance[referencedSegmentationFrame].uid -> "Referenced SOP Instance UID (0008,1155)"
-* instance[referencedSegmentationFrame].subset -> "Referenced Segment Number (0062,000B)"
+Description: "The ImagingSelectionReferencedSegmentationFrame can be extracted from TID 1410.EV(121214, DCM, Referenced Segmentation Frame)."
+* -> "TID1410(ReferencedSegmentationFrame)"
+* instance[referencedSegmentationFrame].uid -> "tag(0008,1155) [Referenced SOP Instance UID]"
+* instance[referencedSegmentationFrame].subset -> "tag(0062,000B) [Referenced Segment Number]"

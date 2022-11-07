@@ -57,13 +57,24 @@ Description:    "DICOM SR Image 2D Region Mapping to ImagingSelection"
 * instance contains imageInstance 0..*
 * instance[imageInstance].imageRegion 1..1 MS
 
-Mapping: dicom-sr-for-2dImageRegionProfile
-Id: dicom-sr-2d-image-region
-Title: "DICOM SR 2D Image Region"
+Mapping: dicom-tid-1410-for-2dImageRegionProfile
+Id: dicom-tid-1410-2d-image-region
+Title: "DICOM TID 1410 2D Image Region"
 Source: ImagingSelection2dImageRegionProfile
 Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1410"
 Description: "The ImagingSelection2dImageRegion can be extracted from TID 1410.EV(111030, DCM, Image Region)."
 * -> "TID1410(2DImageRegion)"
+* instance[imageInstance].uid -> "tag(0008,1155) [Referenced SOP Instance UID]"
+* instance[imageInstance].imageRegion.regionType -> "tag(0070,0023) [Graphic Type]"
+* instance[imageInstance].imageRegion.coordinate -> "tag(0070,0022) [Graphic Data]"
+
+Mapping: dicom-tid-1411-for-2dImageRegionProfile
+Id: dicom-tid-1411-2d-image-region
+Title: "DICOM TID 1411 2D Image Region"
+Source: ImagingSelection2dImageRegionProfile
+Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1411"
+Description: "The ImagingSelection2dImageRegion can be extracted from TID 1411.EV(111030, DCM, Image Region)."
+* -> "TID1411(2DImageRegion)"
 * instance[imageInstance].uid -> "tag(0008,1155) [Referenced SOP Instance UID]"
 * instance[imageInstance].imageRegion.regionType -> "tag(0070,0023) [Graphic Type]"
 * instance[imageInstance].imageRegion.coordinate -> "tag(0070,0022) [Graphic Data]"

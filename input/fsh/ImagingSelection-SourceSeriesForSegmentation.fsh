@@ -4,11 +4,11 @@ Alias: LOINC =  http://loinc.org
 Alias: DCMIdType = http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-identifier-type
 Alias: HL7IdType = http://terminology.hl7.org/CodeSystem/v2-0203
 
-Profile:        ImagingSelectionReferencedSegmentProfile
+Profile:        ImagingSelectionSourceSeriesForSegmentationProfile
 Parent:         ImagingSelection
-Id:             referenced-segment
-Title:          "Imaging Selection - DICOM SR Referenced Segment Mapping"
-Description:    "DICOM SR Referenced Segment Mapping to ImagingSelection"
+Id:             source-series-for-segmentation
+Title:          "Imaging Selection - DICOM SR Source Series For Segmentation Mapping"
+Description:    "DICOM SR Source Series For Segmentation Mapping to ImagingSelection"
 
 * ^abstract = true
 * insert DICOMSRStructureDefinitionContent
@@ -43,26 +43,28 @@ Description:    "DICOM SR Referenced Segment Mapping to ImagingSelection"
 * derivedFrom[imagingStudyRef].identifier ^short = "Identifier related to Study Instance UID"
 
 * code MS
-* code.coding = DCM#121191 "Referenced Segment"
+* code.coding = DCM#121232 "Source series for segmentation"
 
-* subject only Reference(Patient)
 * subject 1..1 MS
+* subject only Reference(Patient)
+
+* seriesUid MS
+// seriesUid -> UID value of 121232, DCM, "Source series for segmentation" if present
 
 * instance ^slicing.discriminator.type = #pattern
 * instance ^slicing.discriminator.path = "type"
 * instance ^slicing.rules = #open
 * instance ^slicing.ordered = false
-* instance ^slicing.description = "Selected Segmentation Instance"
+* instance ^slicing.description = "Source Instances"
 
-* instance contains referencedSegment 0..*
-* instance[referencedSegment].sopClass = urn:ietf:rfc:3986#urn:oid:1.2.840.10008.5.1.4.1.1.66.4 "Segmentation Storage"
+* instance contains sourceInstances 0..*
+* instance[sourceInstances].sopClass = urn:ietf:rfc:3986#urn:oid:1.2.840.10008.5.1.4.1.1.66.4 "Segmentation Storage"
 
-Mapping: dicom-tid-1411-for-referencedSegmentProfile
-Id: dicom-tid-1411-referenced-segment
-Title: "DICOM TID 1411 Referenced Segment"
-Source: ImagingSelectionReferencedSegmentProfile
+Mapping: dicom-tid-1411-for-sourceSeriesForSegmentation
+Id: dicom-tid-1411-source-segmentation-series
+Title: "DICOM TID 1411 Source Series for Segmentation"
+Source: ImagingSelectionSourceSeriesForSegmentationProfile
 Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1411"
-Description: "The ImagingSelectionReferencedSegment can be extracted from TID 1411.EV(121191, DCM, Referenced Segment)."
-* -> "TID1411(ReferencedSegment)"
-* instance[referencedSegment].uid -> "tag(0008,1155) [Referenced SOP Instance UID]"
-* instance[referencedSegment].subset -> "tag(0062,000B) [Referenced Segment Number]"
+Description: "The ImagingSelectionSourceSeriesForSegmentation can be extracted from TID 1411.EV(121232, DCM, Source Series for Segmentation)."
+* -> "TID1411(SourceSeriesForSegmentation)"
+* seriesUid -> "tag(0040,A124) [UID]"

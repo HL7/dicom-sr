@@ -52,9 +52,9 @@ Description:    "DICOM SR Image Volume Surface Mapping to ImagingSelection"
 
 * imageRegion 1..1 MS
 
-Mapping: dicom-sr-for-VolumeSurfaceProfile
-Id: dicom-sr-volume-surface
-Title: "DICOM SR Volume Surface"
+Mapping: dicom-tid-1411-for-VolumeSurfaceProfile
+Id: dicom-tid-1411-volume-surface
+Title: "DICOM TID 1411 Volume Surface"
 Source: ImagingSelectionVolumeSurfaceProfile
 Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1411"
 Description: "The ImagingSelectionVolumeSurface can be extracted from TID 1411.EV(121231, DCM, Volume Surface)."
