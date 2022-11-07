@@ -22,10 +22,11 @@ CONTAINER.imaging.measurements --> ImagingMeasurementGroup : contains[0..*]
 CONTAINER.derived.imaging.measurements --> DerivedImagingMeasurement : contains[0..*]
 CONTAINER.qualitative.evaluations --> ImagingQualitativeEvaluation : contains[0..*]
 
-ImagingMeasurementGroup --> ImagingMeasurement : contains[0..*]
-ImagingMeasurementGroup --> ImagingQualitativeEvaluation : contains[0..*]
+ImagingMeasurementGroup --> ImagingMeasurement : hasMember[0..*]
+ImagingMeasurementGroup --> ImagingQualitativeEvaluation : hasMember[0..*]
 DerivedImagingMeasurement --> ImagingMeasurementGroup : derivedFrom[0..*]
 
 ImagingMeasurement --> ImagingSelection: focus[0..*]
 ImagingMeasurementGroup --> ImagingSelection: focus[0..*]
+ImagingQualitativeEvaluation --> ImagingSelection: focus[0..*]
 @enduml
