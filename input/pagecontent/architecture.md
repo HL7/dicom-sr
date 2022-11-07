@@ -2,13 +2,11 @@ This chapter describes the architecture of this implementation guide.
 
 1. [Profiles & Extensions](#profiles) - FHIR Profiles and extensions defined in the IG
 
-<a name="profiles"></a>
-
-### Profiles & Extensions
+### Profiles & Extensions<a name="profiles"></a>
 #### Resource Profiles<a name="resources"></a>
 The mapping of the core DICOM SR measurement groups, measurements and qualitative analysis content items are covered by the following resource profiles:
 
-* [Imaging Measurement Group](StructureDefinition-imaging-measurement-group.html) profiles the Observation resource representing DICOM SR measurment group templates:
+* [Imaging Measurement Group](StructureDefinition-imaging-measurement-group.html) profiles the Observation resource representing DICOM SR measurement group templates:
     * [DTID 1410 “Planar ROI Measurements and Qualitative Evaluations”](https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1410)
     * [DTID 1411 “Volumetric ROI Measurements and Qualitative Evaluations”](https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1411)
     * [DTID 1501 “Measurement and Qualitative Evaluation Group”](https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1501)
@@ -21,7 +19,8 @@ The mapping of the core DICOM SR measurement groups, measurements and qualitativ
 
 * [Imaging Qualitative Evaluation](StuctureDefinition-imaging-qualitative-evaluation.html) profiles the Observation resource representing qualitative evaluation content items
 
-The above resource profiles depend on the following ImagingSelection resource profiles:
+The above resource profiles depend on the following resource profiles:
+##### ImagingSelection
 * [Image Region -- 2D](StructureDefinition-image-region-2d.html) profiles the ImagingSelection resource representing a referenced 2D image region content item [CID 111030 "Image Region"](https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_D.html#DCM_111030)
 * [Image Region -- 3D](StructureDefinition-image-region-3d.html) profiles the ImagingSelection resource representing a referenced 3D image region content item [CID 111030 "Image Region"](https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_D.html#DCM_111030)
 * [Referenced Segment](StructureDefinition-referenced-segment.html) profiles the ImagingSelection resource representing a referenced segment content item [CID 121191 "Referenced Segment"](https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_D.html#DCM_121191)
@@ -34,8 +33,11 @@ The above resource profiles depend on the following ImagingSelection resource pr
 * [Illustration of ROI](StructureDefinition-illustration-of-roi.html) profiles the ImagingSelection resource representing a referenced ROI illustration content item [CID 121200 "Illustration of ROI"](https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_D.html#DCM_121200)
 * [Visual explanation](StructureDefinition-visual-explanation.html) profiles the ImagingSelection resource representing a referenced visual explanation content item [CID 130401 "Visual explanation](https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_D.html#DCM_130401)
 
-and the following Device resource profile:
-* [Algorithm Identification](StructureDefinition-algorithm-identification.html) profiles DICOM SR template [DTID 4019 “Algorithm Identification”](https://dicom.nema.org/medical/dicom/current/output/chtml/part16/sect_TID_4019.html)
+##### Device
+* [Algorithm Identification](StructureDefinition-algorithm-identification.html) profiles the Device resource representing the DICOM SR template [DTID 4019 “Algorithm Identification”](https://dicom.nema.org/medical/dicom/current/output/chtml/part16/sect_TID_4019.html)
+
+##### BodyStructure
+* [Finding Site](StructureDefinition-finding-site) profiles the BodyStructure resource representing a finding site content item [CID SCT#363698007 "Finding Site"](http://snomed.info/id/363698007)
 
 #### Supporting DataType Profiles <a name="datatypes"></a>
 There is no special supporting DataType profiles defined by this IG.
@@ -44,6 +46,21 @@ There is no special supporting DataType profiles defined by this IG.
 There is no special supporting extensions defined by this IG.
 
 #### Profiles relationship
+##### DICOM SR Basics
+The content of a DICOM SR is a tree of "content items". Each content item has:
+* a coded "Concept Name" describing the content item
+* a "Value Type"
+* a value (for most value types)
+* zero or more children, each of which is also a content item[^1]
+
+The content item value types relevant to this implementation guide are:
+* `CONTAINER`: a container with children but no value
+* `NUM`: a numerical value with units
+* `TEXT`: a textual value
+* `CODE`: a coded value
+  * Note that a `CODE` content item has a coded concept name *and* a coded value
+* 
+
 ##### Relationship to DICOM SR TID 1500 Measurement Report
 This implementation guide maps content items contained within the DICOM TID 1500 Measurement Report to FHIR resources.
 
@@ -79,4 +96,6 @@ The [Derived Imaging Measurements](StructureDefinition-derived-imaging-measureme
 
 <a name="qualitativeevaluations"></a>
 ##### Imaging Qualitative Evaluations relationship
-A Imaging Qualitative Evaluations `CONTAINER` contains 0-n `TEXT` or `CODE` content items representing qualitative evaluations. Each of these is mapped to a [Imaging Qualitative Evaluation](StuctureDefinition-imaging-qualitative-evaluation.html) Observation.
+An Imaging Qualitative Evaluations `CONTAINER` contains 0-n `TEXT` or `CODE` content items representing qualitative evaluations. Each of these is mapped to a [Imaging Qualitative Evaluation](StuctureDefinition-imaging-qualitative-evaluation.html) Observation.
+
+[^1]: D. Clunie, DICOM Structured Reporting, PixelMed Publishing, 2000, p. 32 [E-book](http://www.pixelmed.com/srbook.html)
