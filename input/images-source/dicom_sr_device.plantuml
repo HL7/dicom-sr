@@ -1,0 +1,46 @@
+@startuml dicom_sr_device
+left to right direction
+
+class "Manufacturer" as EquipmentDevice <<Device>> #d5e8d4 ##green
+class "Participant Device" as DocumentDevice <<Device>> #d5e8d4 ##green
+class "Measurement Group Algorithm" as MeasurementGroupDevice <<Device>> #d5e8d4 ##green
+class "Measurement Algorithm" as MeasurementDevice <<Device>> #d5e8d4 ##green
+class "Qualitative Evaluation Algorithm" as QualitativeDevice <<Device>> #d5e8d4 ##green
+
+class "Imaging Measurement Group" as ImagingMeasurementGroup <<Observation>> #d5e8d4 ##green
+class "Imaging Measurement" as ImagingMeasurement <<Observation>> #d5e8d4 ##green
+class "Imaging Qualitative Evaluation" as ImagingQualitativeEvaluation <<Observation>> #d5e8d4 ##green
+
+
+package DICOM.equipment.ie #EEEEEE {
+    package DICOM.document.ie #EEEEEE {
+        package TID.1500.measurement.report #EEEEEE {
+            package CONTAINER.imaging.measurements {
+            }
+        }
+            package CONTAINER.qualitative.evaluations {
+            }
+    }
+}
+
+DICOM.equipment.ie --> EquipmentDevice
+DICOM.document.ie --> DocumentDevice
+
+CONTAINER.imaging.measurements --> ImagingMeasurementGroup : contains[0..*]
+CONTAINER.qualitative.evaluations --> ImagingQualitativeEvaluation : contains[0..*]
+
+ImagingMeasurementGroup --> ImagingMeasurement : hasMember[0..*]
+ImagingMeasurementGroup --> ImagingQualitativeEvaluation : hasMember[0..*]
+ImagingMeasurementGroup --> MeasurementGroupDevice : device[0..1]
+
+ImagingMeasurement --> MeasurementDevice : device[0..1]
+
+ImagingQualitativeEvaluation --> QualitativeDevice : device[0..1]
+
+MeasurementDevice --> MeasurementGroupDevice : parent[0..1]
+MeasurementGroupDevice --> DocumentDevice : parent[0..1]
+QualitativeDevice --> DocumentDevice : parent[0..1]
+QualitativeDevice --> MeasurementGroupDevice : parent[0..1]
+DocumentDevice --> EquipmentDevice : parent[0..1]
+
+@enduml
