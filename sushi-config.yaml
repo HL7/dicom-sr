@@ -32,7 +32,7 @@ fhirVersion: 5.0.0-ballot
 dependencies:
   fhir.dicom:
     uri: http://fhir.org/packages/fhir.dicom
-    version: 2022.1.20220124
+    version: 2022.4.20221006
 parameters:
   show-inherited-invariants: false
   generate-turtle: false
