@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ballotUrl="http://hl7.org/fhir/uv/dicom-sr/2023May" ciUrl="https://build.fhir.org/ig/HL7/dicom-sr" defaultVersion="0.1.0" defaultWorkgroup="brr" gitUrl="https://github.com/HL7/dicom-sr" url="http://hl7.org/fhir/uv/vulcan-schedule">
+  <version code="current" url="https://build.fhir.org/ig/HL7/dicom-sr"/>
+  <version code="0.1.0" url="http://hl7.org/fhir/uv/dicom-sr/2023May"/>
+  <artifactPageExtension value="-definitions"/>
+  <!-- <artifactPageExtension value="-examples"/> -->
+  <artifactPageExtension value="-mappings"/>
+  <artifact id="CodeSystem/DicomIdentifierType" key="CodeSystem-DicomIdentifierType" name="DICOM Identifier Types"/>
+  <artifact id="ConceptMap/DicomDocumentIE" key="ConceptMap-DicomDocumentIE" name="DICOM Document IE to Observation Map"/>
+  <artifact id="ConceptMap/DicomSrIod" key="ConceptMap-DicomSrIod" name="DICOM SR IOD to Observation Map"/>
+  <artifact id="StructureDefinition/FindingSite" key="StructureDefinition-BodyStructure-FindingSite" name="Finding Site"/>
+  <artifact id="StructureDefinition/AlgorithmIdentification" key="StructureDefinition-Device-AlgorithmIdentification" name="Algorithm Identification"/>
+  <artifact id="StructureDefinition/IllustrationOfRoi" key="StructureDefinition-ImagingSelection-IllustrationOfRoi" name="Illustration of Region of Interest"/>
+  <artifact id="StructureDefinition/ImageRegion2d" key="StructureDefinition-ImagingSelection-ImageRegion2d" name="2D Image Region"/>
+  <artifact id="StructureDefinition/ImageRegion3d" key="StructureDefinition-ImagingSelection-ImageRegion3d" name="3D Image Region"/>
+  <artifact id="StructureDefinition/RealWorldValueMap" key="StructureDefinition-ImagingSelection-RealWorldValueMap" name="Real World Value Map"/>
+  <artifact id="StructureDefinition/ReferencedSegment" key="StructureDefinition-ImagingSelection-ReferencedSegment" name="Referenced Segment"/>
+  <artifact id="StructureDefinition/ReferencedSegmentationFrame" key="StructureDefinition-ImagingSelection-ReferencedSegmentationFrame" name="Referenced Segmentation Frame"/>
+  <artifact id="StructureDefinition/RegionInSpace" key="StructureDefinition-ImagingSelection-RegionInSpace" name="Region In Space"/>
+  <artifact id="StructureDefinition/SourceImageForSegmentation" key="StructureDefinition-ImagingSelection-SourceImageForSegmentation" name="Source Image For Segmentation"/>
+  <artifact id="StructureDefinition/SourceSeriesForSegmentation" key="StructureDefinition-ImagingSelection-SourceSeriesForSegmentation" name="Source Series For Segmentation"/>
+  <artifact id="StructureDefinition/VisualExplanation" key="StructureDefinition-ImagingSelection-VisualExplanation" name="Visual Explanation"/>
+  <artifact id="StructureDefinition/VolumeSurface" key="StructureDefinition-ImagingSelection-VolumeSurface" name="Volume Surface"/>
+  <artifact id="StructureDefinition/ImagingMeasurement" key="StructureDefinition-Observation-ImagingMeasurement" name="Imaging Measurement"/>
+  <artifact id="StructureDefinition/ImagingMeasurementGroup" key="StructureDefinition-Observation-ImagingMeasurementGroup" name="Imaging MeasurementGroup"/>
+  <page key="NA" name="(NA)"/>
+  <page key="many" name="(many)"/>
+  <page key="architecture" name="Architecture"/>
+  <page key="artifacts" name="Artifacts Summary"/>
+  <page key="background" name="Background"/>
+  <page key="index" name="Home"/>
+  <page key="profiles" name="Profiles"/>
+  <page key="toc" name="Table of Contents"/>
+</specification>
