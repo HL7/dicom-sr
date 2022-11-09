@@ -17,9 +17,9 @@ package DICOM.equipment.ie #EEEEEE {
         package TID.1500.measurement.report #EEEEEE {
             package CONTAINER.imaging.measurements {
             }
-        }
             package CONTAINER.qualitative.evaluations {
             }
+        }
     }
 }
 
@@ -38,9 +38,16 @@ ImagingMeasurement --> MeasurementDevice : device[0..1]
 ImagingQualitativeEvaluation --> QualitativeDevice : device[0..1]
 
 MeasurementDevice --> MeasurementGroupDevice : parent[0..1]
+MeasurementDevice --> DocumentDevice : parent[0..1]
+MeasurementDevice --> EquipmentDevice : parent[0..1]
+
 MeasurementGroupDevice --> DocumentDevice : parent[0..1]
-QualitativeDevice --> DocumentDevice : parent[0..1]
+MeasurementGroupDevice --> EquipmentDevice : parent[0..1]
+
 QualitativeDevice --> MeasurementGroupDevice : parent[0..1]
+QualitativeDevice --> DocumentDevice : parent[0..1]
+QualitativeDevice --> EquipmentDevice : parent[0..1]
+
 DocumentDevice --> EquipmentDevice : parent[0..1]
 
 @enduml

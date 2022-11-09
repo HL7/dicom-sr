@@ -2,6 +2,7 @@ This chapter describes the architecture of this implementation guide.
 
 ### Profiles & Extensions<a name="profiles"></a>
 #### Resource Profiles<a name="resources"></a>
+##### Observation<a name="resource-observation"></a>
 The mapping of the core DICOM SR measurement groups, measurements and qualitative analysis content items are covered by the following resource profiles:
 
 * [Imaging Measurement Group](StructureDefinition-imaging-measurement-group.html) profiles the Observation resource representing DICOM SR measurement group templates:
@@ -18,7 +19,7 @@ The mapping of the core DICOM SR measurement groups, measurements and qualitativ
 * [Imaging Qualitative Evaluation](StuctureDefinition-imaging-qualitative-evaluation.html) profiles the Observation resource representing qualitative evaluation content items
 
 The above resource profiles depend on the following resource profiles:
-##### ImagingSelection
+##### ImagingSelection<a name="resource-imagingselection"></a>
 * [Image Region -- 2D](StructureDefinition-image-region-2d.html) profiles the ImagingSelection resource representing a referenced 2D image region content item [CID 111030 "Image Region"](https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_D.html#DCM_111030)
 * [Image Region -- 3D](StructureDefinition-image-region-3d.html) profiles the ImagingSelection resource representing a referenced 3D image region content item [CID 111030 "Image Region"](https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_D.html#DCM_111030)
 * [Referenced Segment](StructureDefinition-referenced-segment.html) profiles the ImagingSelection resource representing a referenced segment content item [CID 121191 "Referenced Segment"](https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_D.html#DCM_121191)
@@ -31,22 +32,22 @@ The above resource profiles depend on the following resource profiles:
 * [Illustration of ROI](StructureDefinition-illustration-of-roi.html) profiles the ImagingSelection resource representing a referenced ROI illustration content item [CID 121200 "Illustration of ROI"](https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_D.html#DCM_121200)
 * [Visual explanation](StructureDefinition-visual-explanation.html) profiles the ImagingSelection resource representing a referenced visual explanation content item [CID 130401 "Visual explanation](https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_D.html#DCM_130401)
 
-##### Device
+##### Device<a name="resource-device"></a>
 * [Algorithm Identification](StructureDefinition-algorithm-identification.html) profiles the Device resource representing the DICOM SR template [DTID 4019 “Algorithm Identification”](https://dicom.nema.org/medical/dicom/current/output/chtml/part16/sect_TID_4019.html)
 * [Device Participant](StructureDefinition-device-participant.html) profiles the Device resource representing the DICOM Document IE device participant [DICOM PS3.3 C.17.2.4 Identified Person or Device Macro](https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.17.2.4.html#table_C.17-3b)
 * [General Equipment](StructureDefinition-general-equipment.html) profiles the Device resource representing the DICOM General Equipment Module [DICOM PS3.3 C.7.5.1 General Equipment Module](https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.5.html#sect_C.7.5.1)
 
-##### BodyStructure
+##### BodyStructure<a name="resource-bodystructure"></a>
 * [Finding Site](StructureDefinition-finding-site) profiles the BodyStructure resource representing a finding site content item [CID SCT#363698007 "Finding Site"](http://snomed.info/id/363698007)
 
-#### Supporting DataType Profiles <a name="datatypes"></a>
+#### Supporting DataType Profiles<a name="datatypes"></a>
 There is no special supporting DataType profiles defined by this IG.
 
 #### Supporting Extensions<a name="extensions"></a>
 There is no special supporting extensions defined by this IG.
 
-#### Profiles relationship
-##### DICOM SR Basics
+#### Profile Relationships<a name="relationships"></a>
+##### DICOM SR Basics<a name="dicom-sr"></a>
 The content of a DICOM SR is a tree of "content items". Each content item has:
 * a coded "Concept Name" describing the content item
 * a "Value Type"
@@ -60,7 +61,7 @@ The content item value types relevant to this implementation guide are:
 * `CODE`: a coded value
   * Note that a `CODE` content item has a coded concept name *and* a coded value
 
-##### Relationship to DICOM SR TID 1500 Measurement Report
+##### Relationship to DICOM SR TID 1500 Measurement Report<a name="tid-1500"></a>
 This implementation guide maps content items contained within the DICOM TID 1500 Measurement Report to FHIR resources.
 
 All mapped content items are children of the following `CONTAINER` content items:
@@ -76,7 +77,7 @@ e.g. the children of the `CONTAINER` with a Concept Name of DCM#126010 "Imaging 
 ![TID 1500 Measurement Report and its children](./tid_1500_measurement_report.svg){: width="100%"}
 
 <a name="measurementgroup"></a>
-###### Imaging Measurement Group relationship
+###### Imaging Measurement Group Relationship<a name="imaging-measurement-group"></a>
 An Imaging Measurement Group `CONTAINER` contains 0-n `NUM` content items representing numerical measurements. Each of these is mapped to an [Imaging Measurement](StructureDefinition-imaging-measurement.html) Observation.
 
 An Imaging Measurement Group `CONTAINER` contains 0-n `TEXT` or `CODE` content items representing qualitative evaluations. Each of these is mapped to an [Imaging Qualitative Evaluation](StuctureDefinition-imaging-qualitative-evaluation.html) Observation. 
@@ -98,7 +99,7 @@ A `TEXT` or `CODE` child content item should only be interpreted as a qualitativ
 * SCT#370129005 "Measurement Method"
 
 <a name="derivedmeasurements"></a>
-###### Derived Imaging Measurements relationship
+###### Derived Imaging Measurements Relationship<a name="derived-imaging-measurement"></a>
 A Derived Imaging Measurement `CONTAINER` contains 0-n `NUM` content items representing derived numerical measurements. Each of these is mapped to a [Derived Measurements](StructureDefinition-derived-imaging-measurements.html) Observation.
 
 A Derived Imaging Measurement `CONTAINER` contains 0-n Imaging Measurement Group `CONTAINER` content items. Each of these is mapped to an [Imaging Measurement Group](StructureDefinition-imaging-measurement-group.html) Observation (see [Imaging Measurement Group relationship](#measurementgroup)).
@@ -106,11 +107,11 @@ A Derived Imaging Measurement `CONTAINER` contains 0-n Imaging Measurement Group
 The [Derived Imaging Measurements](StructureDefinition-derived-imaging-measurements.html) Observation `derivedFrom` element references the child [Imaging Measurement Group](StructureDefinition-imaging-measurement-group.html) Observations. 
 
 <a name="qualitativeevaluations"></a>
-###### Imaging Qualitative Evaluations relationship
+###### Imaging Qualitative Evaluations Relationship<a name="imaging-qualitative-evalutation"></a>
 An Imaging Qualitative Evaluations `CONTAINER` contains 0-n `TEXT` or `CODE` content items representing qualitative evaluations. Each of these is mapped to an [Imaging Qualitative Evaluation](StuctureDefinition-imaging-qualitative-evaluation.html) Observation.
 
 <a name="devices"></a>
-##### Device relationship
+##### Device Relationship<a name="relationship-device"></a>
 A FHIR Observation can only have a single `device` value. However, a DICOM SR can have a device defined at multiple levels:
 * A Manufacturer and Model Name defined in the `Equipment IE`
 * A device participant defined in the `Document IE`
@@ -136,5 +137,6 @@ e.g.
   * If both have a defined Algorithm Identification Device, the Imaging Measurement Group Device will be the parent of the Imaging Qualitative Evaluation Device.
   * If the Imaging Measurement Group does not have a defined Algorithm Identification Device the Imaging Qualitative Evaluation device parent is either the Device Participant Device or the General Equipment Device.
   * If the Imaging Qualitative Evaluation does not have a defined Algorithm Identification Device it's `device` element will reference the device of its parent
+
 
 [^1]: D. Clunie, DICOM Structured Reporting, PixelMed Publishing, 2000, p. 32 [E-book](http://www.pixelmed.com/srbook.html)
