@@ -7,11 +7,26 @@ This IG is organized into three main sections:
 * [Chapter I](background.html): Background - Introduction and overview
     * [Problem](background.html#problem) - Description of the problem
     * [Scope](background.html#scope) - Scope of the IG
-    * [Use cases](background.html#usecases) - Key use cases covered by the IG
+    * [Intended Readers](background.html#readers) - Intended readers of the IG
+    * [Use cases](background.html#use-cases) - Key use cases covered by the IG
     * [Glossary](background.html#glossary) - Glossary
     * [References](background.html#references) - References
 * [Chapter II](architecture.html): Architecture & Implementation
     * [Profiles & Extensions](architecture.html#profiles) - FHIR Profiles and extensions defined in the IG
+      * [Resources](architecture.html#resources) - FHIR Resource Profiles
+        * [Observation](architcture.html#resource-observation) - Observation
+        * [ImagingSelection](architcture.html#resource-imagingselection) - ImagingSelection
+        * [Device](architcture.html#resource-device) - Device
+        * [BodySite](architcture.html#resource-bodysite) - BodySite
+      * [Data Types](architcture.html#datatypes) - FHIR Data Type Profiles
+      * [Extensions](architecture.html#extensions) - FHIR Extensions
+      * [Profile Relationships](architecture.html#relationships) - Relationships between profiled FHIR resources and other standards
+        * [DICOM SR Basics](architecture.html#dicom-sr) - Overview of DICOM SR and terminology
+        * [Relationship to DICOM SR TID 1500 Measurement Report](architecture.html#tid-1500) - Mapping of content from DICOM SR Measurement Report
+          * [Imaging Measurement Group Relationship](architecture.html#imaging-measurement-group) - Mapping of imaging measurement groups
+          * [Derived Imaging Measurements Relationship](architecture.html#derived-imaging-measurement) - Mapping of derived imaging measurements
+          * [Imaging Qualitative Evaluations Relationship](architecture.html#imaging-qualitative-evalutation) - Mapping of imaging qualitative evaluations
+        * [Device Relationship](architecture.html#relationship-device) - Mapping of devices from a DICOM SR Measurement Report
     * [Actors](architecture.html#actors) - Actors participating in the IG
     * [Terminology](architecture.html#terminology) - Value Sets defined and used
     * [Security Consideration](archi.html#sec) - Security aspects to be taken in consideration
@@ -43,7 +58,7 @@ IHE® is a registered trademark of the Healthcare Information Management Systems
 
 
 ### Sponsors Working Groups
-* [Imaging Integration Work Group](http://www.hl7.org/Special/committees/imagemgt/index.cfm){:target="_blank"}
+* [Imaging Integration Work Group](http://www.hl7.org/Special/committees/imagemgt/index.cfm)
 
 ### Contributors
 
@@ -51,5 +66,3 @@ IHE® is a registered trademark of the Healthcare Information Management Systems
 |--------------------------|-----------------------|--------------|
 | Jonathan Whitby | Canon Group Company | Author |
 | Christopher Lindop | GE Healthcare | Author |
-{:.table-striped .table-bordered}
-
