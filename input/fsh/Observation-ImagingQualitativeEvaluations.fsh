@@ -4,11 +4,11 @@ Alias: LOINC =  http://loinc.org
 Alias: DCMIdType = http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-identifier-type
 Alias: HL7IdType = http://terminology.hl7.org/CodeSystem/v2-0203
 
-Profile:        DerivedImagingMeasurementProfile
+Profile:        ImagingQualitativeEvaluationProfile
 Parent:         Observation
-Id:             derived-imaging-measurement
-Title:          "Observation - DICOM SR Derived Imaging Measurement Mapping to Observation"
-Description:    "DICOM SR Derived Imaging Measurement Mapping to Observation"
+Id:             imaging-qualitative-evaluation
+Title:          "Observation - DICOM SR Imaging Qualitative Evaluation Mapping to Observation"
+Description:    "DICOM SR Imaging Qualitative Evaluation Mapping to Observation"
 
 * ^abstract = true
 * insert DICOMSRStructureDefinitionContent
@@ -17,7 +17,7 @@ Description:    "DICOM SR Derived Imaging Measurement Mapping to Observation"
 * identifier ^slicing.discriminator.path = "type"
 * identifier ^slicing.rules = #open
 * identifier ^slicing.ordered = false
-* identifier ^slicing.description = "Identifiers for the derived measurement"
+* identifier ^slicing.description = "Identifiers for the qualitative evaluation"
 
 * identifier contains observationUID 0..* MS
 * identifier[observationUID].type = DCMIdType#observation-uid "Observation UID"
@@ -55,7 +55,7 @@ Description:    "DICOM SR Derived Imaging Measurement Mapping to Observation"
 * partOf[imagingStudyRef].identifier ^short = "Identifier related to Study Instance UID"
 
 * category MS
-* category = DCM#126011 "Derived Imaging Measurement"
+* category = http://terminology.hl7.org/CodeSystem/umls#C0034375 "Qualitative Evaluations"
 
 * code MS
 
@@ -70,31 +70,18 @@ Description:    "DICOM SR Derived Imaging Measurement Mapping to Observation"
 * device only Reference(TID4019AlgorithmIdentificationProfile)
 * device ^short = "Algorithm Identification"
 
-* referenceRange MS
-* valueQuantity MS
+* valueCodeableConcept MS
 
-* derivedFrom ^slicing.discriminator.type = #type
-* derivedFrom ^slicing.discriminator.path = "reference"
-* derivedFrom ^slicing.rules = #open
-* derivedFrom ^slicing.description = "Source Imaging Measurement Groups"
-
-* derivedFrom contains imagingMeasurementGroupRef 1..* MS
-* derivedFrom[imagingMeasurementGroupRef] only Reference(ImagingMeasurementGroupProfile)
-* derivedFrom[imagingMeasurementGroupRef] ^short = "Source Imaging Measurement Groups"
-
-Mapping: dicom-sr-for-TID1420DerivedMeasurementProfile
-Id: dicom-sr-tid-1420
-Title: "DICOM SR TID 1420 Measurements Derived From Multiple ROI Measurements"
-Source: DerivedImagingMeasurementProfile
-Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1420"
-Description: "The TID300Measurement can be extracted from TID 1420 - Measurements Derived From Multiple ROI Measurements."
-* -> "TID1420(DerivedImagingMeasurement)"
-* subject -> "tag(0010,0020) [Patient ID]"
+Mapping: dicom-sr-for-TID1500MeasurementReportProfile
+Id: dicom-sr-tid-1500
+Title: "DICOM SR TID 1500 Measurement Report"
+Source: ImagingQualitativeEvaluationProfile
+Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1500"
+Description: "The Qualitative Evaluation can be extracted from TID 1500 - Measurement Report."
+* -> "TID1500(MeasurementReport)"
 * identifier[observationUID] -> "tag(0040,A171) [Observation UID]"
-* code -> "TID1420.DCID7465.tag(0040,A043) [Concept Name Code Sequence]"
+* subject -> "tag(0010,0020) [Patient ID]"
+* code -> "TID1500.EV(C0034375, UMLS, Qualitative Evaluations)[n].tag(0040,A043) [Concept Name Code Sequence]"
 * issued -> "tag(0040,A032) [Observation DateTime]"
-* referenceRange -> "TID1420.TID310"
-* device -> "TID1420.TID4019"
-* valueQuantity -> "TID1420.DCID7465.tag(0040,A300) [Measured Value Sequence]"
-* derivedFrom -> "TID1420.TID1410"
-* derivedFrom -> "TID1420.TID1411"
+* valueCodeableConcept -> "TID1500.EV(C0034375, UMLS, Qualitative Evaluations)[n].tag(0040,A160) [Text Value]"
+* valueCodeableConcept -> "TID1500.EV(C0034375, UMLS, Qualitative Evaluations)[n].tag(0040,A168) [Concept Code Sequence]"

@@ -17,7 +17,7 @@ Description:    "DICOM SR Imaging Measurement Mapping to Observation"
 * identifier ^slicing.discriminator.path = "type"
 * identifier ^slicing.rules = #open
 * identifier ^slicing.ordered = false
-* identifier ^slicing.description = "Identifiers for the measurement group"
+* identifier ^slicing.description = "Identifiers for the measurement"
 
 * identifier contains observationUID 0..* MS
 * identifier[observationUID].type = DCMIdType#observation-uid "Observation UID"
