@@ -14,10 +14,10 @@ This IG is organized into three main sections:
 * [Chapter II](architecture.html): Architecture & Implementation
     * [Profiles & Extensions](architecture.html#profiles) - FHIR Profiles and extensions defined in the IG
       * [Resources](architecture.html#resources) - FHIR Resource Profiles
-        * [Observation](architcture.html#resource-observation) - Observation
-        * [ImagingSelection](architcture.html#resource-imagingselection) - ImagingSelection
-        * [Device](architcture.html#resource-device) - Device
-        * [BodySite](architcture.html#resource-bodysite) - BodySite
+        * [Observation](architcture.html#observation) - Observation
+        * [ImagingSelection](architcture.html#imagingselection) - ImagingSelection
+        * [Device](architcture.html#device) - Device
+        * [BodySite](architcture.html#bodysite) - BodySite
       * [Data Types](architcture.html#datatypes) - FHIR Data Type Profiles
       * [Extensions](architecture.html#extensions) - FHIR Extensions
       * [Profile Relationships](architecture.html#relationships) - Relationships between profiled FHIR resources and other standards

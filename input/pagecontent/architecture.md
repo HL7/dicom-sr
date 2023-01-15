@@ -116,6 +116,9 @@ A FHIR Observation can only have a single `device` value. However, a DICOM SR ca
 * A Manufacturer and Model Name defined in the `Equipment IE`
 * A device participant defined in the `Document IE`
 * An algorithm defined in:
+  * The Imaging Measurements Container
+  * The Derived Imaging Measurements Container
+  * The Qualitative Evaluations Container
   * An [Imaging Measurement Group](StructureDefinition-imaging-measurement-group.html)
   * An [Imaging Measurement](StructureDefinition-imaging-measurement.html)
   * An [Imaging Qualitative Evaluation](StuctureDefinition-imaging-qualitative-evaluation.html)
@@ -137,6 +140,15 @@ e.g.
   * If both have a defined Algorithm Identification Device, the Imaging Measurement Group Device will be the parent of the Imaging Qualitative Evaluation Device.
   * If the Imaging Measurement Group does not have a defined Algorithm Identification Device the Imaging Qualitative Evaluation device parent is either the Device Participant Device or the General Equipment Device.
   * If the Imaging Qualitative Evaluation does not have a defined Algorithm Identification Device it's `device` element will reference the device of its parent
+
+##### Other Resource Relationships
+All DICOM SOP Instances include information relating to the patient, service request, procedure, etc.
+
+This implementation guide assumes that these resources already exist in the destination FHIR server and does not include a full mapping between their DICOM representation and their FHIR representation.
+
+Instead, it specifies the identifier mapping to allow newly-created resources to be associated with the appropriate existing FHIR resources.
+
+See [DICOM SR Information Object Definition (IOD) Mapping to FHIR](ConceptMap-dicom-sr-iod-to-fhir.html) and [DICOM SR Document Information Entity (IE) Mapping to FHIR](ConceptMap-dicom-document-ie-to-fhir.html).
 
 
 [^1]: D. Clunie, DICOM Structured Reporting, PixelMed Publishing, 2000, p. 32 [E-book](http://www.pixelmed.com/srbook.html)

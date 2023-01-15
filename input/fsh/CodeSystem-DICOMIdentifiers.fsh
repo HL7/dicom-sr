@@ -1,6 +1,6 @@
 CodeSystem: DicomIdentifierType
 Id: dicom-identifier-type
-Title: "DICOM Identifier Type"
+Title: "Identifiers - DICOM Identifier Type"
 Description: "Identifier types related to DICOM UIDs"
 
 * ^caseSensitive = true

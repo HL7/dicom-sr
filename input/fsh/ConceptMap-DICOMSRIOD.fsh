@@ -1,8 +1,10 @@
 Instance:       DICOM-SR-IOD-to-FHIR
 InstanceOf:     ConceptMap
 Usage: #definition
+Title:          "ConceptMap - DICOM SR IOD to FHIR Mapping"
 
-* id =  "dicom-sr-iod-to-fhir"
+
+* id =  "ConceptMap-dicom-sr-iod-to-fhir"
 * description = "Mapping between DICOM SR IOD and FHIR Resources"
 // * url = http://hl7.org/fhir/uv/dicom-sr/dicom-sr-iod-to-fhir
 * status = #draft
@@ -17,7 +19,7 @@ Usage: #definition
     * relationship = #equivalent
     * code = #Patient[1]
     * display = "Patient[1]"
-    * comment = "Processing of the Patient IE may result in the creation of a new Patient resource"
+    * comment = "The DICOM SR Patient IE is mapped to a FHIR Patient resource"
 
 // Study IE Mapping
 * group.element[1]
@@ -27,7 +29,7 @@ Usage: #definition
     * relationship = #equivalent
     * code = #ImagingStudy[1]
     * display = "ImagingStudy[1]"
-    * comment = "Processing of the Study IE may result in the creation of a new ImagingStudy resource"
+    * comment = "The DICOM SR Study IE is mapped to a FHIR ImagingStudy resource"
 
 // Series IE Mapping
 * group.element[2]
@@ -35,7 +37,7 @@ Usage: #definition
   * display = "Series IE"
   * target
     * relationship = #not-related-to
-    * comment = "Series IE is not mapped"
+    * comment = "The DICOM SR Series IE is not mapped"
 
 // Frame of Reference IE Mapping
 * group.element[3]
@@ -43,7 +45,7 @@ Usage: #definition
   * display = "Frame of Reference IE"
   * target
     * relationship = #not-related-to
-    * comment = "Frame of Reference IE is not mapped"
+    * comment = "The DICOM SR Frame of Reference IE is not mapped"
 
 // Equipment IE Mapping
 * group.element[4]
@@ -53,7 +55,7 @@ Usage: #definition
     * relationship = #equivalent
     * code = #Device[1]
     * display = "Device[1]"
-    * comment = "Processing of the Equipment IE may result in the creation of a new Device resource"
+    * comment = "The DICOM SR Equipment IE may result in the creation of a new Device resource"
 
 // Document IE Mapping
 * group.element[5]
