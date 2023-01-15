@@ -1,8 +1,9 @@
 Instance:       DICOM-Document-IE-to-FHIR
 InstanceOf:     ConceptMap
+Title:          "ConceptMap - DICOM Document IE to FHIR Mapping"
 Usage: #definition
 
-* id =  "dicom-document-ie-to-fhir"
+* id =  "ConceptMap-dicom-document-ie-to-fhir"
 * description = "Mapping between DICOM Document IE and FHIR Resources"
 // * url = http://hl7.org/fhir/uv/dicom-sr/dicom-document-ie-to-fhir
 * status = #draft

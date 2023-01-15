@@ -2,7 +2,7 @@ Instance:       DICOM-Qualitative-Evaluation-to-FHIR
 InstanceOf:     ConceptMap
 Usage: #definition
 
-* id =  "dicom-umls-c0034375"
+* id =  "ConceptMap-dicom-umls-c0034375"
 * description = "Mapping between DICOM Document IE and FHIR Resources"
 // * url = http://hl7.org/fhir/uv/dicom-sr/dicom-document-ie-to-fhir
 * status = #draft
