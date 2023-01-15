@@ -6,22 +6,22 @@ Alias: HL7IdType = http://terminology.hl7.org/CodeSystem/v2-0203
 
 Logical:        DICOMCodedValue
 Id:             dicom-code
-Title:          "DICOM Coded Value Representation"
-Description:    "DICOM representation of coded values"
+Title:          "EXPERIMENTAL - DICOM Coded Value Representation"
+Description:    "EXPERIMENTAL - DICOM representation of coded values"
 
-* codevalue 1..1 SU string "Code Value -- equivalent to FHIR coding.value"
-* codingschemedesignator 1..1 SU string "Coding Scheme Designator -- equivalent to FHIR coding.system"
-* codemeaning 1..1 SU string "Code Meaning -- equivalent to FHIR coding.display"
+* CodeValue 1..1 SU string "Code Value -- equivalent to FHIR coding.value"
+* CodingSchemedesignator 1..1 SU string "Coding Scheme Designator -- equivalent to FHIR coding.system"
+* CodeMeaning 1..1 SU string "Code Meaning -- equivalent to FHIR coding.display"
 
 Logical:       DICOMSRContentItem
 Id:             dicom-sr-content-item
-Title:          "DICOM - SR Content Item Structure Definition"
-Description:    "Representing a DICOM SR Content Item as a FHIR Structure Definition"
+Title:          "EXPERIMENTAL - DICOM SR Content Item Structure Definition"
+Description:    "EXPERIMENTAL - Representing a DICOM SR Content Item as a FHIR Structure Definition"
 
-* relationshiptype 0..1 SU code "Relationship to parent Content Item"
-* valuetype 1..1 SU code "Content Item type"
-* conceptnamecodesequence 0..1 SU DICOMCodedValue "Content Item Concept Name"
-* textvalue 0..1 SU string "Content Item textual value"
-* uid 0..1 SU string "Content Item UID value"
-* observationuid 0..1 SU string "Content Item UID"
-* contentSequence 0..* SU DICOMSRContentItem "Child content items"
+* RelationshipType 0..1 SU code "Relationship to parent Content Item"
+* ValueType 1..1 SU code "Content Item type"
+* ConceptNameCodeSequence 0..1 SU DICOMCodedValue "Content Item Concept Name"
+* TextValue 0..1 SU string "Content Item textual value"
+* UID 0..1 SU string "Content Item UID value"
+* ObservationUID 0..1 SU string "Content Item UID"
+* SontentSequence 0..* SU DICOMSRContentItem "Child content items"
