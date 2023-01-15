@@ -1,6 +1,5 @@
 // Define a rule set for commonly used rules for definition resources using other Sushi features
 RuleSet: DICOMSRStructureDefinitionContent
-Title:          "RuleSet - DICOM SR Structure Definition Content"
 
 * ^status = #draft      // draft until final published
 * ^experimental = true  // true until ready for pilot, then false
