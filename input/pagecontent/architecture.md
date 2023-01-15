@@ -100,7 +100,7 @@ A `TEXT` or `CODE` child content item should only be interpreted as a qualitativ
 
 <a name="derivedmeasurements"></a>
 ###### Derived Imaging Measurements Relationship<a name="derived-imaging-measurement"></a>
-A Derived Imaging Measurement `CONTAINER` contains 0-n `NUM` content items representing derived numerical measurements. Each of these is mapped to a [Derived Measurements](StructureDefinition-derived-imaging-measurements.html) Observation.
+A Derived Imaging Measurement `CONTAINER` contains 0-n `NUM` content items representing derived numerical measurements. Each of these is mapped to a [Derived Measurement](StructureDefinition-derived-imaging-measurements.html) Observation.
 
 A Derived Imaging Measurement `CONTAINER` contains 0-n Imaging Measurement Group `CONTAINER` content items. Each of these is mapped to an [Imaging Measurement Group](StructureDefinition-imaging-measurement-group.html) Observation (see [Imaging Measurement Group relationship](#measurementgroup)).
 
