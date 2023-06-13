@@ -10,6 +10,24 @@ Usage: #definition
 * sourceScopeUri = "DICOM-Document"
 * targetScopeUri = "Observation"
 
+// Additional Attributes used in concept map
+* additionalAttribute[0]
+  * code = #OverserverType
+  * description = "DICOM.ParticipantSequence.ObserverType"
+  * uri = "https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.17.2.4.html#table_C.17-3b"
+  * type = #code
+
+* additionalAttribute[1]
+  * code = #DICOMUIDType
+  * description = "DICOM UID Type"
+  * type = #coding
+
+* additionalAttribute[2]
+  * code = #DICOMConceptNameCodeSequence
+  * description = "DICOM Concept Name Code Sequence (0040,A043)"
+  * uri = "https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.17.3.3.html#table_C.17-5"
+  * type = #coding
+
 // Document General Module
 * group.element[0]
   * code = #DICOM.Document.General
@@ -36,11 +54,11 @@ Usage: #definition
     * code = #performer
     * display = "performer"
     * dependsOn[0]
-      * property = "DICOM.ParticipantSequence.ObserverType"
+      * attribute = #OverserverType
       * valueCode = #PSN
-    * dependsOn[1]
-      * property = "macro-map"
-      * valueUri = "identified-person-or-device"
+    * property[0]
+      * code = #macro-map
+      * valueString = "identified-person-or-device"      
 
 * group.element[3]
   * code = #DICOM.ParticipantSequence-Device
@@ -50,11 +68,11 @@ Usage: #definition
     * code = #Device[1]
     * display = "Device[1]"
     * dependsOn[0]
-      * property = "DICOM.ParticipantSequence.ObserverType"
+      * attribute = #OverserverType
       * valueCode = #DEV
-    * dependsOn[1]
-      * property = "macro-map"
-      * valueUri = "identified-person-or-device"
+    * property[0]
+      * code = #macro-map
+      * valueString = "identified-person-or-device"      
     * comment = "If this device matches the Equipment IE device an additional device resource does not need to be created."
 
 // Document Content Module
@@ -82,11 +100,11 @@ Usage: #definition
     * code = #identifier[1]
     * display = "identifier[1]"
     * dependsOn[0]
-      * property = "type"
+      * attribute = #DICOMUIDType
       * valueCoding = DCMIdType#observation-uid "Observation UID"
-    * dependsOn[1]
-      * property = "system"
-      * valueUri = "urn:dicom:uid"
+    * property[0]
+      * code = #system
+      * valueString = "urn:dicom:uid"      
 
 // Content Sequence (0040,A730)
 * group.element[7]
@@ -97,11 +115,11 @@ Usage: #definition
     * code = #Observation[1]
     * display = "Observation[1]"
     * dependsOn[0]
-      * property = "DICOM.ConceptNameCodeSequence"
+      * attribute = #DICOMConceptNameCodeSequence
       * valueCoding = DCM#126010 "Imaging Measurements"
-    * dependsOn[1]
-      * property = "content-map"
-      * valueUri = "dicom-imaging-measurement-group"
+    * property[0]
+      * code = #content-map
+      * valueString = "dicom-imaging-measurement-group"      
 
 // Content Sequence (0040,A730)
 * group.element[8]
@@ -112,11 +130,11 @@ Usage: #definition
     * code = #Observation[1]
     * display = "Observation[1]"
     * dependsOn[0]
-      * property = "DICOM.ConceptNameCodeSequence"
+      * attribute = #DICOMConceptNameCodeSequence
       * valueCoding = DCM#126011 "Derived Imaging Measurements"
-    * dependsOn[1]
-      * property = "content-map"
-      * valueUri = "dicom-derived-imaging-measurements"
+    * property[0]
+      * code = #content-map
+      * valueString = "dicom-derived-imaging-measurements"           
 
 // Content Sequence (0040,A730)
 * group.element[9]
@@ -127,8 +145,9 @@ Usage: #definition
     * code = #Observation[1]
     * display = "Observation[1]"
     * dependsOn[0]
-      * property = "DICOM.ConceptNameCodeSequence"
+      * attribute = #DICOMConceptNameCodeSequence
       * valueCoding = http://terminology.hl7.org/NamingSystem/umls#C0034375 "Qualitative Evaluations"
-    * dependsOn[1]
-      * property = "content-map"
-      * valueUri = "dicom-qualitative-evaluations"
+    * property[0]
+      * code = #content-map
+      * valueString = "dicom-qualitative-evaluations"           
+
