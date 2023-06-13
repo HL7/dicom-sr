@@ -20,13 +20,13 @@ Usage: #definition
 * additionalAttribute[1]
   * code = #DICOMUIDType
   * description = "DICOM UID Type"
-  * type = #coding
+  * type = #Coding
 
 * additionalAttribute[2]
   * code = #DICOMConceptNameCodeSequence
   * description = "DICOM Concept Name Code Sequence (0040,A043)"
   * uri = "https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.17.3.3.html#table_C.17-5"
-  * type = #coding
+  * type = #Coding
 
 // Document General Module
 * group.element[0]
