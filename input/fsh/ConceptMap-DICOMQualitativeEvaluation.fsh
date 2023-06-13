@@ -9,6 +9,12 @@ Usage: #definition
 * sourceScopeUri = "DICOM-Content-Sequence"
 * targetScopeUri = "Observation"
 
+* additionalAttribute[0]
+  * code = #DICOMConceptNameCodeSequence
+  * description = "DICOM Concept Name Code Sequence (0040,A043)"
+  * uri = "https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.17.3.3.html#table_C.17-5"
+  * type = #coding
+
 // Document General Module
 * group.element[0]
   * code = #DICOM.ContentSequence.QualitativeEvaluations
@@ -19,8 +25,8 @@ Usage: #definition
     * display = "issued"
     * comment = "Each child item of this Content Sequence item will be mapped to its own FHIR Observation"
     * dependsOn[0]
-      * property = "DICOM.ConceptNameCodeSequence.CodingSchemeDesignator"
+      * attribute = #DICOMConceptNameCodeSequence
       * valueCoding = http://terminology.hl7.org/NamingSystem/umls#C0034375 "Qualitative Evaluations"
-    * dependsOn[1]
-      * property = "content-map"
-      * valueUri = "dicom-qualitative-evaluations"
+    * property[0]
+      * code = #content-map
+      * valueString = "dicom-qualitative-evaluations"      
