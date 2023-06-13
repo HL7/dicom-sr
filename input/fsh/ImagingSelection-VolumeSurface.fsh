@@ -50,7 +50,8 @@ Description:    "DICOM SR Image Volume Surface Mapping to ImagingSelection"
 
 * frameOfReferenceUid 1..1 MS
 
-* imageRegion 1..1 MS
+// NOTE: Commented out until FHIR-41429 is resolved
+// * imageRegion 1..1 MS
 
 Mapping: dicom-tid-1411-for-VolumeSurfaceProfile
 Id: dicom-tid-1411-volume-surface
@@ -60,5 +61,6 @@ Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapte
 Description: "The ImagingSelectionVolumeSurface can be extracted from TID 1411.EV(121231, DCM, Volume Surface)."
 * -> "TID1411(VolumeSurface)"
 * frameOfReferenceUid -> "tag(3006,0024) [Referenced Frame of Reference UID]"
-* imageRegion.regionType -> "tag(0070,0023) [Graphic Type]"
-* imageRegion.coordinate -> "tag(0070,0022) [Graphic Data]"
+// NOTE: Commented out until FHIR-41429 is resolved
+// * imageRegion.regionType -> "tag(0070,0023) [Graphic Type]"
+// * imageRegion.coordinate -> "tag(0070,0022) [Graphic Data]"

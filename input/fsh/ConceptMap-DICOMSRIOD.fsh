@@ -66,15 +66,15 @@ Title:          "ConceptMap - DICOM SR IOD to FHIR Mapping"
     * code = #Observation[1]
     * display = "Observation[1]"
     * comment = "Processing of the Document IE will result in the creation one or more new Observation resources"
-    * dependsOn[0]
-      * property = "ie-map"
-      * valueUri = "dicom-document-ie-to-fhir"
-    * dependsOn[1]
-      * property = "references"
+    * property[0]
+      * code = #ie-map
+      * valueString = "dicom-document-ie-to-fhir"
+    * property[1]
+      * code = #references
       * valueString = "Observation.subject.reference=Patient[1].id"
-    * dependsOn[2]
-      * property = "references"
+    * property[2]
+      * code = #references
       * valueString = "Observation.partOf.reference=ImagingStudy[1].id"
-    * dependsOn[3]
-      * property = "references"
+    * property[3]
+      * code = #references
       * valueString = "Observation.device.reference=Device[1]"

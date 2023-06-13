@@ -49,7 +49,8 @@ Description:    "DICOM SR Image 3D Region Mapping to ImagingSelection"
 * subject 1..1 MS
 
 * frameOfReferenceUid 1..1 MS
-* imageRegion 1..1 MS
+// NOTE: Commented out until FHIR-41429 is resolved
+// * imageRegion3D 1..1 MS
 
 Mapping: dicom-tid-1410-for-3dImageRegionProfile
 Id: dicom-tid-1410-3d-image-region
@@ -59,5 +60,7 @@ Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapte
 Description: "The ImagingSelection2dImageRegion can be extracted from TID 1410.EV(111030, DCM, Image Region)."
 * -> "TID1410(3DImageRegion)"
 * frameOfReferenceUid -> "tag(3006,0024) [Referenced Frame of Reference UID]"
-* imageRegion.regionType -> "tag(0070,0023) [Graphic Type]"
-* imageRegion.coordinate -> "tag(0070,0022) [Graphic Data]"
+
+// NOTE: Commented out until FHIR-41429 is resolved
+// * imageRegion3D.regionType -> "tag(0070,0023) [Graphic Type]"
+// * imageRegion3D.coordinate -> "tag(0070,0022) [Graphic Data]"
