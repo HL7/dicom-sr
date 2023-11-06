@@ -4,6 +4,11 @@ Alias: LOINC =  http://loinc.org
 Alias: DCMIdType = http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-identifier-type
 Alias: HL7IdType = http://terminology.hl7.org/CodeSystem/v2-0203
 
+Invariant:   measurement-group-category
+Description: "If Observation.code is 'measurement group' it should not also be the category"
+Expression:  "code = 'DCM#125007' implies category.not().exists()"
+Severity:    #error
+
 Profile:        ImagingMeasurementGroupProfile
 Parent:         Observation
 Id:             imaging-measurement-group
@@ -132,11 +137,15 @@ Description:    "DICOM SR TID Imaging Measurement Group Mapping to Observation"
 
 // Imaging Measurements
 * hasMember contains imagingMeasurement 0..* MS
-* hasMember[imagingMeasurement] only Reference(ImagingMeasurementProfile)
+* hasMember[imagingMeasurement] only Reference(ImagingMeasurementProfile or ImagingQualitativeEvaluationProfile)
 
 * interpretation MS
 
-* value[x] 0..0
+* value[x] MS
+* value[x] only CodeableConcept
+* value[x] ^short = "Observation finding"
+
+* device 1..1 MS
 
 Mapping: dicom-sr-for-TID1410PlanarROIMeasurementGroup
 Id: dicom-sr-tid-1410
@@ -147,7 +156,8 @@ Description: "The TID1410PlanarROIMeasurementGroup can be extracted from TID 141
 * -> "TID1410(Planar ROI Measurements and Qualitative Evaluations)"
 * identifier[observationUID] -> "tag(0040,A171) [Observation UID]"
 * subject -> "tag(0010,0020) [Patient ID]"
-* code -> "TID1410.EV(121071, DCM, Finding)"
+* code -> "TID1410.EV(276214006, SCT, Finding category) > DCM#125007 'Measurement Group'"
+* valueCodeableConcept -> "TID1410.EV(121071, DCM, Finding)"
 * issued -> "tag(0040,A032) [Observation DateTime]"
 * interpretation -> "TID1410.$QualType, TID.1410QualModType$"
 
@@ -160,7 +170,8 @@ Description: "The TID1411PlanarROIMeasurementGroup can be extracted from TID 141
 * -> "TID1411(Volumetric ROI Measurements and Qualitative Evaluations)"
 * identifier[observationUID] -> "tag(0040,A171) [Observation UID]"
 * subject -> "tag(0010,0020) [Patient ID]"
-* code -> "TID1411.EV(121071, DCM, Finding)"
+* code -> "TID1411.EV(276214006, SCT, Finding category) > DCM#125007 'Measurement Group'"
+* valueCodeableConcept -> "TID1411.EV(121071, DCM, Finding)"
 * issued -> "tag(0040,A032) [Observation DateTime]"
 * interpretation -> "TID1411.$QualType, TID.1411QualModType$"
 
@@ -173,6 +184,7 @@ Description: "The TID1501PlanarROIMeasurementGroup can be extracted from TID 150
 * -> "TID1501(Measurement and Qualitative Evaluation Group)"
 * identifier[observationUID] -> "tag(0040,A171) [Observation UID]"
 * subject -> "tag(0010,0020) [Patient ID]"
-* code -> "TID1501.EV(121071, DCM, Finding)"
+* code -> "TID1501.EV(276214006, SCT, Finding category) > DCM#125007 'Measurement Group'"
+* valueCodeableConcept -> "TID1501.EV(121071, DCM, Finding)"
 * issued -> "tag(0040,A032) [Observation DateTime]"
 * interpretation -> "TID1501.$QualType, TID.1501QualModType$"

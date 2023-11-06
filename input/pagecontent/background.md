@@ -22,9 +22,7 @@ DICOM SR defines a multitude of templates for capturing Diagnostic imaging Obser
 
 The transformation described is one direction.  Reconstruction of a complete DICOM SR is not expected to be re-constructed from a set of FHIR resources using this IG.
 
-DICOM SR mapping is limited to the Observation Resource.  The resultant mapping is provided, as a minimum, a composition or bundle of Observations.  Depending on the use case, the observations may be a Diagnostic Report. Use case-specific requirements to construct a diagnostic report(e.g. Mammography) may require the transformation described by this IG.  However the specification of those use cases is not in scope for this IG.
-
-![Architecture](./architecture.svg)
+DICOM SR mapping is limited to the Observation Resource.  The resultant mapping is provided, as a minimum, a composition or bundle of Observations.  Depending on the use case, the observations may be a Diagnostic Report. Use case-specific requirements to construct a diagnostic report(e.g. Mammography) may require the transformation described by this IG.  However, the specification of those use cases is not in scope for this IG.
 
 ### Intended Readers<a name="readers"></a>
 This Implementation Guide is intended for
