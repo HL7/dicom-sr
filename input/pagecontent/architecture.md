@@ -112,34 +112,24 @@ An Imaging Qualitative Evaluations `CONTAINER` contains 0-n `TEXT` or `CODE` con
 
 <a name="devices"></a>
 ##### Device Relationship<a name="relationship-device"></a>
-A FHIR Observation can only have a single `device` value. However, a DICOM SR can have a device defined at multiple levels:
-* A Manufacturer and Model Name defined in the `Equipment IE`
-* A device participant defined in the `Document IE`
-* An algorithm defined in:
-  * The Imaging Measurements Container
-  * The Derived Imaging Measurements Container
-  * The Qualitative Evaluations Container
-  * An [Imaging Measurement Group](StructureDefinition-imaging-measurement-group.html)
-  * An [Imaging Measurement](StructureDefinition-imaging-measurement.html)
-  * An [Imaging Qualitative Evaluation](StuctureDefinition-imaging-qualitative-evaluation.html)
+A FHIR Observation can only have a single `device` value. However, a DICOM SR can have two types of devices:
+* The equipment that created the SR
+* An algorithm used to create the Observation
   
-The DICOM SR General Equipment attributes are mapped to a [General Equipment](StructureDefinition-general-equipment.html) Device.
-
-If the DICOM SR Participant Sequence (0040,A07A) contains an item where Observer Type (0040,A084) has a value of "DEV", this item is mapped to a [Device Participant](StructureDefinition-device-participant.html) Device.
+The DICOM SR General Equipment Module attributes are mapped to an [Equipment](StructureDefinition-general-equipment.html) Device.
 
 If an [Imaging Measurement Group](StructureDefinition-imaging-measurement-group.html), [Imaging Measurement](StructureDefinition-imaging-measurement.html) or [Imaging Qualitative Evaluation](StuctureDefinition-imaging-qualitative-evaluation.html) has a child with Concept Name DCM#111001 "Algorithm Name" then it is mapped to an [Algorithm Identification](StructureDefinition-algorithm-identification.html) Device.
 
-If a DICOM SR document contains multiple devices each is mapped to a Device resource. All devices below the Equipment IE level will populate the `parent` element to indicate the Device relationships.
+All algorithm devices will populate use the [Equipment](StructureDefinition-general-equipment.html) Device to populate the `parent` element.
 
-If an [Imaging Measurement Group](StructureDefinition-imaging-measurement-group.html), [Imaging Measurement](StructureDefinition-imaging-measurement.html) or [Imaging Qualitative Evaluation](StuctureDefinition-imaging-qualitative-evaluation.html) does not have a defined device then the `device` element references that of its parent.
+If an [Imaging Measurement Group](StructureDefinition-imaging-measurement-group.html), [Imaging Measurement](StructureDefinition-imaging-measurement.html) or [Imaging Qualitative Evaluation](StuctureDefinition-imaging-qualitative-evaluation.html) does not have a defined device then the `device` element references the [Equipment](StructureDefinition-general-equipment.html) Device.
 
 ![DICOM SR Device relationships](./dicom_sr_device.svg){: width="100%"}
 
 e.g. 
 * If an Imaging Qualitative Evaluation is part of an Imaging Measurement Group:
-  * If both have a defined Algorithm Identification Device, the Imaging Measurement Group Device will be the parent of the Imaging Qualitative Evaluation Device.
-  * If the Imaging Measurement Group does not have a defined Algorithm Identification Device the Imaging Qualitative Evaluation device parent is either the Device Participant Device or the General Equipment Device.
-  * If the Imaging Qualitative Evaluation does not have a defined Algorithm Identification Device it's `device` element will reference the device of its parent
+  * If both have a defined Algorithm Identification Device, both devices will be created and each will have the Equipement Device as its parent.
+  * If the Imaging Qualitative Evaluation does not have a defined Algorithm Identification Device it's `device` element will reference the Equipment Device
 
 ##### Other Resource Relationships
 All DICOM SOP Instances include information relating to the patient, service request, procedure, etc.
