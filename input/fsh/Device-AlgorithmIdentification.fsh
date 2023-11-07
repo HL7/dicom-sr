@@ -4,9 +4,9 @@ Alias: LOINC =  http://loinc.org
 Alias: DCMIdType = http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-identifier-type
 Alias: HL7IdType = http://terminology.hl7.org/CodeSystem/v2-0203
 
-Profile:        TID4019AlgorithmIdentificationProfile
+Profile:        AlgorithmIdentificationProfile
 Parent:         Device
-Id:             tid-4019-algorithm-identification
+Id:             algorithm-identification
 Title:          "Device - DICOM SR TID 4019 Algorithm Identification Mapping"
 Description:    "DICOM SR Algorithm Identification to Device"
 

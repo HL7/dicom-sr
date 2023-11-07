@@ -16,7 +16,7 @@ The mapping of the core DICOM SR measurement groups, measurements and qualitativ
     
 * [Derived Imaging Measurement](StructureDefinition-derived-imaging-measurement.html) profiles the Observation resource representing the DICOM SR derived measurement template [DTID 1420 “Measurements Derived From Multiple ROI Measurements”](https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1420)
 
-* [Imaging Qualitative Evaluation](StuctureDefinition-imaging-qualitative-evaluation.html) profiles the Observation resource representing qualitative evaluation content items
+* [Imaging Qualitative Evaluation](StructureDefinition-imaging-qualitative-evaluation.html) profiles the Observation resource representing qualitative evaluation content items
 
 The above resource profiles depend on the following resource profiles:
 ##### ImagingSelection<a name="resource-imagingselection"></a>
@@ -34,11 +34,10 @@ The above resource profiles depend on the following resource profiles:
 
 ##### Device<a name="resource-device"></a>
 * [Algorithm Identification](StructureDefinition-algorithm-identification.html) profiles the Device resource representing the DICOM SR template [DTID 4019 “Algorithm Identification”](https://dicom.nema.org/medical/dicom/current/output/chtml/part16/sect_TID_4019.html)
-* [Device Participant](StructureDefinition-device-participant.html) profiles the Device resource representing the DICOM Document IE device participant [DICOM PS3.3 C.17.2.4 Identified Person or Device Macro](https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.17.2.4.html#table_C.17-3b)
-* [General Equipment](StructureDefinition-general-equipment.html) profiles the Device resource representing the DICOM General Equipment Module [DICOM PS3.3 C.7.5.1 General Equipment Module](https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.5.html#sect_C.7.5.1)
+* [General Equipment](StructureDefinition-dicom-general-equipment.html) profiles the Device resource representing the DICOM General Equipment Module [DICOM PS3.3 C.7.5.1 General Equipment Module](https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.5.html#sect_C.7.5.1)
 
 ##### BodyStructure<a name="resource-bodystructure"></a>
-* [Finding Site](StructureDefinition-finding-site) profiles the BodyStructure resource representing a finding site content item [CID SCT#363698007 "Finding Site"](http://snomed.info/id/363698007)
+* [Finding Site](StructureDefinition-dicom-sr-finding-site) profiles the BodyStructure resource representing a finding site content item [CID SCT#363698007 "Finding Site"](http://snomed.info/id/363698007)
 
 #### Supporting DataType Profiles<a name="datatypes"></a>
 There is no special supporting DataType profiles defined by this IG.
@@ -70,7 +69,7 @@ All mapped content items are children of the following `CONTAINER` content items
 | ----------------- | --------------------- | ----- |
 | DCM#126010 "Imaging Measurements" | [Imaging Measurement Group](StructureDefinition-imaging-measurement-group.html) | See [Imaging Measurement Group relationship](#measurementgroup) | 
 | DCM#126011 "Derived Imaging Measurements" | [Derived Imaging Measurements](StructureDefinition-derived-imaging-measurements.html) | See [Derived Imaging Measurements relationship](#derivedmeasurements) |
-| UMLS#C0034375  "Qualitative Evaluations" | [Imaging Qualitative Evaluation](StuctureDefinition-imaging-qualitative-evaluation.html) | See [Imaging Qualitative Evaluations relationship](#qualitativeevaluations) |
+| UMLS#C0034375  "Qualitative Evaluations" | [Imaging Qualitative Evaluation](StructureDefinition-imaging-qualitative-evaluation.html) | See [Imaging Qualitative Evaluations relationship](#qualitativeevaluations) |
 
 e.g. the children of the `CONTAINER` with a Concept Name of DCM#126010 "Imaging Measurements" are mapped to [Measurement Group](StructureDefinition-imaging-measurement-group.html) Observations.
 
@@ -80,11 +79,11 @@ e.g. the children of the `CONTAINER` with a Concept Name of DCM#126010 "Imaging 
 ###### Imaging Measurement Group Relationship<a name="imaging-measurement-group"></a>
 An Imaging Measurement Group `CONTAINER` contains 0-n `NUM` content items representing numerical measurements. Each of these is mapped to an [Imaging Measurement](StructureDefinition-imaging-measurement.html) Observation.
 
-An Imaging Measurement Group `CONTAINER` contains 0-n `TEXT` or `CODE` content items representing qualitative evaluations. Each of these is mapped to an [Imaging Qualitative Evaluation](StuctureDefinition-imaging-qualitative-evaluation.html) Observation. 
+An Imaging Measurement Group `CONTAINER` contains 0-n `TEXT` or `CODE` content items representing qualitative evaluations. Each of these is mapped to an [Imaging Qualitative Evaluation](StructureDefinition-imaging-qualitative-evaluation.html) Observation. 
 
 The Imaging Measurement Group `CONTAINER` is mapped to a [Imaging Measurement Group](StructureDefinition-imaging-measurement-group.html) Observation. 
 
-The [Imaging Measurement Group](StructureDefinition-imaging-measurement-group.html) Observation `hasMember` element references the child [Imaging Measurement](StructureDefinition-imaging-measurement.html) and [Imaging Qualitative Evaluation](StuctureDefinition-imaging-qualitative-evaluation.html) Observations.
+The [Imaging Measurement Group](StructureDefinition-imaging-measurement-group.html) Observation `hasMember` element references the child [Imaging Measurement](StructureDefinition-imaging-measurement.html) and [Imaging Qualitative Evaluation](StructureDefinition-imaging-qualitative-evaluation.html) Observations.
 
 **Note:** Not all `TEXT` or `CODE` content items contained within the Imaging Measurement Group represent qualitative evaluations. 
 
@@ -108,7 +107,7 @@ The [Derived Imaging Measurements](StructureDefinition-derived-imaging-measureme
 
 <a name="qualitativeevaluations"></a>
 ###### Imaging Qualitative Evaluations Relationship<a name="imaging-qualitative-evalutation"></a>
-An Imaging Qualitative Evaluations `CONTAINER` contains 0-n `TEXT` or `CODE` content items representing qualitative evaluations. Each of these is mapped to an [Imaging Qualitative Evaluation](StuctureDefinition-imaging-qualitative-evaluation.html) Observation.
+An Imaging Qualitative Evaluations `CONTAINER` contains 0-n `TEXT` or `CODE` content items representing qualitative evaluations. Each of these is mapped to an [Imaging Qualitative Evaluation](StructureDefinition-imaging-qualitative-evaluation.html) Observation.
 
 <a name="devices"></a>
 ##### Device Relationship<a name="relationship-device"></a>
@@ -116,13 +115,13 @@ A FHIR Observation can only have a single `device` value. However, a DICOM SR ca
 * The equipment that created the SR
 * An algorithm used to create the Observation
   
-The DICOM SR General Equipment Module attributes are mapped to an [Equipment](StructureDefinition-general-equipment.html) Device.
+The DICOM SR General Equipment Module attributes are mapped to an [Equipment](StructureDefinition-dicom-general-equipment.html) Device.
 
-If an [Imaging Measurement Group](StructureDefinition-imaging-measurement-group.html), [Imaging Measurement](StructureDefinition-imaging-measurement.html) or [Imaging Qualitative Evaluation](StuctureDefinition-imaging-qualitative-evaluation.html) has a child with Concept Name DCM#111001 "Algorithm Name" then it is mapped to an [Algorithm Identification](StructureDefinition-algorithm-identification.html) Device.
+If an [Imaging Measurement Group](StructureDefinition-imaging-measurement-group.html), [Imaging Measurement](StructureDefinition-imaging-measurement.html) or [Imaging Qualitative Evaluation](StructureDefinition-imaging-qualitative-evaluation.html) has a child with Concept Name DCM#111001 "Algorithm Name" then it is mapped to an [Algorithm Identification](StructureDefinition-algorithm-identification.html) Device.
 
-All algorithm devices will populate use the [Equipment](StructureDefinition-general-equipment.html) Device to populate the `parent` element.
+All algorithm devices will populate use the [Equipment](StructureDefinition-dicom-general-equipment.html) Device to populate the `parent` element.
 
-If an [Imaging Measurement Group](StructureDefinition-imaging-measurement-group.html), [Imaging Measurement](StructureDefinition-imaging-measurement.html) or [Imaging Qualitative Evaluation](StuctureDefinition-imaging-qualitative-evaluation.html) does not have a defined device then the `device` element references the [Equipment](StructureDefinition-general-equipment.html) Device.
+If an [Imaging Measurement Group](StructureDefinition-imaging-measurement-group.html), [Imaging Measurement](StructureDefinition-imaging-measurement.html) or [Imaging Qualitative Evaluation](StructureDefinition-imaging-qualitative-evaluation.html) does not have a defined device then the `device` element references the [Equipment](StructureDefinition-dicom-general-equipment.html) Device.
 
 ![DICOM SR Device relationships](./dicom_sr_device.svg){: width="100%"}
 

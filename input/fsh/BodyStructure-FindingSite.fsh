@@ -6,7 +6,7 @@ Alias: HL7IdType = http://terminology.hl7.org/CodeSystem/v2-0203
 
 Profile:        DICOMSRFindingSiteBodyStructureProfile
 Parent:         BodyStructure
-Id:             dicom-sr-finding-site-body-structure
+Id:             dicom-sr-finding-site
 Title:          "Body Structure - DICOM SR Finding Site Mapping"
 Description:    "DICOM SR Finding Site Mapping to BodyStructure"
 
