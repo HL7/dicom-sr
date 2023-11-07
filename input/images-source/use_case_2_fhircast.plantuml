@@ -1,0 +1,18 @@
+@startuml fhircast_content_sharing
+title Use case 2: Extracting imaging results for FHIRcast content sharing
+
+participant "Measurement Report Creator" as sr_creator
+participant "DICOM SR FHIR IG Implementor" as ig_implementor
+participant "FHIRcast Hub" as fhircast_hub
+participant "Reporting Application" as report_creator
+actor "Report Creator" as reporter
+
+sr_creator -> sr_creator: Create DICOM SR Measurement Report
+ig_implementor -> sr_creator: Retrieve DICOM SR Measurement Report
+ig_implementor -> ig_implementor: Extract FHIR Observtions and related resources
+ig_implementor -> fhircast_hub: Store FHIR Observtions and related resources
+report_creator -> fhircast_hub: Retrieve FHIR Observtions and related resources
+reporter -> report_creator: Review FHIR Observtions and related resources
+reporter -> report_creator: Create report containing selected FHIR Observtions and related resources
+
+@enduml
