@@ -19,10 +19,10 @@ Description:    "DICOM SR Algorithm Identification to Device"
 * property 0..* MS
 * parent 0..1 MS
 
-Mapping: dicom-sr-for-TID4019AlgorithmIdentificationProfile
+Mapping: dicom-sr-for-AlgorithmIdentificationProfile
 Id: dicom-sr
 Title: "DICOM SR TID 4019 Algorithm Identification"
-Source: TID4019AlgorithmIdentificationProfile
+Source: AlgorithmIdentificationProfile
 Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_4019"
 Description: "The TID4019AlgorithmIdentification can be extracted from TID 4019 - Algorithm Identification."
 * -> "TID4019(Algorithm Identification)"

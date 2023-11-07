@@ -146,6 +146,8 @@ Description:    "DICOM SR TID Imaging Measurement Group Mapping to Observation"
 * value[x] ^short = "Observation finding"
 
 * device 1..1 MS
+* device only Reference(AlgorithmIdentificationProfile or GeneralEquipmentProfile)
+* device ^short = "Algorithm Identification or General Equipment Device"
 
 Mapping: dicom-sr-for-TID1410PlanarROIMeasurementGroup
 Id: dicom-sr-tid-1410

@@ -38,6 +38,12 @@ X use cases were identified.
 #### Use case 1: 
 To be created
 
+### Excluded use cases
+The following use cases are not covered by this Implementation Guide:
+* DICOM SR templates other than TID1500
+* Creating a FHIR DiagnosticReport or Composition from a DICOM SR
+* Creating HL7 v2 or v3 results from a DICOM SR
+
 ### Glossary<a name="glossary"></a>
 
 The following terms and acronyms are used within the Radiation Dose Summary IG:

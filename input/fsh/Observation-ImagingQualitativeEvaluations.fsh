@@ -66,9 +66,9 @@ Description:    "DICOM SR Imaging Qualitative Evaluation Mapping to Observation"
 * issued 1..1 MS
 * issued ^short = "Observation Date Time"
 
-* device 0..1 MS
-* device only Reference(TID4019AlgorithmIdentificationProfile)
-* device ^short = "Algorithm Identification"
+* device 1..1 MS
+* device only Reference(AlgorithmIdentificationProfile or GeneralEquipmentProfile)
+* device ^short = "Algorithm Identification or General Equipment Device"
 
 * valueCodeableConcept MS
 

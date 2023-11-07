@@ -82,9 +82,9 @@ Description:    "DICOM SR Imaging Measurement Mapping to Observation"
 
 * method 0..1 MS
 
-* device 0..1 MS
-* device only Reference(TID4019AlgorithmIdentificationProfile)
-* device ^short = "Algorithm Identification"
+* device 1..1 MS
+* device only Reference(AlgorithmIdentificationProfile or GeneralEquipmentProfile)
+* device ^short = "Algorithm Identification or General Equipment Device"
 
 * interpretation MS
 * referenceRange MS

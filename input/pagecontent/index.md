@@ -29,7 +29,7 @@ This IG is organized into three main sections:
         * [Device Relationship](architecture.html#relationship-device) - Mapping of devices from a DICOM SR Measurement Report
     * [Actors](architecture.html#actors) - Actors participating in the IG
     * [Terminology](architecture.html#terminology) - Value Sets defined and used
-    * [Security Consideration](archi.html#sec) - Security aspects to be taken in consideration
+    * [Security Consideration](architecture.html#sec) - Security aspects to be taken in consideration
 * [Chapter III](testing.html): Testing & Conformance
     * [Test Plan](testing.html#testplan) - Test plans for the different actors
     * [Test Data](testing.html#testdata) - Test data that can be used
