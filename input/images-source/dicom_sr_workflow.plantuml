@@ -1,15 +1,15 @@
 @startuml dicom_sr_workflow
 start
-:Create Patient Reference from Patient IE;
+:Create Patient Reference from Patient IE|
 :Patient Reference>
-:Create ImagingStudy Reference from Study IE;
+:Create ImagingStudy Reference from Study IE|
 :ImagingStudy Reference>
-:Create ServiceRequest Reference from Study IE;
+:Create ServiceRequest Reference from Study IE|
 :ServiceRequest Reference>
-:Create EquipmentDevice from General Equipment IE;
+:Create EquipmentDevice from General Equipment IE|
 :EquipmentDevice>
-:Find Container with Concept DCM#126010 "Imaging Measurements"
-:Process Imaging Measurements Container]
+:Find Imaging Measurements Container|
+:Process Imaging Measurements Container|
 partition "Inputs" {
     :Patient Reference<
     :ImagingStudy Reference<
