@@ -38,7 +38,7 @@ Two use cases were identified.
 #### Use case 1: Extracting imaging results for use in reporting
 ![Use Case 1](./dicom_sr_report_extraction.svg){: width="100%"}
 
-### Use case 2: Extracting imaging results for FHIRcast content sharing
+#### Use case 2: Extracting imaging results for FHIRcast content sharing
 ![Use Case 2](./fhircast_content_sharing.svg){: width="100%"}
 
 ### Excluded use cases

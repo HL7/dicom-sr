@@ -30,7 +30,11 @@ This IG is organized into three main sections:
     * [Actors](architecture.html#actors) - Actors participating in the IG
     * [Terminology](architecture.html#terminology) - Value Sets defined and used
     * [Security Consideration](architecture.html#sec) - Security aspects to be taken in consideration
-* [Chapter III](testing.html): Testing & Conformance
+* [Chapter III](workflow.html): Measurement Report Processing Workflow
+    * [DICOM SR Instance Workflow](workflow.html#sr_instance)
+    * [Imaging Measurements Container Workflow](workflow.html#imaging_measurements_container)
+    * [Imaging Measurement Group Workflow](workflow.html#sr_iimaging_measurement_groupnstance)
+* [Chapter IV](testing.html): Testing & Conformance
     * [Test Plan](testing.html#testplan) - Test plans for the different actors
     * [Test Data](testing.html#testdata) - Test data that can be used
     * [Resources Samples](testing.html#samples) - Samples of resources profiled following this IG

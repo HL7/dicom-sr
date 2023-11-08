@@ -1,0 +1,87 @@
+@startuml imaging_measurement_group_workflow
+start
+
+partition "Inputs" {
+    :Patient Reference<
+    :ImagingStudy Reference<
+    :ServiceRequest Reference<
+    :EquipmentDevice<
+    :ParentAlgorithmIdentification<
+}
+
+:Create ImagingMeasurementGroup
+ subject = Patient Reference
+ basedOn = ServiceRequest Reference
+ partOf = ImagingStudy Reference|
+
+while (For each child of Imaging Measurement Group container)
+
+  if (Tracking Identifier or Tracking Unique Identifier) then (yes)
+   :Create BodyStructure Reference from Trackig Identifier / UID|
+   :BodyStructure Reference>
+   :Update ImagingMeasurementGroup
+    focus += BodyStructure Reference|
+  
+  elseif (Finding Category) then (yes)
+   :Update ImagingMeasurementGroup
+   code = Finding Cateogry|
+  
+  elseif (Finding) then (yes)
+   :Update ImagingMeasurementGroup
+    valueCodeableConcept = Finding|
+  
+  elseif (Finding) then (yes)
+   :Update ImagingMeasurementGroup
+    valueCodeableConcept = Finding|
+  
+  elseif (Image Region or Reference) then (yes)
+   :Create ImagingSelection|
+   :Update ImagingMeasurementGroup
+    focus += ImagingSelection|
+  
+  elseif (Measurement Method) then (yes)
+   :Update ImagingMeasurementGroup
+    method = Measurement Method|
+  
+  elseif (Finding Site) then (yes)
+   :Create FindingSite from Finding Site|
+   :FindingSite Reference>
+   :Update ImagingMeasurementGroup
+    bodyStructure = FindingSite|
+  endif
+  
+  if (Algorithm Identification) then (yes)
+   :Create AlgorithmIdentification from TID4019 
+   parent = EquipmentDevice|
+   :AlgorithmIdentification>
+   :Update ImagingMeasurementGroup
+    device = AlgorithmIdentification|
+  elseif (ParentAlgorithmIdentification exusts) then (yes)
+   :Update ImagingMeasurementGroup
+    device = ParentAlgorithmIdentification|
+  else
+   :Update ImagingMeasurementGroup
+    device = EquipmentDevice|
+  endif
+
+  if (Numerical Measurement) then (yes)
+   :Create ImagingMeasurement|
+   partition "Inputs" {
+    :ImagingMeasurementGroup.subject<
+    :ImagingMeasurementGroup.basedOn<
+    :ImagingMeasurementGroup.partOf<
+    :ImagingMeasurementGroup.focus<
+    :ImagingMeasurementGroup.bodyStructure<
+    if (AlgorithmIdentification exists) then (yes)
+    :AlgorithmIdentification<
+    elseif (ParentAlgorithmIdentification exists) then (yes)
+    :ParentAlgorithmIdentification<
+    endif
+   }
+    
+  endif
+
+endwhile
+
+end
+@enduml

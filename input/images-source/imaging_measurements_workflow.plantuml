@@ -1,0 +1,54 @@
+@startuml imaging_measurements_workflow
+start
+
+partition "Inputs" {
+    :Patient Reference<
+    :ImagingStudy Reference<
+    :ImagingStudy Reference<
+    :EquipmentDevice<
+}
+
+if (Algorithm Identification) then (yes)
+:Create AlgorithmIdentification from TID4019
+ parent = EquipmentDevice|
+:AlgorithmIdentification>
+endif
+
+while (For each child of Imaging Measurements container)
+ if (Measurement Group) then (yes)
+ :Create ImagingMeasurementGroup]
+ partition "Inputs" {
+    :Patient Reference<
+    :ImagingStudy Reference<
+    :EquipmentDevice<
+    if (AlgorithmIdentification exists) then (yes)
+     :AlgorithmIdentification<
+    endif
+    }
+ elseif (Derived Imaging Measurements) then (yes)
+ :Create DerivedImagingMeasurement]
+ partition "Inputs" {
+    :Patient Reference<
+    :ImagingStudy Reference<
+    :EquipmentDevice<
+    if (AlgorithmIdentification exists) then (yes)
+     :AlgorithmIdentification<
+    endif
+    }
+ elseif (Qualitative Evaluations) then (yes)
+ :Create ImagingQualitativeEvaluations]
+ partition "Inputs" {
+    :Patient Reference<
+    :ImagingStudy Reference<
+    :ImagingStudy Reference<
+    :EquipmentDevice<
+    if (AlgorithmIdentification exists) then (yes)
+     :AlgorithmIdentification<
+    endif
+    }
+ endif
+endwhile
+
+end
+
+@enduml
