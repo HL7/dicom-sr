@@ -50,8 +50,8 @@ pages:
   architecture.md:
     title: Architecture
     generation: markdown
-  workflow.md:
-    title: Workflow
+  mapping.md:
+    title: Mapping
     generation: markdown
 
 # ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
@@ -62,5 +62,5 @@ menu:
   Contents: toc.html
   Background: background.html
   Architecture: architecture.html
-  Workflow: workflow.html
+  Mapping: mapping.html
   Artifact Index: artifacts.html
