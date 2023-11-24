@@ -127,7 +127,7 @@ If an [Imaging Measurement Group](StructureDefinition-imaging-measurement-group.
 
 e.g. 
 * If an Imaging Qualitative Evaluation is part of an Imaging Measurement Group:
-  * If both have a defined Algorithm Identification Device, both devices will be created and each will have the Equipement Device as its parent.
+  * If both have a defined Algorithm Identification Device, both devices will be created and each will have the Equipment Device as its parent.
   * If the Imaging Qualitative Evaluation does not have a defined Algorithm Identification Device it's `device` element will reference the Equipment Device
 
 ##### Other Resource Relationships

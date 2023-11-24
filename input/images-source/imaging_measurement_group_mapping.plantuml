@@ -1,0 +1,80 @@
+@startuml imaging_measurement_group_mapping
+left to right direction
+
+map inputs {
+   subject => Patient
+   partOf => ImagingStudy
+   basedOn => ServiceRequest
+   device => EquipmentDevice
+}
+
+package "Measurements Group" as measurementGroup {
+   object "Algorithm Identification" as algorithm
+   object "Tracking Identifier / UID" as tracking
+   object "Finding" as finding
+   object "Finding Category" as findingCategory
+   object "Finding Site" as findingSite
+   object "Image Region / Reference" as imageRegion
+   object "Measurement Method" as method
+   package "Numerical Measurements" {
+    object "Numerical Measurement" as measurement
+   }
+}
+
+object AlgorithmIdentification {
+    parent = EquipmentDevice
+}
+
+object TrackingBodyStructure {
+    identifier = TrackingID or TrackingUID
+}
+
+object FindingSite {
+    includedStructure.structure = Finding Site
+}
+
+object ImagingSelection 
+
+object "ImagingMeasurementGroup" as imagingMeasurementGroup {
+    subject = Patient
+    partOf = ImagingStudy
+    basedOn = ServiceRequest
+    device = EquipmentDevice or AlgorithmIdentification
+    focus = TrackingBodyStructure
+    focus = ImagingSelection
+    bodyStructure = FindingSite
+    code = Finding Category or DCM#125007 "Measurement Group"
+    method = Measurement Method
+    valueCodeableConcept = Finding
+    hasMember = ImagingMeasurement
+}
+
+map imagingMeasurementMap {
+    subject => Patient
+    partOf => ImagingStudy
+    basedOn => ServiceRequest
+    focus => TrackingBodyStructure
+    focus => ImagingSelection
+    bodyStructure => FindingSite
+    device => AlgorithmIdentification or EquipmentDevice
+}
+
+algorithm --> AlgorithmIdentification: Create AlgorithmIdentification from Algorithm Identification content item
+tracking --> TrackingBodyStructure: Create BodyStructure reference from Tracking Identifier / UID
+findingSite --> FindingSite: Create BodyStructure from Finding Site
+imageRegion --> ImagingSelection: Create ImagingSelectio from image reference or region
+
+inputs --> imagingMeasurementGroup
+AlgorithmIdentification --> imagingMeasurementGroup
+TrackingBodyStructure --> imagingMeasurementGroup
+finding --> imagingMeasurementGroup
+findingCategory --> imagingMeasurementGroup
+FindingSite --> imagingMeasurementGroup
+ImagingSelection --> imagingMeasurementGroup
+measurementGroup --> imagingMeasurementGroup
+method --> imagingMeasurementGroup
+
+inputs --> imagingMeasurementMap
+measurement --> imagingMeasurementMap: Map numerical measurements to ImagingMeasurement Observations
+imagingMeasurementMap <-- imagingMeasurementGroup: hasMember
+@enduml
