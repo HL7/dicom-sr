@@ -8,7 +8,7 @@ Usage: #definition
 // * url = http://hl7.org/fhir/uv/dicom-sr/dicom-document-ie-to-fhir
 * status = #draft
 * sourceScopeUri = "DICOM-Document"
-* targetScopeUri = "Observation"
+* targetScopeUri = "Bundle"
 
 // Additional Attributes used in concept map
 * additionalAttribute[0]

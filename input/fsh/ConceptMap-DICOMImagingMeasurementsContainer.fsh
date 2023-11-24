@@ -1,0 +1,46 @@
+Instance:       DICOM-Imaging-Measurements-Container-to-FHIR
+InstanceOf:     ConceptMap
+Title:          "ConceptMap - DICOM Imaging Measurements Container to FHIR Mapping"
+Usage: #definition
+
+* id =  "dicom-imaging-measurements-container-ie-to-fhir"
+* description = "Mapping between DICOM Document IE and FHIR Resources"
+* status = #draft
+* sourceScopeUri = "DICOM-Imaging-Measurements-Container"
+* targetScopeUri = "Bundle"
+
+* group[0].element[0]
+  * code = http://dicom.nema.org/resources/ontology/DCM#TID4019
+  * display = "Algorithm Identification"
+  * target
+    * relationship = #equivalent
+    * code = #AlgrithmIdentification
+    * display = "Algorithm Identification Device"
+    * comment = "Content from the Algorithm Identification template will be used to create a FHIR AlgorithmIdentification Device."
+
+* group[1].element[0]
+  * code = http://dicom.nema.org/resources/ontology/DCM#125007
+  * display = "Measurement Group"
+  * target
+    * relationship = #equivalent
+    * code = #ImagingMeasurementGroup
+    * display = "Imaging Measurement Group Observation"
+    * comment = "Each Measurement Group container will be used to create a FHIR ImagingMeasurementGroup Observation."
+
+* group[1].element[1]
+  * code = http://dicom.nema.org/resources/ontology/DCM#126001
+  * display = "Derived Imaging Measurements"
+  * target
+    * relationship = #equivalent
+    * code = #DerivedImagingMeasurements
+    * display = "Derived Imaging Measurement Observation"
+    * comment = "Each child of the the Derived Imaging Measurements container will be used to create a FHIR DerivedImagingMeasurement Observation."
+
+* group[1].element[2]
+  * code = http://terminology.hl7.org/CodeSystem/umls#C0034375
+  * display = "Qualitative Evaluations"
+  * target
+    * relationship = #equivalent
+    * code = #ImagingQualitativeEvaluation
+    * display = "Imaging Qualitative Evaluation Observation"
+    * comment = "Select children of the Imaging Qualitative Evaluations container will be used to create a FHIR ImagingQualitativeEvaluation Observation."

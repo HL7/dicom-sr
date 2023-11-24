@@ -1,12 +1,12 @@
 @startuml dicom_sr_document_ie_mapping
 left to right direction
 
-    map inputs {
-        subject => Patient
-        partOf => ImagingStudy
-        basedOn => ServiceRequest
-        device => EquipmentDevice
-    }
+map inputs {
+    subject => Patient
+    partOf => ImagingStudy
+    basedOn => ServiceRequest
+    device => EquipmentDevice
+}
 
 package "Document IE" {
     object documentGeneralModule {
