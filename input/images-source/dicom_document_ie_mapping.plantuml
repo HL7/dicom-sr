@@ -1,0 +1,33 @@
+@startuml dicom_sr_document_ie_mapping
+left to right direction
+
+    map inputs {
+        subject => Patient
+        partOf => ImagingStudy
+        basedOn => ServiceRequest
+        device => EquipmentDevice
+    }
+
+package "Document IE" {
+    object documentGeneralModule {
+        PreliminaryFlag
+        ParticipantSequence
+    }
+    package "SR Content Sequence" as srContentSequence {
+        object "Imaging Measurements Container" as imagingMeasurements
+    }
+}
+
+map imagingMeasurementsMapping {
+    subject => Patient
+    partOf => ImagingStudy
+    basedOn => ServiceRequest
+    device => EquipmentDevice or ParticipantSequence (Device)
+    performer => ParticpantSequence (Person)
+    stauts => PreliminaryFlag
+}
+
+imagingMeasurements --> imagingMeasurementsMapping: Map contents of Imaging Measurements Container
+inputs --> imagingMeasurementsMapping
+documentGeneralModule --> imagingMeasurementsMapping
+@enduml

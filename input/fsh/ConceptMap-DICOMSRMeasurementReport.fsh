@@ -1,18 +1,17 @@
-Instance:       DICOM-SR-IOD-to-FHIR
+Instance:       DICOM-SR-Measurement-Report-to-FHIR
 InstanceOf:     ConceptMap
-Usage: #definition
-Title:          "ConceptMap - DICOM SR IOD to FHIR Mapping"
+Usage:          #definition
+Title:          "ConceptMap - DICOM SR Measurement Report to FHIR Mapping"
 
 
-* id =  "ConceptMap-dicom-sr-iod-to-fhir"
-* description = "Mapping between DICOM SR IOD and FHIR Resources"
-// * url = http://hl7.org/fhir/uv/dicom-sr/dicom-sr-iod-to-fhir
+* id =  "dicom-sr-mreasurement-report-to-fhir"
+* description = "Mapping between DICOM SR Measurement Report and FHIR Resources"
 * status = #draft
-* sourceScopeUri = "DICOM-SR-IOD"
+* sourceScopeUri = "DICOM-SR-Measurement-Report"
 * targetScopeUri = "Bundle"
 
 // Patient IE Mapping
-* group.element[0]
+* group[0].element[0]
   * code = #DICOM.Patient
   * display = "Patient IE"
   * target
@@ -22,7 +21,7 @@ Title:          "ConceptMap - DICOM SR IOD to FHIR Mapping"
     * comment = "The DICOM SR Patient IE is mapped to a FHIR Patient resource"
 
 // Study IE Mapping
-* group.element[1]
+* group[1].element[0]
   * code = #DICOM.Study
   * display = "Study IE"
   * target
@@ -30,25 +29,17 @@ Title:          "ConceptMap - DICOM SR IOD to FHIR Mapping"
     * code = #ImagingStudy[1]
     * display = "ImagingStudy[1]"
     * comment = "The DICOM SR Study IE is mapped to a FHIR ImagingStudy resource"
-
-// Series IE Mapping
-* group.element[2]
-  * code = #DICOM.Series
-  * display = "Series IE"
+* group[1].element[1]
+  * code = #DICOM.Study
+  * display = "Study IE"
   * target
-    * relationship = #not-related-to
-    * comment = "The DICOM SR Series IE is not mapped"
-
-// Frame of Reference IE Mapping
-* group.element[3]
-  * code = #DICOM.FrameOfReference
-  * display = "Frame of Reference IE"
-  * target
-    * relationship = #not-related-to
-    * comment = "The DICOM SR Frame of Reference IE is not mapped"
+    * relationship = #related-to
+    * code = #ServiceRequest[1]
+    * display = "ServiceRequest[1]"
+    * comment = "The DICOM SR Study IE is mapped to a FHIR ServiceRequqest resource"
 
 // Equipment IE Mapping
-* group.element[4]
+* group[2].element[0]
   * code = #DICOM.Equipment
   * display = "Equipment IE"
   * target
@@ -58,7 +49,7 @@ Title:          "ConceptMap - DICOM SR IOD to FHIR Mapping"
     * comment = "The DICOM SR Equipment IE may result in the creation of a new Device resource"
 
 // Document IE Mapping
-* group.element[5]
+* group[3].element[0]
   * code = #DICOM.Document
   * display = "Document IE"
   * target
@@ -67,8 +58,8 @@ Title:          "ConceptMap - DICOM SR IOD to FHIR Mapping"
     * display = "Observation[1]"
     * comment = "Processing of the Document IE will result in the creation one or more new Observation resources"
     * property[0]
-      * code = #ie-map
-      * valueString = "dicom-document-ie-to-fhir"
+      * code = #imaging-measurement-group-map
+      * valueString = "dicom-imaging-measurement-group-to-fhir"
     * property[1]
       * code = #references
       * valueString = "Observation.subject.reference=Patient[1].id"
@@ -76,5 +67,8 @@ Title:          "ConceptMap - DICOM SR IOD to FHIR Mapping"
       * code = #references
       * valueString = "Observation.partOf.reference=ImagingStudy[1].id"
     * property[3]
+      * code = #references
+      * valueString = "Observation.basedOn.reference=ServiceRequest[1].id"
+    * property[4]
       * code = #references
       * valueString = "Observation.device.reference=Device[1]"

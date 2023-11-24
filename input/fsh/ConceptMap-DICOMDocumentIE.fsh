@@ -3,7 +3,7 @@ InstanceOf:     ConceptMap
 Title:          "ConceptMap - DICOM Document IE to FHIR Mapping"
 Usage: #definition
 
-* id =  "ConceptMap-dicom-document-ie-to-fhir"
+* id =  "dicom-document-ie-to-fhir"
 * description = "Mapping between DICOM Document IE and FHIR Resources"
 // * url = http://hl7.org/fhir/uv/dicom-sr/dicom-document-ie-to-fhir
 * status = #draft
@@ -18,11 +18,6 @@ Usage: #definition
   * type = #code
 
 * additionalAttribute[1]
-  * code = #DICOMUIDType
-  * description = "DICOM UID Type"
-  * type = #Coding
-
-* additionalAttribute[2]
   * code = #DICOMConceptNameCodeSequence
   * description = "DICOM Concept Name Code Sequence (0040,A043)"
   * uri = "https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.17.3.3.html#table_C.17-5"
@@ -30,7 +25,7 @@ Usage: #definition
 
 // Document General Module
 * group.element[0]
-  * code = #DICOM.Document.General
+  * code = #DICOM.SR.Document.General
   * display = "Document General Module"
   * target
     * relationship = #not-related-to
@@ -48,7 +43,7 @@ Usage: #definition
 // Participant Sequence (0040,A07A)
 * group.element[2]
   * code = #DICOM.ParticipantSequence-Performer
-  * display = "Preliminary Flag (0040,A496) -- PSN"
+  * display = "Participant Sequence (0040,A07A) -- PSN"
   * target
     * relationship = #equivalent
     * code = #performer
@@ -62,7 +57,7 @@ Usage: #definition
 
 * group.element[3]
   * code = #DICOM.ParticipantSequence-Device
-  * display = "Preliminary Flag (0040,A496) -- DEV"
+  * display = "Participant Sequence (0040,A07A) -- DEV"
   * target
     * relationship = #equivalent
     * code = #Device[1]
@@ -75,39 +70,8 @@ Usage: #definition
       * valueString = "identified-person-or-device"      
     * comment = "If this device matches the Equipment IE device an additional device resource does not need to be created."
 
-// Document Content Module
-* group.element[4]
-  * code = #DICOM.Document.Content
-  * display = "Document Content Module"
-  * target.relationship = #not-related-to
-
-// Observation DateTime (0040,A032)
-* group.element[5]
-  * code = #DICOM.ObservationDateTime
-  * display = "Observation DateTime (0040,A032)"
-  * target
-    * relationship = #equivalent
-    * code = #issued
-    * display = "issued"
-    * comment = "DICOM DateTime format shall be converted to FHIR instant format."
-
-// Observation UID (0040,A171)
-* group.element[6]
-  * code = #DICOM.ObservationUID
-  * display = "Observation UID (0040,A171)"
-  * target
-    * relationship = #equivalent
-    * code = #identifier[1]
-    * display = "identifier[1]"
-    * dependsOn[0]
-      * attribute = #DICOMUIDType
-      * valueCoding = DCMIdType#observation-uid "Observation UID"
-    * property[0]
-      * code = #system
-      * valueString = "urn:dicom:uid"      
-
 // Content Sequence (0040,A730)
-* group.element[7]
+* group.element[4]
   * code = #DICOM.ContentSequence.ImagingMeasurements
   * display = "Content Sequence (0040,A730) -- Imaging Measurements"
   * target
@@ -120,34 +84,3 @@ Usage: #definition
     * property[0]
       * code = #content-map
       * valueString = "dicom-imaging-measurement-group"      
-
-// Content Sequence (0040,A730)
-* group.element[8]
-  * code = #DICOM.ContentSequence.DerivedImagingMeasurements
-  * display = "Content Sequence (0040,A730) -- Derived Imaging Measurements"
-  * target
-    * relationship = #source-is-narrower-than-target
-    * code = #Observation[1]
-    * display = "Observation[1]"
-    * dependsOn[0]
-      * attribute = #DICOMConceptNameCodeSequence
-      * valueCoding = DCM#126011 "Derived Imaging Measurements"
-    * property[0]
-      * code = #content-map
-      * valueString = "dicom-derived-imaging-measurements"           
-
-// Content Sequence (0040,A730)
-* group.element[9]
-  * code = #DICOM.ContentSequence.QualitativeEvaluations
-  * display = "Content Sequence (0040,A730) -- Qualitative Evaluations"
-  * target
-    * relationship = #source-is-narrower-than-target
-    * code = #Observation[1]
-    * display = "Observation[1]"
-    * dependsOn[0]
-      * attribute = #DICOMConceptNameCodeSequence
-      * valueCoding = http://terminology.hl7.org/NamingSystem/umls#C0034375 "Qualitative Evaluations"
-    * property[0]
-      * code = #content-map
-      * valueString = "dicom-qualitative-evaluations"           
-

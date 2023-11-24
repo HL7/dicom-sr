@@ -18,11 +18,13 @@ DICOM SR is widely adopted by Imaging-based devices and IT systems. Non-imaging 
 
 The standards for recording clinical observations, DICOM SR and HL7 FHIR Observation resource are bridged by this IG by the transformation of the DICOM SR attributes to the HL7 FHIR Observation Resource.
 
-DICOM SR defines a multitude of templates for capturing Diagnostic imaging Observations.  The input for this IG is limited to the DICOM SR template TID-1500 (Measurement Report).  The mapping is limited the content within the tree structure.
+DICOM SR defines a multitude of templates for capturing Diagnostic imaging Observations.  The input for this IG is limited to the DICOM SR template TID-1500 (Measurement Report). The mapping is limited the content within the tree structure.
 
-The transformation described is one direction.  Reconstruction of a complete DICOM SR is not expected to be re-constructed from a set of FHIR resources using this IG.
+The transformation described is one direction. Reconstruction of a complete DICOM SR is not expected to be re-constructed from a set of FHIR resources using this IG.
 
-DICOM SR mapping is limited to the Observation Resource.  The resultant mapping is provided, as a minimum, a composition or bundle of Observations.  Depending on the use case, the observations may be a Diagnostic Report. Use case-specific requirements to construct a diagnostic report(e.g. Mammography) may require the transformation described by this IG.  However, the specification of those use cases is not in scope for this IG.
+DICOM SR mapping is limited to the Observation Resource and a small set of related resources. The resultant mapping is provided, as a minimum, a composition or bundle of Observations. Depending on the use case, the observations may be a Diagnostic Report. Use case-specific requirements to construct a diagnostic report(e.g. Mammography) may require the transformation described by this IG. However, the specification of those use cases is not in scope for this IG.
+
+Therefore, Observations created according to this IG may not include all context relevant to their interpretation.
 
 ### Intended Readers<a name="readers"></a>
 This Implementation Guide is intended for
