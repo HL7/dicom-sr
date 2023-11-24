@@ -3,7 +3,7 @@ InstanceOf:     ConceptMap
 Title:          "ConceptMap - DICOM Imaging Measurements Container to FHIR Mapping"
 Usage: #definition
 
-* id =  "dicom-imaging-measurements-container-ie-to-fhir"
+* id =  "dicom-imaging-measurements-container-to-fhir"
 * description = "Mapping between DICOM Document IE and FHIR Resources"
 * status = #draft
 * sourceScopeUri = "DICOM-Imaging-Measurements-Container"

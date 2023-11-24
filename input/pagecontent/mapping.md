@@ -5,8 +5,8 @@ This chapter describes the mapping between a DICOM SR Measurement Report and FHI
 
 The DICOM SR Measurement Report instance contains the following information relevant to creating FHIR resources:
 * The Patient IE used to associate created resources with the appropriate Patient
-* The Study ID used to associated created resources with the approriate ImagingStudy and ServiceRequest
-* The General Equipment IE used to create an a FHIR Device resource
+* The Study ID used to associated created resources with the appropriate ImagingStudy and ServiceRequest
+* The General Equipment IE used to create a FHIR Device resource
 * The Document IE is used to create one or more FHIR Observations
 
 ![DICOM SR Measurement Report Instance Mapping](./dicom_sr_measurement_report_mapping.svg){: width="100%"}
@@ -24,14 +24,14 @@ The DICOM SR Document IE contains:
 * The ContentSequence containing the SR content tree
     * The mapped content is from the Imaging Measurements `CONTAINER` node
 
-![DICOM SR Document Mapping](./dicom_document_ie_mapping.svg){: width="100%"}
+![DICOM SR Document Mapping](./dicom_sr_document_ie_mapping.svg){: width="100%"}
 
 See also the [DICOM SR Document IE to FHIR ConceptMap](ConceptMap-dicom-document-ie-to-fhir.html).
 
 ### Imaging Measurements Container Mapping
 <a name="imaging_measurements_container"></a>
 
-The Imaging Measuremments Container contains:
+The Imaging Measurements Container contains:
 * 0..1 Algorithm Identification content items denoting an algorithm associated with the observations
 * 0..n MeasurementGroup Container nodes each of which maps to an ImagingMeasurementGroup Observation
 * 0..1 Derived Imaging Measurements Containers
