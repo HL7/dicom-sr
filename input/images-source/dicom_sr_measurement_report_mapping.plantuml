@@ -1,4 +1,4 @@
-@startuml dicom_sr_measurement_reportmapping
+@startuml dicom_sr_measurement_report_mapping
 left to right direction
 package "DICOM SR Measurement Report" {
     object "Patient IE" as patientIE

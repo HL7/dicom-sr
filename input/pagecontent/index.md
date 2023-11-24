@@ -30,11 +30,11 @@ This IG is organized into three main sections:
     * [Actors](architecture.html#actors) - Actors participating in the IG
     * [Terminology](architecture.html#terminology) - Value Sets defined and used
     * [Security Consideration](architecture.html#sec) - Security aspects to be taken in consideration
-* [Chapter III](Mapping.html): Measurement Report Processing Mapping
-    * [DICOM SR Measurement Report Instance Mapping](Mapping.html#sr_instance)
-    * [DICOM SR Document Mapping](Mapping.html#sr_document)
-    * [Imaging Measurements Container Mapping](Mapping.html#imaging_measurements_container)
-    * [Imaging Measurement Group Mapping](Mapping.html#sr_iimaging_measurement_groupnstance)
+* [Chapter III](mapping.html): Measurement Report Processing Mapping
+    * [DICOM SR Measurement Report Instance Mapping](mapping.html#sr_instance)
+    * [DICOM SR Document Mapping](mapping.html#sr_document)
+    * [Imaging Measurements Container Mapping](mapping.html#imaging_measurements_container)
+    * [Imaging Measurement Group Mapping](mapping.html#sr_iimaging_measurement_groupnstance)
 * [Chapter IV](testing.html): Testing & Conformance
     * [Test Plan](testing.html#testplan) - Test plans for the different actors
     * [Test Data](testing.html#testdata) - Test data that can be used
