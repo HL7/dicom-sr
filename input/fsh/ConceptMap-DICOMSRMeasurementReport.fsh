@@ -8,9 +8,11 @@ Title:          "ConceptMap - DICOM SR Measurement Report to FHIR Mapping"
 * name = "ConceptMap - DICOM SR Measurement Report to FHIR Mapping"
 * description = "Mapping between DICOM SR Measurement Report and FHIR Resources"
 * status = #draft
+* experimental = true
+* extension[0].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* extension[0].valueCode = #ii
 * sourceScopeUri = "DICOM-SR-Measurement-Report"
 * targetScopeUri = "Bundle"
-* insert DICOMSRStructureDefinitionContent
 
 // Patient IE Mapping
 * group[0].element[0]

@@ -3,12 +3,13 @@ InstanceOf:     ConceptMap
 Title:          "ConceptMap - DICOM Imaging Measurements Container to FHIR Mapping"
 Usage: #definition
 
-* insert DICOMSRStructureDefinitionContent
-
 * id = "dicom-imaging-measurements-container-to-fhir"
 * name = "ConceptMap - DICOM Imaging Measurements Container to FHIR Mapping"
 * description = "Mapping between DICOM Document IE and FHIR Resources"
 * status = #draft
+* experimental = true
+* extension[0].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* extension[0].valueCode = #ii
 * sourceScopeUri = "DICOM-Imaging-Measurements-Container"
 * targetScopeUri = "Bundle"
 

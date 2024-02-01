@@ -3,13 +3,14 @@ InstanceOf:     ConceptMap
 Title:          "ConceptMap - DICOM Imaging Measurement Group to FHIR Mapping"
 Usage:          #definition
 
-* insert DICOMSRStructureDefinitionContent
-
 * id =  "dicom-imaging-measurement-group-to-fhir"
 * name = "ConceptMap - DICOM Imaging Measurement Group to FHIR Mapping"
 * description = "Mapping between DICOM Imaging Measurement Group and FHIR Resources"
 // * url = http://hl7.org/fhir/uv/dicom-sr/dicom-document-ie-to-fhir
 * status = #draft
+* experimental = true
+* extension[0].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* extension[0].valueCode = #ii
 * sourceScopeUri = "DICOM-Document"
 * targetScopeUri = "Observation"
 
