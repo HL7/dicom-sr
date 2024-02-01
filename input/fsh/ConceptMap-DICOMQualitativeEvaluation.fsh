@@ -1,8 +1,12 @@
 Instance:       DICOM-Qualitative-Evaluation-to-FHIR
 InstanceOf:     ConceptMap
+Title:          "ConceptMap - DICOM Qualitative Evaluation to FHIR Mapping"
 Usage: #definition
 
+* insert DICOMSRStructureDefinitionContent
+
 * id =  "ConceptMap-dicom-umls-c0034375"
+* name = "ConceptMap - DICOM Qualitative Evaluation to FHIR Mapping"
 * description = "Mapping between DICOM Document IE and FHIR Resources"
 // * url = http://hl7.org/fhir/uv/dicom-sr/dicom-document-ie-to-fhir
 * status = #draft
@@ -28,5 +32,5 @@ Usage: #definition
       * attribute = #DICOMConceptNameCodeSequence
       * valueCoding = http://terminology.hl7.org/NamingSystem/umls#C0034375 "Qualitative Evaluations"
     * property[0]
-      * code = #content-map
+      * code = #string
       * valueString = "dicom-qualitative-evaluations"      

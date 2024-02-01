@@ -3,7 +3,10 @@ InstanceOf:     ConceptMap
 Title:          "ConceptMap - DICOM Imaging Measurement Group to FHIR Mapping"
 Usage:          #definition
 
+* insert DICOMSRStructureDefinitionContent
+
 * id =  "dicom-imaging-measurement-group-to-fhir"
+* name = "ConceptMap - DICOM Imaging Measurement Group to FHIR Mapping"
 * description = "Mapping between DICOM Imaging Measurement Group and FHIR Resources"
 // * url = http://hl7.org/fhir/uv/dicom-sr/dicom-document-ie-to-fhir
 * status = #draft
@@ -32,8 +35,7 @@ Usage:          #definition
 * group.element[0]
   * code = #DICOM.Document.General
   * display = "Document General Module"
-  * target
-    * relationship = #not-related-to
+  * noMap = true
 
 // Preliminary Flag (0040,A496)
 * group.element[1]
@@ -57,7 +59,7 @@ Usage:          #definition
       * attribute = #OverserverType
       * valueCode = #PSN
     * property[0]
-      * code = #macro-map
+      * code = #string
       * valueString = "identified-person-or-device"      
 
 * group.element[3]
@@ -71,7 +73,7 @@ Usage:          #definition
       * attribute = #OverserverType
       * valueCode = #DEV
     * property[0]
-      * code = #macro-map
+      * code = #string
       * valueString = "identified-person-or-device"      
     * comment = "If this device matches the Equipment IE device an additional device resource does not need to be created."
 
@@ -79,7 +81,7 @@ Usage:          #definition
 * group.element[4]
   * code = #DICOM.Document.Content
   * display = "Document Content Module"
-  * target.relationship = #not-related-to
+  * noMap = true
 
 // Observation DateTime (0040,A032)
 * group.element[5]
@@ -118,7 +120,7 @@ Usage:          #definition
       * attribute = #DICOMConceptNameCodeSequence
       * valueCoding = DCM#126010 "Imaging Measurements"
     * property[0]
-      * code = #content-map
+      * code = #string
       * valueString = "dicom-imaging-measurement-group"      
 
 // Content Sequence (0040,A730)
@@ -133,7 +135,7 @@ Usage:          #definition
       * attribute = #DICOMConceptNameCodeSequence
       * valueCoding = DCM#126011 "Derived Imaging Measurements"
     * property[0]
-      * code = #content-map
+      * code = #string
       * valueString = "dicom-derived-imaging-measurements"           
 
 // Content Sequence (0040,A730)
@@ -148,6 +150,6 @@ Usage:          #definition
       * attribute = #DICOMConceptNameCodeSequence
       * valueCoding = http://terminology.hl7.org/NamingSystem/umls#C0034375 "Qualitative Evaluations"
     * property[0]
-      * code = #content-map
+      * code = #string
       * valueString = "dicom-qualitative-evaluations"           
 

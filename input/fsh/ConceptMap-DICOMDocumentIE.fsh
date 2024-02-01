@@ -3,7 +3,10 @@ InstanceOf:     ConceptMap
 Title:          "ConceptMap - DICOM Document IE to FHIR Mapping"
 Usage: #definition
 
+* insert DICOMSRStructureDefinitionContent
+
 * id =  "dicom-document-ie-to-fhir"
+* name = "ConceptMap - DICOM Document IE to FHIR Mapping"
 * description = "Mapping between DICOM Document IE and FHIR Resources"
 // * url = http://hl7.org/fhir/uv/dicom-sr/dicom-document-ie-to-fhir
 * status = #draft
@@ -27,8 +30,7 @@ Usage: #definition
 * group.element[0]
   * code = #DICOM.SR.Document.General
   * display = "Document General Module"
-  * target
-    * relationship = #not-related-to
+  * noMap = true
 
 // Preliminary Flag (0040,A496)
 * group.element[1]
@@ -52,7 +54,7 @@ Usage: #definition
       * attribute = #OverserverType
       * valueCode = #PSN
     * property[0]
-      * code = #macro-map
+      * code = #string
       * valueString = "identified-person-or-device"      
 
 * group.element[3]
@@ -66,7 +68,7 @@ Usage: #definition
       * attribute = #OverserverType
       * valueCode = #DEV
     * property[0]
-      * code = #macro-map
+      * code = #string
       * valueString = "identified-person-or-device"      
     * comment = "If this device matches the Equipment IE device an additional device resource does not need to be created."
 
@@ -82,5 +84,5 @@ Usage: #definition
       * attribute = #DICOMConceptNameCodeSequence
       * valueCoding = DCM#126010 "Imaging Measurements"
     * property[0]
-      * code = #content-map
+      * code = #string
       * valueString = "dicom-imaging-measurement-group"      

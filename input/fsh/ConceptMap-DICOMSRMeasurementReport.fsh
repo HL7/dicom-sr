@@ -4,11 +4,13 @@ Usage:          #definition
 Title:          "ConceptMap - DICOM SR Measurement Report to FHIR Mapping"
 
 
-* id =  "dicom-sr-mreasurement-report-to-fhir"
+* id =  "dicom-sr-measurement-report-to-fhir"
+* name = "ConceptMap - DICOM SR Measurement Report to FHIR Mapping"
 * description = "Mapping between DICOM SR Measurement Report and FHIR Resources"
 * status = #draft
 * sourceScopeUri = "DICOM-SR-Measurement-Report"
 * targetScopeUri = "Bundle"
+* insert DICOMSRStructureDefinitionContent
 
 // Patient IE Mapping
 * group[0].element[0]
@@ -36,7 +38,7 @@ Title:          "ConceptMap - DICOM SR Measurement Report to FHIR Mapping"
     * relationship = #related-to
     * code = #ServiceRequest[1]
     * display = "ServiceRequest[1]"
-    * comment = "The DICOM SR Study IE is mapped to a FHIR ServiceRequqest resource"
+    * comment = "The DICOM SR Study IE is mapped to a FHIR ServiceRequest resource"
 
 // Equipment IE Mapping
 * group[2].element[0]

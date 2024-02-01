@@ -9,10 +9,10 @@ actor "Report Creator" as reporter
 
 sr_creator -> sr_creator: Create DICOM SR Measurement Report
 ig_implementor -> sr_creator: Retrieve DICOM SR Measurement Report
-ig_implementor -> ig_implementor: Extract FHIR Observtions and related resources
-ig_implementor -> fhircast_hub: Store FHIR Observtions and related resources
-report_creator -> fhircast_hub: Retrieve FHIR Observtions and related resources
-reporter -> report_creator: Review FHIR Observtions and related resources
-reporter -> report_creator: Create report containing selected FHIR Observtions and related resources
+ig_implementor -> ig_implementor: Extract FHIR Observations and related resources
+ig_implementor -> fhircast_hub: Store FHIR Observations and related resources
+report_creator -> fhircast_hub: Retrieve FHIR Observations and related resources
+reporter -> report_creator: Review FHIR Observations and related resources
+reporter -> report_creator: Create report containing selected FHIR Observations and related resources
 
 @enduml

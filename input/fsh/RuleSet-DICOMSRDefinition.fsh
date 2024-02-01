@@ -15,3 +15,5 @@ RuleSet: DICOMSRStructureDefinitionContent
 * ^contact[2].telecom.system = #email
 * ^contact[2].telecom.value = "mailto:jonathan.whitby@mi.medical.canon"
 * ^jurisdiction.coding =  http://unstats.un.org/unsd/methods/m49/m49.htm#001
+* ^extension.url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
+* ^extension.valueCode = #ii

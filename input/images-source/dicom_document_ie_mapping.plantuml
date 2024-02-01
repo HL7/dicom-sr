@@ -23,8 +23,8 @@ map imagingMeasurementsMapping {
     partOf => ImagingStudy
     basedOn => ServiceRequest
     device => EquipmentDevice or ParticipantSequence (Device)
-    performer => ParticpantSequence (Person)
-    stauts => PreliminaryFlag
+    performer => ParticipantSequence (Person)
+    status => PreliminaryFlag
 }
 
 imagingMeasurements --> imagingMeasurementsMapping: Map contents of Imaging Measurements Container

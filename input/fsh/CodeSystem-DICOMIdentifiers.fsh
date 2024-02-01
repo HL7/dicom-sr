@@ -3,9 +3,11 @@ Id: dicom-identifier-type
 Title: "Identifiers - DICOM Identifier Type"
 Description: "Identifier types related to DICOM UIDs"
 
+* insert DICOMSRStructureDefinitionContent
 * ^caseSensitive = true
 * ^content = #complete
 * ^hierarchyMeaning = #is-a
+* ^experimental = true
 * #study-instance-uid "Study Instance UID" "Unique identifier for the Study"
 * #sop-instance-uid "SOP Instance UID" "Uniquely identifies the SOP Instance"
 * #observation-uid "Observation UID" "Uniquely identifies the observation"

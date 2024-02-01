@@ -17,14 +17,14 @@ partition "Inputs" {
 while (For each child of Imaging Measurement Group container)
 
   if (Tracking Identifier or Tracking Unique Identifier) then (yes)
-   :Create BodyStructure Reference from Trackig Identifier / UID|
+   :Create BodyStructure Reference from Tracking Identifier / UID|
    :BodyStructure Reference>
    :Update ImagingMeasurementGroup
     focus += BodyStructure Reference|
   
   elseif (Finding Category) then (yes)
    :Update ImagingMeasurementGroup
-   code = Finding Cateogry|
+   code = Finding Category|
   
   elseif (Finding) then (yes)
    :Update ImagingMeasurementGroup
@@ -56,7 +56,7 @@ while (For each child of Imaging Measurement Group container)
    :AlgorithmIdentification>
    :Update ImagingMeasurementGroup
     device = AlgorithmIdentification|
-  elseif (ParentAlgorithmIdentification exusts) then (yes)
+  elseif (ParentAlgorithmIdentification exists) then (yes)
    :Update ImagingMeasurementGroup
     device = ParentAlgorithmIdentification|
   else

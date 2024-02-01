@@ -62,7 +62,7 @@ map imagingMeasurementMap {
 algorithm --> AlgorithmIdentification: Create AlgorithmIdentification from Algorithm Identification content item
 tracking --> TrackingBodyStructure: Create BodyStructure reference from Tracking Identifier / UID
 findingSite --> FindingSite: Create BodyStructure from Finding Site
-imageRegion --> ImagingSelection: Create ImagingSelectio from image reference or region
+imageRegion --> ImagingSelection: Create ImagingSelection from image reference or region
 
 inputs --> imagingMeasurementGroup
 AlgorithmIdentification --> imagingMeasurementGroup
