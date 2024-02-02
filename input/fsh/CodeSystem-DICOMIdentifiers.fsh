@@ -7,6 +7,8 @@ Description: "Identifier types related to DICOM UIDs"
 * ^content = #complete
 * ^hierarchyMeaning = #is-a
 * ^experimental = true
+* ^contact[0].telecom[0].system = #url
+* ^contact[0].telecom[0].value = "http://www.hl7.org/Special/committees/imagemgt"
 * ^extension[0].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * ^extension[0].valueCode = #ii
 * #study-instance-uid "Study Instance UID" "Unique identifier for the Study"
