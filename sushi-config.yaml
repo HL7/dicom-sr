@@ -42,9 +42,16 @@ dependencies:
 parameters:
   show-inherited-invariants: false
   usage-stats-opt-out: true
-extension:
-  - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-wg
-    valueCode: #ii
+  apply-context: true
+  apply-copyright: true
+  apply-jurisdiction: true
+  apply-license: true
+  apply-publisher: true
+  apply-version: true
+
+# extension:
+#   - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-wg
+#     valueCode: #ii
 pages:
   index.md:
     title: Home
