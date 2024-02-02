@@ -36,7 +36,7 @@ Usage: #definition
     * comment = "Each child item of this Content Sequence item will be mapped to its own FHIR Observation"
     * dependsOn[0]
       * attribute = #DICOMConceptNameCodeSequence
-      * valueCoding = http://terminology.hl7.org/NamingSystem/umls#C0034375 "Qualitative Evaluations"
+      * valueCoding = http://terminology.hl7.org/CodeSystem/umls#C0034375 "Qualitative Evaluations"
     * property[0]
       * code = #content-map
       * valueString = "dicom-qualitative-evaluations"      

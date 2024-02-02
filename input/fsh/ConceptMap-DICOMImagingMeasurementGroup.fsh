@@ -160,7 +160,7 @@ Usage:          #definition
     * display = "Observation[1]"
     * dependsOn[0]
       * attribute = #DICOMConceptNameCodeSequence
-      * valueCoding = http://terminology.hl7.org/NamingSystem/umls#C0034375 "Qualitative Evaluations"
+      * valueCoding = http://terminology.hl7.org/CodeSystem/umls#C0034375 "Qualitative Evaluations"
     * property[0]
       * code = #content-map
       * valueString = "dicom-qualitative-evaluations"           
