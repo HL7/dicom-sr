@@ -69,5 +69,5 @@ IHE® is a registered trademark of the Healthcare Information Management Systems
 
 | Name        |      Organization       |  Role |
 |--------------------------|-----------------------|--------------|
-| Jonathan Whitby | Canon Group Company | Author |
+| Jonathan Whitby | Canon Medical | Author |
 | Christopher Lindop | GE Healthcare | Author |

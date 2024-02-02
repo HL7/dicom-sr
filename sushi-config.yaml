@@ -49,9 +49,9 @@ parameters:
   apply-publisher: true
   apply-version: true
 
-# extension:
-#   - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-wg
-#     valueCode: #ii
+extension:
+  - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-wg
+    valueCode: ii
 pages:
   index.md:
     title: Home
