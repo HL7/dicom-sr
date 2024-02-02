@@ -10,10 +10,10 @@ name: DICOMSRToFHIRResourceMappingIG
 title: DICOM SR to FHIR Resource Mapping IG
 status: draft
 publisher: 
-  - name: HL7 Imaging Integration Working Group
+  - name: HL7 International / Imaging Integration
   - url: http://www.hl7.org/Special/committees/imagemgt/index.cfm
 contact:
-  - name: HL7 Imaging Integration Workgroup
+  - name: HL7 International / Imaging Integration
     telecom:
       - system: url
         value: http://www.hl7.org/Special/committees/imagemgt/index.cfm
@@ -21,10 +21,14 @@ contact:
     telecom:
       - system: email
         value: jonathan.whitby@mi.medical.canon
+      - system: url
+        value: http://www.hl7.org/Special/committees/imagemgt/index.cfm
   - name: Christopher Lindop
     telecom:
       - system: email
         value: Christopher.Lindop@ge.com
+      - system: url
+        value: http://www.hl7.org/Special/committees/imagemgt/index.cfm
 description: Provides guidance for extracting key content from DICOM Structured Report (SR) objects into FHIR Observations to make use of the results with  the larger hospital enterprise.
 jurisdiction: "http://unstats.un.org/unsd/methods/m49/m49.htm#001"
 license: CC0-1.0
@@ -34,12 +38,13 @@ releaseLabel: ci-build
 dependencies:
   fhir.dicom:
     uri: http://fhir.org/packages/fhir.dicom
-    version: 2023.1.20230123
+    version: 2024.1.20240120
 parameters:
   show-inherited-invariants: false
-  generate-turtle: false
   usage-stats-opt-out: true
-
+extension:
+  - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-wg
+    valueCode: #ii
 pages:
   index.md:
     title: Home

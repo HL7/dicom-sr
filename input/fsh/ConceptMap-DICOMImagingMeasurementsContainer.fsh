@@ -6,7 +6,6 @@ Usage: #definition
 * id = "dicom-imaging-measurements-container-to-fhir"
 * name = "ConceptMap - DICOM Imaging Measurements Container to FHIR Mapping"
 * description = "Mapping between DICOM Document IE and FHIR Resources"
-* url = "http://hl7.org/fhir/uv/dicom-sr/dicom-imaging-measurements-container-to-fhir"
 * status = #draft
 * experimental = true
 * extension[0].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"

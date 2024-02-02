@@ -55,7 +55,7 @@ Description:    "DICOM SR Derived Imaging Measurement Mapping to Observation"
 * partOf[imagingStudyRef].identifier ^short = "Identifier related to Study Instance UID"
 
 * category MS
-* category = DCM#126011 "Derived Imaging Measurement"
+* category = DCM#126011 "Derived Imaging Measurements"
 
 * code MS
 
