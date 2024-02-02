@@ -51,7 +51,7 @@ Description:    "DICOM SR Source Series For Segmentation Mapping to ImagingSelec
 * seriesUid MS
 // seriesUid -> UID value of 121232, DCM, "Source series for segmentation" if present
 
-* instance ^slicing.discriminator.type = value
+* instance ^slicing.discriminator.type = #value
 * instance ^slicing.discriminator.path = "type"
 * instance ^slicing.rules = #open
 * instance ^slicing.ordered = false

@@ -13,7 +13,7 @@ Description:    "DICOM SR Imaging Measurement Mapping to Observation"
 * ^abstract = true
 * insert DICOMSRStructureDefinitionContent
 
-* identifier ^slicing.discriminator.type = value
+* identifier ^slicing.discriminator.type = #value
 * identifier ^slicing.discriminator.path = "type"
 * identifier ^slicing.rules = #open
 * identifier ^slicing.ordered = false
@@ -62,7 +62,7 @@ Description:    "DICOM SR Imaging Measurement Mapping to Observation"
 * subject only Reference(Patient)
 * subject 1..1 MS
 
-* focus ^slicing.discriminator.type = value
+* focus ^slicing.discriminator.type = #value
 * focus ^slicing.discriminator.path = "type"
 * focus ^slicing.rules = #open
 * focus ^slicing.ordered = false

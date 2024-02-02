@@ -48,7 +48,7 @@ Description:    "DICOM SR Illustration Of ROI Mapping to ImagingSelection"
 * subject 1..1 MS
 * subject only Reference(Patient)
 
-* instance ^slicing.discriminator.type = value
+* instance ^slicing.discriminator.type = #value
 * instance ^slicing.discriminator.path = "type"
 * instance ^slicing.rules = #open
 * instance ^slicing.ordered = false

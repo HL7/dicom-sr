@@ -13,7 +13,7 @@ Description:    "DICOM SR Imaging Qualitative Evaluation Mapping to Observation"
 * ^abstract = true
 * insert DICOMSRStructureDefinitionContent
 
-* identifier ^slicing.discriminator.type = value
+* identifier ^slicing.discriminator.type = #value
 * identifier ^slicing.discriminator.path = "type"
 * identifier ^slicing.rules = #open
 * identifier ^slicing.ordered = false
