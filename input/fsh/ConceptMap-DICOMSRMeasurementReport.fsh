@@ -14,6 +14,13 @@ Title:          "ConceptMap - DICOM SR Measurement Report to FHIR Mapping"
 * sourceScopeUri = "DICOM-SR-Measurement-Report"
 * targetScopeUri = "Bundle"
 
+* property[0]
+  * code = #references
+  * type = #string
+* property[1]
+  * code = #imaging-measurement-group-map
+  * type = #string
+
 // Patient IE Mapping
 * group[0].element[0]
   * code = #DICOM.Patient

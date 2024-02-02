@@ -32,6 +32,16 @@ Usage:          #definition
   * uri = "https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.17.3.3.html#table_C.17-5"
   * type = #Coding
 
+* property[0]
+  * code = #macro-map
+  * type = #string
+* property[1]
+  * code = #content-map
+  * type = #string
+* property[2]
+  * code = #system
+  * type = #string
+
 // Document General Module
 * group.element[0]
   * code = #DICOM.Document.General
@@ -60,7 +70,7 @@ Usage:          #definition
       * attribute = #OverserverType
       * valueCode = #PSN
     * property[0]
-      * code = #string
+      * code = #macro-map
       * valueString = "identified-person-or-device"      
 
 * group.element[3]
@@ -70,13 +80,13 @@ Usage:          #definition
     * relationship = #equivalent
     * code = #Device[1]
     * display = "Device[1]"
+    * comment = "If this device matches the Equipment IE device an additional device resource does not need to be created."
     * dependsOn[0]
       * attribute = #OverserverType
       * valueCode = #DEV
     * property[0]
-      * code = #string
+      * code = #macro-map
       * valueString = "identified-person-or-device"      
-    * comment = "If this device matches the Equipment IE device an additional device resource does not need to be created."
 
 // Document Content Module
 * group.element[4]
@@ -121,7 +131,7 @@ Usage:          #definition
       * attribute = #DICOMConceptNameCodeSequence
       * valueCoding = DCM#126010 "Imaging Measurements"
     * property[0]
-      * code = #string
+      * code = #content-map
       * valueString = "dicom-imaging-measurement-group"      
 
 // Content Sequence (0040,A730)
@@ -136,7 +146,7 @@ Usage:          #definition
       * attribute = #DICOMConceptNameCodeSequence
       * valueCoding = DCM#126011 "Derived Imaging Measurements"
     * property[0]
-      * code = #string
+      * code = #content-map
       * valueString = "dicom-derived-imaging-measurements"           
 
 // Content Sequence (0040,A730)
@@ -151,6 +161,6 @@ Usage:          #definition
       * attribute = #DICOMConceptNameCodeSequence
       * valueCoding = http://terminology.hl7.org/NamingSystem/umls#C0034375 "Qualitative Evaluations"
     * property[0]
-      * code = #string
+      * code = #content-map
       * valueString = "dicom-qualitative-evaluations"           
 

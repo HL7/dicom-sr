@@ -20,6 +20,10 @@ Usage: #definition
   * uri = "https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.17.3.3.html#table_C.17-5"
   * type = #Coding
 
+* property[0]
+  * code = #content-map
+  * type = #string
+
 // Document General Module
 * group.element[0]
   * code = #DICOM.ContentSequence.QualitativeEvaluations
@@ -33,5 +37,5 @@ Usage: #definition
       * attribute = #DICOMConceptNameCodeSequence
       * valueCoding = http://terminology.hl7.org/NamingSystem/umls#C0034375 "Qualitative Evaluations"
     * property[0]
-      * code = #string
+      * code = #content-map
       * valueString = "dicom-qualitative-evaluations"      

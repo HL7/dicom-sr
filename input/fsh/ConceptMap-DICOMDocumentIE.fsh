@@ -27,6 +27,10 @@ Usage: #definition
   * uri = "https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.17.3.3.html#table_C.17-5"
   * type = #Coding
 
+* property[0]
+  * code = #macro-map
+  * type = #string
+
 // Document General Module
 * group.element[0]
   * code = #DICOM.SR.Document.General
@@ -55,7 +59,7 @@ Usage: #definition
       * attribute = #OverserverType
       * valueCode = #PSN
     * property[0]
-      * code = #string
+      * code = #macro-map
       * valueString = "identified-person-or-device"      
 
 * group.element[3]
@@ -65,13 +69,13 @@ Usage: #definition
     * relationship = #equivalent
     * code = #Device[1]
     * display = "Device[1]"
+    * comment = "If this device matches the Equipment IE device an additional device resource does not need to be created."
+    * property[0]
+      * code = #macro-map
+      * valueString = "identified-person-or-device"      
     * dependsOn[0]
       * attribute = #OverserverType
       * valueCode = #DEV
-    * property[0]
-      * code = #string
-      * valueString = "identified-person-or-device"      
-    * comment = "If this device matches the Equipment IE device an additional device resource does not need to be created."
 
 // Content Sequence (0040,A730)
 * group.element[4]
