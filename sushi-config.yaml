@@ -42,6 +42,7 @@ dependencies:
 parameters:
   show-inherited-invariants: false
   usage-stats-opt-out: true
+  apply-contact: true
   apply-context: true
   apply-copyright: true
   apply-jurisdiction: true

@@ -1,3 +1,5 @@
+== Suppressed Messages ==
+
 # Base FHIR generated StructuredDefinition references deprecated item
 Reference to deprecated item http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
 Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
