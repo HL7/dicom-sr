@@ -1,7 +1,6 @@
 == Suppressed Messages ==
 
 # Base FHIR generated StructuredDefinition references deprecated item
-Reference to deprecated item http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
 Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
 
 # DICOM Identifier Code System defined as part of this IG
@@ -11,4 +10,5 @@ Reference to experimental CodeSystem http://hl7.org/fhir/uv/dicom-sr/CodeSystem/
 Reference to draft CodeSystem http://hl7.org/fhir/hl7-work-group|1.0.0
 
 # This code system is retired but still used in DICOM SR
-A definition for CodeSystem 'http://terminology.hl7.org/CodeSystem/umls' could not be found, so the code cannot be validated (from http://tx.fhir.org/r4)
+A definition for CodeSystem 'http://terminology.hl7.org/CodeSystem/umls' could not be found, so the code cannot be validated
+The definition for the Code System with URI 'http://terminology.hl7.org/CodeSystem/umls' doesnt provide any codes so the code cannot be validated
