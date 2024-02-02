@@ -18,7 +18,7 @@ Description:    "DICOM SR TID Imaging Measurement Group Mapping to Observation"
 * ^abstract = true
 * insert DICOMSRStructureDefinitionContent
 
-* identifier ^slicing.discriminator.type = #pattern
+* identifier ^slicing.discriminator.type = value
 * identifier ^slicing.discriminator.path = "type"
 * identifier ^slicing.rules = #open
 * identifier ^slicing.ordered = false
@@ -67,7 +67,7 @@ Description:    "DICOM SR TID Imaging Measurement Group Mapping to Observation"
 * subject only Reference(Patient)
 * subject 1..1 MS
 
-* focus ^slicing.discriminator.type = #pattern
+* focus ^slicing.discriminator.type = value
 * focus ^slicing.discriminator.path = "type"
 * focus ^slicing.rules = #open
 * focus ^slicing.ordered = false
@@ -129,7 +129,7 @@ Description:    "DICOM SR TID Imaging Measurement Group Mapping to Observation"
 * issued 1..1 MS
 * issued ^short = "Observation Date Time"
 
-* hasMember ^slicing.discriminator.type = #pattern
+* hasMember ^slicing.discriminator.type = value
 * hasMember ^slicing.discriminator.path = "type"
 * hasMember ^slicing.rules = #open
 * hasMember ^slicing.ordered = false

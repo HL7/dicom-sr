@@ -5,7 +5,7 @@ Title:          "ConceptMap - DICOM SR Measurement Report to FHIR Mapping"
 
 
 * id =  "dicom-sr-measurement-report-to-fhir"
-* name = "ConceptMap - DICOM SR Measurement Report to FHIR Mapping"
+* name = "DICOMSRMeasurementReportToFHIRMapping"
 * description = "Mapping between DICOM SR Measurement Report and FHIR Resources"
 * status = #draft
 * experimental = true

@@ -4,7 +4,7 @@ Title:          "ConceptMap - DICOM Imaging Measurement Group to FHIR Mapping"
 Usage:          #definition
 
 * id =  "dicom-imaging-measurement-group-to-fhir"
-* name = "ConceptMap - DICOM Imaging Measurement Group to FHIR Mapping"
+* name = "DICOMImagingMeasurementGroupToFHIRMapping"
 * description = "Mapping between DICOM Imaging Measurement Group and FHIR Resources"
 * status = #draft
 * experimental = true

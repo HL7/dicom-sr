@@ -4,7 +4,7 @@ Title:          "ConceptMap - DICOM Qualitative Evaluation to FHIR Mapping"
 Usage: #definition
 
 * id =  "concept-map-dicom-umls-c0034375"
-* name = "ConceptMap - DICOM Qualitative Evaluation to FHIR Mapping"
+* name = "DICOMQualitativeEvaluationToFHIRMapping"
 * description = "Mapping between DICOM Document IE and FHIR Resources"
 * status = #draft
 * experimental = true

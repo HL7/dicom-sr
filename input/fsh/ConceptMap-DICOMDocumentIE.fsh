@@ -4,7 +4,7 @@ Title:          "ConceptMap - DICOM Document IE to FHIR Mapping"
 Usage: #definition
 
 * id =  "dicom-document-ie-to-fhir"
-* name = "ConceptMap - DICOM Document IE to FHIR Mapping"
+* name = "DICOMDocumentIEToFHIRMapping"
 * description = "Mapping between DICOM Document IE and FHIR Resources"
 * status = #draft
 * experimental = true

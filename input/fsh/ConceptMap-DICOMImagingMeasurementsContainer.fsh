@@ -4,7 +4,7 @@ Title:          "ConceptMap - DICOM Imaging Measurements Container to FHIR Mappi
 Usage: #definition
 
 * id = "dicom-imaging-measurements-container-to-fhir"
-* name = "ConceptMap - DICOM Imaging Measurements Container to FHIR Mapping"
+* name = "DICOMImagingMeasurementsContainerToFHIRMapping"
 * description = "Mapping between DICOM Document IE and FHIR Resources"
 * status = #draft
 * experimental = true

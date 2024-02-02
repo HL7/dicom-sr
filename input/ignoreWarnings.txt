@@ -3,3 +3,9 @@
 # Base FHIR generated StructuredDefinition references deprecated item
 Reference to deprecated item http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
 Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+
+# DICOM Identifier Code System defined as part of this IG
+Reference to experimental CodeSystem http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-identifier-type|0.1.0
+
+# Reference to this Code System required by IG
+Reference to draft CodeSystem http://hl7.org/fhir/hl7-work-group|1.0.0

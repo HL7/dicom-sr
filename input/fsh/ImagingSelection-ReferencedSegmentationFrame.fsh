@@ -48,7 +48,7 @@ Description:    "DICOM SR Referenced Segmentation Frame Mapping to ImagingSelect
 * subject only Reference(Patient)
 * subject 1..1 MS
 
-* instance ^slicing.discriminator.type = #pattern
+* instance ^slicing.discriminator.type = value
 * instance ^slicing.discriminator.path = "type"
 * instance ^slicing.rules = #open
 * instance ^slicing.ordered = false
