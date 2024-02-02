@@ -7,6 +7,7 @@ Title:          "ConceptMap - DICOM SR Measurement Report to FHIR Mapping"
 * id =  "dicom-sr-measurement-report-to-fhir"
 * name = "ConceptMap - DICOM SR Measurement Report to FHIR Mapping"
 * description = "Mapping between DICOM SR Measurement Report and FHIR Resources"
+* url = "dicom-sr-measurement-report-to-fhir"
 * status = #draft
 * experimental = true
 * extension[0].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"

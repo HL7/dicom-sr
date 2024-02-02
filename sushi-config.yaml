@@ -4,7 +4,7 @@
 # │  https://fshschool.org/docs/sushi/configuration/#full-configuration                            │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 id: hl7.fhir.uv.dicom-sr
-canonical: http://hl7.org/fhir/dicom-sr
+canonical: http://hl7.org/fhir/uv/dicom-sr
 version: 0.1.0
 name: DICOMSRToFHIRResourceMappingIG
 title: DICOM SR to FHIR Resource Mapping IG

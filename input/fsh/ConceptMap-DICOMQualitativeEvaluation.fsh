@@ -3,10 +3,10 @@ InstanceOf:     ConceptMap
 Title:          "ConceptMap - DICOM Qualitative Evaluation to FHIR Mapping"
 Usage: #definition
 
-* id =  "ConceptMap-dicom-umls-c0034375"
+* id =  "concept-map-dicom-umls-c0034375"
 * name = "ConceptMap - DICOM Qualitative Evaluation to FHIR Mapping"
 * description = "Mapping between DICOM Document IE and FHIR Resources"
-// * url = http://hl7.org/fhir/uv/dicom-sr/dicom-document-ie-to-fhir
+* url = "http://hl7.org/fhir/uv/dicom-sr/concept-map-dicom-umls-c0034375"
 * status = #draft
 * experimental = true
 * extension[0].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"

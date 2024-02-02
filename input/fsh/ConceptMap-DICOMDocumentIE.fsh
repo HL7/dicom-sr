@@ -6,7 +6,7 @@ Usage: #definition
 * id =  "dicom-document-ie-to-fhir"
 * name = "ConceptMap - DICOM Document IE to FHIR Mapping"
 * description = "Mapping between DICOM Document IE and FHIR Resources"
-// * url = http://hl7.org/fhir/uv/dicom-sr/dicom-document-ie-to-fhir
+* url = "http://hl7.org/fhir/uv/dicom-sr/dicom-document-ie-to-fhir"
 * status = #draft
 * experimental = true
 * extension[0].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
@@ -29,6 +29,9 @@ Usage: #definition
 
 * property[0]
   * code = #macro-map
+  * type = #string
+* property[1]
+  * code = #content-map
   * type = #string
 
 // Document General Module
@@ -89,5 +92,5 @@ Usage: #definition
       * attribute = #DICOMConceptNameCodeSequence
       * valueCoding = DCM#126010 "Imaging Measurements"
     * property[0]
-      * code = #string
+      * code = #content-map
       * valueString = "dicom-imaging-measurement-group"      
