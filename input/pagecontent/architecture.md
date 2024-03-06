@@ -37,9 +37,9 @@ The above resource profiles depend on the following resource profiles:
 * [General Equipment](StructureDefinition-dicom-general-equipment.html) profiles the Device resource representing the DICOM General Equipment Module [DICOM PS3.3 C.7.5.1 General Equipment Module](https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.5.html#sect_C.7.5.1)
 
 ##### BodyStructure<a name="resource-bodystructure"></a>
-* [Finding Site](StructureDefinition-dicom-sr-finding-site) profiles the BodyStructure resource representing a finding site content item [CID SCT#363698007 "Finding Site"](http://snomed.info/id/363698007)
+* [Finding Site](StructureDefinition-dicom-sr-finding-site.html) profiles the BodyStructure resource representing a finding site content item [CID SCT#363698007 "Finding Site"](http://snomed.info/id/363698007)
 
-#### Supporting DataType Profiles<a name="datatypes"></a>
+#### Supporting DataType Profiles<a name="data-types"></a>
 There is no special supporting DataType profiles defined by this IG.
 
 #### Supporting Extensions<a name="extensions"></a>
@@ -68,7 +68,7 @@ All mapped content items are children of the following `CONTAINER` content items
 | Container Concept Name | Child FHIR Resource Profile | Notes |
 | ----------------- | --------------------- | ----- |
 | DCM#126010 "Imaging Measurements" | [Imaging Measurement Group](StructureDefinition-imaging-measurement-group.html) | See [Imaging Measurement Group relationship](#measurementgroup) | 
-| DCM#126011 "Derived Imaging Measurements" | [Derived Imaging Measurements](StructureDefinition-derived-imaging-measurements.html) | See [Derived Imaging Measurements relationship](#derivedmeasurements) |
+| DCM#126011 "Derived Imaging Measurements" | [Derived Imaging Measurements](StructureDefinition-derived-imaging-measurement.html) | See [Derived Imaging Measurements relationship](#derivedmeasurements) |
 | UMLS#C0034375  "Qualitative Evaluations" | [Imaging Qualitative Evaluation](StructureDefinition-imaging-qualitative-evaluation.html) | See [Imaging Qualitative Evaluations relationship](#qualitativeevaluations) |
 
 e.g. the children of the `CONTAINER` with a Concept Name of DCM#126010 "Imaging Measurements" are mapped to [Measurement Group](StructureDefinition-imaging-measurement-group.html) Observations.
@@ -99,11 +99,11 @@ A `TEXT` or `CODE` child content item should only be interpreted as a qualitativ
 
 <a name="derivedmeasurements"></a>
 ###### Derived Imaging Measurements Relationship<a name="derived-imaging-measurement"></a>
-A Derived Imaging Measurement `CONTAINER` contains 0-n `NUM` content items representing derived numerical measurements. Each of these is mapped to a [Derived Measurement](StructureDefinition-derived-imaging-measurements.html) Observation.
+A Derived Imaging Measurement `CONTAINER` contains 0-n `NUM` content items representing derived numerical measurements. Each of these is mapped to a [Derived Measurement](StructureDefinition-derived-imaging-measurement.html) Observation.
 
 A Derived Imaging Measurement `CONTAINER` contains 0-n Imaging Measurement Group `CONTAINER` content items. Each of these is mapped to an [Imaging Measurement Group](StructureDefinition-imaging-measurement-group.html) Observation (see [Imaging Measurement Group relationship](#measurementgroup)).
 
-The [Derived Imaging Measurements](StructureDefinition-derived-imaging-measurements.html) Observation `derivedFrom` element references the child [Imaging Measurement Group](StructureDefinition-imaging-measurement-group.html) Observations. 
+The [Derived Imaging Measurements](StructureDefinition-derived-imaging-measurement.html) Observation `derivedFrom` element references the child [Imaging Measurement Group](StructureDefinition-imaging-measurement-group.html) Observations. 
 
 <a name="qualitativeevaluations"></a>
 ###### Imaging Qualitative Evaluations Relationship<a name="imaging-qualitative-evalutation"></a>
@@ -137,7 +137,29 @@ This implementation guide assumes that these resources already exist in the dest
 
 Instead, it specifies the identifier mapping to allow newly-created resources to be associated with the appropriate existing FHIR resources.
 
-See [DICOM SR Information Object Definition (IOD) Mapping to FHIR](ConceptMap-dicom-sr-iod-to-fhir.html) and [DICOM SR Document Information Entity (IE) Mapping to FHIR](ConceptMap-dicom-document-ie-to-fhir.html).
+See [DICOM SR Information Object Definition (IOD) Mapping to FHIR](ConceptMap-dicom-sr-measurement-report-to-fhir.html) and [DICOM SR Document Information Entity (IE) Mapping to FHIR](ConceptMap-dicom-document-ie-to-fhir.html).
 
+### Actors<a name="actors"></a>
+
+### Terminology<a name="terminology"></a>
+
+### Security Consideration<a name="sec"></a>
+Exchanging imaging measurement report resources makes use of patient-specific information which could be exploited by malicious actors resulting in exposure of patient data. For these reasons, all data exchange between the different actors must be secured appropriately with access to limited authorized individuals, data protected in transit, and appropriate audit measures taken. 
+
+Implementers SHOULD be aware of these [security considerations](http://hl7.org/fhir/R5/security.html){:target="_blank"} associated with FHIR transactions, particularly those related to:
+
+* [Communications](http://hl7.org/fhir/R5/security.html#http){:target="_blank"}
+* [Authentication](http://hl7.org/fhir/R5/security.html#authentication){:target="_blank"}
+* [Authorization/Access Control](http://hl7.org/fhir/R5/security.html#binding){:target="_blank"}
+* [Audit Logging](http://hl7.org/fhir/R5/security.html#audit){:target="_blank"}
+* [Digital Signatures](http://hl7.org/fhir/R5/signatures.html){:target="_blank"}
+* [Security Labels](http://hl7.org/fhir/R5/security-labels.html){:target="_blank"}
+* [Narrative](http://hl7.org/fhir/R5/security.html#narrative){:target="_blank"}
+
+These security requirements are highlighted in the context of this IG:
+* Systems **SHALL** keep audit logs of the various transactions. Some auditing workflows can be used like IHE ATNA or RESTful ATNA.
+* Systems **SHALL** use TLS version 1.2 or higher for all transmissions not taking place over a secure network connection. IHE ATNA may be followed for the TLS usage.
+* Systems **SHALL** conform to FHIR [Communications Security requirements](http://hl7.org/fhir/R5/security.html#http){:target="_blank"}.
+* Systems **SHALL** implement consent requirements per their country, state, local, and institutional policies.
 
 [^1]: D. Clunie, DICOM Structured Reporting, PixelMed Publishing, 2000, p. 32 [E-book](http://www.pixelmed.com/srbook.html)

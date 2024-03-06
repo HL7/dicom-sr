@@ -1,7 +1,7 @@
 This chapter describes the scope of this guide, provides background information, key concepts,
 and describes the use cases supported by this implementation guide.
 
-1. [Problem](problem) - Description of the Problem
+1. [Problem](#problem) - Description of the Problem
 2. [Scope](#scope) - Scope of the IG
 3. [Intended Readers](#readers) - Intended readers of the IG
 4. [Use cases](#use-cases) - Key use cases covered by the IG

@@ -14,11 +14,11 @@ This IG is organized into three main sections:
 * [Chapter II](architecture.html): Architecture & Implementation
     * [Profiles & Extensions](architecture.html#profiles) - FHIR Profiles and extensions defined in the IG
       * [Resources](architecture.html#resources) - FHIR Resource Profiles
-        * [Observation](architcture.html#observation) - Observation
-        * [ImagingSelection](architcture.html#imagingselection) - ImagingSelection
-        * [Device](architcture.html#device) - Device
-        * [BodySite](architcture.html#bodysite) - BodySite
-      * [Data Types](architcture.html#datatypes) - FHIR Data Type Profiles
+        * [Observation](architcture.html#resource-observation) - Observation
+        * [ImagingSelection](architcture.html#resource-imagingselection) - ImagingSelection
+        * [Device](architcture.html#resource-device) - Device
+        * [BodySite](architcture.html#resource-bodysite) - BodySite
+      * [Data Types](architcture.html#data-types) - FHIR Data Type Profiles
       * [Extensions](architecture.html#extensions) - FHIR Extensions
       * [Profile Relationships](architecture.html#relationships) - Relationships between profiled FHIR resources and other standards
         * [DICOM SR Basics](architecture.html#dicom-sr) - Overview of DICOM SR and terminology
@@ -34,7 +34,7 @@ This IG is organized into three main sections:
     * [DICOM SR Measurement Report Instance Mapping](mapping.html#sr_instance)
     * [DICOM SR Document Mapping](mapping.html#sr_document)
     * [Imaging Measurements Container Mapping](mapping.html#imaging_measurements_container)
-    * [Imaging Measurement Group Mapping](mapping.html#sr_iimaging_measurement_groupnstance)
+    * [Imaging Measurement Group Mapping](mapping.html#imaging_measurement_group)
 * [Chapter IV](testing.html): Testing & Conformance
     * [Test Plan](testing.html#testplan) - Test plans for the different actors
     * [Test Data](testing.html#testdata) - Test data that can be used
