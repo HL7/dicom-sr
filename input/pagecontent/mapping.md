@@ -11,7 +11,7 @@ The DICOM SR Measurement Report instance contains the following information rele
 
 ![DICOM SR Measurement Report Instance Mapping](./dicom_sr_measurement_report_mapping.svg){: width="100%"}
 
-See also the [DICOM SR IOD to FHIR ConceptMap](ConceptMap-dicom-sr-mreasurement-report-to-fhir.html).
+See also the [DICOM SR IOD to FHIR ConceptMap](ConceptMap-dicom-sr-measurement-report-to-fhir.html).
 
 ### Document IE Mapping
 <a name="sr_document"></a>

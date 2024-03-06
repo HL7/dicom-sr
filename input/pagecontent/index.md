@@ -14,11 +14,11 @@ This IG is organized into three main sections:
 * [Chapter II](architecture.html): Architecture & Implementation
     * [Profiles & Extensions](architecture.html#profiles) - FHIR Profiles and extensions defined in the IG
       * [Resources](architecture.html#resources) - FHIR Resource Profiles
-        * [Observation](architcture.html#resource-observation) - Observation
-        * [ImagingSelection](architcture.html#resource-imagingselection) - ImagingSelection
-        * [Device](architcture.html#resource-device) - Device
-        * [BodySite](architcture.html#resource-bodysite) - BodySite
-      * [Data Types](architcture.html#data-types) - FHIR Data Type Profiles
+        * [Observation](architecture.html#resource-observation) - Observation
+        * [ImagingSelection](architecture.html#resource-imagingselection) - ImagingSelection
+        * [Device](architecture.html#resource-device) - Device
+        * [BodySite](architecture.html#resource-bodysite) - BodySite
+      * [Data Types](architecture.html#data-types) - FHIR Data Type Profiles
       * [Extensions](architecture.html#extensions) - FHIR Extensions
       * [Profile Relationships](architecture.html#relationships) - Relationships between profiled FHIR resources and other standards
         * [DICOM SR Basics](architecture.html#dicom-sr) - Overview of DICOM SR and terminology

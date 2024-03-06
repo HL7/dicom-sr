@@ -66,6 +66,9 @@ pages:
   mapping.md:
     title: Mapping
     generation: markdown
+  testing.md:
+    title: Testing
+    generation: markdown
 
 # ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
 # │  To use a provided input/includes/menu.xml file, delete the "menu" property below.             │
@@ -76,4 +79,5 @@ menu:
   Background: background.html
   Architecture: architecture.html
   Mapping: mapping.html
+  Testing: testing.html
   Artifact Index: artifacts.html
