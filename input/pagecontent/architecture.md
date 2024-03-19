@@ -131,6 +131,7 @@ e.g.
   * If the Imaging Qualitative Evaluation does not have a defined Algorithm Identification Device it's `device` element will reference the Equipment Device
 
 ##### Other Resource Relationships
+<a name="other_resources"></a>
 All DICOM SOP Instances include information relating to the patient, service request, procedure, etc.
 
 This implementation guide assumes that these resources already exist in the destination FHIR server and does not include a full mapping between their DICOM representation and their FHIR representation.
