@@ -35,6 +35,9 @@ This IG is organized into three main sections:
     * [DICOM SR Document Mapping](mapping.html#sr_document)
     * [Imaging Measurements Container Mapping](mapping.html#imaging_measurements_container)
     * [Imaging Measurement Group Mapping](mapping.html#imaging_measurement_group)
+    * [Imaging Measurement Mapping](mapping.html#imaging_measurement)
+    * [Imaging Qualitative Evaluation Mapping](mapping.html#imaging_qualitative_evaluation)
+    * [Derived Imaging Measurement Mapping](mapping.html#derived_imaging_measurement)
 * [Chapter IV](testing.html): Testing & Conformance
     * [Test Plan](testing.html#testplan) - Test plans for the different actors
     * [Test Data](testing.html#testdata) - Test data that can be used
