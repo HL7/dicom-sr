@@ -134,7 +134,9 @@ e.g.
 <a name="other_resources"></a>
 All DICOM SOP Instances include information relating to the patient, service request, procedure, etc.
 
-This implementation guide assumes that these resources already exist in the destination FHIR server and does not include a full mapping between their DICOM representation and their FHIR representation.
+Typically, these resources are managed by the EMR and the imaging system is not able to create or update these resources in the FHIR server.
+
+Therefore, this implementation guide assumes that these resources already exist in the destination FHIR server and does not include a full mapping between their DICOM representation and their FHIR representation.
 
 Instead, it specifies the identifier mapping to allow newly-created resources to be associated with the appropriate existing FHIR resources.
 

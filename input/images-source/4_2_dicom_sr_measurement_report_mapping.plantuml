@@ -15,9 +15,12 @@ object ImagingStudy {
 object ServiceRequest {
     identifier = AccessionNumber
 }
-object EquipmentDevice
+object "Device - EquipmentDevice" as equipmentDevice {
+    identifier = Device UID
+    displayName = Manufacturer Model Name
+}
 
-map documentIEMapping {
+map "[[mapping.html#sr_document Document IE Mapping]]" as documentIEMapping {
     subject => Patient
     partOf => ImagingStudy
     basedOn => ServiceRequest
@@ -27,7 +30,7 @@ map documentIEMapping {
 patientIE --> Patient: Create Patient Reference from Patient IE
 studyIE --> ImagingStudy: Create Patient Reference from Study IE
 studyIE --> ServiceRequest: Create Patient Reference from Study IE
-equipmentIE --> EquipmentDevice: Create EquipmentDevice from General Equipment IE
+equipmentIE --> equipmentDevice: Create EquipmentDevice from General Equipment IE
 
 documentIE --> documentIEMapping: Map contents of Document IE
 @enduml

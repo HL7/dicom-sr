@@ -49,6 +49,7 @@ parameters:
   apply-license: true
   apply-publisher: true
   apply-version: true
+  # auto-oid-root:
 
 extension:
   - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-wg

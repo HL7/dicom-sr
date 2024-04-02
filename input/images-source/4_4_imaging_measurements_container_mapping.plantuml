@@ -1,7 +1,7 @@
-@startuml imaging_measurements_mapping
+@startuml imaging_measurements_container_mapping
 left to right direction
 
-map inputs {
+map "[[mapping.html#sr_document Inputs from DICOM Document IE Mapping]]" as inputs {
    subject => Patient
    partOf => ImagingStudy
    basedOn => ServiceRequest
@@ -19,27 +19,27 @@ package "Imaging Measurements Container" as imagingMeasurementGroup {
    }
 }
 
-object AlgorithmIdentification {
+object "Device - AlgorithmIdentification" as AlgorithmIdentification {
     parent = EquipmentDevice
 }
 
 algorithm --> AlgorithmIdentification: Create AlgorithmIdentification from Algorithm Identification content item
 
-map measurementGroupMap {
+map "[[mapping.html#imaging_measurement_group Imaging Measurement Group Mapping]]" as measurementGroupMap {
     subject => Patient
     partOf => ImagingStudy
     basedOn => ServiceRequest
     device => AlgorithmIdentification or EquipmentDevice
 }
 
-map derivedMeasurementsMap {
+map "[[mapping.html#derived_imaging_measurement Derived Imaging Measurement Mapping]]" as derivedMeasurementsMap {
     subject => Patient
     partOf => ImagingStudy
     basedOn => ServiceRequest
     device => AlgorithmIdentification or EquipmentDevice
 }
 
-map qualitativeEvaluationsMap {
+map "[[mapping.html#imaging_qualitative_evaluation Imaging Qualitative Evaluation Mapping]]" as qualitativeEvaluationsMap {
     subject => Patient
     partOf => ImagingStudy
     basedOn => ServiceRequest

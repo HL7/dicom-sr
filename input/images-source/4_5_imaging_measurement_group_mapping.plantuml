@@ -1,7 +1,7 @@
 @startuml imaging_measurement_group_mapping
 left to right direction
 
-map inputs {
+map "[[mapping.html#imaging_measurements_container Inputs from Imaging Measurements Container Mapping]]" as inputs {
    subject => Patient
    partOf => ImagingStudy
    basedOn => ServiceRequest
@@ -21,21 +21,21 @@ package "Measurements Group" as measurementGroup {
    }
 }
 
-object AlgorithmIdentification {
+object "Device - AlgorithmIdentification" as AlgorithmIdentification {
     parent = EquipmentDevice
 }
 
-object TrackingBodyStructure {
+object "Body Structure - TrackingBodyStructure" as TrackingBodyStructure {
     identifier = TrackingID or TrackingUID
 }
 
-object FindingSite {
+object "Body Structure - FindingSite" as FindingSite {
     includedStructure.structure = Finding Site
 }
 
 object ImagingSelection 
 
-object "ImagingMeasurementGroup" as imagingMeasurementGroup {
+object "Observation - Imaging Measurement Group" as imagingMeasurementGroup {
     subject = Patient
     partOf = ImagingStudy
     basedOn = ServiceRequest
@@ -49,7 +49,7 @@ object "ImagingMeasurementGroup" as imagingMeasurementGroup {
     hasMember = ImagingMeasurement
 }
 
-map imagingMeasurementMap {
+map "[[mapping.html#imaging_measurement Imaging Measurement Mapping]]" as imagingMeasurementMap {
     subject => Patient
     partOf => ImagingStudy
     basedOn => ServiceRequest
