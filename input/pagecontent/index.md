@@ -9,6 +9,7 @@ This IG is organized into three main sections:
     * [Scope](background.html#scope) - Scope of the IG
     * [Intended Readers](background.html#readers) - Intended readers of the IG
     * [Use cases](background.html#use-cases) - Key use cases covered by the IG
+    * [FHIR Version 4 compatibility](background.html#fhir-version-4-compatibility) - FHIR Version 4 compatibility
     * [Glossary](background.html#glossary) - Glossary
     * [References](background.html#references) - References
 * [Chapter II](architecture.html): Architecture & Implementation
@@ -38,10 +39,10 @@ This IG is organized into three main sections:
     * [Imaging Measurement Mapping](mapping.html#imaging_measurement)
     * [Imaging Qualitative Evaluation Mapping](mapping.html#imaging_qualitative_evaluation)
     * [Derived Imaging Measurement Mapping](mapping.html#derived_imaging_measurement)
-* [Chapter IV](testing.html): Testing & Conformance
-    * [Test Plan](testing.html#testplan) - Test plans for the different actors
-    * [Test Data](testing.html#testdata) - Test data that can be used
-    * [Resources Samples](testing.html#samples) - Samples of resources profiled following this IG
+* [Chapter IV](example.html): Example DICOM SR Measurement Report Mapping
+    * [Example Instance](example.html#example_sr) - Example DICOM SR Measurement Report
+    * [Patient Mapping](example.html#example_patient) - Patient Mapping Example
+    * [Service Request Mapping](example.html#example_service_request) - Service Request Mapping Example
 
 ### Copyrights and acknowledgments
 

@@ -49,7 +49,7 @@ parameters:
   apply-license: true
   apply-publisher: true
   apply-version: true
-  # auto-oid-root:
+  auto-oid-root: 2.16.840.1.113883.4.642.40.39
 
 extension:
   - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-wg
@@ -67,8 +67,8 @@ pages:
   mapping.md:
     title: Mapping
     generation: markdown
-  testing.md:
-    title: Testing
+  example.md:
+    title: Example
     generation: markdown
 
 # ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
@@ -80,5 +80,5 @@ menu:
   Background: background.html
   Architecture: architecture.html
   Mapping: mapping.html
-  Testing: testing.html
+  Example: example.html
   Artifact Index: artifacts.html

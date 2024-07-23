@@ -7,7 +7,7 @@ RuleSet: DICOMSRStructureDefinitionContent
 * ^publisher = "HL7 International"
 * ^contact[0].name = "HL7 International / Imaging Integration"
 * ^contact[0].telecom[0].system = #url
-* ^contact[0].telecom[0].value = "http://www.hl7.org/Special/committees/imagemgt/index.cfm"
+* ^contact[0].telecom[0].value = "http://www.hl7.org/Special/committees/imagemgt"
 * ^contact[1].name = "Chris Lindop"
 * ^contact[1].telecom[0].system = #email
 * ^contact[1].telecom[0].value = "mailto:christopher.lindop@ge.com"

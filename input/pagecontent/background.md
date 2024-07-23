@@ -49,6 +49,13 @@ The following use cases are not covered by this Implementation Guide:
 * Creating a FHIR DiagnosticReport or Composition from a DICOM SR
 * Creating HL7 v2 or v3 results from a DICOM SR
 
+### FHIR Version 4 compatibility<a name="fhir-version-4-compatibility"></a>
+This implementation guide is based on FHIR R5 and makes extensive use of the `ImagingSelection` resource, which is not present in FHIR R4.
+
+However, the core mapping of DICOM SR to FHIR Observation resources is compatible with FHIR R4. 
+
+The `ImagingSelection` resource is used to provide specific imaging context for imaging observations, but their exclusion should not affect the usability of the created observations to most downstream systems.
+
 ### Glossary<a name="glossary"></a>
 
 The following terms and acronyms are used within the Radiation Dose Summary IG:
