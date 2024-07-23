@@ -43,6 +43,8 @@ This IG is organized into three main sections:
     * [Example Instance](example.html#example_sr) - Example DICOM SR Measurement Report
     * [Patient Mapping](example.html#example_patient) - Patient Mapping Example
     * [Service Request Mapping](example.html#example_service_request) - Service Request Mapping Example
+    * [Imaging Study Mapping](example.html#example_imaging_study) - Imaging Study Mapping Example
+    * [Device Mapping](example.html#example_device) - Device Mapping Example
 
 ### Copyrights and acknowledgments
 

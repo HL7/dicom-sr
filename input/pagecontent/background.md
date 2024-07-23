@@ -58,7 +58,7 @@ The `ImagingSelection` resource is used to provide specific imaging context for 
 
 ### Glossary<a name="glossary"></a>
 
-The following terms and acronyms are used within the Radiation Dose Summary IG:
+The following terms and acronyms are used within the DICOM SR IG:
 
 |Term|Definition|
 |-----|-----------------|

@@ -50,7 +50,7 @@ See
 </table>
 
 1. Search for FHIR Patient with identifier `testhostpital.com|PID-11235`
-    1. If a result is found, use the found `Patient` resource as the `subject` for all created resources\
+    1. If a result is found, use the found `Patient` resource as the `subject` for all created resources
     2. If a result is _not_ found, use a logical reference to the Patient ID from DICOM as the `subject` for all created resources
 
 ### ServiceRequest Mapping<a name="example_service_request"></a>
@@ -101,10 +101,10 @@ See
 </table>
 
 1. Search for FHIR ServiceRequest with identifier `radiology.testhostpital.com|ACSN-235813`
-    1. If a result is found, use the found `ServiceRequest` resource as the `basedOn` value for all created `Observation` resources\
+    1. If a result is found, use the found `ServiceRequest` resource as the `basedOn` value for all created `Observation` resources
     2. If a result is _not_ found, use a logical reference to the Accession Number from DICOM as the `basedOn` value for all created `Observation` resources
 
-### ImagingStudy Mapping
+### ImagingStudy Mapping<a name="example_imaging_study"></a>
 <table>
 <tr>
 <th>DICOM</th>
@@ -147,3 +147,45 @@ See
 
 
 
+### Device Mapping<a name="example_device"></a>
+<table>
+<tr>
+<th>DICOM</th>
+<th>FHIR Resource</th>
+<th>FHIR Reference</th>
+</tr>
+<tr>
+<td>
+<pre>
+{
+  "0020000E": { "vr": "UI", "Value": [ "1.2.840.113747.20080222.8331141314456631405221767081790268995" ] }
+}
+</pre>
+</td>
+<td>
+<pre>
+{
+  "resourceType" : "Device",
+  "id" : "device-001",
+  "identifier": { 
+    "type": {
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+        "code" : "UDI" }]},
+    "system": "urn:dicom:uid",
+    "value": "1.2.840.113747.20080222.8331141314456631405221767081790268995.999",
+  },
+  "displayName": "Example Imaging Measurement Device"
+}
+</pre>
+</td>
+<td>
+<pre>
+"device": [{
+  "type": "Device",
+  "reference": "Device/device-001"
+}]
+</pre>
+</td>
+</tr>
+</table>
