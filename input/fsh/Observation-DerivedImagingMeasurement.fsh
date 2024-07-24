@@ -96,5 +96,4 @@ Description: "The TID300Measurement can be extracted from TID 1420 - Measurement
 * referenceRange -> "TID1420.TID310"
 * device -> "TID1420.TID4019"
 * valueQuantity -> "TID1420.DCID7465.tag(0040,A300) [Measured Value Sequence]"
-* derivedFrom -> "TID1420.TID1410"
-* derivedFrom -> "TID1420.TID1411"
+* derivedFrom -> "TID1420.TID1410 or TID1420.TID1411"

@@ -95,6 +95,10 @@ This IG Contains the following dependencies on other IGs.
 
 {% include dependency-table-short.xhtml %}
 
+### Global Profiles
+
+{% include globals-table.xhtml %}
+
 ### Copyrights
 
 {% capture ip-statement %}{% include ip-statements.xhtml %}{% endcapture %}
