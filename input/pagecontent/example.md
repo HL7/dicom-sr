@@ -189,3 +189,123 @@ See
 </td>
 </tr>
 </table>
+
+### Document Mapping<a name="example_document"></a>
+<table>
+<tr>
+<th>DICOM</th>
+<th>FHIR Observation Fields</th>
+</tr>
+<tr>
+<td>
+<pre>
+{
+  "00080023": { "vr": "DA", "Value": [ "20240724" ] },
+  "00080033": { "vr": "TM", "Value": [ "082342" ] },
+  "0040A496": { "vr": "CS", "Value": [ "FINAL" ] }
+}
+</pre>
+</td>
+<td>
+<pre>
+{
+  "resource": {
+    "resourceType": "Observation",
+    "effectiveDateTime": "2024-07-24T08:23:42"
+    "status": "final",
+    ...
+  }
+}
+</pre>
+</td>
+</tr>
+</table>
+
+1. Extract `ContentDate`, `ContentTime`, and `PreliminaryFlag` values
+2. Use these values to populate the `effectiveDateTime` and `status` fields in the created FHIR Observation resources\
+   `effectiveDateTime` may be overridden by more specific values in specific content items
+
+### Imaging Measurement Container Mapping<a name="example_measurement_container"></a>
+<table>
+<tr>
+<th>DICOM</th>
+<th>FHIR Resource Map</th>
+</tr>
+<tr>
+<td>
+<pre>
+{
+  "0040A010": { "vr": "CS", "Value": [ "CONTAINS" ] },
+  "0040A040": { "vr": "CS", "Value": [ "CONTAINER" ] },
+  "0040A043": { "vr": "SQ", "Value": [ {
+        "00080100": { "vr": "SH", "Value": [ "126010" ] },
+        "00080102": { "vr": "SH", "Value": [ "DCM" ] },
+        "00080104": { "vr": "LO", "Value": [ "Imaging Measurements" ] }
+      } ] },
+  "0040A050": { "vr": "CS", "Value": [ "SEPARATE" ] },
+  "0040A730": { "vr": "SQ", "Value": [
+     {
+        "0040A010": { "vr": "CS", "Value": [ "CONTAINS" ] },
+        "0040A040": { "vr": "CS", "Value": [ "CONTAINER" ] },
+        "0040A043": { "vr": "SQ", "Value": [ {
+           "00080100": { "vr": "SH", "Value": [ "125007" ] },
+           "00080102": { "vr": "SH", "Value": [ "DCM" ] },
+           "00080104": { "vr": "LO", "Value": [ "Measurement Group" ] }
+            } ] },
+        ...
+     },
+     {
+        "0040A010": { "vr": "CS", "Value": [ "CONTAINS" ] },
+        "0040A040": { "vr": "CS", "Value": [ "CONTAINER" ] },
+        "0040A043": { "vr": "SQ", "Value": [ {
+           "00080100": { "vr": "SH", "Value": [ "125007" ] },
+           "00080102": { "vr": "SH", "Value": [ "DCM" ] },
+           "00080104": { "vr": "LO", "Value": [ "Measurement Group" ] }
+            } ] },
+        ...   
+     }
+  ]}
+}
+</pre>
+</td>
+<td>
+<pre>
+[
+  {
+    "resource": {
+      "resourceType": "Observation",
+      "id": "imaging-measurement-group-001"
+      "effectiveDateTime": "2024-07-24T08:23:42"
+      "status": "final",
+      "category" : [{ "coding" : [{
+        "system" : "http://dicom.nema.org/resources/ontology/DCM",
+        "code" : "125007",
+        "display" : "Measurement Group"
+        }]
+      }],
+      ...
+    }
+  },
+  {
+    "resource": {
+      "resourceType": "Observation",
+      "id": "imaging-measurement-group-002"
+      "effectiveDateTime": "2024-07-24T08:23:42"
+      "status": "final",
+      "category" : [{ "coding" : [{
+        "system" : "http://dicom.nema.org/resources/ontology/DCM",
+        "code" : "125007",
+        "display" : "Measurement Group"
+        }]
+      }],
+      ...
+    }
+  }  
+]
+</pre>
+</td>
+</tr>
+</table>
+1. Find the `CONTAINER` content item with the Concept Name Code Sequence (0040,A043) value of `DCM#126010 "Imaging Measurements"`
+2. Find the Content Sequence (0040,A730) for this container
+3. Create a new `ImagingMeasurementGroup` Observation resource for each child content item with a Concept Name Code Sequence (0040,A043) value of `DCM#125007 "Measurement Group"`

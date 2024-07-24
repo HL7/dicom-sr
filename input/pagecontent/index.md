@@ -48,6 +48,8 @@ This IG is organized into three main sections:
     * [Service Request Mapping](example.html#example_service_request) - Service Request Mapping Example
     * [Imaging Study Mapping](example.html#example_imaging_study) - Imaging Study Mapping Example
     * [Device Mapping](example.html#example_device) - Device Mapping Example
+    * [Document Mapping](example.html#example_document) - Document Mapping Example
+    * [Imaging Measurements Container Mapping](example.html#example_imaging_measurements_container) - Imaging Measurements Container Mapping Example
 
 ### Copyrights and acknowledgments
 
