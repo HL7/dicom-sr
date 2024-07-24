@@ -11,13 +11,7 @@ A definition for CodeSystem 'http://terminology.hl7.org/CodeSystem/umls' could n
 The definition for the Code System with URI 'http://terminology.hl7.org/CodeSystem/umls' doesn't provide any codes so the code cannot be validated
 
 # The source for this Context Map is DICOM Attributes so no code system applies
-WARNING: ConceptMap.group[0]: No Source Code System, so the source codes cannot be checked
-WARNING: ConceptMap.group[1]: No Source Code System, so the source codes cannot be checked
-WARNING: ConceptMap.group[2]: No Source Code System, so the source codes cannot be checked
-WARNING: ConceptMap.group[3]: No Source Code System, so the source codes cannot be checked
+No Source Code System, so the source codes cannot be checked
 
 # The destination for this Context Map is FHIR Elements so no code system applies
-WARNING: ConceptMap.group[0]: No Target Code System, so the target codes cannot be checked
-WARNING: ConceptMap.group[1]: No Target Code System, so the target codes cannot be checked
-WARNING: ConceptMap.group[2]: No Target Code System, so the target codes cannot be checked
-WARNING: ConceptMap.group[3]: No Target Code System, so the target codes cannot be checked
+No Target Code System, so the target codes cannot be checked

@@ -83,5 +83,4 @@ Description: "The Qualitative Evaluation can be extracted from TID 1500 - Measur
 * subject -> "tag(0010,0020) [Patient ID]"
 * code -> "TID1500.EV(C0034375, UMLS, Qualitative Evaluations)[n].tag(0040,A043) [Concept Name Code Sequence]"
 * issued -> "tag(0040,A032) [Observation DateTime]"
-* valueCodeableConcept -> "TID1500.EV(C0034375, UMLS, Qualitative Evaluations)[n].tag(0040,A160) [Text Value]"
-* valueCodeableConcept -> "TID1500.EV(C0034375, UMLS, Qualitative Evaluations)[n].tag(0040,A168) [Concept Code Sequence]"
+* valueCodeableConcept -> "TID1500.EV(C0034375, UMLS, Qualitative Evaluations)[n].tag(0040,A160) [Text Value] or .tag(0040,A168) [Concept Code Sequence]"
