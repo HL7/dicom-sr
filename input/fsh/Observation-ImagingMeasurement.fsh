@@ -123,18 +123,3 @@ Description: "The TID1419Measurement can be extracted from TID 1419 - ROI Measur
 * method -> "TID1501.EV(370129005, SCT, Measurement Method)"
 * device -> "TID1501.EV(121071, DCM, Finding)"
 * valueQuantity -> "TID1419.$Measurement.tag(0040,A300) [Measured Value Sequence]"
-
-Mapping: dicom-sr-for-TID1420MeasurementProfile
-Id: dicom-sr-tid-1420
-Title: "DICOM SR TID 1420 Measurement"
-Source: ImagingMeasurementProfile
-Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1420"
-Description: "The TID1419Measurement can be extracted from TID 1420 - Measurements Derived From Multiple ROI Measurements."
-* -> "TID1420(DerivedMeasurement)"
-* identifier[observationUID] -> "tag(0040,A171) [Observation UID]"
-* subject -> "tag(0010,0020) [Patient ID]"
-* code -> "TID1420.CID7465.tag(0040,A043) [Concept Name Code Sequence]"
-* issued -> "tag(0040,A032) [Observation DateTime]"
-* method -> "TID1501.EV(370129005, SCT, Measurement Method)"
-* device -> "TID1501.EV(121071, DCM, Finding)"
-* valueQuantity -> "TID1420.CID7465.tag(0040,A300) [Measured Value Sequence]"

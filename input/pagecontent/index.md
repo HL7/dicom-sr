@@ -72,7 +72,7 @@ IHE® is a registered trademark of the Healthcare Information Management Systems
 
 
 ### Sponsors Working Groups
-* [Imaging Integration Work Group](http://www.hl7.org/Special/committees/imagemgt/index.cfm)
+* [Imaging Integration Work Group](http://www.hl7.org/Special/committees/imagemgt)
 
 ### Contributors
 

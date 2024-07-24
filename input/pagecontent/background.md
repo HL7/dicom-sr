@@ -88,3 +88,15 @@ The following terms and acronyms are used within the DICOM SR IG:
 2. DICOM,[TID 1500\. Measurement Report](https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1500)
 3. IHE Radiology (RAD), [Technical Framework Supplement, AI Results (AIR)](https://www.ihe.net/uploadedFiles/Documents/Radiology/IHE_RAD_Suppl_AIR.pdf)
 4. D. Clunie, [DICOM Structured Reporting](http://www.pixelmed.com/srbook.html)
+
+### IG Dependencies
+
+This IG Contains the following dependencies on other IGs.
+
+{% include dependency-table-short.xhtml %}
+
+### Copyrights
+
+{% capture ip-statement %}{% include ip-statements.xhtml %}{% endcapture %}
+
+{{ ip-statement | remove: '<p>' | remove: '</p>'}}
