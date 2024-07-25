@@ -53,6 +53,10 @@ See
     1. If a result is found, use the found `Patient` resource as the `subject` for all created resources
     2. If a result is _not_ found, use a logical reference to the Patient ID from DICOM as the `subject` for all created resources
 
+#### FHIR Resources
+- Referenced
+  - Patient
+
 ### ServiceRequest Mapping<a name="example_service_request"></a>
 <table>
 <tr>
@@ -104,6 +108,11 @@ See
     1. If a result is found, use the found `ServiceRequest` resource as the `basedOn` value for all created `Observation` resources
     2. If a result is _not_ found, use a logical reference to the Accession Number from DICOM as the `basedOn` value for all created `Observation` resources
 
+#### FHIR Resources
+- Referenced
+   - Patient
+   - ServiceRequest
+
 ### ImagingStudy Mapping<a name="example_imaging_study"></a>
 <table>
 <tr>
@@ -123,7 +132,7 @@ See
 <pre>
 "derivedFrom": [{
   "type": "ImagingStudy",
-  "reference": "ImagingStudy/11235"
+  "reference": "ImagingStudy/581321"
 }]
 </pre>
 </td>
@@ -145,7 +154,11 @@ See
     1. If a result is found, use the found `ImagingStudy` resource as the `derivedFrom` value for all created `Observation` and `ImagingSelection` resources\
     2. If a result is _not_ found, use a logical reference to the Study Instance UID ID from DICOM as the `subject` for all created `Observation` and `ImagingSelection` resources
 
-
+#### FHIR Resources
+- Referenced
+   - Patient
+   - ServiceRequest
+   - ImagingStudy
 
 ### Device Mapping<a name="example_device"></a>
 <table>
@@ -190,6 +203,14 @@ See
 </tr>
 </table>
 
+#### FHIR Resources
+- Referenced
+   - Patient
+   - ServiceRequest
+   - ImagingStudy
+- Created
+   - Device (General Equipment)
+
 ### Document Mapping<a name="example_document"></a>
 <table>
 <tr>
@@ -211,6 +232,17 @@ See
 {
   "resource": {
     "resourceType": "Observation",
+    "subject": {
+      "reference": "Patient/11235"
+    },
+    "basedOn": [{
+      "type": "ServiceRequest",
+      "reference": "ServiceRequest/235813"
+    }],
+    "derivedFrom": [{
+      "type": "ImagingStudy",
+      "reference": "ImagingStudy/581321"
+    }],
     "effectiveDateTime": "2024-07-24T08:23:42"
     "status": "final",
     ...
@@ -225,11 +257,11 @@ See
 2. Use these values to populate the `effectiveDateTime` and `status` fields in the created FHIR Observation resources\
    `effectiveDateTime` may be overridden by more specific values in specific content items
 
-### Imaging Measurement Container Mapping<a name="example_measurement_container"></a>
+### Imaging Measurement Container Mapping<a name="example_imaging_measurement_container"></a>
 <table>
 <tr>
 <th>DICOM</th>
-<th>FHIR Resource Map</th>
+<th>FHIR Resources</th>
 </tr>
 <tr>
 <td>
@@ -253,16 +285,6 @@ See
            "00080104": { "vr": "LO", "Value": [ "Measurement Group" ] }
             } ] },
         ...
-     },
-     {
-        "0040A010": { "vr": "CS", "Value": [ "CONTAINS" ] },
-        "0040A040": { "vr": "CS", "Value": [ "CONTAINER" ] },
-        "0040A043": { "vr": "SQ", "Value": [ {
-           "00080100": { "vr": "SH", "Value": [ "125007" ] },
-           "00080102": { "vr": "SH", "Value": [ "DCM" ] },
-           "00080104": { "vr": "LO", "Value": [ "Measurement Group" ] }
-            } ] },
-        ...   
      }
   ]}
 }
@@ -275,6 +297,17 @@ See
     "resource": {
       "resourceType": "Observation",
       "id": "imaging-measurement-group-001"
+       "subject": {
+         "reference": "Patient/11235"
+       },
+       "basedOn": [{
+         "type": "ServiceRequest",
+         "reference": "ServiceRequest/235813"
+       }],
+       "derivedFrom": [{
+         "type": "ImagingStudy",
+         "reference": "ImagingStudy/581321"
+       }],
       "effectiveDateTime": "2024-07-24T08:23:42"
       "status": "final",
       "category" : [{ "coding" : [{
@@ -283,29 +316,356 @@ See
         "display" : "Measurement Group"
         }]
       }],
+     "device": {
+        "reference": "Device/device-001"
+      },
       ...
     }
-  },
-  {
-    "resource": {
-      "resourceType": "Observation",
-      "id": "imaging-measurement-group-002"
-      "effectiveDateTime": "2024-07-24T08:23:42"
-      "status": "final",
-      "category" : [{ "coding" : [{
-        "system" : "http://dicom.nema.org/resources/ontology/DCM",
-        "code" : "125007",
-        "display" : "Measurement Group"
-        }]
-      }],
-      ...
-    }
-  }  
+  } 
 ]
 </pre>
 </td>
 </tr>
 </table>
+
 1. Find the `CONTAINER` content item with the Concept Name Code Sequence (0040,A043) value of `DCM#126010 "Imaging Measurements"`
 2. Find the Content Sequence (0040,A730) for this container
 3. Create a new `ImagingMeasurementGroup` Observation resource for each child content item with a Concept Name Code Sequence (0040,A043) value of `DCM#125007 "Measurement Group"`
+
+#### FHIR Resources
+- Referenced
+   - Patient
+   - ServiceRequest
+   - ImagingStudy
+- Created
+   - Device (General Equipment)
+
+### Imaging Measurement Group Mapping<a name="example_imaging_measurement_group"></a>
+<table>
+<tr>
+<th>DICOM</th>
+<th>FHIR Observation</th>
+</tr>
+<tr>
+<td>
+<pre>
+{
+  "0040A010": { "vr": "CS", "Value": [ "CONTAINS" ] },
+  "0040A040": { "vr": "CS", "Value": [ "CONTAINER" ] },
+  "0040A043": { "vr": "SQ", "Value": [ {
+        "00080100": { "vr": "SH", "Value": [ "125007" ] },
+        "00080102": { "vr": "SH", "Value": [ "DCM" ] },
+        "00080104": { "vr": "LO", "Value": [ "Measurement Group" ] }
+      } ] },
+  "0040A050": { "vr": "CS", "Value": [ "SEPARATE" ] },
+  "0040A504": { "vr": "SQ", "Value": [ {
+        "00080105": { "vr": "CS", "Value": [ "DCMR" ] },
+        "00080118": { "vr": "UI", "Value": [ "1.2.840.10008.8.1.1" ] },
+        "0040DB00": { "vr": "CS", "Value": [ "1411" ] }
+      } ] },
+  "0040A730": { "vr": "SQ", "Value": [ {
+        "0040A010": { "vr": "CS", "Value": [ "HAS OBS CONTEXT" ] },
+        "0040A040": { "vr": "CS", "Value": [ "TEXT" ] },
+        "0040A043": { "vr": "SQ", "Value": [ {
+              "00080100": { "vr": "SH", "Value": [ "112039" ] },
+              "00080102": { "vr": "SH", "Value": [ "DCM" ] },
+              "00080104": { "vr": "LO", "Value": [ "Tracking Identifier" ] }
+            } ] },
+        "0040A160": { "vr": "UT", "Value": [ "Nodule 1" ] }
+      },
+      {
+        "0040A010": { "vr": "CS", "Value": [ "HAS OBS CONTEXT" ] },
+        "0040A040": { "vr": "CS", "Value": [ "UIDREF" ] },
+        "0040A043": { "vr": "SQ", "Value": [ {
+              "00080100": { "vr": "SH", "Value": [ "112040" ] },
+              "00080102": { "vr": "SH", "Value": [ "DCM" ] },
+              "00080104": { "vr": "LO", "Value": [ "Tracking Unique Identifier" ] }
+            } ] },
+        "0040A124": { "vr": "UI", "Value": [ "2.25.93574820107276479941769093764306453580797441114463894069751" ] }
+      },
+      {
+        "0040A010": { "vr": "CS", "Value": [ "CONTAINS" ] },
+        "0040A040": { "vr": "CS", "Value": [ "CODE" ] },
+        "0040A043": { "vr": "SQ", "Value": [ {
+              "00080100": { "vr": "SH", "Value": [ "276214006" ] },
+              "00080102": { "vr": "SH", "Value": [ "SCT" ] },
+              "00080104": { "vr": "LO", "Value": [ "Finding category" ] }
+            } ] },
+        "0040A168": { "vr": "SQ", "Value": [ {
+              "00080100": { "vr": "SH", "Value": [ "241053004" ] },
+              "00080102": { "vr": "SH", "Value": [ "SCT" ] },
+              "00080104": { "vr": "LO", "Value": [ "Radiographic measurement of lung volume" ] }
+            } ] }
+      },
+      {
+        "0040A010": { "vr": "CS", "Value": [ "CONTAINS" ] },
+        "0040A040": { "vr": "CS", "Value": [ "CODE" ] },
+        "0040A043": { "vr": "SQ", "Value": [ {
+              "00080100": { "vr": "SH", "Value": [ "121071" ] },
+              "00080102": { "vr": "SH", "Value": [ "DCM" ] },
+              "00080104": { "vr": "LO", "Value": [ "Finding" ] }
+            } ] },
+        "0040A168": { "vr": "SQ", "Value": [ {
+              "00080100": { "vr": "SH", "Value": [ "M-03010" ] },
+              "00080102": { "vr": "SH", "Value": [ "SRT" ] },
+              "00080104": { "vr": "LO", "Value": [ "Nodule" ] }
+            } ] }
+      },
+      {
+        "00081199": { "vr": "SQ", "Value": [ {
+              "00081150": { "vr": "UI", "Value": [ "1.2.840.10008.5.1.4.1.1.66.4" ] },
+              "00081155": { "vr": "UI", "Value": [ "1.2.276.0.7230010.3.1.4.0.57823.1553343864.578878" ] },
+              "0062000B": { "vr": "US", "Value": [ 1 ] }
+            } ] },
+        "0040A010": { "vr": "CS", "Value": [ "CONTAINS" ] },
+        "0040A040": { "vr": "CS", "Value": [ "IMAGE" ] },
+        "0040A043": { "vr": "SQ", "Value": [ {
+              "00080100": { "vr": "SH", "Value": [ "121191" ] },
+              "00080102": { "vr": "SH", "Value": [ "DCM" ] },
+              "00080104": { "vr": "LO", "Value": [ "Referenced Segment" ] }
+            } ] }
+      },
+      {
+        "0040A010": { "vr": "CS", "Value": [ "CONTAINS" ] },
+        "0040A040": { "vr": "CS", "Value": [ "UIDREF" ] },
+        "0040A043": { "vr": "SQ", "Value": [ {
+              "00080100": { "vr": "SH", "Value": [ "121232" ] },
+              "00080102": { "vr": "SH", "Value": [ "DCM" ] },
+              "00080104": { "vr": "LO", "Value": [ "Source series for segmentation" ] }
+            } ] },
+        "0040A124": { "vr": "UI", "Value": [ "1.3.6.1.4.1.14519.5.2.1.6279.6001.273525289046256012743471155680" ] }
+      },
+      {
+        "0040A010": { "vr": "CS", "Value": [ "HAS CONCEPT MOD" ] },
+        "0040A040": { "vr": "CS", "Value": [ "CODE" ] },
+        "0040A043": { "vr": "SQ", "Value": [ {
+              "00080100": { "vr": "SH", "Value": [ "G-C0E3" ] },
+              "00080102": { "vr": "SH", "Value": [ "SRT" ] },
+              "00080104": { "vr": "LO", "Value": [ "Finding Site" ] }
+            } ] },
+        "0040A168": { "vr": "SQ", "Value": [ {
+              "00080100": { "vr": "SH", "Value": [ "T-28000" ] },
+              "00080102": { "vr": "SH", "Value": [ "SRT" ] },
+              "00080104": { "vr": "LO", "Value": [ "Lung" ] }
+            } ] }
+      },
+      {
+        "0040A010": { "vr": "CS", "Value": [ "CONTAINS" ] },
+        "0040A040": { "vr": "CS", "Value": [ "NUM" ] },
+        ...
+      },
+      {
+        "0040A010": { "vr": "CS", "Value": [ "CONTAINS" ] },
+        "0040A040": { "vr": "CS", "Value": [ "NUM" ] },
+        ...
+      },
+      {
+        "0040A010": { "vr": "CS", "Value": [ "CONTAINS" ] },
+        "0040A040": { "vr": "CS", "Value": [ "NUM" ] },
+        ...
+      },
+      {
+        "0040A010": { "vr": "CS", "Value": [ "CONTAINS" ] },
+        "0040A040": { "vr": "CS", "Value": [ "CODE" ] },
+        ...
+      },
+      {
+        "0040A010": { "vr": "CS", "Value": [ "CONTAINS" ] },
+        "0040A040": { "vr": "CS", "Value": [ "CODE" ] },
+        ...
+      } ] }
+}
+</pre>
+</td>
+<td>
+<pre>
+[
+  {
+    "resource": {
+      "resourceType": "BodyStructure",
+      "id": "tracking-1",
+      "identifier": [
+        {
+          "type": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-identifier-type",
+                "code": "tracking-identifier",
+                "display": "Tracking Identifier"
+              }
+            ]
+          },
+          "value": "Nodule 1"
+        },
+        {
+          "type": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-identifier-type",
+                "code": "tracking-uid",
+                "display": "Tracking UID"
+              }
+            ]
+          },
+          "system": "urn:dicom:uid",
+          "value": "urn:oid:1.2.840.113747.20080222.8331141314456631405221767081790268995.100"
+        }
+      ],
+      "patient": {
+        "reference": "Patient/11235"
+      },
+      "includedStructure": [
+        "structure": {
+          "coding": "Nodule 1"
+        }
+      ]
+    }
+  },
+  {
+    "resource": {
+      "resourceType": "BodyStructure",
+      "id": "finding-site-1",
+      "patient": {
+        "reference": "Patient/11235"
+      },
+      "includedStructure": [
+        "structure": {
+          "coding": [{
+            "system" : "http://terminology.hl7.org/CodeSystem/snm",
+            "code" : "T-28000",
+            "display" : "Lung"
+          }]
+        }
+      ]
+    }
+  },
+    {
+    "resource": {
+      "resourceType": "ImagingSelection",
+      "id": "segment-1",
+      "status": "registered",
+      "subject": {
+        "reference": "Patient/11235"
+      },
+      "code": {
+        "coding": [
+          {
+            "system": "http://dicom.nema.org/resources/ontology/DCM",
+            "code": "121191",
+            "display": "Referenced Segment"
+          }
+        ]
+      },
+      "derivedFrom": [
+        {
+          "reference": "ImagingStudy/581321"
+        }
+      ],
+      "seriesUid": "1.2.840.113747.20080222.8331141314456631405221767081790268995.2"
+      "instance": [
+        {
+          "uid": "11.2.840.113747.20080222.8331141314456631405221767081790268995.2.1",
+          "sopClass": {
+            "system": "urn:ietf:rfc:3986",
+            "code": "urn:oid:1.2.840.10008.5.1.4.1.1.66.4"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "resource": {
+      "resourceType": "Observation",
+      "id": "imaging-measurement-group-001"
+       "subject": {
+         "reference": "Patient/11235"
+       },
+       "basedOn": [{
+         "type": "ServiceRequest",
+         "reference": "ServiceRequest/235813"
+       }],
+       "derivedFrom": [{
+         "type": "ImagingStudy",
+         "reference": "ImagingStudy/581321"
+       }],
+      "effectiveDateTime": "2024-07-24T08:23:42"
+      "status": "final",
+      "code" : { "coding" : [{
+        "system" : "http://snomed.info/sct/MAIN/version/2024-07-01",
+        "code" : "241053004",
+        "display" : "Radiographic measurement of lung volume"
+        }]
+      },      
+      "category" : [{ "coding" : [{
+        "system" : "http://dicom.nema.org/resources/ontology/DCM",
+        "code" : "125007",
+        "display" : "Measurement Group"
+        }]
+      }],
+      "focus": [
+        {
+          "reference": "ImagingSelection/segment-1"
+        },
+        {
+          "reference": "BodyStructure/tracking-1"
+        }
+      ],
+      "bodyStructure": {
+        "reference": "BodyStructure/finding-site-1"
+      },
+     "device": {
+        "reference": "Device/device-001"
+      },
+      "valueCodeableConcept": {
+        "coding": [{
+            "system": "http://terminology.hl7.org/CodeSystem/snm",
+            "code": "M-03010",
+            "display": "Nodule"
+          }]
+      },
+      "hasMember": [
+        {
+          "reference": "Observation/imaging-measurement-1"
+        },
+        {
+          "reference": "Observation/imaging-measurement-2"
+        },
+        {
+          "reference": "Observation/imaging-measurement-3"
+        },
+        {
+          "reference": "Observation/qualitative-evaluation-1"
+        },
+        {
+          "reference": "Observation/qualitative-evaluation-2"
+        }
+      ]
+    }
+  }
+]
+</pre>
+</td>
+</tr>
+</table>
+
+1. Create BodyStructure resources for tracking and finding site (if not already existing)
+2. Create ImagingSelection resource for segment (if not already existing)
+3. Create Observation resource for ImagingMeasurementGroup
+   1. Set `code` to value of Finding Category
+   2. Set `focus` to reference ImagingSelection and tracking BodyStructure resources
+   3. Set `bodyStructure` to reference finding site BodyStructure resource
+   4. Set `hasMember` to reference Observation resources for imaging measurements and qualitative evaluations\
+      *Note: Not yet created*
+   5. Set 'device' to reference general equipment Device resource
+   6. Set `valueCodeableConcept` to value of Finding
+
+#### FHIR Resources
+- Referenced
+   - Patient
+   - ServiceRequest
+   - ImagingStudy
+- Created
+   - Device (General Equipment)
+   - Observation (ImagingMeasurementGroup)
+   - BodyStructure (Tracking, FindingSite)
+   - ImagingSelection (Segment)

@@ -149,6 +149,9 @@ Description:    "DICOM SR TID Imaging Measurement Group Mapping to Observation"
 * device only Reference(AlgorithmIdentificationProfile or GeneralEquipmentProfile)
 * device ^short = "Algorithm Identification or General Equipment Device"
 
+* bodyStructure MS
+* bodyStructure only Reference(DICOMSRFindingSiteBodyStructureProfile)
+
 Mapping: dicom-sr-for-TID1410PlanarROIMeasurementGroup
 Id: dicom-sr-tid-1410
 Title: "DICOM SR TID 1410 Planar ROI Measurement Group"

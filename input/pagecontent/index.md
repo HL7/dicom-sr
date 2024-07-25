@@ -49,7 +49,8 @@ This IG is organized into three main sections:
     * [Imaging Study Mapping](example.html#example_imaging_study) - Imaging Study Mapping Example
     * [Device Mapping](example.html#example_device) - Device Mapping Example
     * [Document Mapping](example.html#example_document) - Document Mapping Example
-    * [Imaging Measurements Container Mapping](example.html#example_imaging_measurements_container) - Imaging Measurements Container Mapping Example
+    * [Imaging Measurements Container Mapping](example.html#example_imaging_measurement_container) - Imaging Measurements Container Mapping Example
+    * [Imaging Measurement Group Mapping](example.html#example_imaging_measurement_group) - Imaging Measurement Group Mapping Example
 
 ### Copyrights and acknowledgments
 
@@ -72,13 +73,12 @@ DICOM® is a registered trademark of the National Electrical Manufacturers Assoc
 
 IHE® is a registered trademark of the Healthcare Information Management Systems Society in the United States and trademarks of IHE Europe in the European Community.
 
-
 ### Sponsors Working Groups
 * [Imaging Integration Work Group](http://www.hl7.org/Special/committees/imagemgt)
 
 ### Contributors
 
-| Name        |      Organization       |  Role |
-|--------------------------|-----------------------|--------------|
+| Name | Organization | Role |
+| ---- | ---- | ---- |
 | Jonathan Whitby | Canon Medical | Author |
 | Christopher Lindop | GE Healthcare | Author |
