@@ -35,8 +35,7 @@ Mapping: dicom-sr-tracking-identifiers-for-measurement-groups
 Id: dicom-sr-measurement-group-tracking-identifiers
 Title: "DICOM SR Observation Tracking Identifiers for EV(125007, DCM, Measurement Group)"
 Source: DICOMSRTrackingIdentifiersBodyStructureProfile
-Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1410, https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1411, https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1501"
-Description: "The observation tracking identifiers can be extracted from Measurement Group content items in TID 1410, TID 1411, and TID 1501."
+Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1500"
 * -> "EV(125007, DCM, Measurement Group)"
 * identifier[trackingIdentifier] -> "DT (112039, DCM, Tracking Identifier)"
 * identifier[trackingUid] -> "EV (112040, DCM, Tracking Unique Identifier)"
