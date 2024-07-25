@@ -722,4 +722,4 @@ The source DICOM SR Measurement Report is in DICOM JSON format. See the [DICOM P
 </table>
 
 ### Example Measurement Report<a name="example_sr"></a>
-{% include DiagnosticReport-example-dicom-sr-measurement-report.json %}
+See [Example Measurement Report](DiagnosticReport-example-dicom-sr-measurement-report.html) for a complete example of a Measurement Report containing the above resources.
