@@ -27,7 +27,7 @@ The source DICOM SR Measurement Report is in DICOM JSON format. See the [DICOM P
 <pre>
 "subject": {
   "type": "Patient",
-  "reference": "Patient/11235"
+  "reference": "Patient/measurement-report-patient"
 }
 </pre>
 </td>
@@ -78,7 +78,7 @@ The source DICOM SR Measurement Report is in DICOM JSON format. See the [DICOM P
 <pre>
 "basedOn": [{
   "type": "ServiceRequest",
-  "reference": "ServiceRequest/235813"
+  "reference": "ServiceRequest/measurement-report-service-request"
 }]
 </pre>
 </td>
@@ -129,7 +129,7 @@ The source DICOM SR Measurement Report is in DICOM JSON format. See the [DICOM P
 <pre>
 "derivedFrom": [{
   "type": "ImagingStudy",
-  "reference": "ImagingStudy/581321"
+  "reference": "ImagingStudy/measurement-report-imaging-study"
 }]
 </pre>
 </td>
@@ -193,7 +193,7 @@ The source DICOM SR Measurement Report is in DICOM JSON format. See the [DICOM P
 <pre>
 "device": [{
   "type": "Device",
-  "reference": "Device/device-001"
+  "reference": "Device/example-general-equipment"
 }]
 </pre>
 </td>
@@ -230,15 +230,15 @@ The source DICOM SR Measurement Report is in DICOM JSON format. See the [DICOM P
   "resource": {
     "resourceType": "Observation",
     "subject": {
-      "reference": "Patient/11235"
+      "reference": "Patient/measurement-report-patient"
     },
     "basedOn": [{
       "type": "ServiceRequest",
-      "reference": "ServiceRequest/235813"
+      "reference": "ServiceRequest/measurement-report-service-request"
     }],
     "derivedFrom": [{
       "type": "ImagingStudy",
-      "reference": "ImagingStudy/581321"
+      "reference": "ImagingStudy/measurement-report-imaging-study"
     }],
     "effectiveDateTime": "2024-07-24T08:23:42"
     "status": "final",
@@ -295,15 +295,15 @@ The source DICOM SR Measurement Report is in DICOM JSON format. See the [DICOM P
       "resourceType": "Observation",
       "id": "imaging-measurement-group-001"
        "subject": {
-         "reference": "Patient/11235"
+         "reference": "Patient/measurement-report-patient"
        },
        "basedOn": [{
          "type": "ServiceRequest",
-         "reference": "ServiceRequest/235813"
+         "reference": "ServiceRequest/measurement-report-service-request"
        }],
        "derivedFrom": [{
          "type": "ImagingStudy",
-         "reference": "ImagingStudy/581321"
+         "reference": "ImagingStudy/measurement-report-imaging-study"
        }],
       "effectiveDateTime": "2024-07-24T08:23:42"
       "status": "final",
@@ -314,7 +314,7 @@ The source DICOM SR Measurement Report is in DICOM JSON format. See the [DICOM P
         }]
       }],
      "device": {
-        "reference": "Device/device-001"
+        "reference": "Device/example-general-equipment"
       },
       ...
     }
@@ -509,7 +509,7 @@ The source DICOM SR Measurement Report is in DICOM JSON format. See the [DICOM P
         }
       ],
       "patient": {
-        "reference": "Patient/11235"
+        "reference": "Patient/measurement-report-patient"
       },
       "includedStructure": [
         "structure": {
@@ -523,7 +523,7 @@ The source DICOM SR Measurement Report is in DICOM JSON format. See the [DICOM P
       "resourceType": "BodyStructure",
       "id": "finding-site-1",
       "patient": {
-        "reference": "Patient/11235"
+        "reference": "Patient/measurement-report-patient"
       },
       "includedStructure": [
         "structure": {
@@ -542,7 +542,7 @@ The source DICOM SR Measurement Report is in DICOM JSON format. See the [DICOM P
       "id": "segment-1",
       "status": "registered",
       "subject": {
-        "reference": "Patient/11235"
+        "reference": "Patient/measurement-report-patient"
       },
       "code": {
         "coding": [
@@ -555,7 +555,7 @@ The source DICOM SR Measurement Report is in DICOM JSON format. See the [DICOM P
       },
       "derivedFrom": [
         {
-          "reference": "ImagingStudy/581321"
+          "reference": "ImagingStudy/measurement-report-imaging-study"
         }
       ],
       "seriesUid": "1.2.840.113747.20080222.8331141314456631405221767081790268995.2"
@@ -575,15 +575,15 @@ The source DICOM SR Measurement Report is in DICOM JSON format. See the [DICOM P
       "resourceType": "Observation",
       "id": "imaging-measurement-group-001"
        "subject": {
-         "reference": "Patient/11235"
+         "reference": "Patient/measurement-report-patient"
        },
        "basedOn": [{
          "type": "ServiceRequest",
-         "reference": "ServiceRequest/235813"
+         "reference": "ServiceRequest/measurement-report-service-request"
        }],
        "derivedFrom": [{
          "type": "ImagingStudy",
-         "reference": "ImagingStudy/581321"
+         "reference": "ImagingStudy/measurement-report-imaging-study"
        }],
       "effectiveDateTime": "2024-07-24T08:23:42"
       "status": "final",
@@ -611,7 +611,7 @@ The source DICOM SR Measurement Report is in DICOM JSON format. See the [DICOM P
         "reference": "BodyStructure/finding-site-1"
       },
      "device": {
-        "reference": "Device/device-001"
+        "reference": "Device/example-general-equipment"
       },
       "valueCodeableConcept": {
         "coding": [{

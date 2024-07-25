@@ -8,7 +8,7 @@ Description: "An example of a Patient referenced from a measurement report."
 * code
   * coding
     * system = "http://dicom.nema.org/resources/ontology/DCM"
-    * code = #DTID1500 "DICOM SR Measurement Report"
+    * code = #126000 "Imaging Measurement Report"
 * subject = Reference(MeasurementReportPatient-Example)
 * text
   * status = #generated

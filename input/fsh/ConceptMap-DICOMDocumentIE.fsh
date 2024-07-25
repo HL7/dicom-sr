@@ -7,6 +7,7 @@ Usage: #definition
 * name = "DICOMDocumentIEToFHIRMapping"
 * description = "Mapping between DICOM Document IE and FHIR Resources"
 * status = #active
+* experimental = false
 * contact.telecom.system = #url
 * contact.telecom.value = "http://www.hl7.org/Special/committees/imagemgt"
 * extension[0].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"

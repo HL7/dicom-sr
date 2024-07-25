@@ -10,10 +10,10 @@ Description: "An example of a Patient referenced from a measurement report."
     * coding
       * system = "http://terminology.hl7.org/CodeSystem/v2-0203"
       * code = #MR "Medical record number"
-  * system = "testhospital.org"
+  * system = "http://testhospital.org/mr"
   * assigner
     * display = "Test Hospital"
-  * value = "12345"
+  * value = "PID-12345"
 
 Instance: MeasurementReportServiceRequest-Example
 InstanceOf: ServiceRequest
@@ -27,7 +27,7 @@ Description: "An example of a ServiceRequest referenced from a measurement repor
     * coding
       * system = "http://terminology.hl7.org/CodeSystem/v2-0203"
       * code = #ACSN "Accession ID"
-  * system = "http://goodhealth.org/acsn"
+  * system = "http://testhospital.org/acsn"
   * value = "ACSN-235813"
 * subject = Reference(MeasurementReportPatient-Example)
 * status = #active

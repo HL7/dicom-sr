@@ -8,6 +8,7 @@ Title:          "ConceptMap - DICOM SR Measurement Report to FHIR Mapping"
 * name = "DICOMSRMeasurementReportToFHIRMapping"
 * description = "Mapping between DICOM SR Measurement Report and FHIR Resources"
 * status = #active
+* experimental = false
 * contact[0].telecom[0].system = #url
 * contact[0].telecom[0].value = "http://www.hl7.org/Special/committees/imagemgt"
 * extension[0].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
