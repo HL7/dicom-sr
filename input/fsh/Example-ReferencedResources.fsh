@@ -43,7 +43,7 @@ Description: "An example of a ServiceRequest referenced from a measurement repor
       * code = #ACSN "Accession ID"
   * system = "http://testhospital.org/acsn"
   * value = "ACSN-235813"
-* subject = Reference(MeasurementReportPatient-Example)
+* subject = Reference(Example-Patient)
 * status = #active
 * intent = #order
 * text
@@ -71,8 +71,8 @@ Description: "An example of an ImagingStudy referenced from a measurement report
   * system = "urn:dicom:uid"
   * value = "urn:oid:2.16.124.113543.1154777499.30246.19789.350343004"
 
-* subject = Reference(MeasurementReportPatient-Example)
-* basedOn = Reference(MeasurementReportServiceRequest-Example)
+* subject = Reference(Example-Patient)
+* basedOn = Reference(Example-ServiceRequest)
 * status = #available
 * text
   * status = #generated

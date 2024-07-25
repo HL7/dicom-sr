@@ -31,7 +31,7 @@ Description: "Example of BodySite representing a DICOM SR Finding Site"
 
 * id = "measurement-report-finding-site"
 
-* patient = Reference(MeasurementReportPatient-Example)
+* patient = Reference(Example-Patient)
 * includedStructure
   * structure
     * coding

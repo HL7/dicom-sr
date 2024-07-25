@@ -733,4 +733,4 @@ See:
 </table>
 
 ### Example Measurement Report<a name="example_sr"></a>
-See [Example Measurement Report](DiagnosticReport-example-dicom-sr-measurement-report.html) for a complete example of a Measurement Report containing the above resources.
+See [Example Measurement Report](DiagnosticReport-dicom-sr-measurement-report.html) for a complete example of a Measurement Report containing the above resources.

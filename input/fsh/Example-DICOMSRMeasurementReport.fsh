@@ -9,7 +9,7 @@ Description: "An example of a DICOM SR measurement report."
   * coding
     * system = "http://dicom.nema.org/resources/ontology/DCM"
     * code = #126000 "Imaging Measurement Report"
-* subject = Reference(MeasurementReportPatient-Example)
+* subject = Reference(Example-Patient)
 * text
   * status = #generated
   * div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">

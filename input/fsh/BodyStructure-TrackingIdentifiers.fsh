@@ -64,7 +64,7 @@ Description: "Example of BodySite representing a DICOM SR Tracking Identifier"
   * system = "urn:dicom:uid"
   * value = "urn:oid:1.2.840.113747.20080222.8331141314456631405221767081790268995.100"
 
-* patient = Reference(MeasurementReportPatient-Example)
+* patient = Reference(Example-Patient)
 * includedStructure
   * structure
     * text = "Nodule 1"
