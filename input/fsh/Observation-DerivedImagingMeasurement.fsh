@@ -49,7 +49,7 @@ Description:    "DICOM SR Derived Imaging Measurement Mapping to Observation"
 * partOf[imagingStudyRef] only Reference(ImagingStudy)
 * partOf[imagingStudyRef] ^short = "Related ImagingStudy"
 * partOf[imagingStudyRef].identifier.type 1..1
-* partOf[imagingStudyRef].identifier.type = DCMIdType#study-instance-uid "Study Instance UID"
+* partOf[imagingStudyRef].identifier.type = DCM#110180 "Study Instance UID"
 * partOf[imagingStudyRef].identifier.system = "urn:dicom:uid"
 * partOf[imagingStudyRef].identifier.value 1..1
 * partOf[imagingStudyRef].identifier ^short = "Identifier related to Study Instance UID"

@@ -54,7 +54,7 @@ Description:    "DICOM SR TID Imaging Measurement Group Mapping to Observation"
 * partOf[imagingStudyRef] only Reference(ImagingStudy)
 * partOf[imagingStudyRef] ^short = "Related ImagingStudy"
 * partOf[imagingStudyRef].identifier.type 1..1
-* partOf[imagingStudyRef].identifier.type = DCMIdType#study-instance-uid "Study Instance UID"
+* partOf[imagingStudyRef].identifier.type = DCM#110180 "Study Instance UID"
 * partOf[imagingStudyRef].identifier.system = "urn:dicom:uid"
 * partOf[imagingStudyRef].identifier.value 1..1
 * partOf[imagingStudyRef].identifier ^short = "Identifier related to Study Instance UID"
@@ -74,12 +74,7 @@ Description:    "DICOM SR TID Imaging Measurement Group Mapping to Observation"
 * focus ^slicing.description = "Observation foci"
 
 * focus contains trackingUidBodyStructure 0..* MS
-* focus[trackingUidBodyStructure] only Reference(BodyStructure)
-* focus[trackingUidBodyStructure].identifier.type 1..1
-* focus[trackingUidBodyStructure].identifier.type = DCMIdType#tracking-uid "Tracking UID"
-* focus[trackingUidBodyStructure].identifier.system = "urn:dicom:uid"
-* focus[trackingUidBodyStructure].identifier.value 1..1
-* focus[trackingUidBodyStructure].identifier ^short = "A unique identifier used for tracking a finding or feature, potentially across multiple reporting objects, over time"
+* focus[trackingUidBodyStructure] only Reference(DICOMSRTrackingIdentifiersBodyStructureProfile)
 
 * focus contains imageRegion2d 0..* MS
 * focus[imageRegion2d] only Reference(ImagingSelection2dImageRegionProfile)
@@ -182,7 +177,7 @@ Description: "The TID1411PlanarROIMeasurementGroup can be extracted from TID 141
 
 Mapping: dicom-sr-for-TID1501PlanarROIMeasurementGroupProfile
 Id: dicom-sr-tid-1501
-Title: "DICOM SR TID 1501 Planar ROI Measurement GroupTID 1501 Measurement and Qualitative Evaluation Group"
+Title: "DICOM SR TID 1501 Measurement and Qualitative Evaluation Group"
 Source: ImagingMeasurementGroupProfile
 Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1501"
 Description: "The TID1501PlanarROIMeasurementGroup can be extracted from TID 1501 - Measurement and Qualitative Evaluation Group."

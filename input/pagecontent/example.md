@@ -17,7 +17,7 @@ The source DICOM SR Measurement Report is in DICOM JSON format. See the [DICOM P
   "00100020": { "vr": "LO", "Value": [ "PID-11235" ] },
   "00100024": { "vr": "SQ",  "Value": [ {
         "00400031": { "vr": "SH", "Value": [ "Test Hospital" ] },
-        "00400032": { "vr": "SH", "Value": [ "testhospital.org" ] },
+        "00400032": { "vr": "SH", "Value": [ "http://testhospital.org/mr" ] },
         "00400033": { "vr": "LO", "Value": [ "URI" ] }
       } ] }
 }
@@ -36,7 +36,7 @@ The source DICOM SR Measurement Report is in DICOM JSON format. See the [DICOM P
 "subject": {
   "type": "Patient",
   "identifier": { 
-    "system": "testhospital.org",
+    "system": "http://testhospital.org/mr",
     "value": "PID-11235",
     "assigner": { "display": "Test Hospital" } 
   }
@@ -49,6 +49,8 @@ The source DICOM SR Measurement Report is in DICOM JSON format. See the [DICOM P
 1. Search for FHIR Patient with identifier `testhostpital.com|PID-11235`
     1. If a result is found, use the found `Patient` resource as the `subject` for all created resources
     2. If a result is _not_ found, use a logical reference to the Patient ID from DICOM as the `subject` for all created resources
+
+See [Example Patient](Patient-measurement-report-patient.html).
 
 #### FHIR Resources
 - Referenced
@@ -68,7 +70,7 @@ The source DICOM SR Measurement Report is in DICOM JSON format. See the [DICOM P
   "00080050": { "vr": "SH" , "Value": "ACSN-235813" },
   "00080051": { "vr": "SQ",  "Value": [ {
         "00400031": { "vr": "SH", "Value": [ "Test Hospital" ] },
-        "00400032": { "vr": "SH", "Value": [ "testhospital.org" ] },
+        "00400032": { "vr": "SH", "Value": [ "http://testhospital.org/acsn" ] },
         "00400033": { "vr": "LO", "Value": [ "URI" ] }
       } ] }
 }
@@ -91,7 +93,7 @@ The source DICOM SR Measurement Report is in DICOM JSON format. See the [DICOM P
       "coding" : [{
         "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
         "code" : "ACSN" }]},
-    "system": "testhospital.org",
+    "system": "http://testhospital.org/acsn",
     "value": "ACSN-235813",
     "assigner": { "display": "Test Hospital" } 
   }
@@ -104,6 +106,8 @@ The source DICOM SR Measurement Report is in DICOM JSON format. See the [DICOM P
 1. Search for FHIR ServiceRequest with identifier `radiology.testhostpital.com|ACSN-235813`
     1. If a result is found, use the found `ServiceRequest` resource as the `basedOn` value for all created `Observation` resources
     2. If a result is _not_ found, use a logical reference to the Accession Number from DICOM as the `basedOn` value for all created `Observation` resources
+
+See [Example ServiceRequest](ServiceRequest-measurement-report-service-request.html).
 
 #### FHIR Resources
 - Referenced
@@ -150,6 +154,8 @@ The source DICOM SR Measurement Report is in DICOM JSON format. See the [DICOM P
 1. Search for FHIR ImagingStudy with identifier `urn:dicom:uid|urn:oid:1.2.840.113747.20080222.8331141314456631405221767081790268995`
     1. If a result is found, use the found `ImagingStudy` resource as the `derivedFrom` value for all created `Observation` and `ImagingSelection` resources\
     2. If a result is _not_ found, use a logical reference to the Study Instance UID ID from DICOM as the `subject` for all created `Observation` and `ImagingSelection` resources
+
+See [Example ImagingStudy](ImagingStudy-measurement-report-imaging-study.html).
 
 #### FHIR Resources
 - Referenced
@@ -199,6 +205,8 @@ The source DICOM SR Measurement Report is in DICOM JSON format. See the [DICOM P
 </td>
 </tr>
 </table>
+
+See [Example Device](Device-measurement-report-general-equipment.html).
 
 #### FHIR Resources
 - Referenced
@@ -328,6 +336,9 @@ The source DICOM SR Measurement Report is in DICOM JSON format. See the [DICOM P
 1. Find the `CONTAINER` content item with the Concept Name Code Sequence (0040,A043) value of `DCM#126010 "Imaging Measurements"`
 2. Find the Content Sequence (0040,A730) for this container
 3. Create a new `ImagingMeasurementGroup` Observation resource for each child content item with a Concept Name Code Sequence (0040,A043) value of `DCM#125007 "Measurement Group"`
+
+See:
+- 
 
 #### FHIR Resources
 - Referenced
@@ -513,7 +524,7 @@ The source DICOM SR Measurement Report is in DICOM JSON format. See the [DICOM P
       },
       "includedStructure": [
         "structure": {
-          "coding": "Nodule 1"
+          "text": "Nodule 1"
         }
       ]
     }

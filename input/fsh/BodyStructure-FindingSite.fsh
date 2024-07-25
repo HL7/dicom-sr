@@ -24,12 +24,12 @@ Description: "The FindingSiteBodyStructure can be extracted from TID 300 EV(3636
 * includedStructure.structure.coding -> "TID300.EV(363698007, SCT, Finding Site)"
 * includedStructure.laterality -> "TID300.EV(272741003, SCT, Laterality)"
 
-Instance: DICOMSRFindingSiteBodyStructure-Example
+Instance: Example-BodyStructure-DICOMSRFindingSiteBodyStructureProfile
 InstanceOf: DICOMSRFindingSiteBodyStructureProfile
 Usage: #example
 Description: "Example of BodySite representing a DICOM SR Finding Site"
 
-* id = "finding-site-1"
+* id = "measurement-report-finding-site"
 
 * patient = Reference(MeasurementReportPatient-Example)
 * includedStructure
@@ -37,3 +37,22 @@ Description: "Example of BodySite representing a DICOM SR Finding Site"
     * coding
       * system = "http://snomed.info/sct"
       * code = #363698007 "Structure of left lung"
+* text
+  * status = #generated
+  * div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
+  <pre>
+{
+  \"0040A010\": { \"vr\": \"CS\", \"Value\": [ \"HAS CONCEPT MOD\" ] },
+  \"0040A040\": { \"vr\": \"CS\", \"Value\": [ \"CODE\" ] },
+  \"0040A043\": { \"vr\": \"SQ\", \"Value\": [ {
+        \"00080100\": { \"vr\": \"SH\", \"Value\": [ \"G-C0E3\" ] },
+        \"00080102\": { \"vr\": \"SH\", \"Value\": [ \"SRT\" ] },
+        \"00080104\": { \"vr\": \"LO\", \"Value\": [ \"Finding Site\" ] }
+      } ] },
+  \"0040A168\": { \"vr\": \"SQ\", \"Value\": [ {
+        \"00080100\": { \"vr\": \"SH\", \"Value\": [ \"T-28000\" ] },
+        \"00080102\": { \"vr\": \"SH\", \"Value\": [ \"SRT\" ] },
+        \"00080104\": { \"vr\": \"LO\", \"Value\": [ \"Lung\" ] }
+      } ] }
+}
+  </pre></div>"

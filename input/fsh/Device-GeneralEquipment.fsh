@@ -26,12 +26,12 @@ Description: "The GeneralEquipmentProfile can be extracted from DICOM PS 3.3 Sec
 * identifier -> "tag(0018,1002) [Device UID]"
 * displayName -> "tag(0008,1090) [Manufacturer's Model Name]"
 
-Instance: GeneralEquipment-Example
+Instance: Example-Device-GeneralEquipment
 InstanceOf: GeneralEquipmentProfile
 Usage: #example
 Description: "An example of the Device resource corresponding to the DICOM General Equipment IE."
 
-* id = "example-general-equipment"
+* id = "measurement-report-general-equipment"
 
 * identifier
   * type
@@ -41,3 +41,12 @@ Description: "An example of the Device resource corresponding to the DICOM Gener
   * system = "urn:dicom:uid"
   * value = "1.2.840.113747.20080222.8331141314456631405221767081790268995.999"
 * displayName = "Example Imaging Measurement Device"
+* text
+  * status = #generated
+  * div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
+  <pre>
+{
+  \"001081090\": { \"vr\": \"LO\", \"Value\": [ \"Example Imaging Measurement Device\" ] },
+  \"00181002\": { \"vr\": \"UI\", \"Value\": [ \"1.2.840.113747.20080222.8331141314456631405221767081790268995.8888\" ] }
+}
+  </pre></div>"

@@ -49,7 +49,7 @@ Description:    "DICOM SR Imaging Measurement Mapping to Observation"
 * partOf[imagingStudyRef] only Reference(ImagingStudy)
 * partOf[imagingStudyRef] ^short = "Related ImagingStudy"
 * partOf[imagingStudyRef].identifier.type 1..1
-* partOf[imagingStudyRef].identifier.type = DCMIdType#study-instance-uid "Study Instance UID"
+* partOf[imagingStudyRef].identifier.type = DCM#110180 "Study Instance UID"
 * partOf[imagingStudyRef].identifier.system = "urn:dicom:uid"
 * partOf[imagingStudyRef].identifier.value 1..1
 * partOf[imagingStudyRef].identifier ^short = "Identifier related to Study Instance UID"
@@ -69,12 +69,7 @@ Description:    "DICOM SR Imaging Measurement Mapping to Observation"
 * focus ^slicing.description = "Observation foci"
 
 * focus contains trackingUidBodyStructure 0..* MS
-* focus[trackingUidBodyStructure] only Reference(BodyStructure)
-* focus[trackingUidBodyStructure].identifier.type 1..1
-* focus[trackingUidBodyStructure].identifier.type = DCMIdType#tracking-uid "Tracking UID"
-* focus[trackingUidBodyStructure].identifier.system = "urn:dicom:uid"
-* focus[trackingUidBodyStructure].identifier.value 1..1
-* focus[trackingUidBodyStructure].identifier ^short = "A unique identifier used for tracking a finding or feature, potentially across multiple reporting objects, over time"
+* focus[trackingUidBodyStructure] only Reference(DICOMSRTrackingIdentifiersBodyStructureProfile)
 
 // Observation Date Time
 * issued 1..1 MS

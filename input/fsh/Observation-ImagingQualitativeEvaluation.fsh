@@ -49,7 +49,7 @@ Description:    "DICOM SR Imaging Qualitative Evaluation Mapping to Observation"
 * partOf[imagingStudyRef] only Reference(ImagingStudy)
 * partOf[imagingStudyRef] ^short = "Related ImagingStudy"
 * partOf[imagingStudyRef].identifier.type 1..1
-* partOf[imagingStudyRef].identifier.type = DCMIdType#study-instance-uid "Study Instance UID"
+* partOf[imagingStudyRef].identifier.type = DCM#110180 "Study Instance UID"
 * partOf[imagingStudyRef].identifier.system = "urn:dicom:uid"
 * partOf[imagingStudyRef].identifier.value 1..1
 * partOf[imagingStudyRef].identifier ^short = "Identifier related to Study Instance UID"
@@ -69,6 +69,15 @@ Description:    "DICOM SR Imaging Qualitative Evaluation Mapping to Observation"
 * device 1..1 MS
 * device only Reference(AlgorithmIdentificationProfile or GeneralEquipmentProfile)
 * device ^short = "Algorithm Identification or General Equipment Device"
+
+* focus ^slicing.discriminator.type = #value
+* focus ^slicing.discriminator.path = "type"
+* focus ^slicing.rules = #open
+* focus ^slicing.ordered = false
+* focus ^slicing.description = "Observation foci"
+
+* focus contains trackingUidBodyStructure 0..* MS
+* focus[trackingUidBodyStructure] only Reference(DICOMSRTrackingIdentifiersBodyStructureProfile)
 
 * valueCodeableConcept MS
 

@@ -1,9 +1,9 @@
-Instance: DICOMSRMeasurementReport-Example
+Instance: Example-DiagnosticReport-DICOMSRMeasurementReport
 InstanceOf: DiagnosticReport
 Usage: #example
-Description: "An example of a Patient referenced from a measurement report."
+Description: "An example of a DICOM SR measurement report."
 
-* id = "example-dicom-sr-measurement-report"
+* id = "dicom-sr-measurement-report"
 * status = #final
 * code
   * coding

@@ -37,7 +37,7 @@ Description:    "DICOM SR Visual Explanation Mapping to ImagingSelection"
 * derivedFrom[imagingStudyRef] only Reference(ImagingStudy)
 * derivedFrom[imagingStudyRef] ^short = "Related ImagingStudy"
 * derivedFrom[imagingStudyRef].identifier.type 1..1
-* derivedFrom[imagingStudyRef].identifier.type = DCMIdType#study-instance-uid "Study Instance UID"
+* derivedFrom[imagingStudyRef].identifier.type = DCM#110180 "Study Instance UID"
 * derivedFrom[imagingStudyRef].identifier.system = "urn:dicom:uid"
 * derivedFrom[imagingStudyRef].identifier.value 1..1
 * derivedFrom[imagingStudyRef].identifier ^short = "Identifier related to Study Instance UID"
