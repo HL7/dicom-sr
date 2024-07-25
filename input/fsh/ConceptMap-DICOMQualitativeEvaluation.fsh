@@ -6,8 +6,7 @@ Usage: #definition
 * id =  "concept-map-dicom-umls-c0034375"
 * name = "DICOMQualitativeEvaluationToFHIRMapping"
 * description = "Mapping between DICOM Document IE and FHIR Resources"
-* status = #draft
-* experimental = true
+* status = #active
 * contact[0].telecom[0].system = #url
 * contact[0].telecom[0].value = "http://www.hl7.org/Special/committees/imagemgt"
 * extension[0].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"

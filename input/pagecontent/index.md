@@ -41,9 +41,7 @@ This IG is organized into three main sections:
 
 [comment]: <> (    * [Imaging Qualitative Evaluation Mapping]&#40;mapping.html#imaging_qualitative_evaluation&#41;)
 
-[comment]: <> (    * [Derived Imaging Measurement Mapping]&#40;mapping.html#derived_imaging_measurement&#41;)
 * [Chapter IV](example.html): Example DICOM SR Measurement Report Mapping
-    * [Example Instance](example.html#example_sr) - Example DICOM SR Measurement Report
     * [Patient Mapping](example.html#example_patient) - Patient Mapping Example
     * [Service Request Mapping](example.html#example_service_request) - Service Request Mapping Example
     * [Imaging Study Mapping](example.html#example_imaging_study) - Imaging Study Mapping Example
@@ -51,6 +49,9 @@ This IG is organized into three main sections:
     * [Document Mapping](example.html#example_document) - Document Mapping Example
     * [Imaging Measurements Container Mapping](example.html#example_imaging_measurement_container) - Imaging Measurements Container Mapping Example
     * [Imaging Measurement Group Mapping](example.html#example_imaging_measurement_group) - Imaging Measurement Group Mapping Example
+    * [Imaging Measurement Mapping](example.html#example_imaging_measurement) - Imaging Measurement Mapping Example
+    * [Imaging Qualitative Evaluation Mapping](example.html#example_imaging_qualitative_evaluation) - Imaging Qualitative Evaluation Mapping Example
+    * [Example Instance](example.html#example_sr) - Complete Example DICOM SR Measurement Report
 
 ### Copyrights and acknowledgments
 

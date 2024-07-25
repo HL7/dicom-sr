@@ -1,9 +1,6 @@
 This chapter describes the complete mapping of a DICOM SR Measurement Report into FHIR resources following the method of this implementation guide.
 
-### Example Measurement Report<a name="example_sr"></a>
-TODO -- Add source of measurement report.
-
-See 
+The source DICOM SR Measurement Report is in DICOM JSON format. See the [DICOM PS3.18 Section F](https://dicom.nema.org/medical/dicom/current/output/chtml/part18/chapter_F.html) for more information.
 
 ### Patient Mapping<a name="example_patient"></a>
 <table>
@@ -381,7 +378,7 @@ See
               "00080102": { "vr": "SH", "Value": [ "DCM" ] },
               "00080104": { "vr": "LO", "Value": [ "Tracking Unique Identifier" ] }
             } ] },
-        "0040A124": { "vr": "UI", "Value": [ "2.25.93574820107276479941769093764306453580797441114463894069751" ] }
+        "0040A124": { "vr": "UI", "Value": [ "1.2.840.113747.20080222.8331141314456631405221767081790268995.100" ] }
       },
       {
         "0040A010": { "vr": "CS", "Value": [ "CONTAINS" ] },
@@ -656,7 +653,8 @@ See
    3. Set `bodyStructure` to reference finding site BodyStructure resource
    4. Set `hasMember` to reference Observation resources for imaging measurements and qualitative evaluations\
       *Note: Not yet created*
-   5. Set 'device' to reference general equipment Device resource
+   5. Set `device` to reference general equipment Device resource\
+      No Algorithm Identification is specified at the group level so the general equipment device is used
    6. Set `valueCodeableConcept` to value of Finding
 
 #### FHIR Resources
@@ -669,3 +667,59 @@ See
    - Observation (ImagingMeasurementGroup)
    - BodyStructure (Tracking, FindingSite)
    - ImagingSelection (Segment)
+
+### Imaging Measurement Mapping <a name="example_imaging_measurement"></a>
+<table>
+<tr>
+<th>DICOM</th>
+<th>FHIR Observation</th>
+</tr>
+<tr>
+<td>
+<pre>
+{
+    {
+      "0040A010": { "vr": "CS", "Value": [ "CONTAINS" ] },
+      "0040A040": { "vr": "CS", "Value": [ "NUM" ] },
+      "0040A043": { "vr": "SQ", "Value": [ {
+        "00080100": { "vr": "SH", "Value": [ "G-D705" ] },
+        "00080102": { "vr": "SH", "Value": [ "SRT" ] },
+        "00080104": { "vr": "LO", "Value": [ "Volume" ] }
+      } ] },
+      "0040A300": { "vr": "SQ", "Value": [ {
+        "004008EA": { "vr": "SQ", "Value": [ {
+          "00080100": { "vr": "SH", "Value": [ "mm3" ] },
+          "00080102": { "vr": "SH", "Value": [ "UCUM" ] },
+          "00080104": { "vr": "LO", "Value": [ "cubic millimeter" ] }
+        } ] },
+        "0040A30A": { "vr": "DS", "Value": [ 3.111220E+04 ] }
+      } ] }
+}
+</pre>
+</td>
+<td>
+<pre></pre>
+</td>
+</tr>
+</table>
+
+
+### Imaging Qualitative Evaluation Mapping <a name="example_imaging_qualitative_evaluation"></a>
+<table>
+<tr>
+<th>DICOM</th>
+<th>FHIR Observation</th>
+</tr>
+<tr>
+<td>
+<pre>
+</pre>
+</td>
+<td>
+<pre></pre>
+</td>
+</tr>
+</table>
+
+### Example Measurement Report<a name="example_sr"></a>
+TODO -- Add source of measurement report.
