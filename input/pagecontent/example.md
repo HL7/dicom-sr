@@ -937,6 +937,17 @@ See:
       }
     ]
   },
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "C0034375",
+          "system": "http://terminology.hl7.org/CodeSystem/umls",
+          "display": "Qualitative Evaluations"
+        }
+      ]
+    }
+  ],
   "subject" : {
     "reference" : "Patient/measurement-report-patient"
   },

@@ -56,6 +56,9 @@ Description:    "DICOM SR Imaging Measurement Mapping to Observation"
 
 * code MS
 
+* category 1..* MS
+* category = DCM#125007 "Measurement Group"
+
 * subject only Reference(Patient)
 * subject 1..1 MS
 
@@ -128,7 +131,7 @@ Description:    "DICOM SR Imaging Measurement Mapping to Observation"
 * bodyStructure MS
 * bodyStructure only Reference(BodyStructureFindingSite)
 
-* valueQuantity MS
+* valueQuantity 1..1 MS
 
 Mapping: dicom-sr-for-TID300MeasurementProfile
 Id: dicom-sr-tid-300

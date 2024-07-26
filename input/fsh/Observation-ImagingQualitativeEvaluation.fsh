@@ -54,10 +54,10 @@ Description:    "DICOM SR Imaging Qualitative Evaluation Mapping to Observation"
 * partOf[imagingStudyRef].identifier.value 1..1
 * partOf[imagingStudyRef].identifier ^short = "Identifier related to Study Instance UID"
 
-* category MS
-* category = http://terminology.hl7.org/CodeSystem/umls#C0034375 "Qualitative Evaluations"
-
 * code MS
+
+* category 1..* MS
+* category = http://terminology.hl7.org/CodeSystem/umls#C0034375 "Qualitative Evaluations"
 
 * subject only Reference(Patient)
 * subject 1..1 MS
@@ -123,7 +123,7 @@ Description:    "DICOM SR Imaging Qualitative Evaluation Mapping to Observation"
 * focus[visualExplanation] only Reference(ImagingSelectionVisualExplanationProfile)
 * focus[visualExplanation] ^short = "VisualExplanation"
 
-* valueCodeableConcept MS
+* valueCodeableConcept 1..1 MS
 
 Mapping: dicom-sr-for-TID1500MeasurementReportProfile
 Id: dicom-sr-tid-1500
@@ -155,6 +155,7 @@ Description: "Example of Observation representing a DICOM SR Measurement Qualita
   * coding
     * system = "https://ncit.nci.nih.gov"
     * code = #C45992 "Subtlety score"
+* category = http://terminology.hl7.org/CodeSystem/umls#C0034375 "Qualitative Evaluations"
 * focus[referencedSegment] = Reference(Example-ImagingSelection-ReferencedSegment)
 * focus[trackingIdentifiers] = Reference(Example-BodyStructure-TrackingIdentifiers)
 * bodyStructure = Reference(Example-BodyStructure-FindingSite)
@@ -181,6 +182,7 @@ Description: "Example of Observation representing a DICOM SR Measurement Qualita
   * coding
     * system = "http://radlex.org"
     * code = #RID36042 "Malignancy"
+* category = http://terminology.hl7.org/CodeSystem/umls#C0034375 "Qualitative Evaluations"
 * focus[referencedSegment] = Reference(Example-ImagingSelection-ReferencedSegment)
 * focus[trackingIdentifiers] = Reference(Example-BodyStructure-TrackingIdentifiers)
 * bodyStructure = Reference(Example-BodyStructure-FindingSite)
