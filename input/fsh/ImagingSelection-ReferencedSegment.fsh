@@ -54,8 +54,8 @@ Description:    "DICOM SR Referenced Segment Mapping to ImagingSelection"
 * instance ^slicing.ordered = false
 * instance ^slicing.description = "Selected Segmentation Instance"
 
-* instance contains referencedSegment 0..*
-* instance[referencedSegment].sopClass = urn:ietf:rfc:3986#urn:oid:1.2.840.10008.5.1.4.1.1.66.4 "Segmentation Storage"
+* instance contains segmentationInstance 0..*
+* instance[segmentationInstance].sopClass = urn:ietf:rfc:3986#urn:oid:1.2.840.10008.5.1.4.1.1.66.4 "Segmentation Storage"
 
 Mapping: dicom-tid-1411-for-referencedSegmentProfile
 Id: dicom-tid-1411-referenced-segment
@@ -63,9 +63,9 @@ Title: "DICOM TID 1411 Referenced Segment"
 Source: ImagingSelectionReferencedSegmentProfile
 Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1411"
 Description: "The ImagingSelectionReferencedSegment can be extracted from TID 1411.EV(121191, DCM, Referenced Segment)."
-* -> "TID1411(ReferencedSegment)"
-* instance[referencedSegment].uid -> "tag(0008,1155) [Referenced SOP Instance UID]"
-* instance[referencedSegment].subset -> "tag(0062,000B) [Referenced Segment Number]"
+* -> "TID1411(Referenced Segment)"
+* instance[segmentationInstance].uid -> "tag(0008,1155) [Referenced SOP Instance UID]"
+* instance[segmentationInstance].subset -> "tag(0062,000B) [Referenced Segment Number]"
 
 Instance: Example-ImagingSelection-ReferencedSegment
 InstanceOf: ImagingSelectionReferencedSegmentProfile
@@ -86,7 +86,7 @@ Description: "An example of an Segmentation SOP Instance referenced from a measu
     * system = "http://dicom.nema.org/resources/ontology/DCM"
     * code = #121191 "Referenced Segment"
 * seriesUid = "1.2.840.113747.20080222.83341314456631405221767081790268995.2"
-* instance
+* instance[segmentationInstance]
   * uid = "1.2.840.113747.20080222.83341314456631405221767081790268995.2.1"
   * sopClass = urn:ietf:rfc:3986#urn:oid:1.2.840.10008.5.1.4.1.1.66.4 "Segmentation Storage"
 * text
