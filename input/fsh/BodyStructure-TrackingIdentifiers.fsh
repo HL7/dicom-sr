@@ -29,6 +29,7 @@ Description:    "DICOM SR Observation Tracking Identifier Mapping to BodyStructu
 * identifier[trackingUid].type = DCM#112040 "Tracking Unique Identifier"
 * identifier[trackingUid].value 1..1
 * identifier[trackingUid] ^short = "Tracking UID"
+* identifier[trackingUid].system = "urn:dicom:uid"
 * identifier[trackingUid] ^definition = "A unique identifier used for tracking a finding or feature, potentially across multiple reporting objects, over time."
 
 Mapping: dicom-sr-tracking-identifiers-for-measurement-groups
@@ -50,16 +51,10 @@ Description: "Example of BodySite representing a DICOM SR Tracking Identifier"
 * id = "measurement-report-tracking-identifier"
 
 * identifier[trackingIdentifier]
-  * type
-    * coding
-      * system = "http://dicom.nema.org/resources/ontology/DCM"
-      * code = #112039 "Tracking Identifier"
+  * type = DCM#112039 "Tracking Identifier"
   * value = "Nodule 1"
 * identifier[trackingUid]
-  * type
-    * coding
-      * system = "http://dicom.nema.org/resources/ontology/DCM"
-      * code = #112040 "Tracking Unique Identifier"
+  * type = DCM#112040 "Tracking Unique Identifier"
   * system = "urn:dicom:uid"
   * value = "urn:oid:1.2.840.113747.20080222.8331141314456631405221767081790268995.100"
 
