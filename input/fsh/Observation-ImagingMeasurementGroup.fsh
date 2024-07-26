@@ -222,11 +222,11 @@ Description: "Example of Observation representing a DICOM SR Measurement Group"
   * coding
     * system = "http://terminology.hl7.org/CodeSystem/snm"
     * code = #121071 "Nodule"
-* hasMember[+] = Reference(Example-Observation-ImagingMeasurement-001)
-* hasMember[+] = Reference(Example-Observation-ImagingMeasurement-002)
-* hasMember[+] = Reference(Example-Observation-ImagingMeasurement-003)
-* hasMember[+] = Reference(Example-Observation-ImagingQualitativeEvaluation-001)
-* hasMember[+] = Reference(Example-Observation-ImagingQualitativeEvaluation-002)
+* hasMember[imagingMeasurement] = Reference(Example-Observation-ImagingMeasurement-001)
+* hasMember[imagingMeasurement] = Reference(Example-Observation-ImagingMeasurement-002)
+* hasMember[imagingMeasurement] = Reference(Example-Observation-ImagingMeasurement-003)
+* hasMember[qualitativeEvaluation] = Reference(Example-Observation-ImagingQualitativeEvaluation-001)
+* hasMember[qualitativeEvaluation] = Reference(Example-Observation-ImagingQualitativeEvaluation-002)
 
 * text
   * status = #generated
