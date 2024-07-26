@@ -67,8 +67,8 @@ Description:    "DICOM SR TID Imaging Measurement Group Mapping to Observation"
 * subject only Reference(Patient)
 * subject 1..1 MS
 
-* focus ^slicing.discriminator.type = #type
-* focus ^slicing.discriminator.path = "reference"
+* focus ^slicing.discriminator.type = #profile
+* focus ^slicing.discriminator.path = "Observation.focus"
 * focus ^slicing.rules = #open
 * focus ^slicing.ordered = false
 * focus ^slicing.description = "Observation foci"
