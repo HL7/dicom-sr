@@ -128,7 +128,7 @@ Description:    "DICOM SR TID Imaging Measurement Group Mapping to Observation"
 * hasMember ^slicing.discriminator.path = "resolve()"
 * hasMember ^slicing.rules = #open
 * hasMember ^slicing.ordered = false
-* hasMember ^slicing.description = "Imaging Measurements"
+* hasMember ^slicing.description = "Child Imaging Measurements and Qualitative Evaluations"
 
 // Imaging Measurements
 * hasMember contains imagingMeasurement 0..* MS
@@ -222,11 +222,11 @@ Description: "Example of Observation representing a DICOM SR Measurement Group"
   * coding
     * system = "http://terminology.hl7.org/CodeSystem/snm"
     * code = #121071 "Nodule"
-* hasMember[imagingMeasurement][+] = Reference(Example-Observation-ImagingMeasurement-001)
-* hasMember[imagingMeasurement][+] = Reference(Example-Observation-ImagingMeasurement-002)
-* hasMember[imagingMeasurement][+] = Reference(Example-Observation-ImagingMeasurement-003)
-* hasMember[qualitativeEvaluation][+] = Reference(Example-Observation-ImagingQualitativeEvaluation-001)
-* hasMember[qualitativeEvaluation][+] = Reference(Example-Observation-ImagingQualitativeEvaluation-002)
+* hasMember[+] = Reference(Example-Observation-ImagingMeasurement-001)
+* hasMember[+] = Reference(Example-Observation-ImagingMeasurement-002)
+* hasMember[+] = Reference(Example-Observation-ImagingMeasurement-003)
+* hasMember[+] = Reference(Example-Observation-ImagingQualitativeEvaluation-001)
+* hasMember[+] = Reference(Example-Observation-ImagingQualitativeEvaluation-002)
 
 * text
   * status = #generated
