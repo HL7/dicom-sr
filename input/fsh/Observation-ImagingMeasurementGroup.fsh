@@ -74,7 +74,7 @@ Description:    "DICOM SR TID Imaging Measurement Group Mapping to Observation"
 * focus ^slicing.description = "Observation foci"
 
 * focus contains trackingIdentifiers 0..* MS
-* focus[trackingIdentifiers] only Reference(DICOMSRTrackingIdentifiersBodyStructureProfile)
+* focus[trackingIdentifiers] only Reference(BodyStructureTrackingIdentifiers)
 
 * focus contains imageRegion2d 0..* MS
 * focus[imageRegion2d] only Reference(ImagingSelection2dImageRegionProfile)
@@ -145,7 +145,7 @@ Description:    "DICOM SR TID Imaging Measurement Group Mapping to Observation"
 * device ^short = "Algorithm Identification or General Equipment Device"
 
 * bodyStructure MS
-* bodyStructure only Reference(DICOMSRFindingSiteBodyStructureProfile)
+* bodyStructure only Reference(BodyStructureFindingSite)
 
 Mapping: dicom-sr-for-TID1410PlanarROIMeasurementGroup
 Id: dicom-sr-tid-1410
@@ -194,7 +194,7 @@ InstanceOf: ImagingMeasurementGroupProfile
 Usage: #example
 Description: "Example of Observation representing a DICOM SR Measurement Group"
 
-* id = "imaging-measurement-group-001"
+* id = "imaging-measurement-group"
 * subject = Reference(Example-Patient)
 * basedOn = Reference(Example-ServiceRequest)
 * partOf = Reference(Example-ImagingStudy)
@@ -202,7 +202,7 @@ Description: "Example of Observation representing a DICOM SR Measurement Group"
 * status = #final
 * code
   * coding
-    * system = "http://snomed.info/sct/MAIN/version/2024-07-01"
+    * system = "http://snomed.info/sct"
     * code = #241053004 "Radiographic measurement of lung volume"
 * category
   * coding
@@ -216,12 +216,11 @@ Description: "Example of Observation representing a DICOM SR Measurement Group"
   * coding
     * system = "http://terminology.hl7.org/CodeSystem/snm"
     * code = #121071 "Nodule"
-* hasMember
-  * reference = "Observation/imaging-measurement-001"
-  * reference = "Observation/imaging-measurement-002"
-  * reference = "Observation/imaging-measurement-003"
-  * reference = "Observation/qualitative-evaluation-001"
-  * reference = "Observation/qualitative-evaluation-002"
+* hasMember[+] = Reference(Example-Observation-ImagingMeasurement-001)
+* hasMember[+] = Reference(Example-Observation-ImagingMeasurement-002)
+* hasMember[+] = Reference(Example-Observation-ImagingMeasurement-003)
+* hasMember[+] = Reference(Example-Observation-ImagingQualitativeEvaluation-001)
+* hasMember[+] = Reference(Example-Observation-ImagingQualitativeEvaluation-002)
 
 * text
   * status = #generated

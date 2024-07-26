@@ -4,7 +4,7 @@ Alias: LOINC =  http://loinc.org
 Alias: DCMIdType = http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-identifier-type
 Alias: HL7IdType = http://terminology.hl7.org/CodeSystem/v2-0203
 
-Profile:        DICOMSRTrackingIdentifiersBodyStructureProfile
+Profile:        BodyStructureTrackingIdentifiers
 Parent:         BodyStructure
 Id:             dicom-sr-tracking-identifiers
 Title:          "Body Structure - DICOM SR Observation Tracking Identifier Mapping"
@@ -34,7 +34,7 @@ Description:    "DICOM SR Observation Tracking Identifier Mapping to BodyStructu
 Mapping: dicom-sr-tracking-identifiers-for-measurement-groups
 Id: dicom-sr-measurement-group-tracking-identifiers
 Title: "DICOM SR Observation Tracking Identifiers for EV(125007, DCM, Measurement Group)"
-Source: DICOMSRTrackingIdentifiersBodyStructureProfile
+Source: BodyStructureTrackingIdentifiers
 Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1500"
 * -> "EV(125007, DCM, Measurement Group)"
 * identifier[trackingIdentifier] -> "DT (112039, DCM, Tracking Identifier)"
@@ -43,7 +43,7 @@ Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapte
 * includedStructure.structure.text -> "DT (112039, DCM, Tracking Identifier) > EV (112040, DCM, Tracking Unique Identifier)"
 
 Instance: Example-BodyStructure-TrackingIdentifiers
-InstanceOf: DICOMSRTrackingIdentifiersBodyStructureProfile
+InstanceOf: BodyStructureTrackingIdentifiers
 Usage: #example
 Description: "Example of BodySite representing a DICOM SR Tracking Identifier"
 

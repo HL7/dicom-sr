@@ -668,7 +668,7 @@ See [Example Device](Device-measurement-report-general-equipment.html).
 See:
 - [Example Tracking Identifier BodyStructure](BodyStructure-measurement-report-tracking-identifier.html)
 - [Example Finding Site BodyStructure](BodyStructure-measurement-report-finding-site.html)
-- [Example Referenced Segment ImagingSelection](ImagingSelection-measurement-report-segment.html)
+- [Example Referenced Segment ImagingSelection](ImagingSelection-measurement-report-referenced-segment.html)
 - [Example Imaging Measurement Group Observation](Observation-imaging-measurement-group.html)
 
 #### FHIR Resources

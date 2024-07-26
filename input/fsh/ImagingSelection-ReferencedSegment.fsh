@@ -88,9 +88,7 @@ Description: "An example of an Segmentation SOP Instance referenced from a measu
 * seriesUid = "1.2.840.113747.20080222.83341314456631405221767081790268995.2"
 * instance
   * uid = "1.2.840.113747.20080222.83341314456631405221767081790268995.2.1"
-  * sopClass
-    * system = "urn:ietf:rfc:3986"
-    * code = #urn:oid:1.2.840.10008.5.1.4.1.1.66.4 "Segmentation Storage"
+  * sopClass = urn:ietf:rfc:3986#urn:oid:1.2.840.10008.5.1.4.1.1.66.4 "Segmentation Storage"
 * text
   * status = #generated
   * div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">

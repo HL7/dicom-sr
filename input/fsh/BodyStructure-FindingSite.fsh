@@ -4,7 +4,7 @@ Alias: LOINC =  http://loinc.org
 Alias: DCMIdType = http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-identifier-type
 Alias: HL7IdType = http://terminology.hl7.org/CodeSystem/v2-0203
 
-Profile:        DICOMSRFindingSiteBodyStructureProfile
+Profile:        BodyStructureFindingSite
 Parent:         BodyStructure
 Id:             dicom-sr-finding-site
 Title:          "Body Structure - DICOM SR Finding Site Mapping"
@@ -17,7 +17,7 @@ Description:    "DICOM SR Finding Site Mapping to BodyStructure"
 Mapping: dicom-sr-for-findingSiteProfile
 Id: dicom-sr
 Title: "DICOM SR Finding Site"
-Source: DICOMSRFindingSiteBodyStructureProfile
+Source: BodyStructureFindingSite
 Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_300"
 Description: "The FindingSiteBodyStructure can be extracted from TID 300 EV(363698007, SCT, Finding Site) and EV (272741003, SCT, Laterality)."
 * -> "TID300(FindingSite)"
@@ -25,7 +25,7 @@ Description: "The FindingSiteBodyStructure can be extracted from TID 300 EV(3636
 * includedStructure.laterality -> "TID300.EV(272741003, SCT, Laterality)"
 
 Instance: Example-BodyStructure-FindingSite
-InstanceOf: DICOMSRFindingSiteBodyStructureProfile
+InstanceOf: BodyStructureFindingSite
 Usage: #example
 Description: "Example of BodySite representing a DICOM SR Finding Site"
 

@@ -54,9 +54,6 @@ Description:    "DICOM SR Imaging Measurement Mapping to Observation"
 * partOf[imagingStudyRef].identifier.value 1..1
 * partOf[imagingStudyRef].identifier ^short = "Identifier related to Study Instance UID"
 
-* category MS
-* category = DCM#125007 "Measurement Group"
-
 * code MS
 
 * subject only Reference(Patient)
@@ -69,7 +66,51 @@ Description:    "DICOM SR Imaging Measurement Mapping to Observation"
 * focus ^slicing.description = "Observation foci"
 
 * focus contains trackingIdentifiers 0..* MS
-* focus[trackingIdentifiers] only Reference(DICOMSRTrackingIdentifiersBodyStructureProfile)
+* focus[trackingIdentifiers] only Reference(BodyStructureTrackingIdentifiers)
+
+* focus contains imageRegion2d 0..* MS
+* focus[imageRegion2d] only Reference(ImagingSelection2dImageRegionProfile)
+* focus[imageRegion2d] ^short = "2D Image Region"
+
+* focus contains imageRegion3d 0..* MS
+* focus[imageRegion3d] only Reference(ImagingSelection3dImageRegionProfile)
+* focus[imageRegion3d] ^short = "3D Image Region"
+
+* focus contains referencedSegment 0..* MS
+* focus[referencedSegment] only Reference(ImagingSelectionReferencedSegmentProfile)
+* focus[referencedSegment] ^short = "Referenced Segment"
+
+* focus contains referencedSegmentationFrame 0..* MS
+* focus[referencedSegmentationFrame] only Reference(ImagingSelectionReferencedSegmentationFrameProfile)
+* focus[referencedSegmentationFrame] ^short = "Referenced Segmentation Frame"
+
+* focus contains sourceImageForSegmentation 0..* MS
+* focus[sourceImageForSegmentation] only Reference(ImagingSelectionSourceImageForSegmentationProfile)
+* focus[sourceImageForSegmentation] ^short = "Source Image for Segmentation"
+
+* focus contains sourceSeriesForSegmentation 0..* MS
+* focus[sourceSeriesForSegmentation] only Reference(ImagingSelectionSourceSeriesForSegmentationProfile)
+* focus[sourceSeriesForSegmentation] ^short = "Source Series for Segmentation"
+
+* focus contains regionInSpace 0..* MS
+* focus[regionInSpace] only Reference(ImagingSelectionRegionInSpaceProfile)
+* focus[regionInSpace] ^short = "RegionInSpace"
+
+* focus contains volumeSurface 0..* MS
+* focus[volumeSurface] only Reference(ImagingSelectionVolumeSurfaceProfile)
+* focus[volumeSurface] ^short = "Volume Surface"
+
+* focus contains realWorldValueMap 0..* MS
+* focus[realWorldValueMap] only Reference(ImagingSelectionRealWorldValueMapProfile)
+* focus[realWorldValueMap] ^short = "Real World Value Map"
+
+* focus contains illustrationOfRoi 0..* MS
+* focus[illustrationOfRoi] only Reference(ImagingSelectionIllustrationOfROIProfile)
+* focus[illustrationOfRoi] ^short = "Illustration of ROI"
+
+* focus contains visualExplanation 0..* MS
+* focus[visualExplanation] only Reference(ImagingSelectionVisualExplanationProfile)
+* focus[visualExplanation] ^short = "VisualExplanation"
 
 // Observation Date Time
 * issued 1..1 MS
@@ -85,7 +126,7 @@ Description:    "DICOM SR Imaging Measurement Mapping to Observation"
 * referenceRange MS
 
 * bodyStructure MS
-* bodyStructure only Reference(DICOMSRFindingSiteBodyStructureProfile)
+* bodyStructure only Reference(BodyStructureFindingSite)
 
 * valueQuantity MS
 
@@ -118,3 +159,78 @@ Description: "The TID1419Measurement can be extracted from TID 1419 - ROI Measur
 * method -> "TID1501.EV(370129005, SCT, Measurement Method)"
 * device -> "TID1501.EV(121071, DCM, Finding)"
 * valueQuantity -> "TID1419.$Measurement.tag(0040,A300) [Measured Value Sequence]"
+
+Instance: Example-Observation-ImagingMeasurement-001
+InstanceOf: ImagingMeasurementProfile
+Usage: #example
+Description: "Example of Observation representing a DICOM SR Measurement Imaging Measurement."
+
+* id = "imaging-measurement-001"
+* subject = Reference(Example-Patient)
+* basedOn = Reference(Example-ServiceRequest)
+* partOf = Reference(Example-ImagingStudy)
+* issued = "2024-07-24T08:23:42+00:00"
+* status = #final
+* code
+  * coding
+    * system = "http://terminology.hl7.org/CodeSystem/snm"
+    * code = #G-D705 "Volume"
+* focus[referencedSegment] = Reference(Example-ImagingSelection-ReferencedSegment)
+* focus[trackingIdentifiers] = Reference(Example-BodyStructure-TrackingIdentifiers)
+* bodyStructure = Reference(Example-BodyStructure-FindingSite)
+* device = Reference(Example-Device-AlgorithmIdentification)
+* valueQuantity
+  * value = 6705.54990898997
+  * unit = "cubic millimeter"
+  * system = "http://unitsofmeasure.org"
+  * code = #mm3
+
+Instance: Example-Observation-ImagingMeasurement-002
+InstanceOf: ImagingMeasurementProfile
+Usage: #example
+Description: "Example of Observation representing a DICOM SR Measurement Imaging Measurement."
+
+* id = "imaging-measurement-002"
+* subject = Reference(Example-Patient)
+* basedOn = Reference(Example-ServiceRequest)
+* partOf = Reference(Example-ImagingStudy)
+* issued = "2024-07-24T08:23:42+00:00"
+* status = #final
+* code
+  * coding
+    * system = "http://terminology.hl7.org/CodeSystem/snm"
+    * code = #M-02550 "Diameter"
+* focus[referencedSegment] = Reference(Example-ImagingSelection-ReferencedSegment)
+* focus[trackingIdentifiers] = Reference(Example-BodyStructure-TrackingIdentifiers)
+* bodyStructure = Reference(Example-BodyStructure-FindingSite)
+* device = Reference(Example-Device-AlgorithmIdentification)
+* valueQuantity
+  * value = 6705.54990898997
+  * unit = "millimeter"
+  * system = "http://unitsofmeasure.org"
+  * code = #mm
+
+Instance: Example-Observation-ImagingMeasurement-003
+InstanceOf: ImagingMeasurementProfile
+Usage: #example
+Description: "Example of Observation representing a DICOM SR Measurement Imaging Measurement."
+
+* id = "imaging-measurement-003"
+* subject = Reference(Example-Patient)
+* basedOn = Reference(Example-ServiceRequest)
+* partOf = Reference(Example-ImagingStudy)
+* issued = "2024-07-24T08:23:42+00:00"
+* status = #final
+* code
+  * coding
+    * system = "https://ibsi.readthedocs.io/en/latest/"
+    * code = #C0JK "Surface area of mesh"
+* focus[referencedSegment] = Reference(Example-ImagingSelection-ReferencedSegment)
+* focus[trackingIdentifiers] = Reference(Example-BodyStructure-TrackingIdentifiers)
+* bodyStructure = Reference(Example-BodyStructure-FindingSite)
+* device = Reference(Example-Device-GeneralEquipment)
+* valueQuantity
+  * value = 9.026567E+03
+  * unit = "square millimeter"
+  * system = "http://unitsofmeasure.org"
+  * code = #mm2
