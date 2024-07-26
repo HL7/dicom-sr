@@ -705,6 +705,7 @@ See [Example Device](Device-measurement-report-general-equipment.html).
 </tr>
 </table>
 
+For each Measurement Group:
 1. Create BodyStructure resources for tracking and finding site (if not already existing)
 2. Create ImagingSelection resource for segment (if not already existing)
 3. Create Observation resource for ImagingMeasurementGroup
@@ -760,15 +761,117 @@ See:
           "00080104": { "vr": "LO", "Value": [ "cubic millimeter" ] }
         } ] },
         "0040A30A": { "vr": "DS", "Value": [ 3.111220E+04 ] }
-      } ] }
+      } ] },
+        "0040A730": { "vr": "SQ", "Value": [ {
+              "0040A010": { "vr": "CS", "Value": [ "HAS CONCEPT MOD" ] },
+              "0040A040": { "vr": "CS", "Value": [ "TEXT" ] },
+              "0040A043": { "vr": "SQ", "Value": [ {
+                    "00080100": { "vr": "SH", "Value": [ "111001" ] },
+                    "00080102": { "vr": "SH", "Value": [ "DCM" ] },
+                    "00080104": { "vr": "LO", "Value": [ "Algorithm Name" ] }
+                  } ] },
+              "0040A160": { "vr": "UT", "Value": [ "pylidc" ] }
+            },
+            {
+              "0040A010": { "vr": "CS", "Value": [ "HAS CONCEPT MOD" ] },
+              "0040A040": { "vr": "CS", "Value": [ "TEXT" ] },
+              "0040A043": { "vr": "SQ", "Value": [ {
+                    "00080100": { "vr": "SH", "Value": [ "111003" ] },
+                    "00080102": { "vr": "SH", "Value": [ "DCM" ] },
+                    "00080104": { "vr": "LO", "Value": [ "Algorithm Version" ] }
+                  } ] },
+              "0040A160": { "vr": "UT", "Value": [ "0.2.0" ] }
+            } ] }
+      },
+      ...
 }
 </pre>
 </td>
 <td>
-<pre></pre>
+<pre>
+{
+  "resourceType" : "Device",
+  "id" : "measurement-report-algorithm",
+  "displayName" : "pylidc",
+  "version" : [
+    {
+      "value" : "0.2.0"
+    }
+  ],
+  "parent" : {
+    "reference" : "Device/measurement-report-general-equipment"
+  }
+},
+{
+  "resourceType" : "Observation",
+  "id" : "imaging-measurement-001",
+  "basedOn" : [
+    {
+      "reference" : "ServiceRequest/measurement-report-service-request"
+    }
+  ],
+  "partOf" : [
+    {
+      "reference" : "ImagingStudy/measurement-report-imaging-study"
+    }
+  ],
+  "status" : "final",
+  "code" : {
+    "coding" : [
+      {
+        "system" : "http://terminology.hl7.org/CodeSystem/snm",
+        "code" : "G-D705"
+      }
+    ]
+  },
+  "subject" : {
+    "reference" : "Patient/measurement-report-patient"
+  },
+  "focus" : [
+    {
+      "reference" : "ImagingSelection/measurement-report-referenced-segment"
+    },
+    {
+      "reference" : "BodyStructure/measurement-report-tracking-identifier"
+    }
+  ],
+  "effectiveDateTime" : "2024-07-24T08:23:42+00:00",
+  "issued" : "2024-07-24T08:23:42+00:00",
+  "performer" : [
+    {
+      "reference" : "Practitioner/measurement-report-practitioner"
+    }
+  ],
+  "valueQuantity" : {
+    "value" : 6705.54990898997,
+    "unit" : "cubic millimeter",
+    "system" : "http://unitsofmeasure.org",
+    "code" : "mm3"
+  },
+  "bodyStructure" : {
+    "reference" : "BodyStructure/measurement-report-finding-site"
+  },
+  "device" : {
+    "reference" : "Device/measurement-report-algorithm"
+  }
+}
+</pre>
 </td>
 </tr>
 </table>
+
+For each Numerical Measurement:
+1. Use the Algorithm Identification fields to create a new AlgorithmIdentification Device resource (if not already present).\
+   This Device resource should have the general equipment device as its parent.
+2. Copy `focus` values from the parent Measurement Group
+3. Copy `bodyStructure` value from the parent Measurement Group unless a Finding Site is defined for the specific Numerical Measurement
+4. Set the `valueQuantity` to the value of the Numerical Measurement
+
+See:
+- [Example Imaging Measurement 001](Observation-imaging-measurement-001.html)
+- [Example Imaging Measurement 002](Observation-imaging-measurement-002.html)
+- [Example Imaging Measurement 003](Observation-imaging-measurement-003.html)
+
 
 #### FHIR Resources
 - Referenced
@@ -791,13 +894,97 @@ See:
 <tr>
 <td>
 <pre>
+{
+  {
+    "0040A010": { "vr": "CS", "Value": [ "CONTAINS" ] },
+    "0040A040": { "vr": "CS", "Value": [ "CODE" ] },
+    "0040A043": { "vr": "SQ", "Value": [ {
+          "00080100": { "vr": "SH", "Value": [ "C45992" ] },
+          "00080102": { "vr": "SH", "Value": [ "NCIt" ] },
+          "00080104": { "vr": "LO", "Value": [ "Subtlety score" ] }
+        } ] },
+    "0040A168": { "vr": "SQ", "Value": [ {
+          "00080100": { "vr": "SH", "Value": [ "105" ] },
+          "00080102": { "vr": "SH", "Value": [ "99LIDCQIICR" ] },
+          "00080104": { "vr": "LO", "Value": [ "5 out of 5 (Obvious)" ] }
+        } ] }
+  },
+  ...
+}
 </pre>
 </td>
 <td>
-<pre></pre>
+<pre>
+{
+  "resourceType" : "Observation",
+  "id" : "qualitative-evaluation-001",
+  "basedOn" : [
+    {
+      "reference" : "ServiceRequest/measurement-report-service-request"
+    }
+  ],
+  "partOf" : [
+    {
+      "reference" : "ImagingStudy/measurement-report-imaging-study"
+    }
+  ],
+  "status" : "final",
+  "code" : {
+    "coding" : [
+      {
+        "system" : "https://ncit.nci.nih.gov",
+        "code" : "C45992"
+      }
+    ]
+  },
+  "subject" : {
+    "reference" : "Patient/measurement-report-patient"
+  },
+  "focus" : [
+    {
+      "reference" : "ImagingSelection/measurement-report-referenced-segment"
+    },
+    {
+      "reference" : "BodyStructure/measurement-report-tracking-identifier"
+    }
+  ],
+  "effectiveDateTime" : "2024-07-24T08:23:42+00:00",
+  "issued" : "2024-07-24T08:23:42+00:00",
+  "performer" : [
+    {
+      "reference" : "Practitioner/measurement-report-practitioner"
+    }
+  ],
+  "valueCodeableConcept" : {
+    "coding" : [
+      {
+        "system" : "http://cancerimagingarchive.net",
+        "code" : "105"
+      }
+    ]
+  },
+  "bodyStructure" : {
+    "reference" : "BodyStructure/measurement-report-finding-site"
+  },
+  "device" : {
+    "reference" : "Device/measurement-report-general-equipment"
+  }
+}
+</pre>
 </td>
 </tr>
 </table>
+
+For each Qualitative Evaluation:
+1. Use the Algorithm Identification fields to create a new AlgorithmIdentification Device resource (if not already present).\
+   This Device resource should have the general equipment device as its parent.
+2. Copy `focus` values from the parent Measurement Group
+3. Copy `bodyStructure` value from the parent Measurement Group unless a Finding Site is defined for the specific Numerical Measurement
+4. Set the `valueCodeableConcept` to the value of the Value Code in the Qualitative Evaluation
+
+See:
+- [Example Imaging Qualitative Evaluation 001](Observation-qualitative-evaluation-001.html)
+- [Example Imaging Qualitative Evaluation 002](Observation-qualitative-evaluation-002.html)
 
 #### FHIR Resources
 - Referenced
