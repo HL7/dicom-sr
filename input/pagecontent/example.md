@@ -199,7 +199,7 @@ See [Example ImagingStudy](ImagingStudy-measurement-report-imaging-study.html).
 <pre>
 "device": [{
   "type": "Device",
-  "reference": "Device/example-general-equipment"
+  "reference": "Device/measurement-report-general-equipment"
 }]
 </pre>
 </td>
@@ -248,7 +248,7 @@ See [Example Device](Device-measurement-report-general-equipment.html).
       "type": "ImagingStudy",
       "reference": "ImagingStudy/measurement-report-imaging-study"
     }],
-    "effectiveDateTime": "2024-07-24T08:23:42"
+    "issued": "2024-07-24T08:23:42"
     "status": "final",
     ...
   }
@@ -259,8 +259,8 @@ See [Example Device](Device-measurement-report-general-equipment.html).
 </table>
 
 1. Extract `ContentDate`, `ContentTime`, and `PreliminaryFlag` values
-2. Use these values to populate the `effectiveDateTime` and `status` fields in the created FHIR Observation resources\
-   `effectiveDateTime` may be overridden by more specific values in specific content items
+2. Use these values to populate the `issued` and `status` fields in the created FHIR Observation resources\
+   `issued` may be overridden by more specific values in specific content items
 
 ### Imaging Measurement Container Mapping<a name="example_imaging_measurement_container"></a>
 <table>
@@ -313,7 +313,7 @@ See [Example Device](Device-measurement-report-general-equipment.html).
          "type": "ImagingStudy",
          "reference": "ImagingStudy/measurement-report-imaging-study"
        }],
-      "effectiveDateTime": "2024-07-24T08:23:42"
+      "issued": "2024-07-24T08:23:42"
       "status": "final",
       "category" : [{ "coding" : [{
         "system" : "http://dicom.nema.org/resources/ontology/DCM",
@@ -322,7 +322,7 @@ See [Example Device](Device-measurement-report-general-equipment.html).
         }]
       }],
      "device": {
-        "reference": "Device/example-general-equipment"
+        "reference": "Device/measurement-report-general-equipment"
       },
       ...
     }
@@ -336,9 +336,6 @@ See [Example Device](Device-measurement-report-general-equipment.html).
 1. Find the `CONTAINER` content item with the Concept Name Code Sequence (0040,A043) value of `DCM#126010 "Imaging Measurements"`
 2. Find the Content Sequence (0040,A730) for this container
 3. Create a new `ImagingMeasurementGroup` Observation resource for each child content item with a Concept Name Code Sequence (0040,A043) value of `DCM#125007 "Measurement Group"`
-
-See:
-- 
 
 #### FHIR Resources
 - Referenced
@@ -491,7 +488,7 @@ See:
   {
     "resource": {
       "resourceType": "BodyStructure",
-      "id": "tracking-1",
+      "id": "measurement-report-tracking-identifier",
       "identifier": [
         {
           "type": {
@@ -532,7 +529,7 @@ See:
   {
     "resource": {
       "resourceType": "BodyStructure",
-      "id": "finding-site-1",
+      "id": "measurement-report-finding-site",
       "patient": {
         "reference": "Patient/measurement-report-patient"
       },
@@ -550,8 +547,8 @@ See:
     {
     "resource": {
       "resourceType": "ImagingSelection",
-      "id": "segment-1",
-      "status": "registered",
+      "id": "measurement-report-referenced-segment",
+      "status": "available",
       "subject": {
         "reference": "Patient/measurement-report-patient"
       },
@@ -584,7 +581,7 @@ See:
   {
     "resource": {
       "resourceType": "Observation",
-      "id": "imaging-measurement-group-001"
+      "id": "imaging-measurement-group"
        "subject": {
          "reference": "Patient/measurement-report-patient"
        },
@@ -596,7 +593,7 @@ See:
          "type": "ImagingStudy",
          "reference": "ImagingStudy/measurement-report-imaging-study"
        }],
-      "effectiveDateTime": "2024-07-24T08:23:42"
+      "issued": "2024-07-24T08:23:42+00:00"
       "status": "final",
       "code" : { "coding" : [{
         "system" : "http://snomed.info/sct/MAIN/version/2024-07-01",
@@ -612,17 +609,17 @@ See:
       }],
       "focus": [
         {
-          "reference": "ImagingSelection/segment-1"
+          "reference": "ImagingSelection/measurement-report-referenced-segment"
         },
         {
-          "reference": "BodyStructure/tracking-1"
+          "reference": "BodyStructure/measurement-report-tracking-identifier"
         }
       ],
       "bodyStructure": {
-        "reference": "BodyStructure/finding-site-1"
+        "reference": "BodyStructure/measurement-report-finding-site"
       },
      "device": {
-        "reference": "Device/example-general-equipment"
+        "reference": "Device/measurement-report-general-equipment"
       },
       "valueCodeableConcept": {
         "coding": [{
@@ -633,19 +630,19 @@ See:
       },
       "hasMember": [
         {
-          "reference": "Observation/imaging-measurement-1"
+          "reference": "Observation/imaging-measurement-001"
         },
         {
-          "reference": "Observation/imaging-measurement-2"
+          "reference": "Observation/imaging-measurement-002"
         },
         {
-          "reference": "Observation/imaging-measurement-3"
+          "reference": "Observation/imaging-measurement-003"
         },
         {
-          "reference": "Observation/qualitative-evaluation-1"
+          "reference": "Observation/qualitative-evaluation-001"
         },
         {
-          "reference": "Observation/qualitative-evaluation-2"
+          "reference": "Observation/qualitative-evaluation-002"
         }
       ]
     }
@@ -667,6 +664,12 @@ See:
    5. Set `device` to reference general equipment Device resource\
       No Algorithm Identification is specified at the group level so the general equipment device is used
    6. Set `valueCodeableConcept` to value of Finding
+
+See:
+- [Example Tracking Identifier BodyStructure](BodyStructure-measurement-report-tracking-identifier.html)
+- [Example Finding Site BodyStructure](BodyStructure-measurement-report-finding-site.html)
+- [Example Referenced Segment ImagingSelection](ImagingSelection-measurement-report-segment.html)
+- [Example Imaging Measurement Group Observation](Observation-imaging-measurement-group.html)
 
 #### FHIR Resources
 - Referenced

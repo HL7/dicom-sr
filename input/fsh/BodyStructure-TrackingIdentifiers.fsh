@@ -42,7 +42,7 @@ Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapte
 * patient -> "tag(0010,0020) [Patient ID]"
 * includedStructure.structure.text -> "DT (112039, DCM, Tracking Identifier) > EV (112040, DCM, Tracking Unique Identifier)"
 
-Instance: Example-BodyStructure-DICOMSRTrackingIdentifiersBodyStructureProfile
+Instance: Example-BodyStructure-TrackingIdentifiers
 InstanceOf: DICOMSRTrackingIdentifiersBodyStructureProfile
 Usage: #example
 Description: "Example of BodySite representing a DICOM SR Tracking Identifier"

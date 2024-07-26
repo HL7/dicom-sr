@@ -73,8 +73,8 @@ Description:    "DICOM SR TID Imaging Measurement Group Mapping to Observation"
 * focus ^slicing.ordered = false
 * focus ^slicing.description = "Observation foci"
 
-* focus contains trackingUidBodyStructure 0..* MS
-* focus[trackingUidBodyStructure] only Reference(DICOMSRTrackingIdentifiersBodyStructureProfile)
+* focus contains trackingIdentifiers 0..* MS
+* focus[trackingIdentifiers] only Reference(DICOMSRTrackingIdentifiersBodyStructureProfile)
 
 * focus contains imageRegion2d 0..* MS
 * focus[imageRegion2d] only Reference(ImagingSelection2dImageRegionProfile)
@@ -188,3 +188,169 @@ Description: "The TID1501PlanarROIMeasurementGroup can be extracted from TID 150
 * valueCodeableConcept -> "TID1501.EV(121071, DCM, Finding)"
 * issued -> "tag(0040,A032) [Observation DateTime]"
 * interpretation -> "TID1501.$QualType, TID.1501QualModType$"
+
+Instance: Example-Observation-ImagingMeasurementGroupProfile
+InstanceOf: ImagingMeasurementGroupProfile
+Usage: #example
+Description: "Example of Observation representing a DICOM SR Measurement Group"
+
+* id = "imaging-measurement-group-001"
+* subject = Reference(Example-Patient)
+* basedOn = Reference(Example-ServiceRequest)
+* partOf = Reference(Example-ImagingStudy)
+* issued = "2024-07-24T08:23:42+00:00"
+* status = #final
+* code
+  * coding
+    * system = "http://snomed.info/sct/MAIN/version/2024-07-01"
+    * code = #241053004 "Radiographic measurement of lung volume"
+* category
+  * coding
+    * system = "http://dicom.nema.org/resources/ontology/DCM"
+    * code = #125007 "Measurement Group"
+* focus[referencedSegment] = Reference(Example-ImagingSelection-ReferencedSegment)
+* focus[trackingIdentifiers] = Reference(Example-BodyStructure-TrackingIdentifiers)
+* bodyStructure = Reference(Example-BodyStructure-FindingSite)
+* device = Reference(Example-Device-GeneralEquipment)
+* valueCodeableConcept
+  * coding
+    * system = "http://terminology.hl7.org/CodeSystem/snm"
+    * code = #121071 "Nodule"
+* hasMember
+  * reference = "Observation/imaging-measurement-001"
+  * reference = "Observation/imaging-measurement-002"
+  * reference = "Observation/imaging-measurement-003"
+  * reference = "Observation/qualitative-evaluation-001"
+  * reference = "Observation/qualitative-evaluation-002"
+
+* text
+  * status = #generated
+  * div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
+  <pre>
+{{
+   \"0040A010\": { \"vr\": \"CS\", \"Value\": [ \"CONTAINS\" ] },
+   \"0040A040\": { \"vr\": \"CS\", \"Value\": [ \"CONTAINER\" ] },
+   \"0040A043\": { \"vr\": \"SQ\", \"Value\": [ {
+         \"00080100\": { \"vr\": \"SH\", \"Value\": [ \"125007\" ] },
+         \"00080102\": { \"vr\": \"SH\", \"Value\": [ \"DCM\" ] },
+         \"00080104\": { \"vr\": \"LO\", \"Value\": [ \"Measurement Group\" ] }
+       } ] },
+   \"0040A050\": { \"vr\": \"CS\", \"Value\": [ \"SEPARATE\" ] },
+   \"0040A504\": { \"vr\": \"SQ\", \"Value\": [ {
+         \"00080105\": { \"vr\": \"CS\", \"Value\": [ \"DCMR\" ] },
+         \"00080118\": { \"vr\": \"UI\", \"Value\": [ \"1.2.840.10008.8.1.1\" ] },
+         \"0040DB00\": { \"vr\": \"CS\", \"Value\": [ \"1411\" ] }
+       } ] },
+   \"0040A730\": { \"vr\": \"SQ\", \"Value\": [ {
+         \"0040A010\": { \"vr\": \"CS\", \"Value\": [ \"HAS OBS CONTEXT\" ] },
+         \"0040A040\": { \"vr\": \"CS\", \"Value\": [ \"TEXT\" ] },
+         \"0040A043\": { \"vr\": \"SQ\", \"Value\": [ {
+               \"00080100\": { \"vr\": \"SH\", \"Value\": [ \"112039\" ] },
+               \"00080102\": { \"vr\": \"SH\", \"Value\": [ \"DCM\" ] },
+               \"00080104\": { \"vr\": \"LO\", \"Value\": [ \"Tracking Identifier\" ] }
+             } ] },
+         \"0040A160\": { \"vr\": \"UT\", \"Value\": [ \"Nodule 1\" ] }
+       },
+       {
+         \"0040A010\": { \"vr\": \"CS\", \"Value\": [ \"HAS OBS CONTEXT\" ] },
+         \"0040A040\": { \"vr\": \"CS\", \"Value\": [ \"UIDREF\" ] },
+         \"0040A043\": { \"vr\": \"SQ\", \"Value\": [ {
+               \"00080100\": { \"vr\": \"SH\", \"Value\": [ \"112040\" ] },
+               \"00080102\": { \"vr\": \"SH\", \"Value\": [ \"DCM\" ] },
+               \"00080104\": { \"vr\": \"LO\", \"Value\": [ \"Tracking Unique Identifier\" ] }
+             } ] },
+         \"0040A124\": { \"vr\": \"UI\", \"Value\": [ \"1.2.840.113747.20080222.8331141314456631405221767081790268995.100\" ] }
+       },
+       {
+         \"0040A010\": { \"vr\": \"CS\", \"Value\": [ \"CONTAINS\" ] },
+         \"0040A040\": { \"vr\": \"CS\", \"Value\": [ \"CODE\" ] },
+         \"0040A043\": { \"vr\": \"SQ\", \"Value\": [ {
+               \"00080100\": { \"vr\": \"SH\", \"Value\": [ \"276214006\" ] },
+               \"00080102\": { \"vr\": \"SH\", \"Value\": [ \"SCT\" ] },
+               \"00080104\": { \"vr\": \"LO\", \"Value\": [ \"Finding category\" ] }
+             } ] },
+         \"0040A168\": { \"vr\": \"SQ\", \"Value\": [ {
+               \"00080100\": { \"vr\": \"SH\", \"Value\": [ \"241053004\" ] },
+               \"00080102\": { \"vr\": \"SH\", \"Value\": [ \"SCT\" ] },
+               \"00080104\": { \"vr\": \"LO\", \"Value\": [ \"Radiographic measurement of lung volume\" ] }
+             } ] }
+       },
+       {
+         \"0040A010\": { \"vr\": \"CS\", \"Value\": [ \"CONTAINS\" ] },
+         \"0040A040\": { \"vr\": \"CS\", \"Value\": [ \"CODE\" ] },
+         \"0040A043\": { \"vr\": \"SQ\", \"Value\": [ {
+               \"00080100\": { \"vr\": \"SH\", \"Value\": [ \"121071\" ] },
+               \"00080102\": { \"vr\": \"SH\", \"Value\": [ \"DCM\" ] },
+               \"00080104\": { \"vr\": \"LO\", \"Value\": [ \"Finding\" ] }
+             } ] },
+         \"0040A168\": { \"vr\": \"SQ\", \"Value\": [ {
+               \"00080100\": { \"vr\": \"SH\", \"Value\": [ \"M-03010\" ] },
+               \"00080102\": { \"vr\": \"SH\", \"Value\": [ \"SRT\" ] },
+               \"00080104\": { \"vr\": \"LO\", \"Value\": [ \"Nodule\" ] }
+             } ] }
+       },
+       {
+         \"00081199\": { \"vr\": \"SQ\", \"Value\": [ {
+               \"00081150\": { \"vr\": \"UI\", \"Value\": [ \"1.2.840.10008.5.1.4.1.1.66.4\" ] },
+               \"00081155\": { \"vr\": \"UI\", \"Value\": [ \"1.2.276.0.7230010.3.1.4.0.57823.1553343864.578878\" ] },
+               \"0062000B\": { \"vr\": \"US\", \"Value\": [ 1 ] }
+             } ] },
+         \"0040A010\": { \"vr\": \"CS\", \"Value\": [ \"CONTAINS\" ] },
+         \"0040A040\": { \"vr\": \"CS\", \"Value\": [ \"IMAGE\" ] },
+         \"0040A043\": { \"vr\": \"SQ\", \"Value\": [ {
+               \"00080100\": { \"vr\": \"SH\", \"Value\": [ \"121191\" ] },
+               \"00080102\": { \"vr\": \"SH\", \"Value\": [ \"DCM\" ] },
+               \"00080104\": { \"vr\": \"LO\", \"Value\": [ \"Referenced Segment\" ] }
+             } ] }
+       },
+       {
+         \"0040A010\": { \"vr\": \"CS\", \"Value\": [ \"CONTAINS\" ] },
+         \"0040A040\": { \"vr\": \"CS\", \"Value\": [ \"UIDREF\" ] },
+         \"0040A043\": { \"vr\": \"SQ\", \"Value\": [ {
+               \"00080100\": { \"vr\": \"SH\", \"Value\": [ \"121232\" ] },
+               \"00080102\": { \"vr\": \"SH\", \"Value\": [ \"DCM\" ] },
+               \"00080104\": { \"vr\": \"LO\", \"Value\": [ \"Source series for segmentation\" ] }
+             } ] },
+         \"0040A124\": { \"vr\": \"UI\", \"Value\": [ \"1.3.6.1.4.1.14519.5.2.1.6279.6001.273525289046256012743471155680\" ] }
+       },
+       {
+         \"0040A010\": { \"vr\": \"CS\", \"Value\": [ \"HAS CONCEPT MOD\" ] },
+         \"0040A040\": { \"vr\": \"CS\", \"Value\": [ \"CODE\" ] },
+         \"0040A043\": { \"vr\": \"SQ\", \"Value\": [ {
+               \"00080100\": { \"vr\": \"SH\", \"Value\": [ \"G-C0E3\" ] },
+               \"00080102\": { \"vr\": \"SH\", \"Value\": [ \"SRT\" ] },
+               \"00080104\": { \"vr\": \"LO\", \"Value\": [ \"Finding Site\" ] }
+             } ] },
+         \"0040A168\": { \"vr\": \"SQ\", \"Value\": [ {
+               \"00080100\": { \"vr\": \"SH\", \"Value\": [ \"T-28000\" ] },
+               \"00080102\": { \"vr\": \"SH\", \"Value\": [ \"SRT\" ] },
+               \"00080104\": { \"vr\": \"LO\", \"Value\": [ \"Lung\" ] }
+             } ] }
+       },
+       {
+         \"0040A010\": { \"vr\": \"CS\", \"Value\": [ \"CONTAINS\" ] },
+         \"0040A040\": { \"vr\": \"CS\", \"Value\": [ \"NUM\" ] },
+         ...
+       },
+       {
+         \"0040A010\": { \"vr\": \"CS\", \"Value\": [ \"CONTAINS\" ] },
+         \"0040A040\": { \"vr\": \"CS\", \"Value\": [ \"NUM\" ] },
+         ...
+       },
+       {
+         \"0040A010\": { \"vr\": \"CS\", \"Value\": [ \"CONTAINS\" ] },
+         \"0040A040\": { \"vr\": \"CS\", \"Value\": [ \"NUM\" ] },
+         ...
+       },
+       {
+         \"0040A010\": { \"vr\": \"CS\", \"Value\": [ \"CONTAINS\" ] },
+         \"0040A040\": { \"vr\": \"CS\", \"Value\": [ \"CODE\" ] },
+         ...
+       },
+       {
+         \"0040A010\": { \"vr\": \"CS\", \"Value\": [ \"CONTAINS\" ] },
+         \"0040A040\": { \"vr\": \"CS\", \"Value\": [ \"CODE\" ] },
+         ...
+       } ] }
+ }
+  </pre></div>"

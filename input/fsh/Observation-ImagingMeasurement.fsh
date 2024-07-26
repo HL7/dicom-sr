@@ -68,8 +68,8 @@ Description:    "DICOM SR Imaging Measurement Mapping to Observation"
 * focus ^slicing.ordered = false
 * focus ^slicing.description = "Observation foci"
 
-* focus contains trackingUidBodyStructure 0..* MS
-* focus[trackingUidBodyStructure] only Reference(DICOMSRTrackingIdentifiersBodyStructureProfile)
+* focus contains trackingIdentifiers 0..* MS
+* focus[trackingIdentifiers] only Reference(DICOMSRTrackingIdentifiersBodyStructureProfile)
 
 // Observation Date Time
 * issued 1..1 MS

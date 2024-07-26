@@ -76,8 +76,8 @@ Description:    "DICOM SR Imaging Qualitative Evaluation Mapping to Observation"
 * focus ^slicing.ordered = false
 * focus ^slicing.description = "Observation foci"
 
-* focus contains trackingUidBodyStructure 0..* MS
-* focus[trackingUidBodyStructure] only Reference(DICOMSRTrackingIdentifiersBodyStructureProfile)
+* focus contains trackingIdentifiers 0..* MS
+* focus[trackingIdentifiers] only Reference(DICOMSRTrackingIdentifiersBodyStructureProfile)
 
 * valueCodeableConcept MS
 

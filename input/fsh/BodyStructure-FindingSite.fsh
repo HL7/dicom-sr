@@ -24,7 +24,7 @@ Description: "The FindingSiteBodyStructure can be extracted from TID 300 EV(3636
 * includedStructure.structure.coding -> "TID300.EV(363698007, SCT, Finding Site)"
 * includedStructure.laterality -> "TID300.EV(272741003, SCT, Laterality)"
 
-Instance: Example-BodyStructure-DICOMSRFindingSiteBodyStructureProfile
+Instance: Example-BodyStructure-FindingSite
 InstanceOf: DICOMSRFindingSiteBodyStructureProfile
 Usage: #example
 Description: "Example of BodySite representing a DICOM SR Finding Site"
