@@ -15,3 +15,6 @@ No Source Code System, so the source codes cannot be checked
 
 # The destination for this Context Map is FHIR Elements so no code system applies
 No Target Code System, so the target codes cannot be checked
+
+# This code table is required by the ImagingSelection resource but is not a well-defined code system. This is addressed with a resource change in R6.
+ValueSet 'http://dicom.nema.org/medical/dicom/current/output/chtml/part04/sect_B.5.html#table_B.5-1' not found

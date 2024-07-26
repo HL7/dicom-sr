@@ -118,7 +118,7 @@ See [Example ServiceRequest](ServiceRequest-measurement-report-service-request.h
 <table>
 <tr>
 <th>DICOM</th>
-<th>FHIR Resource Reference</th>
+<th>FHIR Resource References</th>
 <th>FHIR Identifier Reference</th>
 </tr>
 <tr>
@@ -214,12 +214,13 @@ See [Example Device](Device-measurement-report-general-equipment.html).
    - ServiceRequest
    - ImagingStudy
 - Created
-   - Device (General Equipment)
+   - Device (GeneralEquipment)
 
 ### Document Mapping<a name="example_document"></a>
 <table>
 <tr>
 <th>DICOM</th>
+<th>FHIR Resource</th>
 <th>FHIR Observation Fields</th>
 </tr>
 <tr>
@@ -228,7 +229,43 @@ See [Example Device](Device-measurement-report-general-equipment.html).
 {
   "00080023": { "vr": "DA", "Value": [ "20240724" ] },
   "00080033": { "vr": "TM", "Value": [ "082342" ] },
-  "0040A496": { "vr": "CS", "Value": [ "FINAL" ] }
+  "0040A496": { "vr": "CS", "Value": [ "FINAL" ] },
+  "0040A730": { "vr": "SQ", "Value": [ {
+        "0040A010": { "vr": "CS", "Value": [ "HAS OBS CONTEXT" ] },
+        "0040A040": { "vr": "CS", "Value": [ "CODE" ] },
+        "0040A043": { "vr": "SQ", "Value": [ {
+              "00080100": { "vr": "SH", "Value": [ "121005" ] },
+              "00080102": { "vr": "SH", "Value": [ "DCM" ] },
+              "00080104": { "vr": "LO", "Value": [ "Observer Type" ] }
+            } ] },
+        "0040A168": { "vr": "SQ", "Value": [ {
+              "00080100": { "vr": "SH", "Value": [ "121006" ] },
+              "00080102": { "vr": "SH", "Value": [ "DCM" ] },
+              "00080104": { "vr": "LO", "Value": [ "Person" ] }
+            } ] }
+      },
+      {
+        "0040A010": { "vr": "CS", "Value": [ "HAS OBS CONTEXT" ] },
+        "0040A040": { "vr": "CS", "Value": [ "PNAME" ] },
+        "0040A043": { "vr": "SQ", "Value": [ {
+              "00080100": { "vr": "SH", "Value": [ "121008" ] },
+              "00080102": { "vr": "SH", "Value": [ "DCM" ] },
+              "00080104": { "vr": "LO", "Value": [ "Person Observer Name" ] }
+            } ] },
+        "0040A123": { "vr": "PN", "Value": [ { "Alphabetic": "RADIOLOGIST^EXAMPLE" } ] }
+      }
+}
+</pre>
+</td>
+<td>
+<pre>
+{
+  "resourceType" : "Practitioner",
+  "id" : "measurement-report-practitioner",
+  "name": [{
+    "family": "RADIOLOGIST",
+    "given": ["EXAMPLE"]
+  }]
 }
 </pre>
 </td>
@@ -248,8 +285,12 @@ See [Example Device](Device-measurement-report-general-equipment.html).
       "type": "ImagingStudy",
       "reference": "ImagingStudy/measurement-report-imaging-study"
     }],
-    "issued": "2024-07-24T08:23:42"
+    "issued": "2024-07-24T08:23:42",
     "status": "final",
+    "performer": [{
+      "type": "Practitioner",
+      "reference": "Practitioner/measurement-report-practitioner"
+    }],
     ...
   }
 }
@@ -259,8 +300,18 @@ See [Example Device](Device-measurement-report-general-equipment.html).
 </table>
 
 1. Extract `ContentDate`, `ContentTime`, and `PreliminaryFlag` values
-2. Use these values to populate the `issued` and `status` fields in the created FHIR Observation resources\
+2. Extract `ObserverType` and `PersonObserverName` values to identify the `Practitioner` resource
+3. Use these values to populate the `issued`, `status` and `performer` fields in the created FHIR Observation resources\
    `issued` may be overridden by more specific values in specific content items
+
+#### FHIR Resources
+- Referenced
+    - Patient
+    - ServiceRequest
+    - ImagingStudy
+    - Practitioner
+- Created
+    - Device (GeneralEquipment)
 
 ### Imaging Measurement Container Mapping<a name="example_imaging_measurement_container"></a>
 <table>
@@ -342,8 +393,9 @@ See [Example Device](Device-measurement-report-general-equipment.html).
    - Patient
    - ServiceRequest
    - ImagingStudy
+   - Practitioner
 - Created
-   - Device (General Equipment)
+   - Device (GeneralEquipment)
 
 ### Imaging Measurement Group Mapping<a name="example_imaging_measurement_group"></a>
 <table>
@@ -676,8 +728,9 @@ See:
    - Patient
    - ServiceRequest
    - ImagingStudy
+   - Practitioner
 - Created
-   - Device (General Equipment)
+   - Device (GeneralEquipment)
    - Observation (ImagingMeasurementGroup)
    - BodyStructure (Tracking, FindingSite)
    - ImagingSelection (Segment)
@@ -717,6 +770,17 @@ See:
 </tr>
 </table>
 
+#### FHIR Resources
+- Referenced
+    - Patient
+    - ServiceRequest
+    - ImagingStudy
+    - Practitioner
+- Created
+    - Device (GeneralEquipment, AlgorithmIdentification)
+    - Observation (ImagingMeasurementGroup, ImagingMeasurement x 3)
+    - BodyStructure (Tracking, FindingSite)
+    - ImagingSelection (Segment)
 
 ### Imaging Qualitative Evaluation Mapping <a name="example_imaging_qualitative_evaluation"></a>
 <table>
@@ -734,6 +798,18 @@ See:
 </td>
 </tr>
 </table>
+
+#### FHIR Resources
+- Referenced
+    - Patient
+    - ServiceRequest
+    - ImagingStudy
+    - Practitioner
+- Created
+    - Device (GeneralEquipment, AlgorithmIdentification)
+    - Observation (ImagingMeasurementGroup, ImagingMeasurement x 3, QualitativeEvaluation x 2)
+    - BodyStructure (Tracking, FindingSite)
+    - ImagingSelection (Segment)
 
 ### Example Measurement Report<a name="example_sr"></a>
 See [Example Measurement Report](DiagnosticReport-dicom-sr-measurement-report.html) for a complete example of a Measurement Report containing the above resources.

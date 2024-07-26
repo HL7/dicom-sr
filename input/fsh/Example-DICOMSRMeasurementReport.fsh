@@ -66,6 +66,30 @@ Description: "An example of a DICOM SR measurement report."
     } ] }
   },
   {
+    \"0040A010\": { \"vr\": \"CS\", \"Value\": [ \"HAS OBS CONTEXT\" ] },
+    \"0040A040\": { \"vr\": \"CS\", \"Value\": [ \"CODE\" ] },
+    \"0040A043\": { \"vr\": \"SQ\", \"Value\": [ {
+      \"00080100\": { \"vr\": \"SH\", \"Value\": [ \"121005\" ] },
+      \"00080102\": { \"vr\": \"SH\", \"Value\": [ \"DCM\" ] },
+      \"00080104\": { \"vr\": \"LO\", \"Value\": [ \"Observer Type\" ] }
+    } ] },
+    \"0040A168\": { \"vr\": \"SQ\", \"Value\": [ {
+      \"00080100\": { \"vr\": \"SH\", \"Value\": [ \"121006\" ] },
+      \"00080102\": { \"vr\": \"SH\", \"Value\": [ \"DCM\" ] },
+      \"00080104\": { \"vr\": \"LO\", \"Value\": [ \"Person\" ] }
+    } ] }
+  },
+  {
+    \"0040A010\": { \"vr\": \"CS\", \"Value\": [ \"HAS OBS CONTEXT\" ] },
+    \"0040A040\": { \"vr\": \"CS\", \"Value\": [ \"PNAME\" ] },
+    \"0040A043\": { \"vr\": \"SQ\", \"Value\": [ {
+      \"00080100\": { \"vr\": \"SH\", \"Value\": [ \"121008\" ] },
+      \"00080102\": { \"vr\": \"SH\", \"Value\": [ \"DCM\" ] },
+      \"00080104\": { \"vr\": \"LO\", \"Value\": [ \"Person Observer Name\" ] }
+    } ] },
+    \"0040A123\": { \"vr\": \"PN\", \"Value\": [ { \"Alphabetic\": \"RADIOLOGIST^EXAMPLE\" } ] }
+  },
+  {
     \"0040A010\": { \"vr\": \"CS\", \"Value\": [ \"CONTAINS\" ] },
     \"0040A040\": { \"vr\": \"CS\", \"Value\": [ \"CONTAINER\" ] },
     \"0040A043\": { \"vr\": \"SQ\", \"Value\": [ {

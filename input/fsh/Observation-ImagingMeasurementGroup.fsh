@@ -124,8 +124,8 @@ Description:    "DICOM SR TID Imaging Measurement Group Mapping to Observation"
 * issued 1..1 MS
 * issued ^short = "Observation Date Time"
 
-* hasMember ^slicing.discriminator.type = #value
-* hasMember ^slicing.discriminator.path = "type"
+* hasMember ^slicing.discriminator.type = #pattern
+* hasMember ^slicing.discriminator.path = "resolve()"
 * hasMember ^slicing.rules = #open
 * hasMember ^slicing.ordered = false
 * hasMember ^slicing.description = "Imaging Measurements"
@@ -199,7 +199,9 @@ Description: "Example of Observation representing a DICOM SR Measurement Group"
 * basedOn = Reference(Example-ServiceRequest)
 * partOf = Reference(Example-ImagingStudy)
 * issued = "2024-07-24T08:23:42+00:00"
+* effectiveDateTime = "2024-07-24T08:23:42+00:00"
 * status = #final
+* performer = Reference(Example-Practitioner)
 * code
   * coding
     * system = "http://snomed.info/sct"

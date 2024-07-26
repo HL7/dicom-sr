@@ -170,7 +170,9 @@ Description: "Example of Observation representing a DICOM SR Measurement Imaging
 * basedOn = Reference(Example-ServiceRequest)
 * partOf = Reference(Example-ImagingStudy)
 * issued = "2024-07-24T08:23:42+00:00"
+* effectiveDateTime = "2024-07-24T08:23:42+00:00"
 * status = #final
+* performer = Reference(Example-Practitioner)
 * code
   * coding
     * system = "http://terminology.hl7.org/CodeSystem/snm"
@@ -195,7 +197,9 @@ Description: "Example of Observation representing a DICOM SR Measurement Imaging
 * basedOn = Reference(Example-ServiceRequest)
 * partOf = Reference(Example-ImagingStudy)
 * issued = "2024-07-24T08:23:42+00:00"
+* effectiveDateTime = "2024-07-24T08:23:42+00:00"
 * status = #final
+* performer = Reference(Example-Practitioner)
 * code
   * coding
     * system = "http://terminology.hl7.org/CodeSystem/snm"
@@ -220,7 +224,9 @@ Description: "Example of Observation representing a DICOM SR Measurement Imaging
 * basedOn = Reference(Example-ServiceRequest)
 * partOf = Reference(Example-ImagingStudy)
 * issued = "2024-07-24T08:23:42+00:00"
+* effectiveDateTime = "2024-07-24T08:23:42+00:00"
 * status = #final
+* performer = Reference(Example-Practitioner)
 * code
   * coding
     * system = "https://ibsi.readthedocs.io/en/latest/"

@@ -148,7 +148,9 @@ Description: "Example of Observation representing a DICOM SR Measurement Qualita
 * basedOn = Reference(Example-ServiceRequest)
 * partOf = Reference(Example-ImagingStudy)
 * issued = "2024-07-24T08:23:42+00:00"
+* effectiveDateTime = "2024-07-24T08:23:42+00:00"
 * status = #final
+* performer = Reference(Example-Practitioner)
 * code
   * coding
     * system = "https://ncit.nci.nih.gov"
@@ -172,7 +174,9 @@ Description: "Example of Observation representing a DICOM SR Measurement Qualita
 * basedOn = Reference(Example-ServiceRequest)
 * partOf = Reference(Example-ImagingStudy)
 * issued = "2024-07-24T08:23:42+00:00"
+* effectiveDateTime = "2024-07-24T08:23:42+00:00"
 * status = #final
+* performer = Reference(Example-Practitioner)
 * code
   * coding
     * system = "http://radlex.org"
