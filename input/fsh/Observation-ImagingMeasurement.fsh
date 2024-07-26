@@ -60,7 +60,7 @@ Description:    "DICOM SR Imaging Measurement Mapping to Observation"
 * subject 1..1 MS
 
 * focus ^slicing.discriminator.type = #profile
-* focus ^slicing.discriminator.path = "Observation.focus"
+* focus ^slicing.discriminator.path = "resolve()"
 * focus ^slicing.rules = #open
 * focus ^slicing.ordered = false
 * focus ^slicing.description = "Observation foci"
