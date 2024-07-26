@@ -26,7 +26,7 @@ Description:    "DICOM SR Observation Tracking Identifier Mapping to BodyStructu
 * identifier[trackingIdentifier] ^definition = "An identifier used for tracking a finding or feature, potentially across multiple reporting objects, over time."
 
 * identifier contains trackingUid 0..1
-* identifier[trackingUid].type = http://dicom.nema.org/resources/ontology/DCM#112040 "Tracking Unique Identifier"
+* identifier[trackingUid].type.coding = DCM#112040 "Tracking Unique Identifier"
 * identifier[trackingUid].value 1..1
 * identifier[trackingUid] ^short = "Tracking UID"
 * identifier[trackingUid].system = "urn:dicom:uid"
