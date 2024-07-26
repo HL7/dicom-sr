@@ -49,7 +49,7 @@ Description:    "DICOM SR Referenced Segment Mapping to ImagingSelection"
 * subject 1..1 MS
 
 * instance ^slicing.discriminator.type = #value
-* instance ^slicing.discriminator.path = "type"
+* instance ^slicing.discriminator.path = "sopClass"
 * instance ^slicing.rules = #open
 * instance ^slicing.ordered = false
 * instance ^slicing.description = "Selected Segmentation Instance"

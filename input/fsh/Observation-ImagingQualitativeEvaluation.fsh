@@ -71,7 +71,7 @@ Description:    "DICOM SR Imaging Qualitative Evaluation Mapping to Observation"
 * device ^short = "Algorithm Identification or General Equipment Device"
 
 * focus ^slicing.discriminator.type = #value
-* focus ^slicing.discriminator.path = "type"
+* focus ^slicing.discriminator.path = "reference"
 * focus ^slicing.rules = #open
 * focus ^slicing.ordered = false
 * focus ^slicing.description = "Observation foci"
