@@ -124,7 +124,7 @@ Description:    "DICOM SR TID Imaging Measurement Group Mapping to Observation"
 * issued 1..1 MS
 * issued ^short = "Observation Date Time"
 
-* hasMember ^slicing.discriminator.type = #pattern
+* hasMember ^slicing.discriminator.type = #profile
 * hasMember ^slicing.discriminator.path = "resolve()"
 * hasMember ^slicing.rules = #open
 * hasMember ^slicing.ordered = false
@@ -222,8 +222,11 @@ Description: "Example of Observation representing a DICOM SR Measurement Group"
   * coding
     * system = "http://terminology.hl7.org/CodeSystem/snm"
     * code = #121071 "Nodule"
-* hasMember[imagingMeasurement] = Reference(Example-Observation-ImagingMeasurement-001)
-* hasMember[qualitativeEvaluation] = Reference(Example-Observation-ImagingQualitativeEvaluation-001)
+* hasMember[imagingMeasurement][+] = Reference(Example-Observation-ImagingMeasurement-001)
+* hasMember[imagingMeasurement][+] = Reference(Example-Observation-ImagingMeasurement-002)
+* hasMember[imagingMeasurement][+] = Reference(Example-Observation-ImagingMeasurement-003)
+* hasMember[qualitativeEvaluation][+] = Reference(Example-Observation-ImagingQualitativeEvaluation-001)
+* hasMember[qualitativeEvaluation][+] = Reference(Example-Observation-ImagingQualitativeEvaluation-002)
 
 * text
   * status = #generated
