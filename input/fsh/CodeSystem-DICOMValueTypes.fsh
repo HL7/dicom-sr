@@ -6,7 +6,7 @@ Description: "DICOM SR Content Item Value Types"
 * ^caseSensitive = true
 * ^content = #complete
 * ^hierarchyMeaning = #is-a
-* ^experimental = true
+* ^experimental = false
 * ^contact[0].telecom[0].system = #url
 * ^contact[0].telecom[0].value = "http://www.hl7.org/Special/committees/imagemgt"
 * ^extension[0].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
@@ -24,3 +24,6 @@ Description: "DICOM SR Content Item Value Types"
 * #waveform "WAVEFORM" "Waveform Reference Macro"
 * #scoord "SCOORD" "Spatial Coordinates Macro"
 * #scoord3d "SCOORD3D" "Spatial Coordinates 3D Macro"
+* #tcoord "TCOORD" "Temporal Coordinates Macro"
+* #container "CONTAINER" "Container Macro"
+* #table "TABLE" "Table Content Item Macro"

@@ -17,7 +17,7 @@ Usage: #definition
 
 * additionalAttribute[0]
   * code = #IdentifierType
-  * description = "DICOM Identifier Type"
+  * description = "DICOM Controlled Terminology"
   * uri = "http://dicom.nema.org/resources/ontology/DCM"
   * type = #Coding
 
