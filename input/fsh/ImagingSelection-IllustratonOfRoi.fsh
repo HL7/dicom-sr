@@ -55,8 +55,8 @@ Description: "An example of an Illustration of ROI referenced from a measurement
 * code
   * coding
     * system = "http://dicom.nema.org/resources/ontology/DCM"
-    * code = #121191 "Referenced Segment"
-* seriesUid = "1.2.840.113747.20080222.83341314456631405221767081790268995.2"
-* instance[segmentationInstance]
-  * uid = "1.2.840.113747.20080222.83341314456631405221767081790268995.2.1"
-  * sopClass = https://dicom.nema.org/medical/dicom/current/output/chtml/part04/sect_B.5#1.2.840.10008.5.1.4.1.1.66.4 "Segmentation Storage"
+    * code = #121200 "Illustration of ROI"
+* seriesUid = "1.2.840.113747.20080222.83341314456631405221767081790268995.3"
+* instance
+  * uid = "1.2.840.113747.20080222.83341314456631405221767081790268995.3.1"
+  * sopClass = https://dicom.nema.org/medical/dicom/current/output/chtml/part04/sect_B.5#1.2.840.10008.5.1.4.1.1.7.4 "Multi-frame True Color Secondary Capture Image Storage"
