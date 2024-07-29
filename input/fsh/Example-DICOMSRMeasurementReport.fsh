@@ -32,7 +32,7 @@ Description: "An example of a DICOM SR measurement report."
   \"00100020\": { \"vr\": \"LO\", \"Value\": [ \"PID-11235\" ] },
   \"00100024\": { \"vr\": \"SQ\",  \"Value\": [ {
     \"00400031\": { \"vr\": \"SH\", \"Value\": [ \"Test Hospital\" ] },
-    \"00400032\": { \"vr\": \"SH\", \"Value\": [ \"testhospital.org\" ] },
+    \"00400032\": { \"vr\": \"SH\", \"Value\": [ \"test-hospital.org\" ] },
     \"00400033\": { \"vr\": \"LO\", \"Value\": [ \"URI\" ] }
   } ] },
   \"0020000D\": { \"vr\": \"UI\", \"Value\": [ \"1.2.840.113747.20080222.8331141314456631405221767081790268995\" ] },

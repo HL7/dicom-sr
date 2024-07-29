@@ -158,7 +158,7 @@ Implementers SHOULD be aware of these [security considerations](http://hl7.org/f
 * [Narrative](http://hl7.org/fhir/R5/security.html#narrative){:target="_blank"}
 
 These security requirements are highlighted in the context of this IG:
-* Systems **SHALL** keep audit logs of the various transactions. Some auditing workflows can be used like IHE ATNA or RESTful ATNA.
+* Systems **SHALL** keep audit logs of the various transactions. Some auditing workflows can be used like IHE ATNA or Restful ATNA.
 * Systems **SHALL** use TLS version 1.2 or higher for all transmissions not taking place over a secure network connection. IHE ATNA may be followed for the TLS usage.
 * Systems **SHALL** conform to FHIR [Communications Security requirements](http://hl7.org/fhir/R5/security.html#http){:target="_blank"}.
 * Systems **SHALL** implement consent requirements per their country, state, local, and institutional policies.

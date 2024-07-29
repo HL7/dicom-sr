@@ -116,3 +116,41 @@ Description:    "DICOM SR Base Observation for Imaging Measurement Groups, Imagi
 
 * bodyStructure MS
 * bodyStructure only Reference(BodyStructureFindingSite)
+
+Instance: Example-Observation-ImagingObservation
+InstanceOf: ImagingObservationProfile
+Usage: #example
+Description: "Example of the base Imaging Observation"
+
+* id = "imaging-observation"
+* subject = Reference(Example-Patient)
+* basedOn = Reference(Example-ServiceRequest)
+* partOf = Reference(Example-ImagingStudy)
+* issued = "2024-07-24T08:23:42+00:00"
+* effectiveDateTime = "2024-07-24T08:23:42+00:00"
+* status = #final
+* performer = Reference(Example-Practitioner)
+* code
+  * coding
+    * system = "http://snomed.info/sct"
+    * code = #241053004 "Radiographic measurement of lung volume"
+
+* focus[trackingIdentifiers] = Reference(Example-BodyStructure-TrackingIdentifiers)
+
+// Test of all imaging selection profiles
+* focus[illustrationOfRoi] = Reference(Example-ImagingSelection-IllustrationOfROI)
+* focus[imageRegion2d] = Reference(Example-ImagingSelection-2dImageRegion)
+* focus[imageRegion3d] = Reference(Example-ImagingSelection-3dImageRegion)
+* focus[realWorldValueMap] = Reference(Example-ImagingSelection-RealWorldValueMap)
+* focus[referencedSegment] = Reference(Example-ImagingSelection-ReferencedSegment)
+* focus[referencedSegmentationFrame] = Reference(Example-ImagingSelection-ReferencedSegmentationFrame)
+* focus[regionInSpace] = Reference(Example-ImagingSelection-RegionInSpace)
+* focus[visualExplanation] = Reference(Example-ImagingSelection-VisualExplanation)
+* focus[volumeSurface] = Reference(Example-ImagingSelection-VolumeSurface)
+
+* bodyStructure = Reference(Example-BodyStructure-FindingSite)
+* device = Reference(Example-Device-GeneralEquipment)
+* valueCodeableConcept
+  * coding
+    * system = "http://terminology.hl7.org/CodeSystem/snm"
+    * code = #121071 "Nodule"

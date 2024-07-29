@@ -10,7 +10,7 @@ Description: "An example of a Patient referenced from a measurement report."
     * coding
       * system = "http://terminology.hl7.org/CodeSystem/v2-0203"
       * code = #MR "Medical record number"
-  * system = "http://testhospital.org/mr"
+  * system = "http://test-hospital.org/mr"
   * assigner
     * display = "Test Hospital"
   * value = "PID-12345"
@@ -23,7 +23,7 @@ Description: "An example of a Patient referenced from a measurement report."
   \"00100020\": { \"vr\": \"LO\", \"Value\": [ \"PID-11235\" ] },
   \"00100024\": { \"vr\": \"SQ\",  \"Value\": [ {
         \"00400031\": { \"vr\": \"SH\", \"Value\": [ \"Test Hospital\" ] },
-        \"00400032\": { \"vr\": \"SH\", \"Value\": [ \"http://testhospital.org/mr\" ] },
+        \"00400032\": { \"vr\": \"SH\", \"Value\": [ \"http://test-hospital.org/mr\" ] },
         \"00400033\": { \"vr\": \"LO\", \"Value\": [ \"URI\" ] }
       } ] }
 }
@@ -41,7 +41,7 @@ Description: "An example of a ServiceRequest referenced from a measurement repor
     * coding
       * system = "http://terminology.hl7.org/CodeSystem/v2-0203"
       * code = #ACSN "Accession ID"
-  * system = "http://testhospital.org/acsn"
+  * system = "http://test-hospital.org/acsn"
   * value = "ACSN-235813"
 * subject = Reference(Example-Patient)
 * status = #active
@@ -54,7 +54,7 @@ Description: "An example of a ServiceRequest referenced from a measurement repor
   \"00080050\": { \"vr\": \"SH\" , \"Value\": \"ACSN-235813\" },
   \"00080051\": { \"vr\": \"SQ\",  \"Value\": [ {
         \"00400031\": { \"vr\": \"SH\", \"Value\": [ \"Test Hospital\" ] },
-        \"00400032\": { \"vr\": \"SH\", \"Value\": [ \"http://testhospital.org/acsn\" ] },
+        \"00400032\": { \"vr\": \"SH\", \"Value\": [ \"http://test-hospital.org/acsn\" ] },
         \"00400033\": { \"vr\": \"LO\", \"Value\": [ \"URI\" ] }
       } ] }
 }
