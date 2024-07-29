@@ -4,11 +4,11 @@ Alias: LOINC =  http://loinc.org
 Alias: DCMIdType = http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-identifier-type
 Alias: HL7IdType = http://terminology.hl7.org/CodeSystem/v2-0203
 
-Profile:        ImagingSelectionSourceSeriesForSegmentationProfile
+Profile:        ImagingSelectionObservationImagingSelectionProfile
 Parent:         ImagingSelection
-Id:             source-series-for-segmentation
-Title:          "Imaging Selection - DICOM SR Source Series For Segmentation Mapping"
-Description:    "DICOM SR Source Series For Segmentation Mapping to ImagingSelection"
+Id:             observation-imaging-selection
+Title:          "Imaging Selection - DICOM SR Base Imaging Selection"
+Description:    "DICOM SR Base Imaging Selection. Not used directly."
 
 * ^abstract = true
 * insert DICOMSRStructureDefinitionContent
@@ -42,29 +42,5 @@ Description:    "DICOM SR Source Series For Segmentation Mapping to ImagingSelec
 * derivedFrom[imagingStudyRef].identifier.value 1..1
 * derivedFrom[imagingStudyRef].identifier ^short = "Identifier related to Study Instance UID"
 
-* code MS
-* code.coding = DCM#121232 "Source series for segmentation"
-
-* subject 1..1 MS
 * subject only Reference(Patient)
-
-* seriesUid MS
-// seriesUid -> UID value of 121232, DCM, "Source series for segmentation" if present
-
-* instance ^slicing.discriminator.type = #value
-* instance ^slicing.discriminator.path = "type"
-* instance ^slicing.rules = #open
-* instance ^slicing.ordered = false
-* instance ^slicing.description = "Source Instances"
-
-* instance contains sourceInstances 0..*
-* instance[sourceInstances].sopClass = urn:ietf:rfc:3986#urn:oid:1.2.840.10008.5.1.4.1.1.66.4 "Segmentation Storage"
-
-Mapping: dicom-tid-1411-for-sourceSeriesForSegmentation
-Id: dicom-tid-1411-source-segmentation-series
-Title: "DICOM TID 1411 Source Series for Segmentation"
-Source: ImagingSelectionSourceSeriesForSegmentationProfile
-Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1411"
-Description: "The ImagingSelectionSourceSeriesForSegmentation can be extracted from TID 1411.EV(121232, DCM, Source Series for Segmentation)."
-* -> "TID1411(SourceSeriesForSegmentation)"
-* seriesUid -> "tag(0040,A124) [UID]"
+* subject 1..1 MS

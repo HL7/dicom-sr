@@ -10,7 +10,7 @@ Expression:  "code = 'DCM#125007' implies category.not().exists()"
 Severity:    #error
 
 Profile:        ImagingMeasurementGroupProfile
-Parent:         Observation
+Parent:         ImagingObservationProfile
 Id:             imaging-measurement-group
 Title:          "Observation - DICOM SR Imaging Measurement Group Mapping"
 Description:    "DICOM SR TID Imaging Measurement Group Mapping to Observation"
@@ -18,111 +18,8 @@ Description:    "DICOM SR TID Imaging Measurement Group Mapping to Observation"
 * ^abstract = true
 * insert DICOMSRStructureDefinitionContent
 
-* identifier ^slicing.discriminator.type = #value
-* identifier ^slicing.discriminator.path = "type"
-* identifier ^slicing.rules = #open
-* identifier ^slicing.ordered = false
-* identifier ^slicing.description = "Identifiers for the measurement group"
-
-* identifier contains observationUID 0..* MS
-* identifier[observationUID].type = DCMIdType#observation-uid "Observation UID"
-* identifier[observationUID].system = "urn:dicom:uid"
-* identifier[observationUID].value 1..1
-* identifier[observationUID] ^short = "The unique identifier for the measurement group."
-
-// Associated ServiceRequest
-* basedOn ^slicing.discriminator.type = #type
-* basedOn ^slicing.discriminator.path = "reference"
-* basedOn ^slicing.rules = #open
-* basedOn ^slicing.description = "Description of the related ServiceRequest"
-
-* basedOn contains serviceRequestRef 0..1 MS
-* basedOn[serviceRequestRef] only Reference(ServiceRequest)
-* basedOn[serviceRequestRef] ^short = "Description of the related ServiceRequest"
-* basedOn[serviceRequestRef].identifier.type 1..1
-* basedOn[serviceRequestRef].identifier.type = HL7IdType#ACSN "Accession ID"
-* basedOn[serviceRequestRef].identifier.value 1..1
-* basedOn[serviceRequestRef].identifier ^short = "The accession number related to the performed study"
-
-// Associated Imaging Study
-* partOf ^slicing.discriminator.type = #type
-* partOf ^slicing.discriminator.path = "reference"
-* partOf ^slicing.rules = #open
-* partOf ^slicing.description = "Description of the related ImagingStudy" 
-
-* partOf contains imagingStudyRef 1..1 MS
-* partOf[imagingStudyRef] only Reference(ImagingStudy)
-* partOf[imagingStudyRef] ^short = "Related ImagingStudy"
-* partOf[imagingStudyRef].identifier.type 1..1
-* partOf[imagingStudyRef].identifier.type = DCM#110180 "Study Instance UID"
-* partOf[imagingStudyRef].identifier.system = "urn:dicom:uid"
-* partOf[imagingStudyRef].identifier.value 1..1
-* partOf[imagingStudyRef].identifier ^short = "Identifier related to Study Instance UID"
-
 * category MS
 * category = DCM#125007 "Measurement Group"
-
-* code MS
-
-* subject only Reference(Patient)
-* subject 1..1 MS
-
-* focus ^slicing.discriminator.type = #profile
-* focus ^slicing.discriminator.path = "resolve()"
-* focus ^slicing.rules = #open
-* focus ^slicing.ordered = false
-* focus ^slicing.description = "Observation foci"
-
-* focus contains trackingIdentifiers 0..* MS
-* focus[trackingIdentifiers] only Reference(BodyStructureTrackingIdentifiers)
-
-* focus contains imageRegion2d 0..* MS
-* focus[imageRegion2d] only Reference(ImagingSelection2dImageRegionProfile)
-* focus[imageRegion2d] ^short = "2D Image Region"
-
-* focus contains imageRegion3d 0..* MS
-* focus[imageRegion3d] only Reference(ImagingSelection3dImageRegionProfile)
-* focus[imageRegion3d] ^short = "3D Image Region"
-
-* focus contains referencedSegment 0..* MS
-* focus[referencedSegment] only Reference(ImagingSelectionReferencedSegmentProfile)
-* focus[referencedSegment] ^short = "Referenced Segment"
-
-* focus contains referencedSegmentationFrame 0..* MS
-* focus[referencedSegmentationFrame] only Reference(ImagingSelectionReferencedSegmentationFrameProfile)
-* focus[referencedSegmentationFrame] ^short = "Referenced Segmentation Frame"
-
-* focus contains sourceImageForSegmentation 0..* MS
-* focus[sourceImageForSegmentation] only Reference(ImagingSelectionSourceImageForSegmentationProfile)
-* focus[sourceImageForSegmentation] ^short = "Source Image for Segmentation"
-
-* focus contains sourceSeriesForSegmentation 0..* MS
-* focus[sourceSeriesForSegmentation] only Reference(ImagingSelectionSourceSeriesForSegmentationProfile)
-* focus[sourceSeriesForSegmentation] ^short = "Source Series for Segmentation"
-
-* focus contains regionInSpace 0..* MS
-* focus[regionInSpace] only Reference(ImagingSelectionRegionInSpaceProfile)
-* focus[regionInSpace] ^short = "RegionInSpace"
-
-* focus contains volumeSurface 0..* MS
-* focus[volumeSurface] only Reference(ImagingSelectionVolumeSurfaceProfile)
-* focus[volumeSurface] ^short = "Volume Surface"
-
-* focus contains realWorldValueMap 0..* MS
-* focus[realWorldValueMap] only Reference(ImagingSelectionRealWorldValueMapProfile)
-* focus[realWorldValueMap] ^short = "Real World Value Map"
-
-* focus contains illustrationOfRoi 0..* MS
-* focus[illustrationOfRoi] only Reference(ImagingSelectionIllustrationOfROIProfile)
-* focus[illustrationOfRoi] ^short = "Illustration of ROI"
-
-* focus contains visualExplanation 0..* MS
-* focus[visualExplanation] only Reference(ImagingSelectionVisualExplanationProfile)
-* focus[visualExplanation] ^short = "VisualExplanation"
-
-// Observation Date Time
-* issued 1..1 MS
-* issued ^short = "Observation Date Time"
 
 * hasMember ^slicing.discriminator.type = #profile
 * hasMember ^slicing.discriminator.path = "resolve()"
@@ -138,18 +35,9 @@ Description:    "DICOM SR TID Imaging Measurement Group Mapping to Observation"
 * hasMember contains qualitativeEvaluation 0..* MS
 * hasMember[qualitativeEvaluation] only Reference(ImagingQualitativeEvaluationProfile)
 
-* interpretation MS
-
 * value[x] MS
 * value[x] only CodeableConcept
 * value[x] ^short = "Observation finding"
-
-* device 1..1 MS
-* device only Reference(AlgorithmIdentificationProfile or GeneralEquipmentProfile)
-* device ^short = "Algorithm Identification or General Equipment Device"
-
-* bodyStructure MS
-* bodyStructure only Reference(BodyStructureFindingSite)
 
 Mapping: dicom-sr-for-TID1410PlanarROIMeasurementGroup
 Id: dicom-sr-tid-1410

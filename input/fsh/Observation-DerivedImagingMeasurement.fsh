@@ -68,7 +68,6 @@ Description:    "DICOM SR Derived Imaging Measurement Mapping to Observation"
 
 * device 1..1 MS
 * device only Reference(AlgorithmIdentificationProfile or GeneralEquipmentProfile)
-* device ^short = "Algorithm Identification or General Equipment Device"
 
 * referenceRange MS
 * valueQuantity MS
@@ -97,3 +96,28 @@ Description: "The TID300Measurement can be extracted from TID 1420 - Measurement
 * device -> "TID1420.TID4019"
 * valueQuantity -> "TID1420.DCID7465.tag(0040,A300) [Measured Value Sequence]"
 * derivedFrom -> "TID1420.TID1410 or TID1420.TID1411"
+
+Instance: Example-Observation-DerivedImagingMeasurement
+InstanceOf: DerivedImagingMeasurementProfile
+Usage: #example
+Description: "Example of Observation representing a DICOM SR Derived Imaging Measurement."
+
+* id = "derived-imaging-measurement"
+* subject = Reference(Example-Patient)
+* basedOn = Reference(Example-ServiceRequest)
+* partOf = Reference(Example-ImagingStudy)
+* issued = "2024-07-24T08:23:42+00:00"
+* effectiveDateTime = "2024-07-24T08:23:42+00:00"
+* status = #final
+* performer = Reference(Example-Practitioner)
+* code
+  * coding
+    * system = "http://dicom.nema.org/resources/ontology/DCM"
+    * code = #126031 "Peak Value Within ROI"
+* device = Reference(Example-Device-GeneralEquipment)
+* valueQuantity
+  * value = 123.45
+  * unit = "Hounsfield unit"
+  * system = "http://unitsofmeasure.org"
+  * code = #hnsf'U
+* derivedFrom = Reference(Example-ImagingMeasurementGroup)
