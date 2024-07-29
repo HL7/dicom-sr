@@ -88,14 +88,14 @@ Usage: #definition
     * display = "ImagingSelection2dImageRegion"
     * dependsOn[0]
       * attribute = #ValueType
-      * valueCoding = http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-valueset-types#scoord
+      * valueCoding = http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-value-type#scoord
   * target[1]
     * relationship = #equivalent
     * code = #ImagingSelection3dImageRegion
     * display = "ImagingSelection3dImageRegion"
     * dependsOn[0]
       * attribute = #ValueType
-      * valueCoding = http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-valueset-types#scoord3d
+      * valueCoding = http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-value-type#scoord3d
   * target[2]
     * relationship = #equivalent
     * code = #focus
@@ -228,14 +228,14 @@ Usage: #definition
     * comment = "Select children of the Imaging Measurement Group container will be used to create a FHIR ImagingMeasurement Observation."
     * dependsOn[0]
       * attribute = #ValueType
-      * valueCoding = http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-valueset-types#num
+      * valueCoding = http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-value-type#num
   * target[1]
     * relationship = #equivalent
     * code = #hasMember
     * display = "ImagingMeasurementGroup.hasMember"
     * dependsOn[0]
       * attribute = #ValueType
-      * valueCoding = http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-valueset-types#num
+      * valueCoding = http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-value-type#num
 
 * group[15].element[0]
   * code = http://terminology.hl7.org/CodeSystem/umls#C0034375
@@ -247,17 +247,17 @@ Usage: #definition
     * comment = "Select children of the Imaging Measurement Group container will be used to create a FHIR ImagingQualitativeEvaluation Observation."
     * dependsOn[0]
       * attribute = #ValueType
-      * valueCoding = http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-valueset-types#text
+      * valueCoding = http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-value-type#text
     * dependsOn[1]
       * attribute = #ValueType
-      * valueCoding = http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-valueset-types#code
+      * valueCoding = http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-value-type#code
   * target[1]
     * relationship = #equivalent
     * code = #hasMember
     * display = "ImagingMeasurementGroup.hasMember"
     * dependsOn[0]
       * attribute = #ValueType
-      * valueCoding = http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-valueset-types#text
+      * valueCoding = http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-value-type#text
     * dependsOn[1]
       * attribute = #ValueType
-      * valueCoding = http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-valueset-types#code
+      * valueCoding = http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-value-type#code
