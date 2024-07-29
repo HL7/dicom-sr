@@ -139,8 +139,8 @@ Description: "Example of the base Imaging Observation"
 
 // Test of all imaging selection profiles
 * focus[illustrationOfRoi] = Reference(Example-ImagingSelection-IllustrationOfROI)
-* focus[imageRegion2d] = Reference(Example-ImagingSelection-2dImageRegion)
-* focus[imageRegion3d] = Reference(Example-ImagingSelection-3dImageRegion)
+* focus[imageRegion2d] = Reference(Example-ImagingSelection-ImageRegion2D)
+* focus[imageRegion3d] = Reference(Example-ImagingSelection-ImageRegion3D)
 * focus[realWorldValueMap] = Reference(Example-ImagingSelection-RealWorldValueMap)
 * focus[referencedSegment] = Reference(Example-ImagingSelection-ReferencedSegment)
 * focus[referencedSegmentationFrame] = Reference(Example-ImagingSelection-ReferencedSegmentationFrame)

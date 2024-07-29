@@ -43,7 +43,7 @@ Description: "The ImagingSelectionRealWorldValueMap can be extracted from TID 14
 * -> "TID1411(RealWorldValueMap)"
 * instance[valueMapInstance].uid -> "tag(0008,1155) [Referenced SOP Instance UID]"
 
-Instance: Example-ImagingSelection-ReferencedRealWorldValueMap
+Instance: Example-ImagingSelection-RealWorldValueMap
 InstanceOf: ImagingSelectionRealWorldValueMapProfile
 Usage: #example
 Description: "An example of an Real World Value Map SOP Instance referenced from a measurement report."
