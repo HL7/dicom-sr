@@ -11,7 +11,7 @@ Usage: #definition
 * contact[0].telecom[0].system = #url
 * contact[0].telecom[0].value = "http://www.hl7.org/Special/committees/imagemgt"
 * extension[0].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
-* extension[0].valueCode = #ii
+* extension[0].valueCoding = #ii
 * sourceScopeUri = "DICOM-Imaging-Measurement-Group"
 * targetScopeUri = "Bundle"
 
@@ -23,8 +23,8 @@ Usage: #definition
 
 * additionalAttribute[1]
   * code = #ValueType
-  * description = "DICOM Value Set Type"
-  * uri = "http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-valueset-types"
+  * description = "DICOM Value Type"
+  * uri = "http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-value-type"
   * type = #Coding
 
 * group[0].element[0]
@@ -36,14 +36,14 @@ Usage: #definition
     * display = "BodyStructureTrackingIdentifiers.identifier"
     * dependsOn[0]
       * attribute = #IdentifierType
-      * valueCode = http://dicom.nema.org/resources/ontology/DCM#112039
+      * valueCoding = http://dicom.nema.org/resources/ontology/DCM#112039
   * target[1]
     * relationship = #equivalent
     * code = #identifier
     * display = "ImagingMeasurementGroup.focus.identifier"
     * dependsOn[0]
       * attribute = #IdentifierType
-      * valueCode = http://dicom.nema.org/resources/ontology/DCM#112039
+      * valueCoding = http://dicom.nema.org/resources/ontology/DCM#112039
 
 * group[0].element[1]
   * code = http://dicom.nema.org/resources/ontology/DCM#112040
@@ -54,14 +54,14 @@ Usage: #definition
     * display = "BodyStructureTrackingIdentifiers.identifier"
     * dependsOn[0]
       * attribute = #IdentifierType
-      * valueCode = http://dicom.nema.org/resources/ontology/DCM#112040
+      * valueCoding = http://dicom.nema.org/resources/ontology/DCM#112040
   * target[1]
     * relationship = #equivalent
     * code = #identifier
     * display = "ImagingMeasurementGroup.focus.identifier"
     * dependsOn[0]
       * attribute = #IdentifierType
-      * valueCode = http://dicom.nema.org/resources/ontology/DCM#112040
+      * valueCoding = http://dicom.nema.org/resources/ontology/DCM#112040
 
 * group[1].element[0]
   * code = http://snomed.info/sct#276214006
@@ -76,8 +76,8 @@ Usage: #definition
   * display = "Finding"
   * target
     * relationship = #equivalent
-    * code = #valueCodeableConcept
-    * display = "ImagingMeasurementGroup.valueCodeableConcept"
+    * code = #valueCodingableConcept
+    * display = "ImagingMeasurementGroup.valueCodingableConcept"
 
 * group[3].element[0]
   * code = http://dicom.nema.org/resources/ontology/DCM#111030
@@ -88,14 +88,14 @@ Usage: #definition
     * display = "ImagingSelection2dImageRegion"
     * dependsOn[0]
       * attribute = #ValueType
-      * valueCode = http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-valueset-types#scoord
+      * valueCoding = http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-valueset-types#scoord
   * target[1]
     * relationship = #equivalent
     * code = #ImagingSelection3dImageRegion
     * display = "ImagingSelection3dImageRegion"
     * dependsOn[0]
       * attribute = #ValueType
-      * valueCode = http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-valueset-types#scoord3d
+      * valueCoding = http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-valueset-types#scoord3d
   * target[2]
     * relationship = #equivalent
     * code = #focus
@@ -228,14 +228,14 @@ Usage: #definition
     * comment = "Select children of the Imaging Measurement Group container will be used to create a FHIR ImagingMeasurement Observation."
     * dependsOn[0]
       * attribute = #ValueType
-      * valueCode = http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-valueset-types#num
+      * valueCoding = http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-valueset-types#num
   * target[1]
     * relationship = #equivalent
     * code = #hasMember
     * display = "ImagingMeasurementGroup.hasMember"
     * dependsOn[0]
       * attribute = #ValueType
-      * valueCode = http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-valueset-types#num
+      * valueCoding = http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-valueset-types#num
 
 * group[15].element[0]
   * code = http://terminology.hl7.org/CodeSystem/umls#C0034375
@@ -247,17 +247,17 @@ Usage: #definition
     * comment = "Select children of the Imaging Measurement Group container will be used to create a FHIR ImagingQualitativeEvaluation Observation."
     * dependsOn[0]
       * attribute = #ValueType
-      * valueCode = http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-valueset-types#text
+      * valueCoding = http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-valueset-types#text
     * dependsOn[1]
       * attribute = #ValueType
-      * valueCode = http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-valueset-types#code
+      * valueCoding = http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-valueset-types#code
   * target[1]
     * relationship = #equivalent
     * code = #hasMember
     * display = "ImagingMeasurementGroup.hasMember"
     * dependsOn[0]
       * attribute = #ValueType
-      * valueCode = http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-valueset-types#text
+      * valueCoding = http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-valueset-types#text
     * dependsOn[1]
       * attribute = #ValueType
-      * valueCode = http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-valueset-types#code
+      * valueCoding = http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-valueset-types#code
