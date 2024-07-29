@@ -5,7 +5,7 @@ Alias: DCMIdType = http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-identifier-t
 Alias: HL7IdType = http://terminology.hl7.org/CodeSystem/v2-0203
 
 Profile:        ImagingSelectionVisualExplanationProfile
-Parent:         ImagingSelection
+Parent:         ImagingSelectionObservationImagingSelectionProfile
 Id:             visual-explanation
 Title:          "Imaging Selection - DICOM SR Visual Explanation Mapping"
 Description:    "DICOM SR Visual Explanation Mapping to ImagingSelection"
@@ -14,47 +14,10 @@ Description:    "DICOM SR Visual Explanation Mapping to ImagingSelection"
 * insert DICOMSRStructureDefinitionContent
 
 // Associated ServiceRequest
-* basedOn ^slicing.discriminator.type = #type
-* basedOn ^slicing.discriminator.path = "reference"
-* basedOn ^slicing.rules = #open
-* basedOn ^slicing.description = "Description of the related ServiceRequest"
-
-* basedOn contains serviceRequestRef 0..1 MS
-* basedOn[serviceRequestRef] only Reference(ServiceRequest)
-* basedOn[serviceRequestRef] ^short = "Description of the related ServiceRequest"
-* basedOn[serviceRequestRef].identifier.type 1..1
-* basedOn[serviceRequestRef].identifier.type = HL7IdType#ACSN "Accession ID"
-* basedOn[serviceRequestRef].identifier.value 1..1
-* basedOn[serviceRequestRef].identifier ^short = "The accession number related to the performed study"
-
-// Associated Imaging Study
-* derivedFrom ^slicing.discriminator.type = #type
-* derivedFrom ^slicing.discriminator.path = "reference"
-* derivedFrom ^slicing.rules = #open
-* derivedFrom ^slicing.description = "Description of the related ImagingStudy" 
-
-* derivedFrom contains imagingStudyRef 1..1 MS
-* derivedFrom[imagingStudyRef] only Reference(ImagingStudy)
-* derivedFrom[imagingStudyRef] ^short = "Related ImagingStudy"
-* derivedFrom[imagingStudyRef].identifier.type 1..1
-* derivedFrom[imagingStudyRef].identifier.type = DCM#110180 "Study Instance UID"
-* derivedFrom[imagingStudyRef].identifier.system = "urn:dicom:uid"
-* derivedFrom[imagingStudyRef].identifier.value 1..1
-* derivedFrom[imagingStudyRef].identifier ^short = "Identifier related to Study Instance UID"
-
 * code MS
 * code.coding = DCM#130401 "Visual Explanation"
 
-* subject 1..1 MS
-* subject only Reference(Patient)
-
-* instance ^slicing.discriminator.type = #value
-* instance ^slicing.discriminator.path = "type"
-* instance ^slicing.rules = #open
-* instance ^slicing.ordered = false
-* instance ^slicing.description = "Source Instances"
-
-* instance contains sourceInstances 0..*
+* instance 1..* MS
 
 Mapping: dicom-tid-1410-for-visualExplanation
 Id: dicom-tid-1410-visual-explanation
@@ -63,7 +26,8 @@ Source: ImagingSelectionVisualExplanationProfile
 Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1410"
 Description: "The ImagingSelectionVisualExplanation can be extracted from TID 1410.EV(130401, DCM, Visual Explanation)."
 * -> "TID1410(VisualExplanation)"
-* instance[sourceInstances].uid -> "tag(0008,1155) [Referenced SOP Instance UID]"
+* instance.uid -> "tag(0008,1155) [Referenced SOP Instance UID]"
+* instance.sopClass -> "tag(0008,1150) [Referenced SOP Class UID]"
 
 Mapping: dicom-tid-1411-for-visualExplanation
 Id: dicom-tid-1411-visual-explanation
@@ -72,4 +36,24 @@ Source: ImagingSelectionVisualExplanationProfile
 Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1411"
 Description: "The ImagingSelectionVisualExplanation can be extracted from TID 1411.EV(130401, DCM, Visual Explanation)."
 * -> "TID1411(VisualExplanation)"
-* instance[sourceInstances].uid -> "tag(0008,1155) [Referenced SOP Instance UID]"
+* instance.uid -> "tag(0008,1155) [Referenced SOP Instance UID]"
+* instance.sopClass -> "tag(0008,1150) [Referenced SOP Class UID]"
+
+Instance: Example-ImagingSelection-VisualExplanation
+InstanceOf: ImagingSelectionVisualExplanationProfile
+Usage: #example
+Description: "An example of an visual explanation referenced from a measurement report."
+
+* id = "measurement-report-visual-explanation"
+
+* subject = Reference(Example-Patient)
+* derivedFrom = Reference(Example-ImagingStudy)
+* status = #available
+* code
+  * coding
+    * system = "http://dicom.nema.org/resources/ontology/DCM"
+    * code = DCM#130401 "Visual Explanation"
+* seriesUid = "1.2.840.113747.20080222.83341314456631405221767081790268995.3"
+* instance
+  * uid = "1.2.840.113747.20080222.83341314456631405221767081790268995.3.1"
+  * sopClass = https://dicom.nema.org/medical/dicom/current/output/chtml/part04/sect_B.5#1.2.840.10008.5.1.4.1.1.7.4 "Multi-frame True Color Secondary Capture Image Storage"
