@@ -7,12 +7,9 @@ The mapping between DICOM SR Measurement Report contents and FHIR Resources is s
 * [Document IE Mapping](#sr_document)
 * [Imaging Measurements Container Mapping](#imaging_measurements_container)
 * [Imaging Measurement Group Mapping](#imaging_measurement_group)
-
-[comment]: <> (* [Imaging Measurement Mapping]&#40;#imaging_measurement&#41;)
-
-[comment]: <> (* [Imaging Qualitative Evaluation Mapping]&#40;#imaging_qualitative_evaluation&#41;)
-
-[comment]: <> (* [Derived Imaging Measurement Mapping]&#40;#derived_imaging_measurement&#41;)
+* [Imaging Measurement Mapping](#imaging_measurement)
+* [Imaging Qualitative Evaluation Mapping](#imaging_qualitative_evaluation)
+* [Derived Imaging Measurement Mapping](#derived_imaging_measurement)
 
 ![DICOM SR Measurement Report Mapping Overview](./dicom_sr_measurement_report_mapping_overview.svg){: width="100%"}
 
