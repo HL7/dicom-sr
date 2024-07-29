@@ -24,6 +24,7 @@ Description:    "DICOM SR Referenced Segment Mapping to ImagingSelection"
 
 * instance contains segmentationInstance 1..*
 * instance[segmentationInstance].sopClass = https://dicom.nema.org/medical/dicom/current/output/chtml/part04/sect_B.5#1.2.840.10008.5.1.4.1.1.66.4 "Segmentation Storage"
+* instance[segmentationInstance].subset 1..1
 
 Mapping: dicom-tid-1411-for-referencedSegmentProfile
 Id: dicom-tid-1411-referenced-segment
@@ -53,6 +54,7 @@ Description: "An example of an Segmentation SOP Instance referenced from a measu
 * instance[segmentationInstance]
   * uid = "1.2.840.113747.20080222.83341314456631405221767081790268995.2.1"
   * sopClass = https://dicom.nema.org/medical/dicom/current/output/chtml/part04/sect_B.5#1.2.840.10008.5.1.4.1.1.66.4 "Segmentation Storage"
+  * subset = "1"
 * text
   * status = #generated
   * div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">

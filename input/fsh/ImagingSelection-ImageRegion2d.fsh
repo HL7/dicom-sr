@@ -66,7 +66,7 @@ Description: "An example of a 2D Image Region referenced from a measurement repo
   * uid = "1.2.840.113747.20080222.83341314456631405221767081790268995.4.1"
   * sopClass = https://dicom.nema.org/medical/dicom/current/output/chtml/part04/sect_B.5#1.2.840.10008.5.1.4.1.1.2 "CT Image Storage"
   * imageRegion2D
-    * regionType = #POLYLINE
+    * regionType = #polyline
     * coordinate[+] = 0.25
     * coordinate[+] = 0.25
     * coordinate[+] = 0.75

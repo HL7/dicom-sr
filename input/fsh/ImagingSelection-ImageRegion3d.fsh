@@ -51,7 +51,7 @@ Description: "An example of a 3D Image Region referenced from a measurement repo
 * frameOfReferenceUid = "1.2.840.113747.20080222.83341314456631405221767081790268995.5"
 // NOTE: Commented out until FHIR-41429 is resolved
 // * imageRegion3D
-//   * regionType = #ELLIPSE
+//   * regionType = #ellipse
 //   * coordinate[+] = -50.0
 //   * coordinate[+] = -50.0
 //   * coordinate[+] = -50.0

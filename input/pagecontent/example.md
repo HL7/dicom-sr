@@ -626,6 +626,7 @@ See [Example Device](Device-measurement-report-general-equipment.html).
             "system": "urn:ietf:rfc:3986",
             "code": "urn:oid:1.2.840.10008.5.1.4.1.1.66.4"
           }
+          "subset": "1"
         }
       ]
     }
