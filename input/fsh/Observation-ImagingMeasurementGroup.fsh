@@ -9,7 +9,7 @@ Description: "If Observation.code is 'measurement group' it should not also be t
 Expression:  "code = 'DCM#125007' implies category.not().exists()"
 Severity:    #error
 
-Profile:        ImagingMeasurementGroupProfile
+Profile:        ImagingMeasurementGroup
 Parent:         ImagingObservationProfile
 Id:             imaging-measurement-group
 Title:          "Observation - DICOM SR Imaging Measurement Group Mapping"
@@ -29,11 +29,11 @@ Description:    "DICOM SR TID Imaging Measurement Group Mapping to Observation"
 
 // Imaging Measurements
 * hasMember contains imagingMeasurement 0..* MS
-* hasMember[imagingMeasurement] only Reference(ImagingMeasurementProfile)
+* hasMember[imagingMeasurement] only Reference(ImagingMeasurement)
 
 // Imaging Qualitative Evaluations
 * hasMember contains qualitativeEvaluation 0..* MS
-* hasMember[qualitativeEvaluation] only Reference(ImagingQualitativeEvaluationProfile)
+* hasMember[qualitativeEvaluation] only Reference(ImagingQualitativeEvaluation)
 
 * value[x] MS
 * value[x] only CodeableConcept
@@ -42,7 +42,7 @@ Description:    "DICOM SR TID Imaging Measurement Group Mapping to Observation"
 Mapping: dicom-sr-for-TID1410PlanarROIMeasurementGroup
 Id: dicom-sr-tid-1410
 Title: "DICOM SR TID 1410 Planar ROI Measurement Group"
-Source: ImagingMeasurementGroupProfile
+Source: ImagingMeasurementGroup
 Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1410"
 Description: "The TID1410PlanarROIMeasurementGroup can be extracted from TID 1410 - Planar ROI Measurements and Qualitative Evaluations."
 * -> "TID1410(Planar ROI Measurements and Qualitative Evaluations)"
@@ -51,12 +51,13 @@ Description: "The TID1410PlanarROIMeasurementGroup can be extracted from TID 141
 * code -> "TID1410.EV(276214006, SCT, Finding category) > DCM#125007 'Measurement Group'"
 * valueCodeableConcept -> "TID1410.EV(121071, DCM, Finding)"
 * issued -> "tag(0040,A032) [Observation DateTime]"
+* method -> "TID1501.EV(370129005, SCT, Measurement Method)"
 * interpretation -> "TID1410.$QualType, TID.1410QualModType$"
 
 Mapping: dicom-sr-for-TID1411VolumetricROIMeasurementGroup
 Id: dicom-sr-tid-1411
 Title: "DICOM SR TID 1411 Volumetric ROI Measurement Group"
-Source: ImagingMeasurementGroupProfile
+Source: ImagingMeasurementGroup
 Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1411"
 Description: "The TID1411PlanarROIMeasurementGroup can be extracted from TID 1411 - Volumetric ROI Measurements and Qualitative Evaluations."
 * -> "TID1411(Volumetric ROI Measurements and Qualitative Evaluations)"
@@ -65,12 +66,13 @@ Description: "The TID1411PlanarROIMeasurementGroup can be extracted from TID 141
 * code -> "TID1411.EV(276214006, SCT, Finding category) > DCM#125007 'Measurement Group'"
 * valueCodeableConcept -> "TID1411.EV(121071, DCM, Finding)"
 * issued -> "tag(0040,A032) [Observation DateTime]"
+* method -> "TID1501.EV(370129005, SCT, Measurement Method)"
 * interpretation -> "TID1411.$QualType, TID.1411QualModType$"
 
 Mapping: dicom-sr-for-TID1501PlanarROIMeasurementGroupProfile
 Id: dicom-sr-tid-1501
 Title: "DICOM SR TID 1501 Measurement and Qualitative Evaluation Group"
-Source: ImagingMeasurementGroupProfile
+Source: ImagingMeasurementGroup
 Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1501"
 Description: "The TID1501PlanarROIMeasurementGroup can be extracted from TID 1501 - Measurement and Qualitative Evaluation Group."
 * -> "TID1501(Measurement and Qualitative Evaluation Group)"
@@ -79,10 +81,11 @@ Description: "The TID1501PlanarROIMeasurementGroup can be extracted from TID 150
 * code -> "TID1501.EV(276214006, SCT, Finding category) > DCM#125007 'Measurement Group'"
 * valueCodeableConcept -> "TID1501.EV(121071, DCM, Finding)"
 * issued -> "tag(0040,A032) [Observation DateTime]"
+* method -> "TID1501.EV(370129005, SCT, Measurement Method)"
 * interpretation -> "TID1501.$QualType, TID.1501QualModType$"
 
 Instance: Example-Observation-ImagingMeasurementGroup
-InstanceOf: ImagingMeasurementGroupProfile
+InstanceOf: ImagingMeasurementGroup
 Usage: #example
 Description: "Example of Observation representing a DICOM SR Measurement Group"
 

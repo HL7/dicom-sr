@@ -4,8 +4,8 @@ Alias: LOINC =  http://loinc.org
 Alias: DCMIdType = http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-identifier-type
 Alias: HL7IdType = http://terminology.hl7.org/CodeSystem/v2-0203
 
-Profile:        ImagingSelection3dImageRegionProfile
-Parent:         ImagingSelectionObservationImagingSelectionProfile
+Profile:        ImagingSelection3dImageRegion
+Parent:         ImagingSelectionObservationImagingSelection
 Id:             image-region-3d
 Title:          "Imaging Selection - DICOM SR Image 3D Region Mapping"
 Description:    "DICOM SR Image 3D Region Mapping to ImagingSelection"
@@ -24,7 +24,7 @@ Description:    "DICOM SR Image 3D Region Mapping to ImagingSelection"
 Mapping: dicom-tid-1410-for-3dImageRegionProfile
 Id: dicom-tid-1410-3d-image-region
 Title: "DICOM TID 1410 3D Image Region"
-Source: ImagingSelection3dImageRegionProfile
+Source: ImagingSelection3dImageRegion
 Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1410"
 Description: "The ImagingSelection2dImageRegion can be extracted from TID 1410.EV(111030, DCM, Image Region)."
 * -> "TID1410(3DImageRegion)"
@@ -35,7 +35,7 @@ Description: "The ImagingSelection2dImageRegion can be extracted from TID 1410.E
 // * imageRegion3D.coordinate -> "tag(0070,0022) [Graphic Data]"
 
 Instance: Example-ImagingSelection-ImageRegion3D
-InstanceOf: ImagingSelection3dImageRegionProfile
+InstanceOf: ImagingSelection3dImageRegion
 Usage: #example
 Description: "An example of a 3D Image Region referenced from a measurement report."
 

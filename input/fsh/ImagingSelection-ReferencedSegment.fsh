@@ -4,8 +4,8 @@ Alias: LOINC =  http://loinc.org
 Alias: DCMIdType = http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-identifier-type
 Alias: HL7IdType = http://terminology.hl7.org/CodeSystem/v2-0203
 
-Profile:        ImagingSelectionReferencedSegmentProfile
-Parent:         ImagingSelectionObservationImagingSelectionProfile
+Profile:        ImagingSelectionReferencedSegment
+Parent:         ImagingSelectionObservationImagingSelection
 Id:             referenced-segment
 Title:          "Imaging Selection - DICOM SR Referenced Segment Mapping"
 Description:    "DICOM SR Referenced Segment Mapping to ImagingSelection"
@@ -29,7 +29,7 @@ Description:    "DICOM SR Referenced Segment Mapping to ImagingSelection"
 Mapping: dicom-tid-1411-for-referencedSegmentProfile
 Id: dicom-tid-1411-referenced-segment
 Title: "DICOM TID 1411 Referenced Segment"
-Source: ImagingSelectionReferencedSegmentProfile
+Source: ImagingSelectionReferencedSegment
 Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1411"
 Description: "The ImagingSelectionReferencedSegment can be extracted from TID 1411.EV(121191, DCM, Referenced Segment)."
 * -> "TID1411(Referenced Segment)"
@@ -37,7 +37,7 @@ Description: "The ImagingSelectionReferencedSegment can be extracted from TID 14
 * instance[segmentationInstance].subset -> "tag(0062,000B) [Referenced Segment Number]"
 
 Instance: Example-ImagingSelection-ReferencedSegment
-InstanceOf: ImagingSelectionReferencedSegmentProfile
+InstanceOf: ImagingSelectionReferencedSegment
 Usage: #example
 Description: "An example of an Segmentation SOP Instance referenced from a measurement report."
 

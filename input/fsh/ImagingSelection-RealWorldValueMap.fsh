@@ -4,8 +4,8 @@ Alias: LOINC =  http://loinc.org
 Alias: DCMIdType = http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-identifier-type
 Alias: HL7IdType = http://terminology.hl7.org/CodeSystem/v2-0203
 
-Profile:        ImagingSelectionRealWorldValueMapProfile
-Parent:         ImagingSelectionObservationImagingSelectionProfile
+Profile:        ImagingSelectionRealWorldValueMap
+Parent:         ImagingSelectionObservationImagingSelection
 Id:             real-world-value-map
 Title:          "Imaging Selection - DICOM SR Real World Value Map"
 Description:    "DICOM SRReal World Value Map Mapping to ImagingSelection"
@@ -28,7 +28,7 @@ Description:    "DICOM SRReal World Value Map Mapping to ImagingSelection"
 Mapping: dicom-tid-1410-for-realWorldValueMapProfile
 Id: dicom-tid-1410-real-world-value-map
 Title: "DICOM TID 1410 Real World Value Map"
-Source: ImagingSelectionRealWorldValueMapProfile
+Source: ImagingSelectionRealWorldValueMap
 Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1410"
 Description: "The ImagingSelectionRealWorldValueMap can be extracted from TID 1410.EV(126100, DCM, Real World Value Map used for measurement)."
 * -> "TID1410(RealWorldValueMap)"
@@ -37,14 +37,14 @@ Description: "The ImagingSelectionRealWorldValueMap can be extracted from TID 14
 Mapping: dicom-tid-1411-for-realWorldValueMapProfile
 Id: dicom-tid-1411-real-world-value-map
 Title: "DICOM TID 1411 Real World Value Map"
-Source: ImagingSelectionRealWorldValueMapProfile
+Source: ImagingSelectionRealWorldValueMap
 Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1411"
 Description: "The ImagingSelectionRealWorldValueMap can be extracted from TID 1411.EV(126100, DCM, Real World Value Map used for measurement)."
 * -> "TID1411(RealWorldValueMap)"
 * instance[valueMapInstance].uid -> "tag(0008,1155) [Referenced SOP Instance UID]"
 
 Instance: Example-ImagingSelection-RealWorldValueMap
-InstanceOf: ImagingSelectionRealWorldValueMapProfile
+InstanceOf: ImagingSelectionRealWorldValueMap
 Usage: #example
 Description: "An example of an Real World Value Map SOP Instance referenced from a measurement report."
 

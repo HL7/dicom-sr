@@ -4,8 +4,8 @@ Alias: LOINC =  http://loinc.org
 Alias: DCMIdType = http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-identifier-type
 Alias: HL7IdType = http://terminology.hl7.org/CodeSystem/v2-0203
 
-Profile:        ImagingSelectionRegionInSpaceProfile
-Parent:         ImagingSelectionObservationImagingSelectionProfile
+Profile:        ImagingSelectionRegionInSpace
+Parent:         ImagingSelectionObservationImagingSelection
 Id:             region-in-space
 Title:          "Imaging Selection - DICOM SR Region In Space"
 Description:    "DICOM SR Region In Space Mapping to ImagingSelection"
@@ -29,7 +29,7 @@ Description:    "DICOM SR Region In Space Mapping to ImagingSelection"
 Mapping: dicom-tid-1410-for-regionInSpaceProfile
 Id: dicom-tid-1410-region-in-space
 Title: "DICOM TID 1410 Region In Space"
-Source: ImagingSelectionRegionInSpaceProfile
+Source: ImagingSelectionRegionInSpace
 Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1410"
 Description: "The ImagingSelectionRegionInSpace can be extracted from TID 1410.EV(130488, DCM, Region In Space)."
 * -> "TID1410(RegionInSpace)"
@@ -39,7 +39,7 @@ Description: "The ImagingSelectionRegionInSpace can be extracted from TID 1410.E
 Mapping: dicom-tid-1411-for-regionInSpaceProfile
 Id: dicom-tid-1411-region-in-space
 Title: "DICOM TID 1411 Region In Space"
-Source: ImagingSelectionRegionInSpaceProfile
+Source: ImagingSelectionRegionInSpace
 Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1411"
 Description: "The ImagingSelectionRegionInSpace can be extracted from TID 1411.EV(130488, DCM, Region In Space)."
 * -> "TID1411(RegionInSpace)"
@@ -47,7 +47,7 @@ Description: "The ImagingSelectionRegionInSpace can be extracted from TID 1411.E
 * instance[rtStructureInstance].subset -> "CID130488.CID130489.tag(0040,A160) [Text Value]"
 
 Instance: Example-ImagingSelection-RegionInSpace
-InstanceOf: ImagingSelectionRegionInSpaceProfile
+InstanceOf: ImagingSelectionRegionInSpace
 Usage: #example
 Description: "An example of an region in space referenced from a measurement report."
 

@@ -4,8 +4,8 @@ Alias: LOINC =  http://loinc.org
 Alias: DCMIdType = http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-identifier-type
 Alias: HL7IdType = http://terminology.hl7.org/CodeSystem/v2-0203
 
-Profile:        ImagingSelectionReferencedSegmentationFrameProfile
-Parent:         ImagingSelectionObservationImagingSelectionProfile
+Profile:        ImagingSelectionReferencedSegmentationFrame
+Parent:         ImagingSelectionObservationImagingSelection
 Id:             referenced-segmentation-frame
 Title:          "Imaging Selection - DICOM SR Referenced Segmentation Frame Mapping"
 Description:    "DICOM SR Referenced Segmentation Frame Mapping to ImagingSelection"
@@ -29,7 +29,7 @@ Description:    "DICOM SR Referenced Segmentation Frame Mapping to ImagingSelect
 Mapping: dicom-tid-1410-for-referencedSegmentationFrame
 Id: dicom-tid-1410-referenced-segmentation-frame
 Title: "DICOM TID 1410 Referenced Segmentation Frame"
-Source: ImagingSelectionReferencedSegmentationFrameProfile
+Source: ImagingSelectionReferencedSegmentationFrame
 Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1410"
 Description: "The ImagingSelectionReferencedSegmentationFrame can be extracted from TID 1410.EV(121214, DCM, Referenced Segmentation Frame)."
 * -> "TID1410(ReferencedSegmentationFrame)"
@@ -37,7 +37,7 @@ Description: "The ImagingSelectionReferencedSegmentationFrame can be extracted f
 * instance[referencedSegmentationFrame].subset -> "tag(0062,000B) [Referenced Segment Number]"
 
 Instance: Example-ImagingSelection-ReferencedSegmentationFrame
-InstanceOf: ImagingSelectionReferencedSegmentationFrameProfile
+InstanceOf: ImagingSelectionReferencedSegmentationFrame
 Usage: #example
 Description: "An example of an Segmentation Frame referenced from a measurement report."
 

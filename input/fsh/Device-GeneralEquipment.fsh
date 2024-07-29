@@ -4,7 +4,7 @@ Alias: LOINC =  http://loinc.org
 Alias: DCMIdType = http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-identifier-type
 Alias: HL7IdType = http://terminology.hl7.org/CodeSystem/v2-0203
 
-Profile:        GeneralEquipmentProfile
+Profile:        GeneralEquipmentDevice
 Parent:         Device
 Id:             dicom-general-equipment
 Title:          "Device - DICOM General Equipment"
@@ -16,18 +16,18 @@ Description:    "DICOM General Equipment to Device"
 * identifier 0..1 MS
 * displayName 0..1 MS
 
-Mapping: dicom-sr-for-GeneralEquipmentProfile
+Mapping: dicom-sr-for-GeneralEquipmentDevice
 Id: dicom-sr
 Title: "DICOM SR General Equipment"
-Source: GeneralEquipmentProfile
+Source: GeneralEquipmentDevice
 Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.5.html#sect_C.7.5.1"
-Description: "The GeneralEquipmentProfile can be extracted from DICOM PS 3.3 Sect C.7.5  General Equipment Module."
+Description: "The GeneralEquipmentDevice can be extracted from DICOM PS 3.3 Sect C.7.5  General Equipment Module."
 * -> "DICOM PS 3.3 C.7.5.1 (General Equipment)"
 * identifier -> "tag(0018,1002) [Device UID]"
 * displayName -> "tag(0008,1090) [Manufacturer's Model Name]"
 
 Instance: Example-Device-GeneralEquipment
-InstanceOf: GeneralEquipmentProfile
+InstanceOf: GeneralEquipmentDevice
 Usage: #example
 Description: "An example of the Device resource corresponding to the DICOM General Equipment IE."
 

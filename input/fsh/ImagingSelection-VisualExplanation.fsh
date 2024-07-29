@@ -4,8 +4,8 @@ Alias: LOINC =  http://loinc.org
 Alias: DCMIdType = http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-identifier-type
 Alias: HL7IdType = http://terminology.hl7.org/CodeSystem/v2-0203
 
-Profile:        ImagingSelectionVisualExplanationProfile
-Parent:         ImagingSelectionObservationImagingSelectionProfile
+Profile:        ImagingSelectionVisualExplanation
+Parent:         ImagingSelectionObservationImagingSelection
 Id:             visual-explanation
 Title:          "Imaging Selection - DICOM SR Visual Explanation Mapping"
 Description:    "DICOM SR Visual Explanation Mapping to ImagingSelection"
@@ -22,7 +22,7 @@ Description:    "DICOM SR Visual Explanation Mapping to ImagingSelection"
 Mapping: dicom-tid-1410-for-visualExplanation
 Id: dicom-tid-1410-visual-explanation
 Title: "DICOM TID 1410 Visual Explanation"
-Source: ImagingSelectionVisualExplanationProfile
+Source: ImagingSelectionVisualExplanation
 Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1410"
 Description: "The ImagingSelectionVisualExplanation can be extracted from TID 1410.EV(130401, DCM, Visual Explanation)."
 * -> "TID1410(VisualExplanation)"
@@ -32,7 +32,7 @@ Description: "The ImagingSelectionVisualExplanation can be extracted from TID 14
 Mapping: dicom-tid-1411-for-visualExplanation
 Id: dicom-tid-1411-visual-explanation
 Title: "DICOM TID 1411 Visual Explanation"
-Source: ImagingSelectionVisualExplanationProfile
+Source: ImagingSelectionVisualExplanation
 Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1411"
 Description: "The ImagingSelectionVisualExplanation can be extracted from TID 1411.EV(130401, DCM, Visual Explanation)."
 * -> "TID1411(VisualExplanation)"
@@ -40,7 +40,7 @@ Description: "The ImagingSelectionVisualExplanation can be extracted from TID 14
 * instance.sopClass -> "tag(0008,1150) [Referenced SOP Class UID]"
 
 Instance: Example-ImagingSelection-VisualExplanation
-InstanceOf: ImagingSelectionVisualExplanationProfile
+InstanceOf: ImagingSelectionVisualExplanation
 Usage: #example
 Description: "An example of an visual explanation referenced from a measurement report."
 

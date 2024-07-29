@@ -18,11 +18,15 @@ Usage: #definition
 * group[0].element[0]
   * code = http://dicom.nema.org/resources/ontology/DCM#TID4019
   * display = "Algorithm Identification"
-  * target
+  * target[0]
     * relationship = #equivalent
     * code = #AlgrithmIdentification
-    * display = "Algorithm Identification Device"
+    * display = "AlgorithmIdentification"
     * comment = "Content from the Algorithm Identification template will be used to create a FHIR AlgorithmIdentification Device."
+  * target[0]
+    * relationship = #equivalent
+    * code = #device
+    * display = "observation.device"
 
 * group[1].element[0]
   * code = http://dicom.nema.org/resources/ontology/DCM#125007
@@ -30,7 +34,7 @@ Usage: #definition
   * target
     * relationship = #equivalent
     * code = #ImagingMeasurementGroup
-    * display = "Imaging Measurement Group Observation"
+    * display = "ImagingMeasurementGroup"
     * comment = "Each Measurement Group container will be used to create a FHIR ImagingMeasurementGroup Observation."
 
 * group[1].element[1]
@@ -39,7 +43,7 @@ Usage: #definition
   * target
     * relationship = #equivalent
     * code = #DerivedImagingMeasurements
-    * display = "Derived Imaging Measurement Observation"
+    * display = "DerivedImagingMeasurements"
     * comment = "Each child of the the Derived Imaging Measurements container will be used to create a FHIR DerivedImagingMeasurement Observation."
 
 * group[1].element[2]
@@ -48,5 +52,5 @@ Usage: #definition
   * target
     * relationship = #equivalent
     * code = #ImagingQualitativeEvaluation
-    * display = "Imaging Qualitative Evaluation Observation"
+    * display = "ImagingQualitativeEvaluation"
     * comment = "Select children of the Imaging Qualitative Evaluations container will be used to create a FHIR ImagingQualitativeEvaluation Observation."

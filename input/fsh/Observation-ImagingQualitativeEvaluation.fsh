@@ -4,7 +4,7 @@ Alias: LOINC =  http://loinc.org
 Alias: DCMIdType = http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-identifier-type
 Alias: HL7IdType = http://terminology.hl7.org/CodeSystem/v2-0203
 
-Profile:        ImagingQualitativeEvaluationProfile
+Profile:        ImagingQualitativeEvaluation
 Parent:         ImagingObservationProfile
 Id:             imaging-qualitative-evaluation
 Title:          "Observation - DICOM SR Imaging Qualitative Evaluation Mapping to Observation"
@@ -21,7 +21,7 @@ Description:    "DICOM SR Imaging Qualitative Evaluation Mapping to Observation"
 Mapping: dicom-sr-for-TID1500MeasurementReportProfile
 Id: dicom-sr-tid-1500
 Title: "DICOM SR TID 1500 Measurement Report"
-Source: ImagingQualitativeEvaluationProfile
+Source: ImagingQualitativeEvaluation
 Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1500"
 Description: "The Qualitative Evaluation can be extracted from TID 1500 - Measurement Report."
 * -> "TID1500(MeasurementReport)"
@@ -32,7 +32,7 @@ Description: "The Qualitative Evaluation can be extracted from TID 1500 - Measur
 * valueCodeableConcept -> "TID1500.EV(C0034375, UMLS, Qualitative Evaluations)[n].tag(0040,A160) [Text Value] or .tag(0040,A168) [Concept Code Sequence]"
 
 Instance: Example-Observation-ImagingQualitativeEvaluation-001
-InstanceOf: ImagingQualitativeEvaluationProfile
+InstanceOf: ImagingQualitativeEvaluation
 Usage: #example
 Description: "Example of Observation representing a DICOM SR Measurement Qualitative Evaluation."
 
@@ -59,7 +59,7 @@ Description: "Example of Observation representing a DICOM SR Measurement Qualita
     * code = #105 "5 out of 5 (Obvious)"
 
 Instance: Example-Observation-ImagingQualitativeEvaluation-002
-InstanceOf: ImagingQualitativeEvaluationProfile
+InstanceOf: ImagingQualitativeEvaluation
 Usage: #example
 Description: "Example of Observation representing a DICOM SR Measurement Qualitative Evaluation."
 

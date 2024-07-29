@@ -4,7 +4,7 @@ Alias: LOINC =  http://loinc.org
 Alias: DCMIdType = http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-identifier-type
 Alias: HL7IdType = http://terminology.hl7.org/CodeSystem/v2-0203
 
-Profile:        AlgorithmIdentificationProfile
+Profile:        AlgorithmIdentification
 Parent:         Device
 Id:             algorithm-identification
 Title:          "Device - DICOM SR TID 4019 Algorithm Identification Mapping"
@@ -19,10 +19,10 @@ Description:    "DICOM SR Algorithm Identification to Device"
 * property 0..* MS
 * parent 0..1 MS
 
-Mapping: dicom-sr-for-AlgorithmIdentificationProfile
+Mapping: dicom-sr-for-AlgorithmIdentification
 Id: dicom-sr
 Title: "DICOM SR TID 4019 Algorithm Identification"
-Source: AlgorithmIdentificationProfile
+Source: AlgorithmIdentification
 Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_4019"
 Description: "The TID4019AlgorithmIdentification can be extracted from TID 4019 - Algorithm Identification."
 * -> "TID4019(Algorithm Identification)"
@@ -32,7 +32,7 @@ Description: "The TID4019AlgorithmIdentification can be extracted from TID 4019 
 * type -> "TID4109.EV(111000, DCM, Algorithm Family)"
 
 Instance: Example-Device-AlgorithmIdentification
-InstanceOf: AlgorithmIdentificationProfile
+InstanceOf: AlgorithmIdentification
 Usage: #example
 Description: "An example of the Device resource corresponding to an Algorithm Identification content item."
 

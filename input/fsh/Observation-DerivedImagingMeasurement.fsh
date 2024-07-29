@@ -67,7 +67,7 @@ Description:    "DICOM SR Derived Imaging Measurement Mapping to Observation"
 * issued ^short = "Observation Date Time"
 
 * device 1..1 MS
-* device only Reference(AlgorithmIdentificationProfile or GeneralEquipmentProfile)
+* device only Reference(AlgorithmIdentification or GeneralEquipmentDevice)
 
 * referenceRange MS
 * valueQuantity MS
@@ -78,7 +78,7 @@ Description:    "DICOM SR Derived Imaging Measurement Mapping to Observation"
 * derivedFrom ^slicing.description = "Source Imaging Measurement Groups"
 
 * derivedFrom contains imagingMeasurementGroupRef 1..* MS
-* derivedFrom[imagingMeasurementGroupRef] only Reference(ImagingMeasurementGroupProfile)
+* derivedFrom[imagingMeasurementGroupRef] only Reference(ImagingMeasurementGroup)
 * derivedFrom[imagingMeasurementGroupRef] ^short = "Source Imaging Measurement Groups"
 
 Mapping: dicom-sr-for-TID1420DerivedMeasurementProfile

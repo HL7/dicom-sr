@@ -4,7 +4,7 @@ Alias: LOINC =  http://loinc.org
 Alias: DCMIdType = http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-identifier-type
 Alias: HL7IdType = http://terminology.hl7.org/CodeSystem/v2-0203
 
-Profile:        ImagingMeasurementProfile
+Profile:        ImagingMeasurement
 Parent:         ImagingObservationProfile
 Id:             imaging-measurement
 Title:          "Observation - DICOM SR Imaging Measurement Mapping to Observation"
@@ -26,7 +26,7 @@ Description:    "DICOM SR Imaging Measurement Mapping to Observation"
 Mapping: dicom-sr-for-TID300MeasurementProfile
 Id: dicom-sr-tid-300
 Title: "DICOM SR TID 300 Measurement"
-Source: ImagingMeasurementProfile
+Source: ImagingMeasurement
 Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_300"
 Description: "The TID300Measurement can be extracted from TID 300 - Measurement."
 * -> "TID300(Measurement)"
@@ -41,7 +41,7 @@ Description: "The TID300Measurement can be extracted from TID 300 - Measurement.
 Mapping: dicom-sr-for-TID1419MeasurementProfile
 Id: dicom-sr-tid-1419
 Title: "DICOM SR TID 1419 Measurement"
-Source: ImagingMeasurementProfile
+Source: ImagingMeasurement
 Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1419"
 Description: "The TID1419Measurement can be extracted from TID 1419 - ROI Measurements."
 * -> "TID1419(ROIMeasurement)"
@@ -54,7 +54,7 @@ Description: "The TID1419Measurement can be extracted from TID 1419 - ROI Measur
 * valueQuantity -> "TID1419.$Measurement.tag(0040,A300) [Measured Value Sequence]"
 
 Instance: Example-Observation-ImagingMeasurement-001
-InstanceOf: ImagingMeasurementProfile
+InstanceOf: ImagingMeasurement
 Usage: #example
 Description: "Example of Observation representing a DICOM SR Imaging Measurement."
 
@@ -81,7 +81,7 @@ Description: "Example of Observation representing a DICOM SR Imaging Measurement
   * code = #mm3
 
 Instance: Example-Observation-ImagingMeasurement-002
-InstanceOf: ImagingMeasurementProfile
+InstanceOf: ImagingMeasurement
 Usage: #example
 Description: "Example of Observation representing a DICOM SR Imaging Measurement."
 
@@ -108,7 +108,7 @@ Description: "Example of Observation representing a DICOM SR Imaging Measurement
   * code = #mm
 
 Instance: Example-Observation-ImagingMeasurement-003
-InstanceOf: ImagingMeasurementProfile
+InstanceOf: ImagingMeasurement
 Usage: #example
 Description: "Example of Observation representing a DICOM SR Imaging Measurement."
 

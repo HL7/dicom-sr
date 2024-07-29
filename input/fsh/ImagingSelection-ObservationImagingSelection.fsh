@@ -4,7 +4,7 @@ Alias: LOINC =  http://loinc.org
 Alias: DCMIdType = http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-identifier-type
 Alias: HL7IdType = http://terminology.hl7.org/CodeSystem/v2-0203
 
-Profile:        ImagingSelectionObservationImagingSelectionProfile
+Profile:        ImagingSelectionObservationImagingSelection
 Parent:         ImagingSelection
 Id:             observation-imaging-selection
 Title:          "Imaging Selection - DICOM SR Base Imaging Selection"

@@ -4,8 +4,8 @@ Alias: LOINC =  http://loinc.org
 Alias: DCMIdType = http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-identifier-type
 Alias: HL7IdType = http://terminology.hl7.org/CodeSystem/v2-0203
 
-Profile:        ImagingSelectionVolumeSurfaceProfile
-Parent:         ImagingSelectionObservationImagingSelectionProfile
+Profile:        ImagingSelectionVolumeSurface
+Parent:         ImagingSelectionObservationImagingSelection
 Id:             volume-surface
 Title:          "Imaging Selection - DICOM SR Image Volume Surface Mapping"
 Description:    "DICOM SR Image Volume Surface Mapping to ImagingSelection"
@@ -24,7 +24,7 @@ Description:    "DICOM SR Image Volume Surface Mapping to ImagingSelection"
 Mapping: dicom-tid-1411-for-VolumeSurfaceProfile
 Id: dicom-tid-1411-volume-surface
 Title: "DICOM TID 1411 Volume Surface"
-Source: ImagingSelectionVolumeSurfaceProfile
+Source: ImagingSelectionVolumeSurface
 Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1411"
 Description: "The ImagingSelectionVolumeSurface can be extracted from TID 1411.EV(121231, DCM, Volume Surface)."
 * -> "TID1411(VolumeSurface)"
@@ -34,7 +34,7 @@ Description: "The ImagingSelectionVolumeSurface can be extracted from TID 1411.E
 // * imageRegion3D.coordinate -> "tag(0070,0022) [Graphic Data]"
 
 Instance: Example-ImagingSelection-VolumeSurface
-InstanceOf: ImagingSelectionVolumeSurfaceProfile
+InstanceOf: ImagingSelectionVolumeSurface
 Usage: #example
 Description: "An example of an Volume Surface referenced from a measurement report."
 
