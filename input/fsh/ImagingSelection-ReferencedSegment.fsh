@@ -22,7 +22,7 @@ Description:    "DICOM SR Referenced Segment Mapping to ImagingSelection"
 * instance ^slicing.ordered = false
 * instance ^slicing.description = "Selected Segmentation Instance"
 
-* instance contains segmentationInstance 0..*
+* instance contains segmentationInstance 1..*
 * instance[segmentationInstance].sopClass = https://dicom.nema.org/medical/dicom/current/output/chtml/part04/sect_B.5#1.2.840.10008.5.1.4.1.1.66.4 "Segmentation Storage"
 
 Mapping: dicom-tid-1411-for-referencedSegmentProfile

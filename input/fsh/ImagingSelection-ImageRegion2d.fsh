@@ -22,7 +22,7 @@ Description:    "DICOM SR Image 2D Region Mapping to ImagingSelection"
 * instance ^slicing.ordered = false
 * instance ^slicing.description = "Selected Image Instance"
 
-* instance contains imageInstance 0..*
+* instance contains imageInstance 1..*
 * instance[imageInstance].imageRegion2D 1..1 MS
 
 Mapping: dicom-tid-1410-for-2dImageRegionProfile
