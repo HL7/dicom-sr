@@ -16,13 +16,7 @@ Description:    "DICOM SR Illustration Of ROI Mapping to ImagingSelection"
 * code MS
 * code.coding = DCM#121200 "Illustration of ROI"
 
-* instance ^slicing.discriminator.type = #value
-* instance ^slicing.discriminator.path = "type"
-* instance ^slicing.rules = #open
-* instance ^slicing.ordered = false
-* instance ^slicing.description = "Source Instances"
-
-* instance contains sourceInstances 0..*
+* instance 1..* MS
 
 Mapping: dicom-tid-1410-for-illustrationOfRoi
 Id: dicom-tid-1410-illustration-of-roi
@@ -31,7 +25,8 @@ Source: ImagingSelectionIllustrationOfROIProfile
 Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1410"
 Description: "The ImagingSelectionIllustrationOfROI can be extracted from TID 1410.EV(121200, DCM, Illustration of ROI)."
 * -> "TID1410(IllustrationOfROI)"
-* instance[sourceInstances].uid -> "tag(0008,1155) [Referenced SOP Instance UID]"
+* instance.uid -> "tag(0008,1155) [Referenced SOP Instance UID]"
+* instance.sopClass -> "tag(0008,1150) [Referenced SOP Class UID]"
 
 Mapping: dicom-tid-1411-for-illustrationOfRoi
 Id: dicom-tid-1411-illustration-of-roi
@@ -40,7 +35,8 @@ Source: ImagingSelectionIllustrationOfROIProfile
 Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1411"
 Description: "The ImagingSelectionIllustrationOfROI can be extracted from TID 1411.EV(121200, DCM, Illustration of ROI)."
 * -> "TID1411(IllustrationOfROI)"
-* instance[sourceInstances].uid -> "tag(0008,1155) [Referenced SOP Instance UID]"
+* instance.uid -> "tag(0008,1155) [Referenced SOP Instance UID]"
+* instance.sopClass -> "tag(0008,1150) [Referenced SOP Class UID]"
 
 Instance: Example-ImagingSelection-IllustrationOfROI
 InstanceOf: ImagingSelectionIllustrationOfROIProfile

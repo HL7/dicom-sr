@@ -119,5 +119,5 @@ Description: "Example of Observation representing a DICOM SR Derived Imaging Mea
   * value = 123.45
   * unit = "Hounsfield unit"
   * system = "http://unitsofmeasure.org"
-  * code = #hnsf'U
+  * code = #hf
 * derivedFrom = Reference(Example-ImagingMeasurementGroup)

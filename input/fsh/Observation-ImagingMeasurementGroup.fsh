@@ -81,7 +81,7 @@ Description: "The TID1501PlanarROIMeasurementGroup can be extracted from TID 150
 * issued -> "tag(0040,A032) [Observation DateTime]"
 * interpretation -> "TID1501.$QualType, TID.1501QualModType$"
 
-Instance: Example-Observation-ImagingMeasurementGroupProfile
+Instance: Example-Observation-ImagingMeasurementGroup
 InstanceOf: ImagingMeasurementGroupProfile
 Usage: #example
 Description: "Example of Observation representing a DICOM SR Measurement Group"
