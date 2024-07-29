@@ -13,7 +13,7 @@ package "Measurements Group" as measurementGroup {
    object "Tracking Identifier / UID" as tracking
    object "Finding" as finding
    object "Finding Category" as findingCategory
-   object "Finding Site" as findingSite
+   object "Finding Site" as BodyStructureFindingSite
    object "Image Region / Reference" as imageRegion
    object "Measurement Method" as method
    package "Numerical Measurements" {
@@ -25,11 +25,11 @@ object "Device - AlgorithmIdentification" as AlgorithmIdentification {
     parent = EquipmentDevice
 }
 
-object "Body Structure - TrackingBodyStructure" as TrackingBodyStructure {
+object "Body Structure - BodyStructureTrackingIdentifiers" as TrackingBodyStructure {
     identifier = TrackingID or TrackingUID
 }
 
-object "Body Structure - FindingSite" as FindingSite {
+object "Body Structure - BodyStructureFindingSite" as BodyStructureFindingSite {
     includedStructure.structure = Finding Site
 }
 
@@ -40,9 +40,9 @@ object "Observation - Imaging Measurement Group" as imagingMeasurementGroup {
     partOf = ImagingStudy
     basedOn = ServiceRequest
     device = EquipmentDevice or AlgorithmIdentification
-    focus = TrackingBodyStructure
+    focus = BodyStructureTrackingIdentifiers
     focus = ImagingSelection
-    bodyStructure = FindingSite
+    bodyStructure = BodyStructureFindingSite
     code = Finding Category or DCM#125007 "Measurement Group"
     method = Measurement Method
     valueCodeableConcept = Finding
@@ -55,13 +55,13 @@ map "[[mapping.html#imaging_measurement Imaging Measurement Mapping]]" as imagin
     basedOn => ServiceRequest
     focus => TrackingBodyStructure
     focus => ImagingSelection
-    bodyStructure => FindingSite
+    bodyStructure => BodyStructureFindingSite
     device => AlgorithmIdentification or EquipmentDevice
 }
 
 algorithm --> AlgorithmIdentification: Create AlgorithmIdentification from Algorithm Identification content item
 tracking --> TrackingBodyStructure: Create BodyStructure reference from Tracking Identifier / UID
-findingSite --> FindingSite: Create BodyStructure from Finding Site
+BodyStructureFindingSite --> BodyStructureFindingSite: Create BodyStructure from Finding Site
 imageRegion --> ImagingSelection: Create ImagingSelection from image reference or region
 
 inputs --> imagingMeasurementGroup
@@ -69,7 +69,7 @@ AlgorithmIdentification --> imagingMeasurementGroup
 TrackingBodyStructure --> imagingMeasurementGroup
 finding --> imagingMeasurementGroup
 findingCategory --> imagingMeasurementGroup
-FindingSite --> imagingMeasurementGroup
+BodyStructureFindingSite --> imagingMeasurementGroup
 ImagingSelection --> imagingMeasurementGroup
 measurementGroup --> imagingMeasurementGroup
 method --> imagingMeasurementGroup

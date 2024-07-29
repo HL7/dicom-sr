@@ -82,26 +82,26 @@ The Imaging Measurement Group contains:
 
 See also the [DICOM Imaging Measurement Group ConceptMap](ConceptMap-dicom-imaging-measurement-group-to-fhir.html).
 
-[comment]: <> (### Imaging Measurement Mapping)
+### Imaging Measurement Mapping
 
-[comment]: <> (<a name="imaging_measurement"></a>)
+<a name="imaging_measurement"></a>
 
-[comment]: <> (![Imaging Measurement Mapping]&#40;./imaging_measurement_mapping.svg&#41;{: width="100%"})
+![Imaging Measurement Mapping](./imaging_measurement_mapping.svg){: width="100%"}
 
-[comment]: <> (See also the [DICOM Imaging Measurement ConceptMap]&#40;ConceptMap-dicom-imaging-measurement-to-fhir.html&#41;.)
+See also the [DICOM Imaging Measurement ConceptMap](ConceptMap-dicom-imaging-measurement-to-fhir.html).
 
-[comment]: <> (### Imaging Qualitative Evaluation Mapping)
+### Imaging Qualitative Evaluation Mapping
 
-[comment]: <> (<a name="imaging_qualitative_evaluation"></a>)
+<a name="imaging_qualitative_evaluation"></a>
 
-[comment]: <> (![Imaging Qualitative Evaluation Mapping]&#40;./imaging_qualitative_evaluation_mapping.svg&#41;{: width="100%"})
+![Imaging Qualitative Evaluation Mapping](./imaging_qualitative_evaluation_mapping.svg){: width="100%"}
 
-[comment]: <> (See also the [DICOM Imaging Qualitative Evaluation ConceptMap]&#40;ConceptMap-dicom-imaging-qualitative-evaluation-to-fhir.html&#41;.)
+See also the [DICOM Imaging Qualitative Evaluation ConceptMap](ConceptMap-dicom-imaging-qualitative-evaluation-to-fhir.html).
 
-[comment]: <> (### Derived Imaging Measurement Mapping)
+### Derived Imaging Measurement Mapping
 
-[comment]: <> (<a name="derived_imaging_measurement"></a>)
+<a name="derived_imaging_measurement"></a>
 
-[comment]: <> (![Derived Imaging Measurement Mapping]&#40;./derived_imaging_measurement_mapping.svg&#41;{: width="100%"})
+![Derived Imaging Measurement Mapping](./derived_imaging_measurement_mapping.svg){: width="100%"}
 
-[comment]: <> (See also the [DICOM Derived Imaging Measurement ConceptMap]&#40;ConceptMap-dicom-derived-imaging-measurement-to-fhir.html&#41;.)
+See also the [DICOM Derived Imaging Measurement ConceptMap](ConceptMap-dicom-derived-imaging-measurement-to-fhir.html).

@@ -36,10 +36,9 @@ This IG is organized into three main sections:
     * [DICOM SR Document Mapping](mapping.html#sr_document)
     * [Imaging Measurements Container Mapping](mapping.html#imaging_measurements_container)
     * [Imaging Measurement Group Mapping](mapping.html#imaging_measurement_group)
-
-[comment]: <> (    * [Imaging Measurement Mapping]&#40;mapping.html#imaging_measurement&#41;)
-
-[comment]: <> (    * [Imaging Qualitative Evaluation Mapping]&#40;mapping.html#imaging_qualitative_evaluation&#41;)
+    * [Imaging Measurement Mapping](mapping.html#imaging_measurement)
+    * [Imaging Qualitative Evaluation Mapping](mapping.html#imaging_qualitative_evaluation)
+    * [Derived Imaging Measurements Mapping](mapping.html#derived_imaging_measurement)
 
 * [Chapter IV](example.html): Example DICOM SR Measurement Report Mapping
     * [Patient Mapping](example.html#example_patient) - Patient Mapping Example
