@@ -120,4 +120,4 @@ Description: "Example of Observation representing a DICOM SR Derived Imaging Mea
   * unit = "Hounsfield unit"
   * system = "http://unitsofmeasure.org"
   * code = #hf
-* derivedFrom = Reference(Example-ImagingMeasurementGroup)
+* derivedFrom = Reference(Example-Observation-ImagingMeasurementGroup)
