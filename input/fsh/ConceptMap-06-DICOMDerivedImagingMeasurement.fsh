@@ -1,11 +1,11 @@
-Instance:       DICOM-Imaging-qualitative-Evaluation-to-FHIR
+Instance:       DICOM-Derived-Imaging-Measurement-to-FHIR
 InstanceOf:     ConceptMap
-Title:          "ConceptMap - DICOM Imaging Qualitative Evaluation to FHIR Mapping"
+Title:          "ConceptMap - DICOM Derived Imaging Measurement to FHIR Mapping"
 Usage: #definition
 
-* id = "dicom-imaging-qualitative-evaluation-to-fhir"
-* name = "DICOMImagingQualitativeEvaluationToFHIRMapping"
-* description = "Mapping between DICOM Imaging Qualitative Evaluation and FHIR Resources"
+* id = "dicom-derived-imaging-measurement-to-fhir"
+* name = "DICOMDerivedImagingMeasurementToFHIRMapping"
+* description = "Mapping between DICOM Derived Imaging Measurement and FHIR Resources"
 * status = #active
 * experimental = false
 * contact[0].telecom[0].system = #url
@@ -28,18 +28,15 @@ Usage: #definition
   * type = #Coding
 
 * group[0].element[0]
-  * code = #$QualType
-  * display = "QualType"
+  * code = #CID7465
+  * display = "Measurement Derived From Multiple ROI Measurements"
   * target[0]
     * relationship = #equivalent
-    * code = #valueCodeableConcept
-    * display = "ImagingQualitativeEvaluation.valueCodeableConcept"
+    * code = #valueQuantity
+    * display = "DerivedImagingMeasurement.valueQuantity"
     * dependsOn[0]
       * attribute = #ValueType
-      * valueCoding = http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-value-type#code
-    * dependsOn[1]
-      * attribute = #ValueType
-      * valueCoding = http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-value-type#text
+      * valueCoding = http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-value-type#num
 
 * group[1].element[0]
   * code = http://dicom.nema.org/resources/ontology/DCM#TID4019
@@ -52,4 +49,17 @@ Usage: #definition
   * target[0]
     * relationship = #equivalent
     * code = #device
-    * display = "ImagingQualitativeEvaluation.device"
+    * display = "DerivedImagingMeasurement.device"
+
+* group[2].element[0]
+  * code = http://dicom.nema.org/resources/ontology/DCM#125007
+  * display = "Measurement Group"
+  * target[0]
+    * relationship = #equivalent
+    * code = #ImagingMeasurementGroup
+    * display = "ImagingMeasurementGroup"
+    * comment = "Measurement Group children of a derived imaging measurement content item are mapped to new ImagingMeasurementGroup observations."
+  * target[1]
+    * relationship = #equivalent
+    * code = #derivedFrom
+    * display = "DerivedImagingMeasurement.derivedFrom"
