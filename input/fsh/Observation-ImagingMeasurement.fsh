@@ -68,8 +68,8 @@ Description: "Example of Observation representing a DICOM SR Imaging Measurement
 * performer = Reference(Example-Practitioner)
 * code
   * coding
-    * system = "http://terminology.hl7.org/CodeSystem/snm"
-    * code = #G-D705 "Volume"
+    * system = "http://snomed.info/sct"
+    * code = #118565006 "Volume"
     * display = "Volume"
 * focus[referencedSegment] = Reference(Example-ImagingSelection-ReferencedSegment)
 * focus[trackingIdentifiers] = Reference(Example-BodyStructure-TrackingIdentifiers)
@@ -96,8 +96,8 @@ Description: "Example of Observation representing a DICOM SR Imaging Measurement
 * performer = Reference(Example-Practitioner)
 * code
   * coding
-    * system = "http://terminology.hl7.org/CodeSystem/snm"
-    * code = #M-02550 "Diameter"
+    * system = "http://snomed.info/sct"
+    * code = #81827009 "Diameter"
     * display = "Diameter"
 * focus[referencedSegment] = Reference(Example-ImagingSelection-ReferencedSegment)
 * focus[trackingIdentifiers] = Reference(Example-BodyStructure-TrackingIdentifiers)
@@ -124,9 +124,9 @@ Description: "Example of Observation representing a DICOM SR Imaging Measurement
 * performer = Reference(Example-Practitioner)
 * code
   * coding
-    * system = "https://ibsi.readthedocs.io/en/latest/"
-    * code = #C0JK "Surface area of mesh"
-    * display = "Surface area of mesh"
+    * system = "http://snomed.info/sct"
+    * code = #301898006 "Body surface area"
+    * display = "Body surface area"
 * focus[referencedSegment] = Reference(Example-ImagingSelection-ReferencedSegment)
 * focus[trackingIdentifiers] = Reference(Example-BodyStructure-TrackingIdentifiers)
 * bodyStructure = Reference(Example-BodyStructure-FindingSite)

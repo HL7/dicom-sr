@@ -153,6 +153,6 @@ Description: "Example of the base Imaging Observation"
 * device = Reference(Example-Device-GeneralEquipment)
 * valueCodeableConcept
   * coding
-    * system = "http://terminology.hl7.org/CodeSystem/snm"
-    * code = #121071 "Nodule"
-    * display = "Nodule"
+    * system = "http://snomed.info/sct"
+    * code = #427359005 "Solitary nodule of lung"
+    * display = "Solitary nodule of lung"

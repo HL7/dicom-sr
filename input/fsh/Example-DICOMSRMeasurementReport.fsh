@@ -187,8 +187,8 @@ Description: "An example of a DICOM SR measurement report."
             \"00080104\": { \"vr\": \"LO\", \"Value\": [ \"Finding\" ] }
           } ] },
           \"0040A168\": { \"vr\": \"SQ\", \"Value\": [ {
-            \"00080100\": { \"vr\": \"SH\", \"Value\": [ \"M-03010\" ] },
-            \"00080102\": { \"vr\": \"SH\", \"Value\": [ \"SRT\" ] },
+            \"00080100\": { \"vr\": \"SH\", \"Value\": [ \"427359005\" ] },
+            \"00080102\": { \"vr\": \"SH\", \"Value\": [ \"SCT\" ] },
             \"00080104\": { \"vr\": \"LO\", \"Value\": [ \"Nodule\" ] }
           } ] }
         },
@@ -220,13 +220,13 @@ Description: "An example of a DICOM SR measurement report."
           \"0040A010\": { \"vr\": \"CS\", \"Value\": [ \"HAS CONCEPT MOD\" ] },
           \"0040A040\": { \"vr\": \"CS\", \"Value\": [ \"CODE\" ] },
           \"0040A043\": { \"vr\": \"SQ\", \"Value\": [ {
-            \"00080100\": { \"vr\": \"SH\", \"Value\": [ \"G-C0E3\" ] },
-            \"00080102\": { \"vr\": \"SH\", \"Value\": [ \"SRT\" ] },
+            \"00080100\": { \"vr\": \"SH\", \"Value\": [ \"363698007\" ] },
+            \"00080102\": { \"vr\": \"SH\", \"Value\": [ \"SCT\" ] },
             \"00080104\": { \"vr\": \"LO\", \"Value\": [ \"Finding Site\" ] }
           } ] },
           \"0040A168\": { \"vr\": \"SQ\", \"Value\": [ {
-            \"00080100\": { \"vr\": \"SH\", \"Value\": [ \"T-28000\" ] },
-            \"00080102\": { \"vr\": \"SH\", \"Value\": [ \"SRT\" ] },
+            \"00080100\": { \"vr\": \"SH\", \"Value\": [ \"39607008\" ] },
+            \"00080102\": { \"vr\": \"SH\", \"Value\": [ \"SCT\" ] },
             \"00080104\": { \"vr\": \"LO\", \"Value\": [ \"Lung\" ] }
           } ] }
         },
@@ -234,8 +234,8 @@ Description: "An example of a DICOM SR measurement report."
           \"0040A010\": { \"vr\": \"CS\", \"Value\": [ \"CONTAINS\" ] },
           \"0040A040\": { \"vr\": \"CS\", \"Value\": [ \"NUM\" ] },
           \"0040A043\": { \"vr\": \"SQ\", \"Value\": [ {
-            \"00080100\": { \"vr\": \"SH\", \"Value\": [ \"G-D705\" ] },
-            \"00080102\": { \"vr\": \"SH\", \"Value\": [ \"SRT\" ] },
+            \"00080100\": { \"vr\": \"SH\", \"Value\": [ \"118565006\" ] },
+            \"00080102\": { \"vr\": \"SH\", \"Value\": [ \"SCT\" ] },
             \"00080104\": { \"vr\": \"LO\", \"Value\": [ \"Volume\" ] }
           } ] },
           \"0040A300\": { \"vr\": \"SQ\", \"Value\": [ {
@@ -271,8 +271,8 @@ Description: "An example of a DICOM SR measurement report."
           \"0040A010\": { \"vr\": \"CS\", \"Value\": [ \"CONTAINS\" ] },
           \"0040A040\": { \"vr\": \"CS\", \"Value\": [ \"NUM\" ] },
           \"0040A043\": { \"vr\": \"SQ\", \"Value\": [ {
-            \"00080100\": { \"vr\": \"SH\", \"Value\": [ \"M-02550\" ] },
-            \"00080102\": { \"vr\": \"SH\", \"Value\": [ \"SRT\" ] },
+            \"00080100\": { \"vr\": \"SH\", \"Value\": [ \"81827009\" ] },
+            \"00080102\": { \"vr\": \"SH\", \"Value\": [ \"SCT\" ] },
             \"00080104\": { \"vr\": \"LO\", \"Value\": [ \"Diameter\" ] }
           } ] },
           \"0040A300\": { \"vr\": \"SQ\", \"Value\": [ {
@@ -308,9 +308,9 @@ Description: "An example of a DICOM SR measurement report."
           \"0040A010\": { \"vr\": \"CS\", \"Value\": [ \"CONTAINS\" ] },
           \"0040A040\": { \"vr\": \"CS\", \"Value\": [ \"NUM\" ] },
           \"0040A043\": { \"vr\": \"SQ\", \"Value\": [ {
-            \"00080100\": { \"vr\": \"SH\", \"Value\": [ \"C0JK\" ] },
+            \"00080100\": { \"vr\": \"SH\", \"Value\": [ \"301898006\" ] },
             \"00080102\": { \"vr\": \"SH\", \"Value\": [ \"IBSI\" ] },
-            \"00080104\": { \"vr\": \"LO\", \"Value\": [ \"Surface area of mesh\" ] }
+            \"00080104\": { \"vr\": \"LO\", \"Value\": [ \"Body surface area\" ] }
           } ] },
           \"0040A300\": { \"vr\": \"SQ\", \"Value\": [ {
             \"004008EA\": { \"vr\": \"SQ\", \"Value\": [ {

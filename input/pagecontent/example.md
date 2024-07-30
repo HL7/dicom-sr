@@ -463,9 +463,9 @@ See [Example Device](Device-measurement-report-general-equipment.html).
               "00080104": { "vr": "LO", "Value": [ "Finding" ] }
             } ] },
         "0040A168": { "vr": "SQ", "Value": [ {
-              "00080100": { "vr": "SH", "Value": [ "M-03010" ] },
-              "00080102": { "vr": "SH", "Value": [ "SRT" ] },
-              "00080104": { "vr": "LO", "Value": [ "Nodule" ] }
+              "00080100": { "vr": "SH", "Value": [ "427359005" ] },
+              "00080102": { "vr": "SH", "Value": [ "SCT" ] },
+              "00080104": { "vr": "LO", "Value": [ "Solitary nodule of lung" ] }
             } ] }
       },
       {
@@ -496,13 +496,13 @@ See [Example Device](Device-measurement-report-general-equipment.html).
         "0040A010": { "vr": "CS", "Value": [ "HAS CONCEPT MOD" ] },
         "0040A040": { "vr": "CS", "Value": [ "CODE" ] },
         "0040A043": { "vr": "SQ", "Value": [ {
-              "00080100": { "vr": "SH", "Value": [ "G-C0E3" ] },
-              "00080102": { "vr": "SH", "Value": [ "SRT" ] },
+              "00080100": { "vr": "SH", "Value": [ "363698007" ] },
+              "00080102": { "vr": "SH", "Value": [ "SCT" ] },
               "00080104": { "vr": "LO", "Value": [ "Finding Site" ] }
             } ] },
         "0040A168": { "vr": "SQ", "Value": [ {
-              "00080100": { "vr": "SH", "Value": [ "T-28000" ] },
-              "00080102": { "vr": "SH", "Value": [ "SRT" ] },
+              "00080100": { "vr": "SH", "Value": [ "39607008" ] },
+              "00080102": { "vr": "SH", "Value": [ "SCT" ] },
               "00080104": { "vr": "LO", "Value": [ "Lung" ] }
             } ] }
       },
@@ -588,8 +588,8 @@ See [Example Device](Device-measurement-report-general-equipment.html).
       "includedStructure": [
         "structure": {
           "coding": [{
-            "system" : "http://terminology.hl7.org/CodeSystem/snm",
-            "code" : "T-28000",
+            "system" : "http://snomed.info/sct",
+            "code" : "39607008",
             "display" : "Lung"
           }]
         }
@@ -676,9 +676,9 @@ See [Example Device](Device-measurement-report-general-equipment.html).
       },
       "valueCodeableConcept": {
         "coding": [{
-            "system": "http://terminology.hl7.org/CodeSystem/snm",
-            "code": "M-03010",
-            "display": "Nodule"
+            "system": "http://snomed.info/sct",
+            "code": "427359005",
+            "display": "Solitary nodule of lung"
           }]
       },
       "hasMember": [
@@ -751,8 +751,8 @@ See:
       "0040A010": { "vr": "CS", "Value": [ "CONTAINS" ] },
       "0040A040": { "vr": "CS", "Value": [ "NUM" ] },
       "0040A043": { "vr": "SQ", "Value": [ {
-        "00080100": { "vr": "SH", "Value": [ "G-D705" ] },
-        "00080102": { "vr": "SH", "Value": [ "SRT" ] },
+        "00080100": { "vr": "SH", "Value": [ "118565006" ] },
+        "00080102": { "vr": "SH", "Value": [ "SCT" ] },
         "00080104": { "vr": "LO", "Value": [ "Volume" ] }
       } ] },
       "0040A300": { "vr": "SQ", "Value": [ {
@@ -820,8 +820,8 @@ See:
   "code" : {
     "coding" : [
       {
-        "system" : "http://terminology.hl7.org/CodeSystem/snm",
-        "code" : "G-D705"
+        "system" : "http://snomed.info/sct",
+        "code" : "118565006"
       }
     ]
   },
