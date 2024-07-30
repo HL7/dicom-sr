@@ -15,9 +15,9 @@
   "00100010": { "vr": "PN", "Value": [ { "Alphabetic": "EXAMPLE^MEASUREMENT^PATIENT}" } ]},
   "00100020": { "vr": "LO", "Value": [ "PID-11235" ] },
   "00100024": { "vr": "SQ",  "Value": [ {
-    "00400031": { "vr": "SH", "Value": [ "Test Hospital" ] },
-    "00400032": { "vr": "SH", "Value": [ "test-hospital.org" ] },
-    "00400033": { "vr": "LO", "Value": [ "URI" ] }
+    "00400031": { "vr": "UT", "Value": [ "Test Hospital" ] },
+    "00400032": { "vr": "UT", "Value": [ "test-hospital.org" ] },
+    "00400033": { "vr": "CS", "Value": [ "URI" ] }
   } ] },
   "00181002": { "vr": "UI", "Value": [ "1.2.840.113747.20080222.83311413144566317081790268995.8888" ] },
   "0020000D": { "vr": "UI", "Value": [ "1.2.840.113747.20080222.83311413144566317081790268995" ] },

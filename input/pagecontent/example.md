@@ -16,9 +16,9 @@ The source DICOM SR Measurement Report is in DICOM JSON format. See the [DICOM P
   "00100010": { "vr": "PN", "Value": [ { "Alphabetic": "EXAMPLE^MEASUREMENT^PATIENT}" } ]},
   "00100020": { "vr": "LO", "Value": [ "PID-11235" ] },
   "00100024": { "vr": "SQ",  "Value": [ {
-        "00400031": { "vr": "SH", "Value": [ "Test Hospital" ] },
-        "00400032": { "vr": "SH", "Value": [ "http://testhospital.org/mr" ] },
-        "00400033": { "vr": "LO", "Value": [ "URI" ] }
+        "00400031": { "vr": "UT", "Value": [ "Test Hospital" ] },
+        "00400032": { "vr": "UT", "Value": [ "http://testhospital.org/mr" ] },
+        "00400033": { "vr": "CS", "Value": [ "URI" ] }
       } ] }
 }
 </pre>
@@ -69,9 +69,9 @@ See [Example Patient](Patient-measurement-report-patient.html).
 {
   "00080050": { "vr": "SH" , "Value": "ACSN-235813" },
   "00080051": { "vr": "SQ",  "Value": [ {
-        "00400031": { "vr": "SH", "Value": [ "Test Hospital" ] },
-        "00400032": { "vr": "SH", "Value": [ "http://testhospital.org/acsn" ] },
-        "00400033": { "vr": "LO", "Value": [ "URI" ] }
+        "00400031": { "vr": "UT", "Value": [ "Test Hospital" ] },
+        "00400032": { "vr": "UT", "Value": [ "http://testhospital.org/acsn" ] },
+        "00400033": { "vr": "CS", "Value": [ "URI" ] }
       } ] }
 }
 </pre>
