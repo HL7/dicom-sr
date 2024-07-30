@@ -10,6 +10,7 @@ Description: "An example of a Patient referenced from a measurement report."
     * coding
       * system = "http://terminology.hl7.org/CodeSystem/v2-0203"
       * code = #MR "Medical record number"
+      * display = "Medical Record Number"
   * system = "http://test-hospital.org/mr"
   * assigner
     * display = "Test Hospital"
@@ -41,6 +42,7 @@ Description: "An example of a ServiceRequest referenced from a measurement repor
     * coding
       * system = "http://terminology.hl7.org/CodeSystem/v2-0203"
       * code = #ACSN "Accession ID"
+      * display = "Accession ID"
   * system = "http://test-hospital.org/acsn"
   * value = "ACSN-235813"
 * subject = Reference(Example-Patient)

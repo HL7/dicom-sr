@@ -57,6 +57,7 @@ Description: "An example of an Real World Value Map SOP Instance referenced from
   * coding
     * system = "http://dicom.nema.org/resources/ontology/DCM"
     * code = #126100 "Real World Value Map used for measurement"
+    * display = "Real World Value Map used for measurement"
 * seriesUid = "1.2.840.113747.20080222.83341314456631405221767081790268995.8"
 * instance[valueMapInstance]
   * uid = "1.2.840.113747.20080222.83341314456631405221767081790268995.8.1"

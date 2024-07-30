@@ -50,6 +50,7 @@ Description: "An example of an Segmentation Frame referenced from a measurement 
   * coding
     * system = "http://dicom.nema.org/resources/ontology/DCM"
     * code = #121214 "Referenced Segmentation Frame"
+    * display = "Referenced Segmentation Frame"
 * seriesUid = "1.2.840.113747.20080222.83341314456631405221767081790268995.2"
 * instance[referencedSegmentationFrame]
   * uid = "1.2.840.113747.20080222.83341314456631405221767081790268995.2.1"

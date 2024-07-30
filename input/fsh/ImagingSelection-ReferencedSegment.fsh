@@ -50,6 +50,7 @@ Description: "An example of an Segmentation SOP Instance referenced from a measu
   * coding
     * system = "http://dicom.nema.org/resources/ontology/DCM"
     * code = #121191 "Referenced Segment"
+    * display = "Referenced Segment"
 * seriesUid = "1.2.840.113747.20080222.83341314456631405221767081790268995.2"
 * instance[segmentationInstance]
   * uid = "1.2.840.113747.20080222.83341314456631405221767081790268995.2.1"

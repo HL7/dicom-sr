@@ -40,12 +40,14 @@ Description: "An example of the Device resource corresponding to the DICOM Gener
       * code = #UDI
   * system = "urn:dicom:uid"
   * value = "1.2.840.113747.20080222.83311413144566317081790268995.8888"
+* manufacturer = "Example Device Manufacturer"
 * displayName = "Example Imaging Measurement Device"
 * text
   * status = #generated
   * div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
   <pre>
 {
+  \"00080070\": { \"vr\": \"LO\", \"Value\": [ \"Example Device Manufacturer\" ] },
   \"001081090\": { \"vr\": \"LO\", \"Value\": [ \"Example Imaging Measurement Device\" ] },
   \"00181002\": { \"vr\": \"UI\", \"Value\": [ \"1.2.840.113747.20080222.83311413144566317081790268995.8888\" ] }
 }

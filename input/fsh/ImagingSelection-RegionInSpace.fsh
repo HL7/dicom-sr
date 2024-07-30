@@ -60,6 +60,7 @@ Description: "An example of an region in space referenced from a measurement rep
   * coding
     * system = "http://dicom.nema.org/resources/ontology/DCM"
     * code = DCM#130488 "Region In Space"
+    * display = "Region In Space"
 * seriesUid = "1.2.840.113747.20080222.83341314456631405221767081790268995.9"
 * instance[rtStructureInstance]
   * uid = "1.2.840.113747.20080222.83341314456631405221767081790268995.9.1"

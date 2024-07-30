@@ -134,6 +134,7 @@ Description: "Example of the base Imaging Observation"
   * coding
     * system = "http://snomed.info/sct"
     * code = #241053004 "Radiographic measurement of lung volume"
+    * display = "Radiographic measurement of lung volume"
 
 * focus[trackingIdentifiers] = Reference(Example-BodyStructure-TrackingIdentifiers)
 
@@ -154,3 +155,4 @@ Description: "Example of the base Imaging Observation"
   * coding
     * system = "http://terminology.hl7.org/CodeSystem/snm"
     * code = #121071 "Nodule"
+    * display = "Nodule"

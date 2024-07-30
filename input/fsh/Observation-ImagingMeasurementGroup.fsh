@@ -101,10 +101,12 @@ Description: "Example of Observation representing a DICOM SR Measurement Group"
   * coding
     * system = "http://snomed.info/sct"
     * code = #241053004 "Radiographic measurement of lung volume"
+    * display = "Radiographic measurement of lung volume"
 * category
   * coding
     * system = "http://dicom.nema.org/resources/ontology/DCM"
     * code = #125007 "Measurement Group"
+    * display = "Measurement Group"
 * focus[referencedSegment] = Reference(Example-ImagingSelection-ReferencedSegment)
 * focus[trackingIdentifiers] = Reference(Example-BodyStructure-TrackingIdentifiers)
 * bodyStructure = Reference(Example-BodyStructure-FindingSite)
@@ -113,6 +115,7 @@ Description: "Example of Observation representing a DICOM SR Measurement Group"
   * coding
     * system = "http://terminology.hl7.org/CodeSystem/snm"
     * code = #121071 "Nodule"
+    * display = "Nodule"
 * hasMember[imagingMeasurement][+] = Reference(Example-Observation-ImagingMeasurement-001)
 * hasMember[imagingMeasurement][+] = Reference(Example-Observation-ImagingMeasurement-002)
 * hasMember[imagingMeasurement][+] = Reference(Example-Observation-ImagingMeasurement-003)

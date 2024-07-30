@@ -9,6 +9,7 @@ Description: "An example of a DICOM SR measurement report."
   * coding
     * system = "http://dicom.nema.org/resources/ontology/DCM"
     * code = #126000 "Imaging Measurement Report"
+    * display = "Imaging Measurement Report"
 * subject = Reference(Example-Patient)
 * text
   * status = #generated
@@ -23,20 +24,35 @@ Description: "An example of a DICOM SR measurement report."
   \"00080020\": { \"vr\": \"DA\", \"Value\": [ \"20000101\" ] },
   \"00080021\": { \"vr\": \"DA\", \"Value\": [ \"20190323\" ] },
   \"00080023\": { \"vr\": \"DA\", \"Value\": [ \"20190323\" ] },
+  \"00080030\": { \"vr\": \"TM\", \"Value\": [ \"082428\" ] },
   \"00080031\": { \"vr\": \"TM\", \"Value\": [ \"082428\" ] },
   \"00080033\": { \"vr\": \"TM\", \"Value\": [ \"082428\" ] },
+  \"00080050\": { \"vr\": \"SH\" , \"Value\": \"ACSN-235813\" },
+  \"00080051\": { \"vr\": \"SQ\",  \"Value\": [ {
+        \"00400031\": { \"vr\": \"UT\", \"Value\": [ \"Test Hospital\" ] },
+        \"00400032\": { \"vr\": \"UT\", \"Value\": [ \"http://test-hospital.org/acsn\" ] },
+        \"00400033\": { \"vr\": \"CS\", \"Value\": [ \"URI\" ] }
+      } ] },
   \"00080060\": { \"vr\": \"CS\", \"Value\": [ \"SR\" ] },
+  \"00080070\": { \"vr\": \"LO\", \"Value\": [ \"Example Device Manufacturer\" ] },
+  \"00080090\": { \"vr\": \"PN\" },
   \"00081090\": { \"vr\": \"LO\", \"Value\": [ \"Example Imaging Measurement Device\" ] },
   \"00081111\": { \"vr\": \"SQ\" },
   \"00100010\": { \"vr\": \"PN\", \"Value\": [ { \"Alphabetic\": \"EXAMPLE^MEASUREMENT^PATIENT}\" } ]},
   \"00100020\": { \"vr\": \"LO\", \"Value\": [ \"PID-11235\" ] },
+  \"00100021\": { \"vr\": \"LO\", \"Value\": [ \"Test Hospital\" ] },
   \"00100024\": { \"vr\": \"SQ\",  \"Value\": [ {
-    \"00400031\": { \"vr\": \"UT\", \"Value\": [ \"Test Hospital\" ] },
     \"00400032\": { \"vr\": \"UT\", \"Value\": [ \"test-hospital.org\" ] },
     \"00400033\": { \"vr\": \"CS\", \"Value\": [ \"URI\" ] }
   } ] },
+  \"00100030\": { \"vr\": \"DA\", \"Value\": [ \"19670701\" ] },
+  \"00100040\": { \"vr\": \"CS\", \"Value\": [ \"F\" ] },
   \"0020000D\": { \"vr\": \"UI\", \"Value\": [ \"1.2.840.113747.20080222.83311413144566317081790268995\" ] },
   \"0020000E\": { \"vr\": \"UI\", \"Value\": [ \"1.2.840.113747.20080222.83311413144566317081790268995.1\" ] },
+  \"00200010\": { \"vr\": \"SH\", \"Value\": [ \"SID-235813\" ] },
+  \"00200011\": { \"vr\": \"IS\", \"Value\": [ \"9\" ] },
+  \"00200013\": { \"vr\": \"IS\", \"Value\": [ \"1\" ] },
+  \"0040A260\": { \"vr\": \"SQ\" },
   \"0040A040\": { \"vr\": \"CS\", \"Value\": [ \"CONTAINER\" ] },
   \"0040A043\": { \"vr\": \"SQ\", \"Value\": [ {
     \"00080100\": { \"vr\": \"SH\", \"Value\": [ \"126000\" ] },
@@ -44,6 +60,12 @@ Description: "An example of a DICOM SR measurement report."
     \"00080104\": { \"vr\": \"LO\", \"Value\": [ \"Imaging Measurement Report\" ] }
   } ] },
   \"0040A050\": { \"vr\": \"CS\", \"Value\": [ \"SEPARATE\" ] },
+  \"0040A073\": { \"vr\": \"SQ\", \"Value\": [ {
+        \"0040A027\": { \"vr\": \"LO\", \"Value\": [ \"Test Hospital\" ] },
+        \"0040A030\": { \"vr\": \"DT\", \"Value\": [ \"20190323082428\" ] },
+        \"0040A075\": { \"vr\": \"PN\", \"Value\": [ { \"Alphabetic\": \"RADIOLOGIST^EXAMPLE\" } ] },
+        \"0040A088\": { \"vr\": \"SQ\" }
+      } ] },
   \"0040A491\": { \"vr\": \"CS\", \"Value\": [ \"COMPLETE\" ] },
   \"0040A493\": { \"vr\": \"CS\", \"Value\": [ \"VERIFIED\" ] },
   \"0040A504\": { \"vr\": \"SQ\", \"Value\": [ {

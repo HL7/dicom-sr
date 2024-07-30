@@ -52,6 +52,7 @@ Description: "An example of an Illustration of ROI referenced from a measurement
   * coding
     * system = "http://dicom.nema.org/resources/ontology/DCM"
     * code = #121200 "Illustration of ROI"
+    * display = "Illustration of ROI"
 * seriesUid = "1.2.840.113747.20080222.83341314456631405221767081790268995.3"
 * instance
   * uid = "1.2.840.113747.20080222.83341314456631405221767081790268995.3.1"

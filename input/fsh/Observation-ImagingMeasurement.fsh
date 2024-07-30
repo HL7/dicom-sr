@@ -70,6 +70,7 @@ Description: "Example of Observation representing a DICOM SR Imaging Measurement
   * coding
     * system = "http://terminology.hl7.org/CodeSystem/snm"
     * code = #G-D705 "Volume"
+    * display = "Volume"
 * focus[referencedSegment] = Reference(Example-ImagingSelection-ReferencedSegment)
 * focus[trackingIdentifiers] = Reference(Example-BodyStructure-TrackingIdentifiers)
 * bodyStructure = Reference(Example-BodyStructure-FindingSite)
@@ -97,6 +98,7 @@ Description: "Example of Observation representing a DICOM SR Imaging Measurement
   * coding
     * system = "http://terminology.hl7.org/CodeSystem/snm"
     * code = #M-02550 "Diameter"
+    * display = "Diameter"
 * focus[referencedSegment] = Reference(Example-ImagingSelection-ReferencedSegment)
 * focus[trackingIdentifiers] = Reference(Example-BodyStructure-TrackingIdentifiers)
 * bodyStructure = Reference(Example-BodyStructure-FindingSite)
@@ -124,6 +126,7 @@ Description: "Example of Observation representing a DICOM SR Imaging Measurement
   * coding
     * system = "https://ibsi.readthedocs.io/en/latest/"
     * code = #C0JK "Surface area of mesh"
+    * display = "Surface area of mesh"
 * focus[referencedSegment] = Reference(Example-ImagingSelection-ReferencedSegment)
 * focus[trackingIdentifiers] = Reference(Example-BodyStructure-TrackingIdentifiers)
 * bodyStructure = Reference(Example-BodyStructure-FindingSite)

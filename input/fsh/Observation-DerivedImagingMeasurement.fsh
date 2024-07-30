@@ -114,6 +114,7 @@ Description: "Example of Observation representing a DICOM SR Derived Imaging Mea
   * coding
     * system = "http://dicom.nema.org/resources/ontology/DCM"
     * code = #126031 "Peak Value Within ROI"
+    * display = "Peak Value Within ROI"
 * device = Reference(Example-Device-GeneralEquipment)
 * valueQuantity
   * value = 123.45

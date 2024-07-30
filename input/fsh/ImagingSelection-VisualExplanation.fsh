@@ -53,6 +53,7 @@ Description: "An example of an visual explanation referenced from a measurement 
   * coding
     * system = "http://dicom.nema.org/resources/ontology/DCM"
     * code = DCM#130401 "Visual Explanation"
+    * display = "Visual Explanation"
 * seriesUid = "1.2.840.113747.20080222.83341314456631405221767081790268995.3"
 * instance
   * uid = "1.2.840.113747.20080222.83341314456631405221767081790268995.3.1"

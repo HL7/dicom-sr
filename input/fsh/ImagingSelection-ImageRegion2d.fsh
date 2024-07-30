@@ -61,6 +61,7 @@ Description: "An example of a 2D Image Region referenced from a measurement repo
   * coding
     * system = "http://dicom.nema.org/resources/ontology/DCM"
     * code = #111030 "Image Region"
+    * display = "Image Region"
 * seriesUid = "1.2.840.113747.20080222.83341314456631405221767081790268995.4"
 * instance
   * uid = "1.2.840.113747.20080222.83341314456631405221767081790268995.4.1"
