@@ -77,7 +77,6 @@ Description: "Example of Observation representing a DICOM SR Measurement Qualita
   * coding
     * system = "http://radlex.org"
     * code = #RID36042 "Malignancy"
-    * display = "Malignancy"
 * category = http://terminology.hl7.org/CodeSystem/umls#C0034375 "Qualitative Evaluations"
 * focus[referencedSegment] = Reference(Example-ImagingSelection-ReferencedSegment)
 * focus[trackingIdentifiers] = Reference(Example-BodyStructure-TrackingIdentifiers)
