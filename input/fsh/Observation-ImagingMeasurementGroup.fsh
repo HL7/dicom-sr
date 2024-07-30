@@ -155,7 +155,7 @@ Description: "Example of Observation representing a DICOM SR Measurement Group"
                \"00080102\": { \"vr\": \"SH\", \"Value\": [ \"DCM\" ] },
                \"00080104\": { \"vr\": \"LO\", \"Value\": [ \"Tracking Unique Identifier\" ] }
              } ] },
-         \"0040A124\": { \"vr\": \"UI\", \"Value\": [ \"1.2.840.113747.20080222.8331141314456631405221767081790268995.100\" ] }
+         \"0040A124\": { \"vr\": \"UI\", \"Value\": [ \"1.2.840.113747.20080222.83311413144566317081790268995.100\" ] }
        },
        {
          \"0040A010\": { \"vr\": \"CS\", \"Value\": [ \"CONTAINS\" ] },

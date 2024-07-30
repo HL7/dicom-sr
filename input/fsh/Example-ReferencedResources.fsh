@@ -22,9 +22,9 @@ Description: "An example of a Patient referenced from a measurement report."
   \"00100010\": { \"vr\": \"PN\", \"Value\": [ { \"Alphabetic\": \"EXAMPLE^MEASUREMENT^PATIENT}\" } ]},
   \"00100020\": { \"vr\": \"LO\", \"Value\": [ \"PID-11235\" ] },
   \"00100024\": { \"vr\": \"SQ\",  \"Value\": [ {
-        \"00400031\": { \"vr\": \"SH\", \"Value\": [ \"Test Hospital\" ] },
-        \"00400032\": { \"vr\": \"SH\", \"Value\": [ \"http://test-hospital.org/mr\" ] },
-        \"00400033\": { \"vr\": \"LO\", \"Value\": [ \"URI\" ] }
+        \"00400031\": { \"vr\": \"UT\", \"Value\": [ \"Test Hospital\" ] },
+        \"00400032\": { \"vr\": \"UT\", \"Value\": [ \"http://test-hospital.org/mr\" ] },
+        \"00400033\": { \"vr\": \"CS\", \"Value\": [ \"URI\" ] }
       } ] }
 }
   </pre></div>"
@@ -53,9 +53,9 @@ Description: "An example of a ServiceRequest referenced from a measurement repor
 {
   \"00080050\": { \"vr\": \"SH\" , \"Value\": \"ACSN-235813\" },
   \"00080051\": { \"vr\": \"SQ\",  \"Value\": [ {
-        \"00400031\": { \"vr\": \"SH\", \"Value\": [ \"Test Hospital\" ] },
-        \"00400032\": { \"vr\": \"SH\", \"Value\": [ \"http://test-hospital.org/acsn\" ] },
-        \"00400033\": { \"vr\": \"LO\", \"Value\": [ \"URI\" ] }
+        \"00400031\": { \"vr\": \"UT\", \"Value\": [ \"Test Hospital\" ] },
+        \"00400032\": { \"vr\": \"UT\", \"Value\": [ \"http://test-hospital.org/acsn\" ] },
+        \"00400033\": { \"vr\": \"CS\", \"Value\": [ \"URI\" ] }
       } ] }
 }
   </pre></div>"
@@ -69,7 +69,7 @@ Description: "An example of an ImagingStudy referenced from a measurement report
 
 * identifier
   * system = "urn:dicom:uid"
-  * value = "urn:oid:2.16.124.113543.1154777499.30246.19789.350343004"
+  * value = "urn:oid:1.2.840.113747.20080222.83311413144566317081790268995"
 
 * subject = Reference(Example-Patient)
 * basedOn = Reference(Example-ServiceRequest)
@@ -79,7 +79,7 @@ Description: "An example of an ImagingStudy referenced from a measurement report
   * div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
   <pre>
 {
-  \"0020000E\": { \"vr\": \"UI\", \"Value\": [ \"1.2.840.113747.20080222.8331141314456631405221767081790268995\" ] }
+  \"0020000D\": { \"vr\": \"UI\", \"Value\": [ \"1.2.840.113747.20080222.83311413144566317081790268995\" ] }
 }
   </pre></div>"
 

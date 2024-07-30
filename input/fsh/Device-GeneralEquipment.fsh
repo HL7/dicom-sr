@@ -39,7 +39,7 @@ Description: "An example of the Device resource corresponding to the DICOM Gener
       * system = "http://terminology.hl7.org/CodeSystem/v2-0203"
       * code = #UDI
   * system = "urn:dicom:uid"
-  * value = "1.2.840.113747.20080222.8331141314456631405221767081790268995.999"
+  * value = "1.2.840.113747.20080222.83311413144566317081790268995.8888"
 * displayName = "Example Imaging Measurement Device"
 * text
   * status = #generated
@@ -47,6 +47,6 @@ Description: "An example of the Device resource corresponding to the DICOM Gener
   <pre>
 {
   \"001081090\": { \"vr\": \"LO\", \"Value\": [ \"Example Imaging Measurement Device\" ] },
-  \"00181002\": { \"vr\": \"UI\", \"Value\": [ \"1.2.840.113747.20080222.8331141314456631405221767081790268995.8888\" ] }
+  \"00181002\": { \"vr\": \"UI\", \"Value\": [ \"1.2.840.113747.20080222.83311413144566317081790268995.8888\" ] }
 }
   </pre></div>"

@@ -56,7 +56,7 @@ Description: "Example of BodySite representing a DICOM SR Tracking Identifier"
 * identifier[trackingUid]
   * type = http://dicom.nema.org/resources/ontology/DCM#112040 "Tracking Unique Identifier"
   * system = "urn:dicom:uid"
-  * value = "urn:oid:1.2.840.113747.20080222.8331141314456631405221767081790268995.100"
+  * value = "urn:oid:1.2.840.113747.20080222.83311413144566317081790268995.100"
 
 * patient = Reference(Example-Patient)
 * includedStructure
@@ -85,6 +85,6 @@ Description: "Example of BodySite representing a DICOM SR Tracking Identifier"
     \"00080102\": { \"vr\": \"SH\", \"Value\": [ \"DCM\" ] },
     \"00080104\": { \"vr\": \"LO\", \"Value\": [ \"Tracking Unique Identifier\" ] }
   } ] },
-  \"0040A124\": { \"vr\": \"UI\", \"Value\": [ \"1.2.840.113747.20080222.8331141314456631405221767081790268995.100\" ] }
+  \"0040A124\": { \"vr\": \"UI\", \"Value\": [ \"1.2.840.113747.20080222.83311413144566317081790268995.100\" ] }
 }
   </pre></div>"

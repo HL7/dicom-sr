@@ -125,7 +125,7 @@ See [Example ServiceRequest](ServiceRequest-measurement-report-service-request.h
 <td>
 <pre>
 {
-  "0020000E": { "vr": "UI", "Value": [ "1.2.840.113747.20080222.8331141314456631405221767081790268995" ] }
+  "0020000E": { "vr": "UI", "Value": [ "1.2.840.113747.20080222.83311413144566317081790268995" ] }
 }
 </pre>
 </td>
@@ -143,7 +143,7 @@ See [Example ServiceRequest](ServiceRequest-measurement-report-service-request.h
   "type": "ImagingStudy",
   "identifier": { 
     "system": "urn:dicom:uid",
-    "value": "urn:oid:1.2.840.113747.20080222.8331141314456631405221767081790268995" 
+    "value": "urn:oid:1.2.840.113747.20080222.83311413144566317081790268995" 
   }
 }]
 </pre>
@@ -151,7 +151,7 @@ See [Example ServiceRequest](ServiceRequest-measurement-report-service-request.h
 </tr>
 </table>
 
-1. Search for FHIR ImagingStudy with identifier `urn:dicom:uid|urn:oid:1.2.840.113747.20080222.8331141314456631405221767081790268995`
+1. Search for FHIR ImagingStudy with identifier `urn:dicom:uid|urn:oid:1.2.840.113747.20080222.83311413144566317081790268995`
     1. If a result is found, use the found `ImagingStudy` resource as the `derivedFrom` value for all created `Observation` and `ImagingSelection` resources\
     2. If a result is _not_ found, use a logical reference to the Study Instance UID ID from DICOM as the `subject` for all created `Observation` and `ImagingSelection` resources
 
@@ -174,7 +174,7 @@ See [Example ImagingStudy](ImagingStudy-measurement-report-imaging-study.html).
 <td>
 <pre>
 {
-  "0020000E": { "vr": "UI", "Value": [ "1.2.840.113747.20080222.8331141314456631405221767081790268995" ] }
+  "0020000E": { "vr": "UI", "Value": [ "1.2.840.113747.20080222.83311413144566317081790268995" ] }
 }
 </pre>
 </td>
@@ -189,7 +189,7 @@ See [Example ImagingStudy](ImagingStudy-measurement-report-imaging-study.html).
         "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
         "code" : "UDI" }]},
     "system": "urn:dicom:uid",
-    "value": "1.2.840.113747.20080222.8331141314456631405221767081790268995.999",
+    "value": "1.2.840.113747.20080222.83311413144566317081790268995.999",
   },
   "displayName": "Example Imaging Measurement Device"
 }
@@ -438,7 +438,7 @@ See [Example Device](Device-measurement-report-general-equipment.html).
               "00080102": { "vr": "SH", "Value": [ "DCM" ] },
               "00080104": { "vr": "LO", "Value": [ "Tracking Unique Identifier" ] }
             } ] },
-        "0040A124": { "vr": "UI", "Value": [ "1.2.840.113747.20080222.8331141314456631405221767081790268995.100" ] }
+        "0040A124": { "vr": "UI", "Value": [ "1.2.840.113747.20080222.83311413144566317081790268995.100" ] }
       },
       {
         "0040A010": { "vr": "CS", "Value": [ "CONTAINS" ] },
@@ -565,7 +565,7 @@ See [Example Device](Device-measurement-report-general-equipment.html).
             ]
           },
           "system": "urn:dicom:uid",
-          "value": "urn:oid:1.2.840.113747.20080222.8331141314456631405221767081790268995.100"
+          "value": "urn:oid:1.2.840.113747.20080222.83311413144566317081790268995.100"
         }
       ],
       "patient": {
@@ -618,10 +618,10 @@ See [Example Device](Device-measurement-report-general-equipment.html).
           "reference": "ImagingStudy/measurement-report-imaging-study"
         }
       ],
-      "seriesUid": "1.2.840.113747.20080222.8331141314456631405221767081790268995.2"
+      "seriesUid": "1.2.840.113747.20080222.83311413144566317081790268995.2"
       "instance": [
         {
-          "uid": "11.2.840.113747.20080222.8331141314456631405221767081790268995.2.1",
+          "uid": "11.2.840.113747.20080222.83311413144566317081790268995.2.1",
           "sopClass": {
             "system": "urn:ietf:rfc:3986",
             "code": "urn:oid:1.2.840.10008.5.1.4.1.1.66.4"

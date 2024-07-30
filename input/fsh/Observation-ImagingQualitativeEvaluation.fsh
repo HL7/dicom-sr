@@ -48,6 +48,7 @@ Description: "Example of Observation representing a DICOM SR Measurement Qualita
   * coding
     * system = "https://ncit.nci.nih.gov"
     * code = #C45992 "Subtlety score"
+    * display = "Subtlety score"
 * category = http://terminology.hl7.org/CodeSystem/umls#C0034375 "Qualitative Evaluations"
 * focus[referencedSegment] = Reference(Example-ImagingSelection-ReferencedSegment)
 * focus[trackingIdentifiers] = Reference(Example-BodyStructure-TrackingIdentifiers)
@@ -57,6 +58,7 @@ Description: "Example of Observation representing a DICOM SR Measurement Qualita
   * coding
     * system = "http://cancerimagingarchive.net"
     * code = #105 "5 out of 5 (Obvious)"
+    * display = "5 out of 5 (Obvious)"
 
 Instance: Example-Observation-ImagingQualitativeEvaluation-002
 InstanceOf: ImagingQualitativeEvaluation
@@ -75,6 +77,7 @@ Description: "Example of Observation representing a DICOM SR Measurement Qualita
   * coding
     * system = "http://radlex.org"
     * code = #RID36042 "Malignancy"
+    * display = "Malignancy"
 * category = http://terminology.hl7.org/CodeSystem/umls#C0034375 "Qualitative Evaluations"
 * focus[referencedSegment] = Reference(Example-ImagingSelection-ReferencedSegment)
 * focus[trackingIdentifiers] = Reference(Example-BodyStructure-TrackingIdentifiers)
@@ -84,3 +87,4 @@ Description: "Example of Observation representing a DICOM SR Measurement Qualita
   * coding
     * system = "http://cancerimagingarchive.net"
     * code = #905 "5 out of 5 (Highly Suspicious for Cancer)"
+    * display = "5 out of 5 (Highly Suspicious for Cancer)"
