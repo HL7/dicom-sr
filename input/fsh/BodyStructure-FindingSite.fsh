@@ -37,6 +37,7 @@ Description: "Example of BodySite representing a DICOM SR Finding Site"
     * coding
       * system = "http://snomed.info/sct"
       * code = #363698007 "Structure of left lung"
+      * display = "Structure of left lung"
 * text
   * status = #generated
   * div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
