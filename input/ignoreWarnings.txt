@@ -18,3 +18,26 @@ No Target Code System, so the target codes cannot be checked
 
 # This code table is required by the ImagingSelection resource but is not a well-defined code system. This is addressed with a resource change in R6.
 ValueSet 'http://dicom.nema.org/medical/dicom/current/output/chtml/part04/sect_B.5.html#table_B.5-1' not found
+A definition for CodeSystem 'https://dicom.nema.org/medical/dicom/current/output/chtml/part04/sect_B.5' could not be found, so the code cannot be validated
+
+# A DICOM CP will be created to add code value for the sole code in DICOM Identifiers. The DICOM value type codes only make sense in the context of this IG.
+Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
+
+# The DICOM value type codes only make sense in the context of this IG.
+Reference to draft CodeSystem http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-value-type|1.0.0-ballot
+
+# A DICOM CP will be created to add code value for the sole code in DICOM Identifiers. Once added, this CodeSystem will be removed from the IG.
+Reference to draft CodeSystem http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-identifier-type|1.0.0-ballot
+
+# This DiagnosticReport is primarily included for its presented form and not for its content. The code value correspond to the DICOM SR template.
+None of the codings provided are in the value set 'LOINC Diagnostic Report Codes' (http://hl7.org/fhir/ValueSet/report-codes|5.0.0), and a coding is recommended to come from this value set (codes = http://dicom.nema.org/resources/ontology/DCM#126000)
+
+# This CodeSystem is used in an example and does not need to be defined in FHIR terminology
+A definition for CodeSystem 'https://ncit.nci.nih.gov' could not be found, so the code cannot be validated
+A definition for CodeSystem 'http://cancerimagingarchive.net' could not be found, so the code cannot be validated
+
+# This CodeSystem should not be in draft status. This error is not a problem with the IG.
+Reference to draft CodeSystem http://radlex.org|4.1.0
+
+# The application of the pattern to repeats is intended.
+The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
