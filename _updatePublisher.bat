@@ -7,14 +7,15 @@ SET publisher_jar=publisher.jar
 SET input_cache_path=%CD%\input-cache\
 SET skipPrompts=false
 
-set update_bat_url=https://raw.githubusercontent.com/FHIR/sample-ig/master/_updatePublisher.bat
-set gen_bat_url=https://raw.githubusercontent.com/FHIR/sample-ig/master/_genonce.bat
-set gencont_bat_url=https://raw.githubusercontent.com/FHIR/sample-ig/master/_gencontinuous.bat
-set gencont_sh_url=https://raw.githubusercontent.com/FHIR/sample-ig/master/_gencontinuous.sh
-set gen_sh_url=https://raw.githubusercontent.com/FHIR/sample-ig/master/_genonce.sh
-set update_sh_url=https://raw.githubusercontent.com/FHIR/sample-ig/master/_updatePublisher.sh
+SET scriptdlroot=https://raw.githubusercontent.com/HL7/ig-publisher-scripts/main
+SET update_bat_url=%scriptdlroot%/_updatePublisher.bat
+SET gen_bat_url=%scriptdlroot%/_genonce.bat
+SET gencont_bat_url=%scriptdlroot%/_gencontinuous.bat
+SET gencont_sh_url=%scriptdlroot%/_gencontinuous.sh
+SET gen_sh_url=%scriptdlroot%/_genonce.sh
+SET update_sh_url=%scriptdlroot%/_updatePublisher.sh
 
-IF "%~1"=="/f" SET skipPrompts=true
+IF "%~1"=="/f" SET skipPrompts=y
 
 
 ECHO.
@@ -65,21 +66,21 @@ IF DEFINED FORCE (
 	GOTO download
 )
 
-IF "%skipPrompts%"=="true" (
-	SET create="Y"
+IF "%skipPrompts%"=="y" (
+	SET create=Y
 ) ELSE (
 	SET /p create="Ok? (Y/N) "
 )
 IF /I "%create%"=="Y" (
-    ECHO Will place publisher jar here: %input_cache_path%%publisher_jar%
+	ECHO Will place publisher jar here: %input_cache_path%%publisher_jar%
 	MKDIR "%input_cache_path%" 2> NUL
 	GOTO download
 )
 GOTO done
 
 :upgrade
-IF "%skipPrompts%"=="true" (
-	SET overwrite="Y"
+IF "%skipPrompts%"=="y" (
+	SET overwrite=Y
 ) ELSE (
 	SET /p overwrite="Overwrite %jarlocation%? (Y/N) "
 )
@@ -132,8 +133,8 @@ GOTO done
 
 ECHO.
 ECHO Updating scripts
-IF "%skipPrompts%"=="true" (
-	SET updateScripts="Y"
+IF "%skipPrompts%"=="y" (
+	SET updateScripts=Y
 ) ELSE (
 	SET /p updateScripts="Update scripts? (Y/N) "
 )
@@ -215,4 +216,4 @@ start copy /y "_updatePublisher.new.bat" "_updatePublisher.bat" ^&^& del "_updat
 
 IF "%skipPrompts%"=="true" (
   PAUSE
-}
+)

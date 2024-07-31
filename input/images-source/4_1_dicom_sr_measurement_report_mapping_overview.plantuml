@@ -21,13 +21,13 @@ package "DICOM SR Measurement Report" as measurementReport {
     }
 }
 
-component "[[mapping.html#sr_instance DICOM SR Measurement Report Instance Mapping]]" as measurementReportInstanceMapping
-component "[[mapping.html#sr_document Document IE Mapping]]" as documentIEMapping
-component "[[mapping.html#imaging_measurements_container Imaging Measurements Container Mapping]]" as imagingMeasurementsContainerMapping
-component "[[mapping.html#imaging_measurement_group Imaging Measurements Group Mapping]]" as imagingMeasurementGroupMapping
-component "[[mapping.html#imaging_measurement Imaging Measurement Mapping]]" as imagingMeasurementMapping
-component "[[mapping.html#qualitative_evaluation Qualitative Evaluation Mapping]]" as qualitativeEvaluationMapping
-component "[[mapping.html#derived_imaging_measurements Derived Imaging Measurements Mapping]]" as derivedImagingMeasurementsMapping
+component "[[mapping.html#dicom-sr-measurement-report-instance-mapping DICOM SR Measurement Report Instance Mapping]]" as measurementReportInstanceMapping
+component "[[mapping.html#document-ie-mapping Document IE Mapping]]" as documentIEMapping
+component "[[mapping.html#imaging-measurements-container-mapping Imaging Measurements Container Mapping]]" as imagingMeasurementsContainerMapping
+component "[[mapping.html#imaging-measurement-group-mapping Imaging Measurements Group Mapping]]" as imagingMeasurementGroupMapping
+component "[[mapping.html#imaging-measurement-mapping Imaging Measurement Mapping]]" as imagingMeasurementMapping
+component "[[mapping.html#imaging-qualitative-evaluation-mapping Qualitative Evaluation Mapping]]" as qualitativeEvaluationMapping
+component "[[mapping.html#derived-imaging-measurement-mapping Derived Imaging Measurements Mapping]]" as derivedImagingMeasurementsMapping
 
 measurementReport --> measurementReportInstanceMapping: Map contents of Measurement Report Instance
 documentIE --> documentIEMapping: Map contents of Document IE

@@ -1,4 +1,4 @@
-@ECHO OFF
+ @ECHO OFF
 SET publisher_jar=publisher.jar
 SET input_cache_path=%CD%\input-cache
 

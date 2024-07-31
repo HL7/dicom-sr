@@ -1,6 +1,6 @@
 @startuml derived_imaging_measurement_mapping
 
-map "[[mapping.html#imaging_measurements_container Inputs from Imaging Measurements Container Mapping]]" as inputs {
+map "[[mapping.html#imaging-measurements-container-mapping Inputs from Imaging Measurements Container Mapping]]" as inputs {
    subject => Patient
    partOf => ImagingStudy
    basedOn => ServiceRequest
@@ -29,7 +29,7 @@ object "Observation - Derived Imaging Measurement" as derivedImagingMeasurement 
     derivedFrom = ImagingMeasurementGroup
 }
 
-map "[[mapping.html#imaging_measurement Imaging Measurement Group Mapping]]" as imagingMeasurementGroupMap {
+map "[[mapping.html#imaging-measurement-group-mapping Imaging Measurement Group Mapping]]" as imagingMeasurementGroupMap {
     subject => Patient
     partOf => ImagingStudy
     basedOn => ServiceRequest

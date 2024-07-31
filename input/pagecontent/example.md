@@ -2,7 +2,7 @@ This chapter describes the complete mapping of a DICOM SR Measurement Report int
 
 The source DICOM SR Measurement Report is in DICOM JSON format. See the [DICOM PS3.18 Section F](https://dicom.nema.org/medical/dicom/current/output/chtml/part18/chapter_F.html) for more information.
 
-### Patient Mapping<a name="example_patient"></a>
+### Example Patient Mapping
 <table>
 <tr>
 <th>DICOM</th>
@@ -56,7 +56,7 @@ See [Example Patient](Patient-measurement-report-patient.html).
 - Referenced
   - Patient
 
-### ServiceRequest Mapping<a name="example_service_request"></a>
+### Example ServiceRequest Mapping
 <table>
 <tr>
 <th>DICOM</th>
@@ -114,7 +114,7 @@ See [Example ServiceRequest](ServiceRequest-measurement-report-service-request.h
    - Patient
    - ServiceRequest
 
-### ImagingStudy Mapping<a name="example_imaging_study"></a>
+### Example ImagingStudy Mapping
 <table>
 <tr>
 <th>DICOM</th>
@@ -163,7 +163,7 @@ See [Example ImagingStudy](ImagingStudy-measurement-report-imaging-study.html).
    - ServiceRequest
    - ImagingStudy
 
-### Device Mapping<a name="example_device"></a>
+### Example Device Mapping
 <table>
 <tr>
 <th>DICOM</th>
@@ -216,7 +216,7 @@ See [Example Device](Device-measurement-report-general-equipment.html).
 - Created
    - Device (GeneralEquipment)
 
-### Document Mapping<a name="example_document"></a>
+### Example Document Mapping
 <table>
 <tr>
 <th>DICOM</th>
@@ -313,7 +313,7 @@ See [Example Device](Device-measurement-report-general-equipment.html).
 - Created
     - Device (GeneralEquipment)
 
-### Imaging Measurement Container Mapping<a name="example_imaging_measurement_container"></a>
+### Example Imaging Measurement Container Mapping
 <table>
 <tr>
 <th>DICOM</th>
@@ -397,7 +397,7 @@ See [Example Device](Device-measurement-report-general-equipment.html).
 - Created
    - Device (GeneralEquipment)
 
-### Imaging Measurement Group Mapping<a name="example_imaging_measurement_group"></a>
+### Example Imaging Measurement Group Mapping
 <table>
 <tr>
 <th>DICOM</th>
@@ -737,7 +737,7 @@ See:
    - BodyStructure (Tracking, FindingSite)
    - ImagingSelection (Segment)
 
-### Imaging Measurement Mapping <a name="example_imaging_measurement"></a>
+### Example Imaging Measurement Mapping 
 <table>
 <tr>
 <th>DICOM</th>
@@ -886,7 +886,7 @@ See:
     - BodyStructure (Tracking, FindingSite)
     - ImagingSelection (Segment)
 
-### Imaging Qualitative Evaluation Mapping <a name="example_imaging_qualitative_evaluation"></a>
+### Example Imaging Qualitative Evaluation Mapping 
 <table>
 <tr>
 <th>DICOM</th>
@@ -1010,5 +1010,5 @@ See:
     - BodyStructure (Tracking, FindingSite)
     - ImagingSelection (Segment)
 
-### Example Measurement Report<a name="example_sr"></a>
+### Example Measurement Report
 See [Example Measurement Report](DiagnosticReport-dicom-sr-measurement-report.html) for a complete example of a Measurement Report containing the above resources.

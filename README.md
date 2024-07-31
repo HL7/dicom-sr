@@ -10,4 +10,4 @@ The HL7 Project Summary is under [this link](https://www.hl7.org/special/Committ
 
 The pre-analysis of this work is under [this link](https://confluence.hl7.org/display/IMIN/Mapping+of+DICOM+SR+to+FHIR).
 
-The CI build is under [this link](https://build.fhir.org/ig/HL7/dicom-sr/).
+The CI build is under [this link](https://build.fhir.org/ig/HL7/dicom-sr).

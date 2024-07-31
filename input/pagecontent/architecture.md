@@ -1,8 +1,8 @@
 This chapter describes the architecture of this implementation guide.
 
-### Profiles & Extensions<a name="profiles"></a>
-#### Resource Profiles<a name="resources"></a>
-##### Observation<a name="resource-observation"></a>
+### Profiles & Extensions
+#### Resource Profiles
+##### Observation
 The mapping of the core DICOM SR measurement groups, measurements and qualitative analysis content items are covered by the following resource profiles:
 
 * [Imaging Measurement Group](StructureDefinition-imaging-measurement-group.html) profiles the Observation resource representing DICOM SR measurement group templates:
@@ -19,7 +19,7 @@ The mapping of the core DICOM SR measurement groups, measurements and qualitativ
 * [Imaging Qualitative Evaluation](StructureDefinition-imaging-qualitative-evaluation.html) profiles the Observation resource representing qualitative evaluation content items
 
 The above resource profiles depend on the following resource profiles:
-##### ImagingSelection<a name="resource-imagingselection"></a>
+##### ImagingSelection
 * [Image Region -- 2D](StructureDefinition-image-region-2d.html) profiles the ImagingSelection resource representing a referenced 2D image region content item [CID 111030 "Image Region"](https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_D.html#DCM_111030)
 * [Image Region -- 3D](StructureDefinition-image-region-3d.html) profiles the ImagingSelection resource representing a referenced 3D image region content item [CID 111030 "Image Region"](https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_D.html#DCM_111030)
 * [Referenced Segment](StructureDefinition-referenced-segment.html) profiles the ImagingSelection resource representing a referenced segment content item [CID 121191 "Referenced Segment"](https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_D.html#DCM_121191)
@@ -30,21 +30,21 @@ The above resource profiles depend on the following resource profiles:
 * [Illustration of ROI](StructureDefinition-illustration-of-roi.html) profiles the ImagingSelection resource representing a referenced ROI illustration content item [CID 121200 "Illustration of ROI"](https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_D.html#DCM_121200)
 * [Visual explanation](StructureDefinition-visual-explanation.html) profiles the ImagingSelection resource representing a referenced visual explanation content item [CID 130401 "Visual explanation](https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_D.html#DCM_130401)
 
-##### Device<a name="resource-device"></a>
+##### Device
 * [Algorithm Identification](StructureDefinition-algorithm-identification.html) profiles the Device resource representing the DICOM SR template [DTID 4019 “Algorithm Identification”](https://dicom.nema.org/medical/dicom/current/output/chtml/part16/sect_TID_4019.html)
 * [General Equipment](StructureDefinition-dicom-general-equipment.html) profiles the Device resource representing the DICOM General Equipment Module [DICOM PS3.3 C.7.5.1 General Equipment Module](https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.5.html#sect_C.7.5.1)
 
-##### BodyStructure<a name="resource-bodystructure"></a>
+##### BodyStructure
 * [Finding Site](StructureDefinition-dicom-sr-finding-site.html) profiles the BodyStructure resource representing a finding site content item [CID SCT#363698007 "Finding Site"](http://snomed.info/id/363698007)
 
-#### Supporting DataType Profiles<a name="data-types"></a>
+#### Supporting DataType Profiles
 There is no special supporting DataType profiles defined by this IG.
 
-#### Supporting Extensions<a name="extensions"></a>
+#### Supporting Extensions
 There is no special supporting extensions defined by this IG.
 
-#### Profile Relationships<a name="relationships"></a>
-##### DICOM SR Basics<a name="dicom-sr"></a>
+#### Profile Relationships
+##### DICOM SR Basics
 The content of a DICOM SR is a tree of "content items". Each content item has:
 * a coded "Concept Name" describing the content item
 * a "Value Type"
@@ -58,7 +58,7 @@ The content item value types relevant to this implementation guide are:
 * `CODE`: a coded value
   * Note that a `CODE` content item has a coded concept name *and* a coded value
 
-##### Relationship to DICOM SR TID 1500 Measurement Report<a name="tid-1500"></a>
+##### Relationship to DICOM SR TID 1500 Measurement Report
 This implementation guide maps content items contained within the DICOM TID 1500 Measurement Report to FHIR resources.
 
 All mapped content items are children of the following `CONTAINER` content items:
@@ -73,8 +73,8 @@ e.g. the children of the `CONTAINER` with a Concept Name of DCM#126010 "Imaging 
 
 ![TID 1500 Measurement Report and its children](./tid_1500_measurement_report.svg){: width="100%"}
 
-<a name="measurementgroup"></a>
-###### Imaging Measurement Group Relationship<a name="imaging-measurement-group"></a>
+
+###### Imaging Measurement Group Relationship
 An Imaging Measurement Group `CONTAINER` contains 0-n `NUM` content items representing numerical measurements. Each of these is mapped to an [Imaging Measurement](StructureDefinition-imaging-measurement.html) Observation.
 
 An Imaging Measurement Group `CONTAINER` contains 0-n `TEXT` or `CODE` content items representing qualitative evaluations. Each of these is mapped to an [Imaging Qualitative Evaluation](StructureDefinition-imaging-qualitative-evaluation.html) Observation. 
@@ -95,20 +95,20 @@ A `TEXT` or `CODE` child content item should only be interpreted as a qualitativ
 * SCT#363698007 "Finding Site"
 * SCT#370129005 "Measurement Method"
 
-<a name="derivedmeasurements"></a>
-###### Derived Imaging Measurements Relationship<a name="derived-imaging-measurement"></a>
+
+###### Derived Imaging Measurements Relationship
 A Derived Imaging Measurement `CONTAINER` contains 0-n `NUM` content items representing derived numerical measurements. Each of these is mapped to a [Derived Measurement](StructureDefinition-derived-imaging-measurement.html) Observation.
 
 A Derived Imaging Measurement `CONTAINER` contains 0-n Imaging Measurement Group `CONTAINER` content items. Each of these is mapped to an [Imaging Measurement Group](StructureDefinition-imaging-measurement-group.html) Observation (see [Imaging Measurement Group relationship](#measurementgroup)).
 
 The [Derived Imaging Measurements](StructureDefinition-derived-imaging-measurement.html) Observation `derivedFrom` element references the child [Imaging Measurement Group](StructureDefinition-imaging-measurement-group.html) Observations. 
 
-<a name="qualitativeevaluations"></a>
-###### Imaging Qualitative Evaluations Relationship<a name="imaging-qualitative-evalutation"></a>
+
+###### Imaging Qualitative Evaluations Relationship
 An Imaging Qualitative Evaluations `CONTAINER` contains 0-n `TEXT` or `CODE` content items representing qualitative evaluations. Each of these is mapped to an [Imaging Qualitative Evaluation](StructureDefinition-imaging-qualitative-evaluation.html) Observation.
 
-<a name="devices"></a>
-##### Device Relationship<a name="relationship-device"></a>
+
+##### Device Relationship
 A FHIR Observation can only have a single `device` value. However, a DICOM SR can have two types of devices:
 * The equipment that created the SR
 * An algorithm used to create the Observation
@@ -129,7 +129,7 @@ e.g.
   * If the Imaging Qualitative Evaluation does not have a defined Algorithm Identification Device it's `device` element will reference the Equipment Device
 
 ##### Other Resource Relationships
-<a name="other_resources"></a>
+
 All DICOM SOP Instances include information relating to the patient, service request, procedure, etc.
 
 Typically, these resources are managed by the EMR and the imaging system is not able to create or update these resources in the FHIR server.
@@ -140,11 +140,11 @@ Instead, it specifies the identifier mapping to allow newly-created resources to
 
 See [DICOM SR Information Object Definition (IOD) Mapping to FHIR](ConceptMap-dicom-sr-measurement-report-to-fhir.html) and [DICOM SR Document Information Entity (IE) Mapping to FHIR](ConceptMap-dicom-document-ie-to-fhir.html).
 
-### Actors<a name="actors"></a>
+### Actors
 
-### Terminology<a name="terminology"></a>
+### Terminology
 
-### Security Consideration<a name="sec"></a>
+### Security Consideration
 Exchanging imaging measurement report resources makes use of patient-specific information which could be exploited by malicious actors resulting in exposure of patient data. For these reasons, all data exchange between the different actors must be secured appropriately with access to limited authorized individuals, data protected in transit, and appropriate audit measures taken. 
 
 Implementers SHOULD be aware of these [security considerations](http://hl7.org/fhir/R5/security.html){:target="_blank"} associated with FHIR transactions, particularly those related to:

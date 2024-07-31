@@ -7,50 +7,55 @@ This IG is organized into three main sections:
 * [Chapter I](background.html): Background - Introduction and overview
     * [Problem](background.html#problem) - Description of the problem
     * [Scope](background.html#scope) - Scope of the IG
-    * [Intended Readers](background.html#readers) - Intended readers of the IG
+    * [Intended Readers](background.html#intended-readers) - Intended readers of the IG
     * [Use cases](background.html#use-cases) - Key use cases covered by the IG
+    * [Excluded use cases](background.html#excluded-use-cases) - Excluded use cases
     * [FHIR Version 4 compatibility](background.html#fhir-version-4-compatibility) - FHIR Version 4 compatibility
     * [Glossary](background.html#glossary) - Glossary
     * [References](background.html#references) - References
+    * [IG Dependencies](background.html#ig-dependencies) - Dependencies on other IGs
+    * [Global Profiles](background.html#global-profiles) - Global profiles used in this IG
+    * [Copyrights](background.html#copyrights) - Copyrights and acknowledgments
 * [Chapter II](architecture.html): Architecture & Implementation
-    * [Profiles & Extensions](architecture.html#profiles) - FHIR Profiles and extensions defined in the IG
-      * [Resources](architecture.html#resources) - FHIR Resource Profiles
-        * [Observation](architecture.html#resource-observation) - Observation
-        * [ImagingSelection](architecture.html#resource-imagingselection) - ImagingSelection
-        * [Device](architecture.html#resource-device) - Device
-        * [BodyStructure](architecture.html#resource-bodystructure) - BodyStructure
-      * [Data Types](architecture.html#data-types) - FHIR Data Type Profiles
-      * [Extensions](architecture.html#extensions) - FHIR Extensions
-      * [Profile Relationships](architecture.html#relationships) - Relationships between profiled FHIR resources and other standards
-        * [DICOM SR Basics](architecture.html#dicom-sr) - Overview of DICOM SR and terminology
-        * [Relationship to DICOM SR TID 1500 Measurement Report](architecture.html#tid-1500) - Mapping of content from DICOM SR Measurement Report
-          * [Imaging Measurement Group Relationship](architecture.html#imaging-measurement-group) - Mapping of imaging measurement groups
-          * [Derived Imaging Measurements Relationship](architecture.html#derived-imaging-measurement) - Mapping of derived imaging measurements
-          * [Imaging Qualitative Evaluations Relationship](architecture.html#imaging-qualitative-evalutation) - Mapping of imaging qualitative evaluations
-        * [Device Relationship](architecture.html#relationship-device) - Mapping of devices from a DICOM SR Measurement Report
+    * [Profiles & Extensions](architecture.html#profiles--extensions) - FHIR Profiles and extensions defined in the IG
+      * [Resources](architecture.html#resource-profiles) - FHIR Resource Profiles
+        * [Observation](architecture.html#observation) - Observation
+        * [ImagingSelection](architecture.html#imagingselection) - ImagingSelection
+        * [Device](architecture.html#device) - Device
+        * [BodyStructure](architecture.html#bodystructure) - BodyStructure
+      * [Data Types](architecture.html#supporting-datatype-profiles) - FHIR Data Type Profiles
+      * [Extensions](architecture.html#supporting-extensions) - FHIR Extensions
+      * [Profile Relationships](architecture.html#profile-relationships) - Relationships between profiled FHIR resources and other standards
+        * [DICOM SR Basics](architecture.html#dicom-sr-basics) - Overview of DICOM SR and terminology
+        * [Relationship to DICOM SR TID 1500 Measurement Report](architecture.html#relationship-to-dicom-sr-tid-1500-measurement-report) - Mapping of content from DICOM SR Measurement Report
+          * [Imaging Measurement Group Relationship](architecture.html#imaging-measurement-group-relationship) - Mapping of imaging measurement groups
+          * [Derived Imaging Measurements Relationship](architecture.html#derived-imaging-measurements-relationship) - Mapping of derived imaging measurements
+          * [Imaging Qualitative Evaluations Relationship](architecture.html#imaging-qualitative-evaluations-relationship) - Mapping of imaging qualitative evaluations
+        * [Device Relationship](architecture.html#device-relationship) - Mapping of devices from a DICOM SR Measurement Report
+        * [Other Resource Relationships](architecture.html#other-resource-relationships) - Relationships to other FHIR resources
     * [Actors](architecture.html#actors) - Actors participating in the IG
     * [Terminology](architecture.html#terminology) - Value Sets defined and used
-    * [Security Consideration](architecture.html#sec) - Security aspects to be taken in consideration
+    * [Security Consideration](architecture.html#security-consideration) - Security aspects to be taken in consideration
 * [Chapter III](mapping.html): Measurement Report Processing Mapping
-    * [DICOM SR Measurement Report Instance Mapping](mapping.html#sr_instance)
-    * [DICOM SR Document Mapping](mapping.html#sr_document)
-    * [Imaging Measurements Container Mapping](mapping.html#imaging_measurements_container)
-    * [Imaging Measurement Group Mapping](mapping.html#imaging_measurement_group)
-    * [Imaging Measurement Mapping](mapping.html#imaging_measurement)
-    * [Imaging Qualitative Evaluation Mapping](mapping.html#imaging_qualitative_evaluation)
-    * [Derived Imaging Measurements Mapping](mapping.html#derived_imaging_measurement)
-
+    * [DICOM SR Measurement Report Mapping Overview](mapping.html#dicom-sr-measurement-report-mapping-overview) - Overview of the mapping process
+    * [DICOM SR Measurement Report Instance Mapping](mapping.html#dicom-sr-measurement-report-instance-mapping)
+    * [DICOM SR Document Mapping](mapping.html#document-ie-mapping)
+    * [Imaging Measurements Container Mapping](mapping.html#imaging-measurements-container-mapping)
+    * [Imaging Measurement Group Mapping](mapping.html#imaging-measurement-group-mapping)
+    * [Imaging Measurement Mapping](mapping.html#imaging-measurement-mapping)
+    * [Imaging Qualitative Evaluation Mapping](mapping.html#imaging-qualitative-evaluation-mapping)
+    * [Derived Imaging Measurements Mapping](mapping.html#derived-imaging-measurement-mapping)
 * [Chapter IV](example.html): Example DICOM SR Measurement Report Mapping
-    * [Patient Mapping](example.html#example_patient) - Patient Mapping Example
-    * [Service Request Mapping](example.html#example_service_request) - Service Request Mapping Example
-    * [Imaging Study Mapping](example.html#example_imaging_study) - Imaging Study Mapping Example
-    * [Device Mapping](example.html#example_device) - Device Mapping Example
-    * [Document Mapping](example.html#example_document) - Document Mapping Example
-    * [Imaging Measurements Container Mapping](example.html#example_imaging_measurement_container) - Imaging Measurements Container Mapping Example
-    * [Imaging Measurement Group Mapping](example.html#example_imaging_measurement_group) - Imaging Measurement Group Mapping Example
-    * [Imaging Measurement Mapping](example.html#example_imaging_measurement) - Imaging Measurement Mapping Example
-    * [Imaging Qualitative Evaluation Mapping](example.html#example_imaging_qualitative_evaluation) - Imaging Qualitative Evaluation Mapping Example
-    * [Example Instance](example.html#example_sr) - Complete Example DICOM SR Measurement Report
+    * [Patient Mapping](example.html#example-patient-mapping) - Patient Mapping Example
+    * [Service Request Mapping](example.html#example-service-request-mapping) - Service Request Mapping Example
+    * [Imaging Study Mapping](example.html#example-imaging-study-mapping) - Imaging Study Mapping Example
+    * [Device Mapping](example.html#example-device-mapping) - Device Mapping Example
+    * [Document Mapping](example.html#example-document-mapping) - Document Mapping Example
+    * [Imaging Measurements Container Mapping](example.html#example-imaging-measurement-container-mapping) - Imaging Measurements Container Mapping Example
+    * [Imaging Measurement Group Mapping](example.html#example-imaging-measurement-group-mapping) - Imaging Measurement Group Mapping Example
+    * [Imaging Measurement Mapping](example.html#example-imaging-measurement-mapping) - Imaging Measurement Mapping Example
+    * [Imaging Qualitative Evaluation Mapping](example.html#example-imaging-qualitative-evaluation-mapping) - Imaging Qualitative Evaluation Mapping Example
+    * [Example Instance](example.html#example-measurement-report) - Complete Example DICOM SR Measurement Report
 
 ### Copyrights and acknowledgments
 

@@ -3,18 +3,23 @@ and describes the use cases supported by this implementation guide.
 
 1. [Problem](#problem) - Description of the Problem
 2. [Scope](#scope) - Scope of the IG
-3. [Intended Readers](#readers) - Intended readers of the IG
+3. [Intended Readers](#intended-readers) - Intended readers of the IG
 4. [Use cases](#use-cases) - Key use cases covered by the IG
-5. [Glossary](#glossary) - Glossary of terms used in this IG
-6. [References](#references) - Useful references
+5. [Excluded use cases](#excluded-use-cases) - Excluded use cases
+6. [FHIR Version 4 compatibility](#fhir-version-4-compatibility) - Compatibility with FHIR R4
+7. [Glossary](#glossary) - Glossary of terms used in this IG
+8. [References](#references) - Useful references
+9. [IG Dependencies](background.html#ig-dependencies) - Dependencies on other IGs
+10. [Global Profiles](background.html#global-profiles) - Global profiles used in this IG
+11. [Copyrights](background.html#copyrights) - Copyrights and acknowledgments
 
-### Problem<a name="problem"></a>
+### Problem
 
 DICOM Structured Report (DICOM SR) is a standard for recording clinical imaging observations made regarding a diagnostic or interventional imaging procedure. Imaging Observations are made by humans, such as a sonographer making measurements on recently acquired ultrasound image, a Radiologist recording observations on suspected lesions, or by a machine, such as an automated AI Algorithm providing qualitative and quantitative observations.
 
 DICOM SR is widely adopted by Imaging-based devices and IT systems. Non-imaging based Healthcare IT Systems, generally, do not support DICOM SR. Non-imaging healthcare systems support HL7 standards, such as FHIR. HL7 has defined Observations as the standardized method for recording clinical observations. Bridging the two standards for clinical imaging observations is necessary for interoperability between these type of systems.
 
-### Scope<a name="scope"></a>
+### Scope
 
 The standards for recording clinical observations, DICOM SR and HL7 FHIR Observation resource are bridged by this IG by the transformation of the DICOM SR attributes to the HL7 FHIR Observation Resource.
 
@@ -26,7 +31,7 @@ DICOM SR mapping is limited to the Observation Resource and a small set of relat
 
 Therefore, Observations created according to this IG may not include all context relevant to their interpretation.
 
-### Intended Readers<a name="readers"></a>
+### Intended Readers
 This Implementation Guide is intended for
 
 * clinical users of structured imaging data,
@@ -34,7 +39,7 @@ This Implementation Guide is intended for
 * imaging device, image analysis and AI algorithm developers and imaging gateway system developers creating DICOM SR.
 
 
-### Use cases<a name="use-cases"></a>
+### Use cases
 Two use cases were identified.
 
 #### Use case 1: Extracting imaging results for use in reporting
@@ -49,14 +54,14 @@ The following use cases are not covered by this Implementation Guide:
 * Creating a FHIR DiagnosticReport or Composition from a DICOM SR
 * Creating HL7 v2 or v3 results from a DICOM SR
 
-### FHIR Version 4 compatibility<a name="fhir-version-4-compatibility"></a>
+### FHIR Version 4 compatibility
 This implementation guide is based on FHIR R5 and makes extensive use of the `ImagingSelection` resource, which is not present in FHIR R4.
 
 However, the core mapping of DICOM SR to FHIR Observation resources is compatible with FHIR R4. 
 
 The `ImagingSelection` resource is used to provide specific imaging context for imaging observations, but their exclusion should not affect the usability of the created observations to most downstream systems.
 
-### Glossary<a name="glossary"></a>
+### Glossary
 
 The following terms and acronyms are used within the DICOM SR IG:
 
@@ -82,7 +87,7 @@ The following terms and acronyms are used within the DICOM SR IG:
 |URL| Uniform Resource Locator |
 |URN| Uniform Resource Name |
 
-### References<a name="references"></a>
+### References
 
 1. DICOM,[DICOM PS3.16: Content Mapping Resource](http://dicom.nema.org/medical/dicom/current/output/chtml/part16/PS3.16.html)
 2. DICOM,[TID 1500\. Measurement Report](https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1500)
