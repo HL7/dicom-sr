@@ -41,3 +41,6 @@ Reference to draft CodeSystem http://radlex.org|4.1.0
 
 # The application of the pattern to repeats is intended.
 The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
+
+# The FHIR DICOM Package is not a standard IG and it fails this validation check
+The canonical URL for an Implementation Guide must point directly to the implementation guide resource, not to the Implementation Guide as a whole
