@@ -47,8 +47,8 @@ This IG is organized into three main sections:
     * [Derived Imaging Measurements Mapping](mapping.html#derived-imaging-measurement-mapping)
 * [Chapter IV](example.html): Example DICOM SR Measurement Report Mapping
     * [Patient Mapping](example.html#example-patient-mapping) - Patient Mapping Example
-    * [Service Request Mapping](example.html#example-service-request-mapping) - Service Request Mapping Example
-    * [Imaging Study Mapping](example.html#example-imaging-study-mapping) - Imaging Study Mapping Example
+    * [Service Request Mapping](example.html#example-servicerequest-mapping) - Service Request Mapping Example
+    * [Imaging Study Mapping](example.html#example-imagingstudy-mapping) - Imaging Study Mapping Example
     * [Device Mapping](example.html#example-device-mapping) - Device Mapping Example
     * [Document Mapping](example.html#example-document-mapping) - Document Mapping Example
     * [Imaging Measurements Container Mapping](example.html#example-imaging-measurement-container-mapping) - Imaging Measurements Container Mapping Example

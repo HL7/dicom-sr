@@ -22,7 +22,7 @@ The DICOM SR Measurement Report instance contains the following information rele
 * The General Equipment IE used to create a FHIR Device resource
 * The Document IE is used to create one or more FHIR Observations
 
-*Note:* This implementation guide assumes that Patient, ImagingStudy and ServiceRequest resources already exist in the destination FHIR server. See [Other Resource Relationships](architecture.html#other_resources).
+*Note:* This implementation guide assumes that Patient, ImagingStudy and ServiceRequest resources already exist in the destination FHIR server. See [Other Resource Relationships](architecture.html#other-resource-relationships).
 
 ![DICOM SR Measurement Report Instance Mapping](./dicom_sr_measurement_report_mapping.svg){: width="100%"}
 

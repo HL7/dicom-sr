@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               ballotUrl="http://hl7.org/fhir/uv/dicom-sr/2024Sep"
+               ciUrl="https://build.fhir.org/ig/HL7/dicom-sr"
+               defaultVersion="1.0.0-ballot"
+               defaultWorkgroup="ii"
+               gitUrl="https://github.com/HL7/dicom-sr"
+               url="http://hl7.org/fhir/uv/dicom-sr">
+  <version code="current" url="https://build.fhir.org/ig/HL7/dicom-sr"/>
+  <version code="1.0.0-ballot" url="http://hl7.org/fhir/uv/dicom-sr/2024Sep"/>
+  <artifactPageExtension value="-definitions"/>
+  <artifactPageExtension value="-examples"/>
+  <artifactPageExtension value="-mappings"/>
+  <artifact deprecated="true" id="StructureDefinition/ImageRegion2d" key="StructureDefinition-ImagingSelection-ImageRegion2d" name="2D Image Region"/>
+  <artifact deprecated="true" id="StructureDefinition/ImageRegion3d" key="StructureDefinition-ImagingSelection-ImageRegion3d" name="3D Image Region"/>
+  <artifact deprecated="true" id="StructureDefinition/AlgorithmIdentification" key="StructureDefinition-Device-AlgorithmIdentification" name="Algorithm Identification"/>
+  <artifact id="StructureDefinition/dicom-sr-finding-site" key="StructureDefinition-dicom-sr-finding-site" name="Body Structure - DICOM SR Finding Site Mapping"/>
+  <artifact id="StructureDefinition/dicom-sr-tracking-identifiers" key="StructureDefinition-dicom-sr-tracking-identifiers" name="Body Structure - DICOM SR Observation Tracking Identifier Mapping"/>
+  <artifact id="ConceptMap/dicom-derived-imaging-measurement-to-fhir" key="ConceptMap-dicom-derived-imaging-measurement-to-fhir" name="ConceptMap - DICOM Derived Imaging Measurement to FHIR Mapping"/>
+  <artifact id="ConceptMap/dicom-document-ie-to-fhir" key="ConceptMap-dicom-document-ie-to-fhir" name="ConceptMap - DICOM Document IE to FHIR Mapping"/>
+  <artifact id="ConceptMap/dicom-imaging-measurement-group-to-fhir" key="ConceptMap-dicom-imaging-measurement-group-to-fhir" name="ConceptMap - DICOM Imaging Measurement Group to FHIR Mapping"/>
+  <artifact id="ConceptMap/dicom-imaging-measurement-to-fhir" key="ConceptMap-dicom-imaging-measurement-to-fhir" name="ConceptMap - DICOM Imaging Measurement to FHIR Mapping"/>
+  <artifact id="ConceptMap/dicom-imaging-measurements-container-to-fhir" key="ConceptMap-dicom-imaging-measurements-container-to-fhir" name="ConceptMap - DICOM Imaging Measurements Container to FHIR Mapping"/>
+  <artifact id="ConceptMap/dicom-imaging-qualitative-evaluation-to-fhir" key="ConceptMap-dicom-imaging-qualitative-evaluation-to-fhir" name="ConceptMap - DICOM Imaging Qualitative Evaluation to FHIR Mapping"/>
+  <artifact id="ConceptMap/dicom-sr-measurement-report-to-fhir" key="ConceptMap-dicom-sr-measurement-report-to-fhir" name="ConceptMap - DICOM SR Measurement Report to FHIR Mapping"/>
+  <artifact deprecated="true" id="ConceptMap/DicomDocumentIE" key="ConceptMap-DicomDocumentIE" name="DICOM Document IE to Observation Map"/>
+  <artifact deprecated="true" id="CodeSystem/DicomIdentifierType" key="CodeSystem-DicomIdentifierType" name="DICOM Identifier Types"/>
+  <artifact deprecated="true" id="ConceptMap/DicomSrIod" key="ConceptMap-DicomSrIod" name="DICOM SR IOD to Observation Map"/>
+  <artifact id="StructureDefinition/dicom-general-equipment" key="StructureDefinition-dicom-general-equipment" name="Device - DICOM General Equipment"/>
+  <artifact id="StructureDefinition/algorithm-identification" key="StructureDefinition-algorithm-identification" name="Device - DICOM SR TID 4019 Algorithm Identification Mapping"/>
+  <artifact id="BodyStructure/measurement-report-finding-site" key="BodyStructure-measurement-report-finding-site" name="Example-BodyStructure-FindingSite"/>
+  <artifact id="BodyStructure/measurement-report-tracking-identifier" key="BodyStructure-measurement-report-tracking-identifier" name="Example-BodyStructure-TrackingIdentifiers"/>
+  <artifact id="Device/measurement-report-algorithm" key="Device-measurement-report-algorithm" name="Example-Device-AlgorithmIdentification"/>
+  <artifact id="Device/measurement-report-general-equipment" key="Device-measurement-report-general-equipment" name="Example-Device-GeneralEquipment"/>
+  <artifact id="DiagnosticReport/dicom-sr-measurement-report" key="DiagnosticReport-dicom-sr-measurement-report" name="Example-DiagnosticReport-DICOMSRMeasurementReport"/>
+  <artifact id="ImagingSelection/measurement-report-illustration-of-roi" key="ImagingSelection-measurement-report-illustration-of-roi" name="Example-ImagingSelection-IllustrationOfROI"/>
+  <artifact id="ImagingSelection/measurement-report-2d-image-region" key="ImagingSelection-measurement-report-2d-image-region" name="Example-ImagingSelection-ImageRegion2D"/>
+  <artifact id="ImagingSelection/measurement-report-3d-image-region" key="ImagingSelection-measurement-report-3d-image-region" name="Example-ImagingSelection-ImageRegion3D"/>
+  <artifact id="ImagingSelection/measurement-report-referenced-real-world-value-map" key="ImagingSelection-measurement-report-referenced-real-world-value-map" name="Example-ImagingSelection-RealWorldValueMap"/>
+  <artifact id="ImagingSelection/measurement-report-referenced-segment" key="ImagingSelection-measurement-report-referenced-segment" name="Example-ImagingSelection-ReferencedSegment"/>
+  <artifact id="ImagingSelection/measurement-report-referenced-segmentation-frame" key="ImagingSelection-measurement-report-referenced-segmentation-frame" name="Example-ImagingSelection-ReferencedSegmentationFrame"/>
+  <artifact id="ImagingSelection/measurement-report-region-in-space" key="ImagingSelection-measurement-report-region-in-space" name="Example-ImagingSelection-RegionInSpace"/>
+  <artifact id="ImagingSelection/measurement-report-visual-explanation" key="ImagingSelection-measurement-report-visual-explanation" name="Example-ImagingSelection-VisualExplanation"/>
+  <artifact id="ImagingSelection/measurement-report-volume-surface" key="ImagingSelection-measurement-report-volume-surface" name="Example-ImagingSelection-VolumeSurface"/>
+  <artifact id="ImagingStudy/measurement-report-imaging-study" key="ImagingStudy-measurement-report-imaging-study" name="Example-ImagingStudy"/>
+  <artifact id="Observation/derived-imaging-measurement" key="Observation-derived-imaging-measurement" name="Example-Observation-DerivedImagingMeasurement"/>
+  <artifact id="Observation/imaging-measurement-001" key="Observation-imaging-measurement-001" name="Example-Observation-ImagingMeasurement-001"/>
+  <artifact id="Observation/imaging-measurement-002" key="Observation-imaging-measurement-002" name="Example-Observation-ImagingMeasurement-002"/>
+  <artifact id="Observation/imaging-measurement-003" key="Observation-imaging-measurement-003" name="Example-Observation-ImagingMeasurement-003"/>
+  <artifact id="Observation/imaging-measurement-group" key="Observation-imaging-measurement-group" name="Example-Observation-ImagingMeasurementGroup"/>
+  <artifact id="Observation/imaging-observation" key="Observation-imaging-observation" name="Example-Observation-ImagingObservation"/>
+  <artifact id="Observation/qualitative-evaluation-001" key="Observation-qualitative-evaluation-001" name="Example-Observation-ImagingQualitativeEvaluation-001"/>
+  <artifact id="Observation/qualitative-evaluation-002" key="Observation-qualitative-evaluation-002" name="Example-Observation-ImagingQualitativeEvaluation-002"/>
+  <artifact id="Patient/measurement-report-patient" key="Patient-measurement-report-patient" name="Example-Patient"/>
+  <artifact id="Practitioner/measurement-report-practitioner" key="Practitioner-measurement-report-practitioner" name="Example-Practitioner"/>
+  <artifact id="ServiceRequest/measurement-report-service-request" key="ServiceRequest-measurement-report-service-request" name="Example-ServiceRequest"/>
+  <artifact deprecated="true" id="StructureDefinition/FindingSite" key="StructureDefinition-BodyStructure-FindingSite" name="Finding Site"/>
+  <artifact id="CodeSystem/dicom-identifier-type" key="CodeSystem-dicom-identifier-type" name="Identifiers - DICOM Identifier Type"/>
+  <artifact deprecated="true" id="StructureDefinition/IllustrationOfRoi" key="StructureDefinition-ImagingSelection-IllustrationOfRoi" name="Illustration of Region of Interest"/>
+  <artifact deprecated="true" id="StructureDefinition/ImagingMeasurement" key="StructureDefinition-Observation-ImagingMeasurement" name="Imaging Measurement"/>
+  <artifact deprecated="true" id="StructureDefinition/ImagingMeasurementGroup" key="StructureDefinition-Observation-ImagingMeasurementGroup" name="Imaging MeasurementGroup"/>
+  <artifact id="StructureDefinition/image-region-2d" key="StructureDefinition-image-region-2d" name="Imaging Selection - DICOM SR 2D Image Region Mapping"/>
+  <artifact id="StructureDefinition/observation-imaging-selection" key="StructureDefinition-observation-imaging-selection" name="Imaging Selection - DICOM SR Base Imaging Selection"/>
+  <artifact id="StructureDefinition/illustration-of-roi" key="StructureDefinition-illustration-of-roi" name="Imaging Selection - DICOM SR Illustration Of ROI Mapping"/>
+  <artifact id="StructureDefinition/image-region-3d" key="StructureDefinition-image-region-3d" name="Imaging Selection - DICOM SR Image 3D Region Mapping"/>
+  <artifact id="StructureDefinition/volume-surface" key="StructureDefinition-volume-surface" name="Imaging Selection - DICOM SR Image Volume Surface Mapping"/>
+  <artifact id="StructureDefinition/real-world-value-map" key="StructureDefinition-real-world-value-map" name="Imaging Selection - DICOM SR Real World Value Map"/>
+  <artifact id="StructureDefinition/referenced-segment" key="StructureDefinition-referenced-segment" name="Imaging Selection - DICOM SR Referenced Segment Mapping"/>
+  <artifact id="StructureDefinition/referenced-segmentation-frame" key="StructureDefinition-referenced-segmentation-frame" name="Imaging Selection - DICOM SR Referenced Segmentation Frame Mapping"/>
+  <artifact id="StructureDefinition/region-in-space" key="StructureDefinition-region-in-space" name="Imaging Selection - DICOM SR Region In Space"/>
+  <artifact id="StructureDefinition/visual-explanation" key="StructureDefinition-visual-explanation" name="Imaging Selection - DICOM SR Visual Explanation Mapping"/>
+  <artifact id="StructureDefinition/derived-imaging-measurement" key="StructureDefinition-derived-imaging-measurement" name="Observation - DICOM SR Derived Imaging Measurement Mapping to Observation"/>
+  <artifact id="StructureDefinition/imaging-measurement-group" key="StructureDefinition-imaging-measurement-group" name="Observation - DICOM SR Imaging Measurement Group Mapping"/>
+  <artifact id="StructureDefinition/imaging-measurement" key="StructureDefinition-imaging-measurement" name="Observation - DICOM SR Imaging Measurement Mapping to Observation"/>
+  <artifact id="StructureDefinition/imaging-observation" key="StructureDefinition-imaging-observation" name="Observation - DICOM SR Imaging Observation"/>
+  <artifact id="StructureDefinition/imaging-qualitative-evaluation" key="StructureDefinition-imaging-qualitative-evaluation" name="Observation - DICOM SR Imaging Qualitative Evaluation Mapping to Observation"/>
+  <artifact deprecated="true" id="StructureDefinition/RealWorldValueMap" key="StructureDefinition-ImagingSelection-RealWorldValueMap" name="Real World Value Map"/>
+  <artifact deprecated="true" id="StructureDefinition/ReferencedSegment" key="StructureDefinition-ImagingSelection-ReferencedSegment" name="Referenced Segment"/>
+  <artifact deprecated="true" id="StructureDefinition/ReferencedSegmentationFrame" key="StructureDefinition-ImagingSelection-ReferencedSegmentationFrame" name="Referenced Segmentation Frame"/>
+  <artifact deprecated="true" id="StructureDefinition/RegionInSpace" key="StructureDefinition-ImagingSelection-RegionInSpace" name="Region In Space"/>
+  <artifact deprecated="true" id="StructureDefinition/SourceImageForSegmentation" key="StructureDefinition-ImagingSelection-SourceImageForSegmentation" name="Source Image For Segmentation"/>
+  <artifact deprecated="true" id="StructureDefinition/SourceSeriesForSegmentation" key="StructureDefinition-ImagingSelection-SourceSeriesForSegmentation" name="Source Series For Segmentation"/>
+  <artifact id="CodeSystem/dicom-value-type" key="CodeSystem-dicom-value-type" name="Value Types -- DICOM SR Content Item Value Types"/>
+  <artifact deprecated="true" id="StructureDefinition/VisualExplanation" key="StructureDefinition-ImagingSelection-VisualExplanation" name="Visual Explanation"/>
+  <artifact deprecated="true" id="StructureDefinition/VolumeSurface" key="StructureDefinition-ImagingSelection-VolumeSurface" name="Volume Surface"/>
+  <page key="NA" name="(NA)"/>
+  <page key="many" name="(many)"/>
+  <page key="architecture" name="Architecture"/>
+  <page key="artifacts" name="Artifacts Summary"/>
+  <page key="background" name="Background"/>
+  <page key="example" name="Example"/>
+  <page key="index" name="Home"/>
+  <page key="mapping" name="Mapping"/>
+  <page deprecated="true" key="profiles" name="Profiles"/>
+  <page key="toc" name="Table of Contents"/>
+</specification>
