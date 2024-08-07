@@ -7,8 +7,8 @@ Alias: HL7IdType = http://terminology.hl7.org/CodeSystem/v2-0203
 Profile:        GeneralEquipmentDevice
 Parent:         Device
 Id:             dicom-general-equipment
-Title:          "Device - DICOM General Equipment"
-Description:    "DICOM General Equipment to Device"
+Title:          "Device - DICOM® General Equipment"
+Description:    "DICOM® General Equipment to Device"
 
 * ^abstract = true
 * insert DICOMSRStructureDefinitionContent
@@ -18,10 +18,10 @@ Description:    "DICOM General Equipment to Device"
 
 Mapping: dicom-sr-for-GeneralEquipmentDevice
 Id: dicom-sr
-Title: "DICOM SR General Equipment"
+Title: "DICOM® SR General Equipment"
 Source: GeneralEquipmentDevice
 Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.5.html#sect_C.7.5.1"
-Description: "The GeneralEquipmentDevice can be extracted from DICOM PS 3.3 Sect C.7.5  General Equipment Module."
+Description: "The GeneralEquipmentDevice can be extracted from DICOM® PS 3.3 Sect C.7.5  General Equipment Module."
 * -> "DICOM PS 3.3 C.7.5.1 (General Equipment)"
 * identifier -> "tag(0018,1002) [Device UID]"
 * displayName -> "tag(0008,1090) [Manufacturer's Model Name]"
@@ -29,7 +29,7 @@ Description: "The GeneralEquipmentDevice can be extracted from DICOM PS 3.3 Sect
 Instance: Example-Device-GeneralEquipment
 InstanceOf: GeneralEquipmentDevice
 Usage: #example
-Description: "An example of the Device resource corresponding to the DICOM General Equipment IE."
+Description: "An example of the Device resource corresponding to the DICOM® General Equipment IE."
 
 * id = "measurement-report-general-equipment"
 

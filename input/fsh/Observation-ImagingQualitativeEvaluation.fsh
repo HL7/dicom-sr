@@ -7,8 +7,8 @@ Alias: HL7IdType = http://terminology.hl7.org/CodeSystem/v2-0203
 Profile:        ImagingQualitativeEvaluation
 Parent:         ImagingObservationProfile
 Id:             imaging-qualitative-evaluation
-Title:          "Observation - DICOM SR Imaging Qualitative Evaluation Mapping to Observation"
-Description:    "DICOM SR Imaging Qualitative Evaluation Mapping to Observation"
+Title:          "Observation - DICOM® SR Imaging Qualitative Evaluation Mapping to Observation"
+Description:    "DICOM® SR Imaging Qualitative Evaluation Mapping to Observation"
 
 * ^abstract = true
 * insert DICOMSRStructureDefinitionContent
@@ -20,7 +20,7 @@ Description:    "DICOM SR Imaging Qualitative Evaluation Mapping to Observation"
 
 Mapping: dicom-sr-for-TID1500MeasurementReportProfile
 Id: dicom-sr-tid-1500
-Title: "DICOM SR TID 1500 Measurement Report"
+Title: "DICOM® SR TID 1500 Measurement Report"
 Source: ImagingQualitativeEvaluation
 Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1500"
 Description: "The Qualitative Evaluation can be extracted from TID 1500 - Measurement Report."
@@ -34,7 +34,7 @@ Description: "The Qualitative Evaluation can be extracted from TID 1500 - Measur
 Instance: Example-Observation-ImagingQualitativeEvaluation-001
 InstanceOf: ImagingQualitativeEvaluation
 Usage: #example
-Description: "Example of Observation representing a DICOM SR Measurement Qualitative Evaluation."
+Description: "Example of Observation representing a DICOM® SR Measurement Qualitative Evaluation."
 
 * id = "qualitative-evaluation-001"
 * subject = Reference(Example-Patient)
@@ -63,7 +63,7 @@ Description: "Example of Observation representing a DICOM SR Measurement Qualita
 Instance: Example-Observation-ImagingQualitativeEvaluation-002
 InstanceOf: ImagingQualitativeEvaluation
 Usage: #example
-Description: "Example of Observation representing a DICOM SR Measurement Qualitative Evaluation."
+Description: "Example of Observation representing a DICOM® SR Measurement Qualitative Evaluation."
 
 * id = "qualitative-evaluation-002"
 * subject = Reference(Example-Patient)

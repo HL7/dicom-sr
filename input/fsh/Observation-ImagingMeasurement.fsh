@@ -7,8 +7,8 @@ Alias: HL7IdType = http://terminology.hl7.org/CodeSystem/v2-0203
 Profile:        ImagingMeasurement
 Parent:         ImagingObservationProfile
 Id:             imaging-measurement
-Title:          "Observation - DICOM SR Imaging Measurement Mapping to Observation"
-Description:    "DICOM SR Imaging Measurement Mapping to Observation"
+Title:          "Observation - DICOM® SR Imaging Measurement Mapping to Observation"
+Description:    "DICOM® SR Imaging Measurement Mapping to Observation"
 
 * ^abstract = true
 * insert DICOMSRStructureDefinitionContent
@@ -25,7 +25,7 @@ Description:    "DICOM SR Imaging Measurement Mapping to Observation"
 
 Mapping: dicom-sr-for-TID300MeasurementProfile
 Id: dicom-sr-tid-300
-Title: "DICOM SR TID 300 Measurement"
+Title: "DICOM® SR TID 300 Measurement"
 Source: ImagingMeasurement
 Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_300"
 Description: "The TID300Measurement can be extracted from TID 300 - Measurement."
@@ -40,7 +40,7 @@ Description: "The TID300Measurement can be extracted from TID 300 - Measurement.
 
 Mapping: dicom-sr-for-TID1419MeasurementProfile
 Id: dicom-sr-tid-1419
-Title: "DICOM SR TID 1419 Measurement"
+Title: "DICOM® SR TID 1419 Measurement"
 Source: ImagingMeasurement
 Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1419"
 Description: "The TID1419Measurement can be extracted from TID 1419 - ROI Measurements."
@@ -56,7 +56,7 @@ Description: "The TID1419Measurement can be extracted from TID 1419 - ROI Measur
 Instance: Example-Observation-ImagingMeasurement-001
 InstanceOf: ImagingMeasurement
 Usage: #example
-Description: "Example of Observation representing a DICOM SR Imaging Measurement."
+Description: "Example of Observation representing a DICOM® SR Imaging Measurement."
 
 * id = "imaging-measurement-001"
 * subject = Reference(Example-Patient)
@@ -84,7 +84,7 @@ Description: "Example of Observation representing a DICOM SR Imaging Measurement
 Instance: Example-Observation-ImagingMeasurement-002
 InstanceOf: ImagingMeasurement
 Usage: #example
-Description: "Example of Observation representing a DICOM SR Imaging Measurement."
+Description: "Example of Observation representing a DICOM® SR Imaging Measurement."
 
 * id = "imaging-measurement-002"
 * subject = Reference(Example-Patient)
@@ -112,7 +112,7 @@ Description: "Example of Observation representing a DICOM SR Imaging Measurement
 Instance: Example-Observation-ImagingMeasurement-003
 InstanceOf: ImagingMeasurement
 Usage: #example
-Description: "Example of Observation representing a DICOM SR Imaging Measurement."
+Description: "Example of Observation representing a DICOM® SR Imaging Measurement."
 
 * id = "imaging-measurement-003"
 * subject = Reference(Example-Patient)

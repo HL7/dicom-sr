@@ -1,9 +1,9 @@
-This chapter describes the mapping between a DICOM SR Measurement Report and FHIR resources.
+This chapter describes the mapping between a DICOM® SR Measurement Report and FHIR resources.
 
 ### DICOM SR Measurement Report Mapping Overview
 
-The mapping between DICOM SR Measurement Report contents and FHIR Resources is split into several sections as follows:
-* [DICOM SR Measurement Report Instance Mapping](#dicom-sr-measurement-report-instance-mapping)
+The mapping between DICOM® SR Measurement Report contents and FHIR Resources is split into several sections as follows:
+* [DICOM® SR Measurement Report Instance Mapping](#dicom-sr-measurement-report-instance-mapping)
 * [Document IE Mapping](#document-ie-mapping)
 * [Imaging Measurements Container Mapping](#imaging-measurements-container-mapping)
 * [Imaging Measurement Group Mapping](#imaging-measurement-group-mapping)
@@ -11,12 +11,12 @@ The mapping between DICOM SR Measurement Report contents and FHIR Resources is s
 * [Imaging Qualitative Evaluation Mapping](#imaging-qualitative-evaluation-mapping)
 * [Derived Imaging Measurement Mapping](#derived-imaging-measurement-mapping)
 
-![DICOM SR Measurement Report Mapping Overview](./dicom_sr_measurement_report_mapping_overview.svg){: width="100%"}
+![DICOM® SR Measurement Report Mapping Overview](./dicom_sr_measurement_report_mapping_overview.svg){: width="100%"}
 
 ### DICOM SR Measurement Report Instance Mapping
 
 
-The DICOM SR Measurement Report instance contains the following information relevant to creating FHIR resources:
+The DICOM® SR Measurement Report instance contains the following information relevant to creating FHIR resources:
 * The Patient IE used to associate created resources with the appropriate Patient
 * The Study ID used to associated created resources with the appropriate ImagingStudy and ServiceRequest
 * The General Equipment IE used to create a FHIR Device resource
@@ -24,7 +24,7 @@ The DICOM SR Measurement Report instance contains the following information rele
 
 *Note:* This implementation guide assumes that Patient, ImagingStudy and ServiceRequest resources already exist in the destination FHIR server. See [Other Resource Relationships](architecture.html#other-resource-relationships).
 
-![DICOM SR Measurement Report Instance Mapping](./dicom_sr_measurement_report_mapping.svg){: width="100%"}
+![DICOM® SR Measurement Report Instance Mapping](./dicom_sr_measurement_report_mapping.svg){: width="100%"}
 
 See also the [DICOM SR IOD to FHIR ConceptMap](ConceptMap-dicom-sr-measurement-report-to-fhir.html).
 

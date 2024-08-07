@@ -1,11 +1,11 @@
 Instance:       DICOM-Document-IE-to-FHIR
 InstanceOf:     ConceptMap
-Title:          "ConceptMap - DICOM Document IE to FHIR Mapping"
+Title:          "ConceptMap - DICOM® Document IE to FHIR Mapping"
 Usage: #definition
 
 * id =  "dicom-document-ie-to-fhir"
 * name = "DICOMDocumentIEToFHIRMapping"
-* description = "Mapping between DICOM Document IE and FHIR Resources"
+* description = "Mapping between DICOM® Document IE and FHIR Resources"
 * status = #active
 * experimental = false
 * contact.telecom.system = #url
@@ -49,7 +49,7 @@ Usage: #definition
     * relationship = #equivalent
     * code = #status
     * display = "status"
-    * comment = "DICOM values shall be converted to lowercase. e.g. 'PRELIMINARY' to 'preliminary'."
+    * comment = "DICOM® values shall be converted to lowercase. e.g. 'PRELIMINARY' to 'preliminary'."
 
 // Participant Sequence (0040,A07A)
 * group.element[2]

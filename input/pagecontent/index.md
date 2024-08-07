@@ -1,4 +1,4 @@
-This Implementation Guide defines the use of FHIR resources to convey measurements, derived measurements and  Qualitative Evaluations extracted from a DICOM SR Measurement Report.
+This Implementation Guide defines the use of FHIR resources to convey measurements, derived measurements and  Qualitative Evaluations extracted from a DICOM® SR Measurement Report.
 
 ### Organization of this implementation guide
 
@@ -26,8 +26,8 @@ This IG is organized into three main sections:
       * [Data Types](architecture.html#supporting-datatype-profiles) - FHIR Data Type Profiles
       * [Extensions](architecture.html#supporting-extensions) - FHIR Extensions
       * [Profile Relationships](architecture.html#profile-relationships) - Relationships between profiled FHIR resources and other standards
-        * [DICOM SR Basics](architecture.html#dicom-sr-basics) - Overview of DICOM SR and terminology
-        * [Relationship to DICOM SR TID 1500 Measurement Report](architecture.html#relationship-to-dicom-sr-tid-1500-measurement-report) - Mapping of content from DICOM SR Measurement Report
+        * [DICOM® SR Basics](architecture.html#dicom-sr-basics) - Overview of DICOM® SR and terminology
+        * [Relationship to DICOM® SR TID 1500 Measurement Report](architecture.html#relationship-to-dicom-sr-tid-1500-measurement-report) - Mapping of content from DICOM SR Measurement Report
           * [Imaging Measurement Group Relationship](architecture.html#imaging-measurement-group-relationship) - Mapping of imaging measurement groups
           * [Derived Imaging Measurements Relationship](architecture.html#derived-imaging-measurements-relationship) - Mapping of derived imaging measurements
           * [Imaging Qualitative Evaluations Relationship](architecture.html#imaging-qualitative-evaluations-relationship) - Mapping of imaging qualitative evaluations

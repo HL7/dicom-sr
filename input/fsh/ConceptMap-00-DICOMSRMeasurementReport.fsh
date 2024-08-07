@@ -1,12 +1,12 @@
 Instance:       DICOM-SR-Measurement-Report-to-FHIR
 InstanceOf:     ConceptMap
 Usage:          #definition
-Title:          "ConceptMap - DICOM SR Measurement Report to FHIR Mapping"
+Title:          "ConceptMap - DICOM® SR Measurement Report to FHIR Mapping"
 
 
 * id =  "dicom-sr-measurement-report-to-fhir"
 * name = "DICOMSRMeasurementReportToFHIRMapping"
-* description = "Mapping between DICOM SR Measurement Report and FHIR Resources"
+* description = "Mapping between DICOM® SR Measurement Report and FHIR Resources"
 * status = #active
 * experimental = false
 * contact[0].telecom[0].system = #url
@@ -31,7 +31,7 @@ Title:          "ConceptMap - DICOM SR Measurement Report to FHIR Mapping"
     * relationship = #equivalent
     * code = #Patient[1]
     * display = "Patient[1]"
-    * comment = "The DICOM SR Patient IE is mapped to a FHIR Patient resource"
+    * comment = "The DICOM® SR Patient IE is mapped to a FHIR Patient resource"
 
 // Study IE Mapping
 * group[1].element[0]
@@ -41,7 +41,7 @@ Title:          "ConceptMap - DICOM SR Measurement Report to FHIR Mapping"
     * relationship = #equivalent
     * code = #ImagingStudy[1]
     * display = "ImagingStudy[1]"
-    * comment = "The DICOM SR Study IE is mapped to a FHIR ImagingStudy resource"
+    * comment = "The DICOM® SR Study IE is mapped to a FHIR ImagingStudy resource"
 * group[1].element[1]
   * code = #DICOM.Study
   * display = "Study IE"
@@ -49,7 +49,7 @@ Title:          "ConceptMap - DICOM SR Measurement Report to FHIR Mapping"
     * relationship = #related-to
     * code = #ServiceRequest[1]
     * display = "ServiceRequest[1]"
-    * comment = "The DICOM SR Study IE is mapped to a FHIR ServiceRequest resource"
+    * comment = "The DICOM® SR Study IE is mapped to a FHIR ServiceRequest resource"
 
 // Equipment IE Mapping
 * group[2].element[0]
@@ -59,7 +59,7 @@ Title:          "ConceptMap - DICOM SR Measurement Report to FHIR Mapping"
     * relationship = #equivalent
     * code = #Device[1]
     * display = "Device[1]"
-    * comment = "The DICOM SR Equipment IE may result in the creation of a new Device resource"
+    * comment = "The DICOM® SR Equipment IE may result in the creation of a new Device resource"
 
 // Document IE Mapping
 * group[3].element[0]

@@ -1,11 +1,11 @@
 Instance:       DICOM-Imaging-Measurement-Group-to-FHIR
 InstanceOf:     ConceptMap
-Title:          "ConceptMap - DICOM Imaging Measurement Group to FHIR Mapping"
+Title:          "ConceptMap - DICOM® Imaging Measurement Group to FHIR Mapping"
 Usage: #definition
 
 * id = "dicom-imaging-measurement-group-to-fhir"
 * name = "DICOMImagingMeasurementGroupToFHIRMapping"
-* description = "Mapping between DICOM Imaging Measurement Group and FHIR Resources"
+* description = "Mapping between DICOM® Imaging Measurement Group and FHIR Resources"
 * status = #active
 * experimental = false
 * contact[0].telecom[0].system = #url
@@ -17,13 +17,13 @@ Usage: #definition
 
 * additionalAttribute[0]
   * code = #IdentifierType
-  * description = "DICOM Controlled Terminology"
+  * description = "DICOM® Controlled Terminology"
   * uri = "http://dicom.nema.org/resources/ontology/DCM"
   * type = #Coding
 
 * additionalAttribute[1]
   * code = #ValueType
-  * description = "DICOM Value Type"
+  * description = "DICOM® Value Type"
   * uri = "http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-value-type"
   * type = #Coding
 
