@@ -1,7 +1,7 @@
 CodeSystem: DicomValueType
 Id: dicom-value-type
 Title: "Value Types -- DICOM SR Content Item Value Types"
-Description: "DICOM SR Content Item Value Types"
+Description: "DICOM® SR Content Item Value Types"
 
 * ^caseSensitive = true
 * ^content = #complete

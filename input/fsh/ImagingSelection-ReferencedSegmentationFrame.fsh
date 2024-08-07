@@ -8,7 +8,7 @@ Profile:        ImagingSelectionReferencedSegmentationFrame
 Parent:         ImagingSelectionObservationImagingSelection
 Id:             referenced-segmentation-frame
 Title:          "Imaging Selection - DICOM SR Referenced Segmentation Frame Mapping"
-Description:    "DICOM SR Referenced Segmentation Frame Mapping to ImagingSelection"
+Description:    "DICOM® SR Referenced Segmentation Frame Mapping to ImagingSelection"
 
 * ^abstract = true
 * insert DICOMSRStructureDefinitionContent

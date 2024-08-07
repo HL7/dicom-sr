@@ -8,7 +8,7 @@ Profile:        AlgorithmIdentification
 Parent:         Device
 Id:             algorithm-identification
 Title:          "Device - DICOM SR TID 4019 Algorithm Identification Mapping"
-Description:    "DICOM SR Algorithm Identification to Device"
+Description:    "DICOM® SR Algorithm Identification to Device"
 
 * ^abstract = true
 * insert DICOMSRStructureDefinitionContent

@@ -8,7 +8,7 @@ Profile:        BodyStructureTrackingIdentifiers
 Parent:         BodyStructure
 Id:             dicom-sr-tracking-identifiers
 Title:          "Body Structure - DICOM SR Observation Tracking Identifier Mapping"
-Description:    "DICOM SR Observation Tracking Identifier Mapping to BodyStructure"
+Description:    "DICOM® SR Observation Tracking Identifier Mapping to BodyStructure"
 
 * ^abstract = true
 * insert DICOMSRStructureDefinitionContent

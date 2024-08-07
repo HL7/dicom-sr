@@ -8,7 +8,7 @@ Profile:        ImagingSelectionRegionInSpace
 Parent:         ImagingSelectionObservationImagingSelection
 Id:             region-in-space
 Title:          "Imaging Selection - DICOM SR Region In Space"
-Description:    "DICOM SR Region In Space Mapping to ImagingSelection"
+Description:    "DICOM® SR Region In Space Mapping to ImagingSelection"
 
 * ^abstract = true
 * insert DICOMSRStructureDefinitionContent

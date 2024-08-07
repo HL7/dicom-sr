@@ -8,7 +8,7 @@ Profile:        ImagingObservationProfile
 Parent:         Observation
 Id:             imaging-observation
 Title:          "Observation - DICOM SR Imaging Observation"
-Description:    "DICOM SR Base Observation for Imaging Measurement Groups, Imaging Measurements and Qualitative Evaluations. Not used directly."
+Description:    "DICOM® SR Base Observation for Imaging Measurement Groups, Imaging Measurements and Qualitative Evaluations. Not used directly."
 
 * ^abstract = true
 * insert DICOMSRStructureDefinitionContent

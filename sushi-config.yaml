@@ -34,7 +34,7 @@ jurisdiction: "http://unstats.un.org/unsd/methods/m49/m49.htm#001"
 license: CC0-1.0
 fhirVersion: 5.0.0
 copyrightYear: 2024+
-releaseLabel: ballot
+releaseLabel: STU1 Ballot
 dependencies:
   fhir.dicom:
     uri: http://fhir.org/packages/fhir.dicom

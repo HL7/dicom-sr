@@ -1,7 +1,7 @@
 Instance: Example-DiagnosticReport-DICOMSRMeasurementReport
 InstanceOf: DiagnosticReport
 Usage: #example
-Description: "An example of a DICOM SR measurement report."
+Description: "An example of a DICOM® SR measurement report."
 
 * id = "dicom-sr-measurement-report"
 * status = #final

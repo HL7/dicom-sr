@@ -8,7 +8,7 @@ Profile:        ImagingSelectionObservationImagingSelection
 Parent:         ImagingSelection
 Id:             observation-imaging-selection
 Title:          "Imaging Selection - DICOM SR Base Imaging Selection"
-Description:    "DICOM SR Base Imaging Selection. Not used directly."
+Description:    "DICOM® SR Base Imaging Selection. Not used directly."
 
 * ^abstract = true
 * insert DICOMSRStructureDefinitionContent

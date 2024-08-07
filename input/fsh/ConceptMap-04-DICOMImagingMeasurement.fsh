@@ -5,7 +5,7 @@ Usage: #definition
 
 * id = "dicom-imaging-measurement-to-fhir"
 * name = "DICOMImagingMeasurementToFHIRMapping"
-* description = "Mapping between DICOM Imaging Measurement and FHIR Resources"
+* description = "Mapping between DICOM® Imaging Measurement and FHIR Resources"
 * status = #active
 * experimental = false
 * contact[0].telecom[0].system = #url

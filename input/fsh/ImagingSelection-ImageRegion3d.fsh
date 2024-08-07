@@ -8,7 +8,7 @@ Profile:        ImagingSelection3dImageRegion
 Parent:         ImagingSelectionObservationImagingSelection
 Id:             image-region-3d
 Title:          "Imaging Selection - DICOM SR Image 3D Region Mapping"
-Description:    "DICOM SR Image 3D Region Mapping to ImagingSelection"
+Description:    "DICOM® SR Image 3D Region Mapping to ImagingSelection"
 
 * ^abstract = true
 * insert DICOMSRStructureDefinitionContent

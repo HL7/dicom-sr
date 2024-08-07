@@ -1,7 +1,7 @@
 CodeSystem: DicomIdentifierType
 Id: dicom-identifier-type
 Title: "Identifiers - DICOM Identifier Type"
-Description: "Identifier types related to DICOM UIDs"
+Description: "Identifier types related to DICOM® UIDs"
 
 * ^caseSensitive = true
 * ^content = #complete

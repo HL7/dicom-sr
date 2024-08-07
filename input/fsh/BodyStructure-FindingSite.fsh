@@ -8,7 +8,7 @@ Profile:        BodyStructureFindingSite
 Parent:         BodyStructure
 Id:             dicom-sr-finding-site
 Title:          "Body Structure - DICOM SR Finding Site Mapping"
-Description:    "DICOM SR Finding Site Mapping to BodyStructure"
+Description:    "DICOM® SR Finding Site Mapping to BodyStructure"
 
 * ^abstract = true
 * insert DICOMSRStructureDefinitionContent

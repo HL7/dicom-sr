@@ -8,7 +8,7 @@ Profile:        DerivedImagingMeasurementProfile
 Parent:         Observation
 Id:             derived-imaging-measurement
 Title:          "Observation - DICOM SR Derived Imaging Measurement Mapping to Observation"
-Description:    "DICOM SR Derived Imaging Measurement Mapping to Observation"
+Description:    "DICOM® SR Derived Imaging Measurement Mapping to Observation"
 
 * ^abstract = true
 * insert DICOMSRStructureDefinitionContent
