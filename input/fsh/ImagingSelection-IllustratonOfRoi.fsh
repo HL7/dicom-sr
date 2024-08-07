@@ -7,7 +7,7 @@ Alias: HL7IdType = http://terminology.hl7.org/CodeSystem/v2-0203
 Profile:        ImagingSelectionIllustrationOfROI
 Parent:         ImagingSelectionObservationImagingSelection
 Id:             illustration-of-roi
-Title:          "Imaging Selection - DICOM® SR Illustration Of ROI Mapping"
+Title:          "Imaging Selection - DICOM SR Illustration Of ROI Mapping"
 Description:    "DICOM® SR Illustration Of ROI Mapping to ImagingSelection"
 
 * ^abstract = true

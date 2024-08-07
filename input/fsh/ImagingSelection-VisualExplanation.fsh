@@ -7,7 +7,7 @@ Alias: HL7IdType = http://terminology.hl7.org/CodeSystem/v2-0203
 Profile:        ImagingSelectionVisualExplanation
 Parent:         ImagingSelectionObservationImagingSelection
 Id:             visual-explanation
-Title:          "Imaging Selection - DICOM® SR Visual Explanation Mapping"
+Title:          "Imaging Selection - DICOM SR Visual Explanation Mapping"
 Description:    "DICOM® SR Visual Explanation Mapping to ImagingSelection"
 
 * ^abstract = true
