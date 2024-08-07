@@ -1,7 +1,7 @@
 Instance:       DICOM-SR-Measurement-Report-to-FHIR
 InstanceOf:     ConceptMap
 Usage:          #definition
-Title:          "ConceptMap - DICOM® SR Measurement Report to FHIR Mapping"
+Title:          "ConceptMap - DICOM SR Measurement Report to FHIR Mapping"
 
 
 * id =  "dicom-sr-measurement-report-to-fhir"

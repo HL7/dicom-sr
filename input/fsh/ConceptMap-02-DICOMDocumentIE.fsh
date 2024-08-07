@@ -1,6 +1,6 @@
 Instance:       DICOM-Document-IE-to-FHIR
 InstanceOf:     ConceptMap
-Title:          "ConceptMap - DICOM® Document IE to FHIR Mapping"
+Title:          "ConceptMap - DICOM Document IE to FHIR Mapping"
 Usage: #definition
 
 * id =  "dicom-document-ie-to-fhir"

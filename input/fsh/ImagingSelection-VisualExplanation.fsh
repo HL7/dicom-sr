@@ -21,7 +21,7 @@ Description:    "DICOM® SR Visual Explanation Mapping to ImagingSelection"
 
 Mapping: dicom-tid-1410-for-visualExplanation
 Id: dicom-tid-1410-visual-explanation
-Title: "DICOM® TID 1410 Visual Explanation"
+Title: "DICOM TID 1410 Visual Explanation"
 Source: ImagingSelectionVisualExplanation
 Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1410"
 Description: "The ImagingSelectionVisualExplanation can be extracted from TID 1410.EV(130401, DCM, Visual Explanation)."
@@ -31,7 +31,7 @@ Description: "The ImagingSelectionVisualExplanation can be extracted from TID 14
 
 Mapping: dicom-tid-1411-for-visualExplanation
 Id: dicom-tid-1411-visual-explanation
-Title: "DICOM® TID 1411 Visual Explanation"
+Title: "DICOM TID 1411 Visual Explanation"
 Source: ImagingSelectionVisualExplanation
 Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1411"
 Description: "The ImagingSelectionVisualExplanation can be extracted from TID 1411.EV(130401, DCM, Visual Explanation)."

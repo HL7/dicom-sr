@@ -1,6 +1,6 @@
 Instance:       DICOM-Imaging-Measurements-Container-to-FHIR
 InstanceOf:     ConceptMap
-Title:          "ConceptMap - DICOM® Imaging Measurements Container to FHIR Mapping"
+Title:          "ConceptMap - DICOM Imaging Measurements Container to FHIR Mapping"
 Usage: #definition
 
 * id = "dicom-imaging-measurements-container-to-fhir"
