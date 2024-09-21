@@ -13,7 +13,7 @@ Profile:        ImagingMeasurementGroup
 Parent:         ImagingObservationProfile
 Id:             imaging-measurement-group
 Title:          "Observation - DICOM SR Imaging Measurement Group Mapping"
-Description:    "DICOM® SR TID Imaging Measurement Group Mapping to Observation"
+Description:    "DICOM® SR Imaging Measurement Group Mapping to Observation"
 
 * ^abstract = true
 * insert DICOMSRStructureDefinitionContent
