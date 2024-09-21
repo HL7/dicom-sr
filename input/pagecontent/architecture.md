@@ -16,7 +16,11 @@ The mapping of the core DICOM SR measurement groups, measurements and qualitativ
     
 * [Derived Imaging Measurement](StructureDefinition-derived-imaging-measurement.html) profiles the Observation resource representing the DICOM SR derived measurement template [DTID 1420 “Measurements Derived From Multiple ROI Measurements”](https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1420)
 
-* [Imaging Qualitative Evaluation](StructureDefinition-imaging-qualitative-evaluation.html) profiles the Observation resource representing qualitative evaluation content items
+* [Imaging Qualitative Evaluation](StructureDefinition-imaging-qualitative-evaluation.html) profiles the Observation resource representing qualitative evaluation content items extracted from DICOM SR measurement templates:
+    * [DTID 1500 “Measurement Report”](https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1500)
+        * Children of Content Item with Concept Name UMLS#C0034375 "Qualitative Evaluations" 
+    * [DTID 1501 “Measurement and Qualitative Evaluation Group”](https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1501)
+        * Select `CODE` and `TEXT` children of Content Item with Concept Name DCM#125007 "Measurement Group"
 
 The above resource profiles depend on the following resource profiles:
 ##### ImagingSelection
@@ -67,7 +71,7 @@ All mapped content items are children of the following `CONTAINER` content items
 | ----------------- | --------------------- | ----- |
 | DCM#126010 "Imaging Measurements" | [Imaging Measurement Group](StructureDefinition-imaging-measurement-group.html) | See [Imaging Measurement Group relationship](#imaging-measurement-group-relationship) | 
 | DCM#126011 "Derived Imaging Measurements" | [Derived Imaging Measurements](StructureDefinition-derived-imaging-measurement.html) | See [Derived Imaging Measurements relationship](#derived-imaging-measurements-relationship) |
-| UMLS#C0034375  "Qualitative Evaluations" | [Imaging Qualitative Evaluation](StructureDefinition-imaging-qualitative-evaluation.html) | See [Imaging Qualitative Evaluations relationship](#imaging-qualitative-evaluations-relationship) |
+| UMLS#C0034375 "Qualitative Evaluations" | [Imaging Qualitative Evaluation](StructureDefinition-imaging-qualitative-evaluation.html) | See [Imaging Qualitative Evaluations relationship](#imaging-qualitative-evaluations-relationship) |
 
 e.g. the children of the `CONTAINER` with a Concept Name of DCM#126010 "Imaging Measurements" are mapped to [Measurement Group](StructureDefinition-imaging-measurement-group.html) Observations.
 
