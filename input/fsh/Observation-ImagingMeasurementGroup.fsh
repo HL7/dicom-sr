@@ -53,6 +53,7 @@ Description: "The TID1410PlanarROIMeasurementGroup can be extracted from TID 141
 * issued -> "tag(0040,A032) [Observation DateTime]"
 * method -> "TID1501.EV(370129005, SCT, Measurement Method)"
 * interpretation -> "TID1410.$QualType, TID.1410QualModType$"
+* device -> "TID4019(Algorithm Identification)"
 
 Mapping: dicom-sr-for-TID1411VolumetricROIMeasurementGroup
 Id: dicom-sr-tid-1411
@@ -68,6 +69,7 @@ Description: "The TID1411PlanarROIMeasurementGroup can be extracted from TID 141
 * issued -> "tag(0040,A032) [Observation DateTime]"
 * method -> "TID1501.EV(370129005, SCT, Measurement Method)"
 * interpretation -> "TID1411.$QualType, TID.1411QualModType$"
+* device -> "TID4019(Algorithm Identification)"
 
 Mapping: dicom-sr-for-TID1501PlanarROIMeasurementGroupProfile
 Id: dicom-sr-tid-1501
@@ -83,6 +85,7 @@ Description: "The TID1501PlanarROIMeasurementGroup can be extracted from TID 150
 * issued -> "tag(0040,A032) [Observation DateTime]"
 * method -> "TID1501.EV(370129005, SCT, Measurement Method)"
 * interpretation -> "TID1501.$QualType, TID.1501QualModType$"
+* device -> "TID4019(Algorithm Identification)"
 
 Instance: Example-Observation-ImagingMeasurementGroup
 InstanceOf: ImagingMeasurementGroup

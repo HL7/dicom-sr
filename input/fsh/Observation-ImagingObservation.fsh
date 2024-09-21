@@ -23,7 +23,7 @@ Description:    "DICOM® SR Base Observation for Imaging Measurement Groups, Ima
 * identifier[observationUID].type = DCMIdType#observation-uid "Observation UID"
 * identifier[observationUID].system = "urn:dicom:uid"
 * identifier[observationUID].value 1..1
-* identifier[observationUID] ^short = "The unique identifier for the measurement group."
+* identifier[observationUID] ^short = "The unique identifier for the observation."
 
 // Associated ServiceRequest
 * basedOn ^slicing.discriminator.type = #type

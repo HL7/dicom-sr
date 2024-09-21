@@ -13,9 +13,6 @@ Description:    "DICOM® SR Imaging Measurement Mapping to Observation"
 * ^abstract = true
 * insert DICOMSRStructureDefinitionContent
 
-* category 1..* MS
-* category = DCM#125007 "Measurement Group"
-
 * referenceRange MS
 
 * bodyStructure MS
@@ -35,7 +32,7 @@ Description: "The TID300Measurement can be extracted from TID 300 - Measurement.
 * code -> "TID300.$Measurement.tag(0040,A043) [Concept Name Code Sequence]"
 * issued -> "tag(0040,A032) [Observation DateTime]"
 * method -> "TID1501.EV(370129005, SCT, Measurement Method)"
-* device -> "TID1501.EV(121071, DCM, Finding)"
+* device -> "TID4019(Algorithm Identification)"
 * valueQuantity -> "TID300.$Measurement.tag(0040,A300) [Measured Value Sequence]"
 
 Mapping: dicom-sr-for-TID1419MeasurementProfile
@@ -50,7 +47,7 @@ Description: "The TID1419Measurement can be extracted from TID 1419 - ROI Measur
 * code -> "TID1419.$Measurement.tag(0040,A043) [Concept Name Code Sequence]"
 * issued -> "tag(0040,A032) [Observation DateTime]"
 * method -> "TID1501.EV(370129005, SCT, Measurement Method)"
-* device -> "TID1501.EV(121071, DCM, Finding)"
+* device -> "TID4019(Algorithm Identification)"
 * valueQuantity -> "TID1419.$Measurement.tag(0040,A300) [Measured Value Sequence]"
 
 Instance: Example-Observation-ImagingMeasurement-001

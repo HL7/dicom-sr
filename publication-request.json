@@ -2,13 +2,9 @@
   "package-id" : "hl7.fhir.uv.dicom-sr",
   "version" : "1.0.0",
   "path" : "http://hl7.org/fhir/uv/dicom-sr/STU1",
-  "milestone" : "true",
+  "mode": "milestone",
   "status" : "trial-use",
   "sequence" : "STU1",
   "desc" : "The STU 1 publication for the DICOM® SR FHIR Implementation Guide",
-  "first" : true,
-  "title" : "DICOM® SR to FHIR Resource Mapping IG",
-  "ci-build" : "https://build.fhir.org/ig/HL7/dicom-sr",
-  "category" : "Imaging",
-  "introduction" : "DICOM® SR is widely adopted by Imaging-based devices and IT systems. Non-imaging based Healthcare IT Systems, generally, do not support DICOM® SR. Non-imaging healthcare systems support HL7 standards, such as FHIR. Bridging the two standards for clinical imaging observations becomes necessary for interoperability between these type of systems.\n\nThe outcome of this project will be one or more implementation guides with defined sets of mappings between SR content and FHIR resources.\n\nThe mapping will not be bi-directional -- a complete DICOM® SR is not expected to be able to be re-constructed from a set of FHIR resources.\n\nThe first phase will focus on mapping Imaging observations to FHIR Observations and related resources (Patient, Device, etc.) and the DICOM® SR template TID-1500 (Measurement Report)."
+  "first" : false
 }
