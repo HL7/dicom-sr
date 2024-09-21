@@ -37,6 +37,7 @@ copyrightYear: 2024+
 releaseLabel: STU1 Ballot
 dependencies:
   fhir.dicom:
+    id: fhir.dicom
     uri: http://fhir.org/packages/fhir.dicom
     version: 2024.2.20240331
 parameters:
