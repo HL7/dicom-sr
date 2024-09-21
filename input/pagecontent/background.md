@@ -40,7 +40,6 @@ This Implementation Guide is intended for
 
 
 ### Use cases
-Two use cases were identified.
 
 #### Use case 1: Extracting imaging results for use in reporting
 ![Use Case 1](./dicom_sr_report_extraction.svg){: width="100%"}
