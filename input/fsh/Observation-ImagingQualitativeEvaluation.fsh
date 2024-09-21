@@ -10,7 +10,7 @@ Id:             imaging-qualitative-evaluation
 Title:          "Observation - DICOM SR Imaging Qualitative Evaluation Mapping to Observation"
 Description:    "DICOM® SR Imaging Qualitative Evaluation Mapping to Observation"
 
-* ^abstract = true
+* ^abstract = false
 * insert DICOMSRStructureDefinitionContent
 
 * category 1..* MS

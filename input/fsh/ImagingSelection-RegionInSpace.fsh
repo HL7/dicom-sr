@@ -10,7 +10,7 @@ Id:             region-in-space
 Title:          "Imaging Selection - DICOM SR Region In Space"
 Description:    "DICOM® SR Region In Space Mapping to ImagingSelection"
 
-* ^abstract = true
+* ^abstract = false
 * insert DICOMSRStructureDefinitionContent
 
 * code MS

@@ -10,7 +10,7 @@ Id:             dicom-sr-finding-site
 Title:          "Body Structure - DICOM SR Finding Site Mapping"
 Description:    "DICOM® SR Finding Site Mapping to BodyStructure"
 
-* ^abstract = true
+* ^abstract = false
 * insert DICOMSRStructureDefinitionContent
 * includedStructure.laterality MS
 

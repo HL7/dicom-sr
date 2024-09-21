@@ -10,7 +10,7 @@ Id:             real-world-value-map
 Title:          "Imaging Selection - DICOM SR Real World Value Map"
 Description:    "DICOM® SR Real World Value Map Mapping to ImagingSelection"
 
-* ^abstract = true
+* ^abstract = false
 * insert DICOMSRStructureDefinitionContent
 
 * code MS

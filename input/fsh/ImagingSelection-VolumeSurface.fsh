@@ -10,7 +10,7 @@ Id:             volume-surface
 Title:          "Imaging Selection - DICOM SR Image Volume Surface Mapping"
 Description:    "DICOM® SR Image Volume Surface Mapping to ImagingSelection"
 
-* ^abstract = true
+* ^abstract = false
 * insert DICOMSRStructureDefinitionContent
 
 * code MS

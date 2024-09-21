@@ -10,7 +10,7 @@ Id:             visual-explanation
 Title:          "Imaging Selection - DICOM SR Visual Explanation Mapping"
 Description:    "DICOM® SR Visual Explanation Mapping to ImagingSelection"
 
-* ^abstract = true
+* ^abstract = false
 * insert DICOMSRStructureDefinitionContent
 
 // Associated ServiceRequest

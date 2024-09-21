@@ -10,7 +10,7 @@ Id:             imaging-measurement
 Title:          "Observation - DICOM SR Imaging Measurement Mapping to Observation"
 Description:    "DICOM® SR Imaging Measurement Mapping to Observation"
 
-* ^abstract = true
+* ^abstract = false
 * insert DICOMSRStructureDefinitionContent
 
 * referenceRange MS

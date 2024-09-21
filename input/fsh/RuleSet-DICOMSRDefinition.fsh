@@ -1,9 +1,9 @@
 // Define a rule set for commonly used rules for definition resources using other Sushi features
 RuleSet: DICOMSRStructureDefinitionContent
 
-* ^status = #draft      // draft until final published
-* ^experimental = true  // true until ready for pilot, then false
-* ^version = "0.1.0"    // Follow IG Versioning rules
+* ^status = #active
+* ^experimental = false
+* ^version = "1.0.0"
 * ^publisher = "HL7 International"
 * ^contact[0].name = "HL7 International / Imaging Integration"
 * ^contact[0].telecom[0].system = #url

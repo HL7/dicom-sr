@@ -10,7 +10,7 @@ Id:             derived-imaging-measurement
 Title:          "Observation - DICOM SR Derived Imaging Measurement Mapping to Observation"
 Description:    "DICOM® SR Derived Imaging Measurement Mapping to Observation"
 
-* ^abstract = true
+* ^abstract = false
 * insert DICOMSRStructureDefinitionContent
 
 * identifier ^slicing.discriminator.type = #value

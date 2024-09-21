@@ -10,7 +10,7 @@ Id:             dicom-general-equipment
 Title:          "Device - DICOM General Equipment"
 Description:    "DICOM® General Equipment to Device"
 
-* ^abstract = true
+* ^abstract = false
 * insert DICOMSRStructureDefinitionContent
 
 * identifier 0..1 MS

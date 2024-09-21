@@ -10,7 +10,7 @@ Id:             image-region-2d
 Title:          "Imaging Selection - DICOM SR 2D Image Region Mapping"
 Description:    "DICOM® SR Image 2D Region Mapping to ImagingSelection"
 
-* ^abstract = true
+* ^abstract = false
 * insert DICOMSRStructureDefinitionContent
 
 * code MS

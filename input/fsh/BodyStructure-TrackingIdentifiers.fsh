@@ -10,7 +10,7 @@ Id:             dicom-sr-tracking-identifiers
 Title:          "Body Structure - DICOM SR Observation Tracking Identifier Mapping"
 Description:    "DICOM® SR Observation Tracking Identifier Mapping to BodyStructure"
 
-* ^abstract = true
+* ^abstract = false
 * insert DICOMSRStructureDefinitionContent
 
 * identifier ^slicing.discriminator.type = #value

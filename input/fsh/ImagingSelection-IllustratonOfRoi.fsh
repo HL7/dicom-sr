@@ -10,7 +10,7 @@ Id:             illustration-of-roi
 Title:          "Imaging Selection - DICOM SR Illustration Of ROI Mapping"
 Description:    "DICOM® SR Illustration Of ROI Mapping to ImagingSelection"
 
-* ^abstract = true
+* ^abstract = false
 * insert DICOMSRStructureDefinitionContent
 
 * code MS

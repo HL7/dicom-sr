@@ -10,7 +10,7 @@ Id:             referenced-segment
 Title:          "Imaging Selection - DICOM SR Referenced Segment Mapping"
 Description:    "DICOM® SR Referenced Segment Mapping to ImagingSelection"
 
-* ^abstract = true
+* ^abstract = false
 * insert DICOMSRStructureDefinitionContent
 
 * code MS

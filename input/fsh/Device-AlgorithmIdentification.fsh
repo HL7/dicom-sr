@@ -10,7 +10,7 @@ Id:             algorithm-identification
 Title:          "Device - DICOM SR TID 4019 Algorithm Identification Mapping"
 Description:    "DICOM® SR Algorithm Identification to Device"
 
-* ^abstract = true
+* ^abstract = false
 * insert DICOMSRStructureDefinitionContent
 
 * displayName 0..1 MS
