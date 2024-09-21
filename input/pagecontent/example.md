@@ -46,7 +46,7 @@ The source DICOM SR Measurement Report is in DICOM JSON format. See the [DICOM P
 </tr>
 </table>
 
-1. Search for FHIR Patient with identifier `testhostpital.com|PID-11235`
+1. Search for FHIR Patient with identifier `testhospital.org|PID-11235`
     1. If a result is found, use the found `Patient` resource as the `subject` for all created resources
     2. If a result is _not_ found, use a logical reference to the Patient ID from DICOM as the `subject` for all created resources
 
@@ -103,7 +103,7 @@ See [Example Patient](Patient-measurement-report-patient.html).
 </tr>
 </table>
 
-1. Search for FHIR ServiceRequest with identifier `radiology.testhostpital.com|ACSN-235813`
+1. Search for FHIR ServiceRequest with identifier `radiology.testhospital.org|ACSN-235813`
     1. If a result is found, use the found `ServiceRequest` resource as the `basedOn` value for all created `Observation` resources
     2. If a result is _not_ found, use a logical reference to the Accession Number from DICOM as the `basedOn` value for all created `Observation` resources
 
@@ -152,8 +152,8 @@ See [Example ServiceRequest](ServiceRequest-measurement-report-service-request.h
 </table>
 
 1. Search for FHIR ImagingStudy with identifier `urn:dicom:uid|urn:oid:1.2.840.113747.20080222.83311413144566317081790268995`
-    1. If a result is found, use the found `ImagingStudy` resource as the `derivedFrom` value for all created `Observation` and `ImagingSelection` resources\
-    2. If a result is _not_ found, use a logical reference to the Study Instance UID ID from DICOM as the `subject` for all created `Observation` and `ImagingSelection` resources
+    1. If a result is found, use the found `ImagingStudy` resource as the `derivedFrom` value for all created `Observation` and `ImagingSelection` resources
+    2. If a result is _not_ found, use a logical reference to the Study Instance UID ID from DICOM as the `derivedFrom` value for all created `Observation` and `ImagingSelection` resources
 
 See [Example ImagingStudy](ImagingStudy-measurement-report-imaging-study.html).
 
