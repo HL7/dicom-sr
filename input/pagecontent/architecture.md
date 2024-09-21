@@ -117,7 +117,7 @@ The DICOM SR General Equipment Module attributes are mapped to an [General Equip
 
 If an [Imaging Measurement Group](StructureDefinition-imaging-measurement-group.html), [Imaging Measurement](StructureDefinition-imaging-measurement.html) or [Imaging Qualitative Evaluation](StructureDefinition-imaging-qualitative-evaluation.html) has a child with Concept Name DCM#111001 "Algorithm Name" then it is mapped to an [Algorithm Identification](StructureDefinition-algorithm-identification.html) Device.
 
-All algorithm devices will populate use the [Equipment](StructureDefinition-dicom-general-equipment.html) Device to populate the `parent` element.
+All algorithm devices will use the [General Equipment](StructureDefinition-dicom-general-equipment.html) Device to populate the `parent` element.
 
 If an [Imaging Measurement Group](StructureDefinition-imaging-measurement-group.html), [Imaging Measurement](StructureDefinition-imaging-measurement.html) or [Imaging Qualitative Evaluation](StructureDefinition-imaging-qualitative-evaluation.html) does not have a defined device then the `device` element references the [Equipment](StructureDefinition-dicom-general-equipment.html) Device.
 
