@@ -174,7 +174,9 @@ See [Example ImagingStudy](ImagingStudy-measurement-report-imaging-study.html).
 <td>
 <pre>
 {
-  "0020000E": { "vr": "UI", "Value": [ "1.2.840.113747.20080222.83311413144566317081790268995" ] }
+  "00080070": { "vr": "LO", "Value": [ "Example Device Manufacturer" ] },
+  "001081090": { "vr": "LO", "Value": [ "Example Imaging Measurement Device" ] },
+  "00181002": { "vr": "UI", "Value": [ "1.2.840.113747.20080222.83311413144566317081790268995.8888" ] }
 }
 </pre>
 </td>
@@ -182,16 +184,19 @@ See [Example ImagingStudy](ImagingStudy-measurement-report-imaging-study.html).
 <pre>
 {
   "resourceType" : "Device",
-  "id" : "device-001",
-  "identifier": { 
-    "type": {
+  "id" : "measurement-report-general-equipment",
+  "identifier" : [{
+    "type" : {
       "coding" : [{
         "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
-        "code" : "UDI" }]},
-    "system": "urn:dicom:uid",
-    "value": "1.2.840.113747.20080222.83311413144566317081790268995.999",
-  },
-  "displayName": "Example Imaging Measurement Device"
+        "code" : "UDI"
+      }]
+    },
+    "system" : "urn:dicom:uid",
+    "value" : "1.2.840.113747.20080222.83311413144566317081790268995.8888"
+  }],
+  "displayName" : "Example Imaging Measurement Device",
+  "manufacturer" : "Example Device Manufacturer"
 }
 </pre>
 </td>
