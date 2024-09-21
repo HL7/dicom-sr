@@ -113,7 +113,7 @@ A FHIR Observation can only have a single `device` value. However, a DICOM SR ca
 * The equipment that created the SR
 * An algorithm used to create the Observation
   
-The DICOM SR General Equipment Module attributes are mapped to an [Equipment](StructureDefinition-dicom-general-equipment.html) Device.
+The DICOM SR General Equipment Module attributes are mapped to an [General Equipment](StructureDefinition-dicom-general-equipment.html) Device.
 
 If an [Imaging Measurement Group](StructureDefinition-imaging-measurement-group.html), [Imaging Measurement](StructureDefinition-imaging-measurement.html) or [Imaging Qualitative Evaluation](StructureDefinition-imaging-qualitative-evaluation.html) has a child with Concept Name DCM#111001 "Algorithm Name" then it is mapped to an [Algorithm Identification](StructureDefinition-algorithm-identification.html) Device.
 
