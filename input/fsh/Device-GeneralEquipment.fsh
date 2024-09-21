@@ -7,8 +7,8 @@ Alias: HL7IdType = http://terminology.hl7.org/CodeSystem/v2-0203
 Profile:        GeneralEquipmentDevice
 Parent:         Device
 Id:             dicom-general-equipment
-Title:          "Device - DICOM General Equipment"
-Description:    "DICOM® General Equipment to Device"
+Title:          "Device - DICOM General Equipment Mapping"
+Description:    "DICOM® General Equipment to Device Mapping"
 
 * ^abstract = false
 * insert DICOMSRStructureDefinitionContent

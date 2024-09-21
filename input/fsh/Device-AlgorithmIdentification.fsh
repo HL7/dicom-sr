@@ -7,7 +7,7 @@ Alias: HL7IdType = http://terminology.hl7.org/CodeSystem/v2-0203
 Profile:        AlgorithmIdentification
 Parent:         Device
 Id:             algorithm-identification
-Title:          "Device - DICOM SR TID 4019 Algorithm Identification Mapping"
+Title:          "Device - DICOM SR Algorithm Identification Mapping"
 Description:    "DICOM® SR Algorithm Identification to Device"
 
 * ^abstract = false
@@ -21,7 +21,7 @@ Description:    "DICOM® SR Algorithm Identification to Device"
 
 Mapping: dicom-sr-for-AlgorithmIdentification
 Id: dicom-sr
-Title: "DICOM SR TID 4019 Algorithm Identification"
+Title: "DICOM SR Algorithm Identification"
 Source: AlgorithmIdentification
 Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_4019"
 Description: "The TID4019AlgorithmIdentification can be extracted from TID 4019 - Algorithm Identification."
