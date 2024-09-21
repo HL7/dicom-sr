@@ -23,7 +23,7 @@ DICOM® SR is widely adopted by Imaging-based devices and IT systems. Non-imagin
 
 The standards for recording clinical observations, DICOM® SR and HL7 FHIR Observation resource are bridged by this IG by the transformation of the DICOM SR attributes to the HL7 FHIR Observation Resource.
 
-DICOM SR defines a multitude of templates for capturing Diagnostic imaging Observations.  The input for this IG is limited to the DICOM SR template TID-1500 (Measurement Report). The mapping is limited the content within the tree structure.
+DICOM SR defines a multitude of templates for capturing Diagnostic imaging Observations. The input for this IG is limited to the DICOM SR template TID-1500 (Measurement Report).
 
 The transformation described is one direction. It may not be possible to reconstruct a complete DICOM SR from a set of FHIR resources created based on this IG.
 
