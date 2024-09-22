@@ -20,7 +20,7 @@ object "Device - EquipmentDevice" as equipmentDevice {
     displayName = Manufacturer Model Name
 }
 
-map "Document IE Mapping" as documentIEMapping {
+map "[[mapping.html#document-ie-mapping Document IE Mapping]]" as documentIEMapping {
     subject => Patient
     partOf => ImagingStudy
     basedOn => ServiceRequest

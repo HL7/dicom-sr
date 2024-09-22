@@ -1,7 +1,7 @@
 @startuml dicom_sr_document_ie_mapping
 left to right direction
 
-map "Inputs from DICOM SR Measurement Report Instance Mapping" as inputs {
+map "[[mapping.html#dicom-sr-measurement-report-instance-mapping Inputs from DICOM SR Measurement Report Instance Mapping]]" as inputs {
     subject => Patient
     partOf => ImagingStudy
     basedOn => ServiceRequest
@@ -18,7 +18,7 @@ package "Document IE" {
     }
 }
 
-map "Imaging Measurements Container Mapping" as imagingMeasurementsMapping {
+map "[[mapping.html#imaging-measurements-container-mapping Imaging Measurements Container Mapping]]" as imagingMeasurementsMapping {
     subject => Patient
     partOf => ImagingStudy
     basedOn => ServiceRequest

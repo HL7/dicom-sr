@@ -1,6 +1,6 @@
 @startuml imaging_measurement_mapping
 
-map "Inputs from Imaging Measurements Group Mapping" as inputs {
+map "[[mapping.html#imaging-measurement-group-mapping Inputs from Imaging Measurements Group Mapping]]" as inputs {
    subject => Patient
    partOf => ImagingStudy
    basedOn => ServiceRequest
