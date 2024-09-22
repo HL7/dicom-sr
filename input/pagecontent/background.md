@@ -42,11 +42,17 @@ This Implementation Guide is intended for
 ### Use cases
 
 #### Use case 1: Extracting imaging results for use in reporting
-![Use Case 1](./dicom_sr_report_extraction.svg){: width="100%"}
-
+<figure>
+  {% include dicom_sr_report_extraction.svg %}
+  <figcaption><b>Figure: Use Case 1 Overview</b></figcaption>
+  <p></p>
+</figure>
 #### Use case 2: Extracting imaging results for FHIRcast content sharing
-![Use Case 2](./fhircast_content_sharing.svg){: width="100%"}
-
+<figure>
+  {% include fhircast_content_sharing.svg %}
+  <figcaption><b>Figure: Use Case 2 Overview</b></figcaption>
+  <p></p>
+</figure>
 ### Excluded use cases
 The following use cases are not covered by this Implementation Guide:
 * DICOM SR templates other than TID1500

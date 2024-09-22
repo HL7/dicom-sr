@@ -75,8 +75,11 @@ All mapped content items are children of the following `CONTAINER` content items
 
 e.g. the children of the `CONTAINER` with a Concept Name of DCM#126010 "Imaging Measurements" are mapped to [Measurement Group](StructureDefinition-imaging-measurement-group.html) Observations.
 
-![TID 1500 Measurement Report and its children](./tid_1500_measurement_report.svg){: width="100%"}
-
+<figure>
+  {% include tid_1500_measurement_report.svg %}
+  <figcaption><b>Figure: TID 1500 Measurement Report and its children Overview</b></figcaption>
+  <p></p>
+</figure>
 
 ###### Imaging Measurement Group Relationship
 An Imaging Measurement Group `CONTAINER` contains 0-n `NUM` content items representing numerical measurements. Each of these is mapped to an [Imaging Measurement](StructureDefinition-imaging-measurement.html) Observation.
@@ -125,8 +128,11 @@ All algorithm devices will use the [General Equipment](StructureDefinition-dicom
 
 If an [Imaging Measurement Group](StructureDefinition-imaging-measurement-group.html), [Imaging Measurement](StructureDefinition-imaging-measurement.html) or [Imaging Qualitative Evaluation](StructureDefinition-imaging-qualitative-evaluation.html) does not have a defined device then the `device` element references the [Equipment](StructureDefinition-dicom-general-equipment.html) Device.
 
-![DICOM SR Device relationships](./dicom_sr_device.svg){: width="100%"}
-
+<figure>
+  {% include dicom_sr_device.svg %}
+  <figcaption><b>Figure: DICOM SR Device relationships Overview</b></figcaption>
+  <p></p>
+</figure>
 e.g. 
 * If an Imaging Qualitative Evaluation is part of an Imaging Measurement Group:
   * If both have a defined Algorithm Identification Device, both devices will be created and each will have the Equipment Device as its parent.
