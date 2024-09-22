@@ -21,13 +21,13 @@ package "DICOM SR Measurement Report" as measurementReport {
     }
 }
 
-component "DICOM SR Measurement Report Instance Mapping" as measurementReportInstanceMapping
-component "Document IE Mapping" as documentIEMapping
-component "Imaging Measurements Container Mapping" as imagingMeasurementsContainerMapping
-component "Imaging Measurements Group Mapping" as imagingMeasurementGroupMapping
-component "Imaging Measurement Mapping" as imagingMeasurementMapping
-component "Qualitative Evaluation Mapping" as qualitativeEvaluationMapping
-component "Derived Imaging Measurements Mapping" as derivedImagingMeasurementsMapping
+component "[[mapping.html#dicom-sr-measurement-report-instance-mapping DICOM SR Measurement Report Instance Mapping]]" as measurementReportInstanceMapping
+component "[[mapping.html#document-ie-mapping Document IE Mapping]]" as documentIEMapping
+component "[[mapping.html#imaging-measurements-container-mapping Imaging Measurements Container Mapping]]" as imagingMeasurementsContainerMapping
+component "[[mapping.html#imaging-measurement-group-mapping Imaging Measurements Group Mapping]]" as imagingMeasurementGroupMapping
+component "[[mapping.html#imaging-measurement-mapping Imaging Measurement Mapping]]" as imagingMeasurementMapping
+component "[[mapping.html#imaging-qualitative-evaluation-mapping Qualitative Evaluation Mapping]]" as qualitativeEvaluationMapping
+component "[[mapping.html#derived-imaging-measurement-mapping Derived Imaging Measurements Mapping]]" as derivedImagingMeasurementsMapping
 
 measurementReport --> measurementReportInstanceMapping: Map contents of Measurement Report Instance
 documentIE --> documentIEMapping: Map contents of Document IE
