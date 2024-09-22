@@ -1,0 +1,71 @@
+@startuml imaging_selection_profiles
+
+Object "TID 1410" as tid_1410
+tid_1410 : Planar ROI
+Object "TID 1411" as tid_1411
+tid_1411 : Volumetric ROI
+Object "TID 1501" as tid_1501
+tid_1501 : Measurement and QE Group
+
+Object "Image Region 2D" as image_region_2d
+image_region_2d : VT = SCOORD
+
+Object "Referenced Segmentation Frame" as referenced_segmentation_frame
+referenced_segmentation_frame : VT = IMAGE
+
+Object "Image Region 3D" as image_region_3d
+image_region_3d : VT = SCOORD3D
+
+Object "Region in Space" as region_in_space
+region_in_space : VT = COMPOSITE
+
+Object "Illustration of ROI" as illustration_of_roi
+illustration_of_roi : VT = IMAGE
+
+Object "Visual Explanation" as visual_explanation
+visual_explanation : VT = IMAGE
+
+Object "Real World Value Map" as real_world_value_map
+real_world_value_map : VT = COMPOSITE
+
+Object "Referenced Segment" as referenced_segment
+referenced_segment : VT = IMAGE
+
+Object "Volume Surface" as volume_surface
+volume_surface : VT = SCOORD3D
+
+Object "Image Source" as image_source
+image_source : VT = IMAGE
+
+Object "Source Image for Segmentation" as source_image_for_segmentation
+source_image_for_segmentation : VT = IMAGE
+
+Object "Source Series for Segmentation" as source_series_for_segmentation
+source_series_for_segmentation : VT = UIDREF
+
+tid_1410 -- image_region_2d: XOR
+tid_1410 -- referenced_segmentation_frame: XOR
+referenced_segmentation_frame -- source_image_for_segmentation
+tid_1410 -- image_region_3d: XOR
+tid_1410 -- region_in_space: XOR
+tid_1410 -- illustration_of_roi
+tid_1410 -- visual_explanation
+tid_1410 -- real_world_value_map
+
+tid_1411 -- image_region_2d: XOR
+tid_1411 -- referenced_segment: XOR
+referenced_segment -- source_series_for_segmentation: XOR
+referenced_segment -- source_image_for_segmentation: XOR
+tid_1411 -- volume_surface: XOR
+volume_surface -- source_series_for_segmentation: XOR
+volume_surface -- source_image_for_segmentation: XOR
+tid_1411 -- region_in_space: XOR
+tid_1411 -- illustration_of_roi
+tid_1411 -- visual_explanation
+tid_1411 -- real_world_value_map
+
+tid_1501 -- image_source
+tid_1501 -- image_region_2d
+tid_1501 -- image_region_3d
+
+@enduml

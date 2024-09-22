@@ -11,10 +11,13 @@ The mapping between DICOM® SR Measurement Report contents and FHIR Resources is
 * [Imaging Qualitative Evaluation Mapping](#imaging-qualitative-evaluation-mapping)
 * [Derived Imaging Measurement Mapping](#derived-imaging-measurement-mapping)
 
-![DICOM® SR Measurement Report Mapping Overview](./dicom_sr_measurement_report_mapping_overview.svg){: width="100%"}
+<figure>
+  {% include dicom_sr_measurement_report_mapping_overview.svg %}
+  <figcaption><b>Figure: DICOM® SR Measurement Report Mapping Overview</b></figcaption>
+  <p></p>
+</figure>
 
 ### DICOM SR Measurement Report Instance Mapping
-
 
 The DICOM® SR Measurement Report instance contains the following information relevant to creating FHIR resources:
 * The Patient IE used to associate created resources with the appropriate Patient
