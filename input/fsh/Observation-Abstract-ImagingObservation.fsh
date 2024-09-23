@@ -112,7 +112,7 @@ Description:    "DICOM® SR Base Observation for Imaging Measurement Groups, Ima
 * interpretation MS
 
 * device 1..1 MS
-* device only Reference(AlgorithmIdentification or GeneralEquipmentDevice)
+* device only Reference(AlgorithmIdentification or GeneralEquipmentDevice or ParticipantDevice)
 
 * bodyStructure MS
 * bodyStructure only Reference(BodyStructureFindingSite)

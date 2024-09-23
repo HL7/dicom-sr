@@ -4,11 +4,11 @@ Alias: LOINC =  http://loinc.org
 Alias: DCMIdType = http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-identifier-type
 Alias: HL7IdType = http://terminology.hl7.org/CodeSystem/v2-0203
 
-Profile:        GeneralEquipmentDevice
+Profile:        ParticipantDevice
 Parent:         Device
-Id:             dicom-general-equipment
-Title:          "Device - DICOM General Equipment Mapping"
-Description:    "DICOM® General Equipment to Device Mapping"
+Id:             dicom-participant-device
+Title:          "Device - DICOM Participant Device Mapping"
+Description:    "DICOM® Participant to Device Mapping"
 
 * ^abstract = false
 * insert DICOMSRStructureDefinitionContent
@@ -16,23 +16,23 @@ Description:    "DICOM® General Equipment to Device Mapping"
 * identifier 0..1 MS
 * displayName 0..1 MS
 
-Mapping: dicom-sr-for-GeneralEquipmentDevice
+Mapping: dicom-sr-for-ParticipantDevice
 Id: dicom-sr
-Title: "DICOM SR General Equipment"
-Source: GeneralEquipmentDevice
-Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.5.html#sect_C.7.5.1"
-Description: "The GeneralEquipmentDevice can be extracted from DICOM® PS 3.3 Sect C.7.5  General Equipment Module."
-* -> "DICOM PS 3.3 C.7.5.1 (General Equipment)"
+Title: "DICOM SR Participant Device"
+Source: ParticipantDevice
+Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.17.2.html"
+Description: "The ParticipantDevice can be extracted from the DICOM® Participant Sequence (0040,A07A) attribute."
+* -> "DICOM Participant Sequence (0040,A07A)"
 * manufacturer -> "tag(0008,0070) [Manufacturer]"
 * identifier -> "tag(0018,1002) [Device UID]"
 * displayName -> "tag(0008,1090) [Manufacturer's Model Name]"
 
-Instance: Example-Device-GeneralEquipment
-InstanceOf: GeneralEquipmentDevice
+Instance: Example-Device-Participant
+InstanceOf: ParticipantDevice
 Usage: #example
-Description: "An example of the Device resource corresponding to the DICOM® General Equipment IE."
+Description: "An example of the Device resource corresponding to the DICOM® Participant Sequence (0040,A07A)."
 
-* id = "measurement-report-general-equipment"
+* id = "measurement-report-participant-device"
 
 * identifier
   * type

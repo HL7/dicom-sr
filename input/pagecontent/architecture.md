@@ -2,6 +2,12 @@ This chapter describes the architecture of this implementation guide.
 
 ### Profiles & Extensions
 #### Resource Profiles
+<figure>
+  {% include dicom_sr_resource_relationships.svg %}
+  <figcaption><b>Figure: IG Resource Relationships</b></figcaption>
+  <p></p>
+</figure>
+
 ##### Observation
 The mapping of the core DICOM SR measurement groups, measurements and qualitative analysis content items are covered by the following resource profiles:
 

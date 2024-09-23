@@ -84,32 +84,3 @@ Description: "An example of an ImagingStudy referenced from a measurement report
   \"0020000D\": { \"vr\": \"UI\", \"Value\": [ \"1.2.840.113747.20080222.83311413144566317081790268995\" ] }
 }
   </pre></div>"
-
-Instance: Example-Practitioner
-InstanceOf: Practitioner
-Usage: #example
-Description: "An example of an Practitioner referenced from a measurement report."
-
-* id = "measurement-report-practitioner"
-
-* name
-  * family = "RADIOLOGIST"
-  * given = "EXAMPLE"
-
-* text
-  * status = #generated
-  * div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
-  <pre>
-{
-  {
-    \"0040A010\": { \"vr\": \"CS\", \"Value\": [ \"HAS OBS CONTEXT\" ] },
-    \"0040A040\": { \"vr\": \"CS\", \"Value\": [ \"PNAME\" ] },
-    \"0040A043\": { \"vr\": \"SQ\", \"Value\": [ {
-          \"00080100\": { \"vr\": \"SH\", \"Value\": [ \"121008\" ] },
-          \"00080102\": { \"vr\": \"SH\", \"Value\": [ \"DCM\" ] },
-          \"00080104\": { \"vr\": \"LO\", \"Value\": [ \"Person Observer Name\" ] }
-        } ] },
-    \"0040A123\": { \"vr\": \"PN\", \"Value\": [ { \"Alphabetic\": \"RADIOLOGIST^EXAMPLE\" } ] }
-  }
-}
-  </pre></div>"
