@@ -1,0 +1,89 @@
+@startuml dicom_sr_measurement_report_inheritance
+left to right direction
+
+package "DICOM SR Measurement Report" as dicom_sr_measurement_report {
+    object "Patient IE" as patient_ie
+    patient_ie : PatientID
+    object "Study IE" as study_ie
+    study_ie : StudyInstanceUID
+    study_ie : AccessionNumber
+    object "General Equipment IE" as general_equipment_ie
+    general_equipment_ie : Manufacturer
+    general_equipment_ie : Manufacturer Model Name
+}
+
+class "Patient" as patient
+patient : identifier = PatientID
+patient_ie --> patient: Create Patient Reference from Patient IE
+
+class "ImagingStudy" as imaging_study
+imaging_study : identifier = StudyInstanceUID
+study_ie --> imaging_study: Create ImagingStudy Reference from Study IE
+
+class "ServiceRequest" as service_request
+service_request : identifier = AccessionNumber
+study_ie --> service_request: Create ServiceRequest Reference from Study IE
+
+object "Document IE" as document_ie
+document_ie : PreliminaryFlag
+document_ie : ParticipantSequence
+dicom_sr_measurement_report --> document_ie: contains 1..1
+
+Object "Imaging Measurements Container" as imaging_measurements_container
+imaging_measurements_container : AlgorithmIdentification
+
+Object "ImagingMeasurementGroup" as imaging_measurement_group_container
+imaging_measurement_group_container : AlgorithmIdentification
+imaging_measurement_group_container : TrackingIdentifier / TrackingUniqueIdentifier
+imaging_measurement_group_container : Finding Site
+
+package "Devices" as devices {
+    class "[[StructureDefinition-dicom-general-equipment.html GeneralEquipmentDevice (Device)]]" as general_equipment_device
+    general_equipment_device : identifier = Device UID
+    general_equipment_device : manufacturer = Manufacturer
+    general_equipment_device : displayName = Manufacturer Model Name
+
+    class "[[StructureDefinition-dicom-participant-device.html ParticipantDevice (Device)]]" as participant_device
+    participant_device : identifier = Device UID
+    participant_device : manufacturer = Manufacturer
+    participant_device : displayName = Manufacturer Model Name
+
+    class "[[StructureDefinition-algorithm-identification.html AlgorithmIdentification (Device)]]" as imaging_measurements_container_device
+    imaging_measurements_container_device : displayName = Algorithm Name
+    imaging_measurements_container_device : version = Algorithm Version
+    imaging_measurements_container_device : property = Algorithm Parameters
+    imaging_measurements_container_device : type = Algorithm Family
+
+    class "[[StructureDefinition-algorithm-identification.html AlgorithmIdentification (Device)]]" as imaging_measurement_group_device
+    imaging_measurement_group_device : displayName = Algorithm Name
+    imaging_measurement_group_device : version = Algorithm Version
+    imaging_measurement_group_device : property = Algorithm Parameters
+    imaging_measurement_group_device : type = Algorithm Family
+}
+general_equipment_ie --> general_equipment_device: Create Device from General Equipment IE
+document_ie --> participant_device: Create Device from ParticipantSequence item with ObserverType = DEVICE
+imaging_measurements_container --> imaging_measurements_container_device: Create Device from AlgorithmIdentification
+imaging_measurement_group_container --> imaging_measurement_group_device: Create Device from AlgorithmIdentification
+
+class "[[StructureDefinition-dicom-sr-tracking-identifiers.html BodyStructureTrackingIdentifiers (BodyStructure)]]" as tracking_identifiers
+tracking_identifiers : identifier = TrackingIdentifier
+tracking_identifiers : identifier = TrackingUniqueIdentifier
+imaging_measurement_group_container --> tracking_identifiers: Create BodyStructure from TrackingIdentifier / TrackingUniqueIdentifier
+
+class "[[StructureDefinition-dicom-sr-finding-site.html BodyStructureFindingSite (BodyStructure)]]" as imaging_measurement_group_finding_site
+imaging_measurement_group_finding_site : structure = FindingSite
+imaging_measurement_group_finding_site : laterality = Laterality
+imaging_measurement_group_container --> imaging_measurement_group_finding_site: Create BodyStructure from FindingSite
+
+Class "[[StructureDefinition-imaging-measurement-group.html ImagingMeasurementGroup (Observation)]]" as imaging_measurement_group
+imaging_measurement_group --> patient: subject
+imaging_measurement_group --> imaging_study: basedOn
+imaging_measurement_group --> service_request: partOf
+imaging_measurement_group --> devices: device\nImaging Measurement Group AlgorithmIdentification > Imaging Measurements Container AlgorithmIdentification > ParticipantDevice > GeneralEquipmentDevice
+
+
+document_ie --> imaging_measurements_container: contains 1..1
+imaging_measurements_container --> imaging_measurement_group: contains 0..*
+
+
+@enduml

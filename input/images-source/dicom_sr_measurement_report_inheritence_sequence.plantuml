@@ -1,0 +1,46 @@
+@startuml dicom_sr_measurement_report_inheritance
+title DICOM SR Measurement Report
+hide footbox
+
+box "SR Document"
+    participant "Patient IE" as patient_ie
+    participant "Study IE" as study_ie
+    participant "General Equipment IE" as general_equipment_ie
+    box "Document IE"
+       participant "PreliminaryFlag" as preliminary_flag
+       participant "ParticipantSequence" as participant_sequence
+       box "Imaging Measurements Container"
+           participant "AlgorithmIdentification" as algorithm_identification_container
+           box "Imaging Measurement Group"
+               participant "Imaging Measurement" as imaging_measurement
+           end box
+    end box
+end box
+
+participant "Patient\n(Reference)" as patient
+patient_ie --> patient: Create Patient Reference from Patient IE
+activate patient
+
+participant "ImagingStudy\n(Reference)" as imaging_study
+study_ie --> imaging_study: Create ImagingStudy Reference from Study IE
+activate imaging_study
+
+participant "ServiceRequest\n(Reference)" as service_request
+study_ie --> service_request: Create ServiceRequest Reference from Study IE
+activate service_request
+
+participant "[[StructureDefinition-dicom-general-equipment.html GeneralEquipmentDevice (Device)]]" as general_equipment_device
+general_equipment_ie --> general_equipment_device: Create Device from General Equipment IE
+activate general_equipment_device
+
+participant "[[StructureDefinition-dicom-participant-device.html ParticipantDevice (Device)]]" as participant_device
+participant_sequence --> participant_sequence: Check ObserverType
+participant_sequence --> participant_device: If ObserverType = DEV\nCreate Device from ParticipantSequence
+activate participant_device
+
+participant "[[StructureDefinition-dicom-participant-person.html ParticipantPerson (Person)]]" as participant_person
+participant_sequence --> participant_sequence: Check ObserverType
+participant_sequence --> participant_person: If ObserverType = PSN\nCreate Person from ParticipantSequence
+activate participant_person
+
+@enduml

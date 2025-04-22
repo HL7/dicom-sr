@@ -70,7 +70,7 @@ Description:    "DICOM® SR Derived Imaging Measurement Mapping to Observation"
 * device only Reference(AlgorithmIdentification or GeneralEquipmentDevice)
 
 * referenceRange MS
-* valueQuantity MS
+* valueQuantity 1..1 MS
 
 * derivedFrom ^slicing.discriminator.type = #type
 * derivedFrom ^slicing.discriminator.path = "reference"

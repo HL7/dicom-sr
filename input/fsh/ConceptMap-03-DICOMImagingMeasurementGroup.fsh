@@ -76,8 +76,8 @@ Usage: #definition
   * display = "Finding"
   * target
     * relationship = #equivalent
-    * code = #valueCodingableConcept
-    * display = "ImagingMeasurementGroup.valueCodingableConcept"
+    * code = #valueCodeableConcept
+    * display = "ImagingMeasurementGroup.valueCodeableConcept"
 
 * group[3].element[0]
   * code = http://dicom.nema.org/resources/ontology/DCM#111030

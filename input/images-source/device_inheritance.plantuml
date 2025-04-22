@@ -1,0 +1,64 @@
+@startuml dicom_sr_measurement_report_inheritance
+!pragma teoz true
+title DICOM SR Measurement Report
+hide footbox
+
+box "SR Document"
+    participant "General Equipment IE" as general_equipment_ie
+    box "Document IE"
+        participant "ParticipantSequence" as participant_sequence
+        box "Imaging Measurements Container"
+            participant "AlgorithmIdentification" as container_algorithm_identification
+            box "Imaging Measurement Group"
+                participant "AlgorithmIdentification" as measurement_group_algorithm_identification
+                box "Imaging Measurement"
+                    participant "AlgorithmIdentification" as measurement_algorithm_identification
+                end box
+            end box
+        end box
+        box "Derived Imaging Measurements"
+            participant "AlgorithmIdentification" as measurement_group_algorithm_identification
+            participant "Imaging Measurement Group" as derived_measurement_group
+        end box
+        box "Qualitative Evaluation"
+            participant "AlgorithmIdentification" as qe_algorithm_identification
+        end box
+    end box
+end box
+
+participant "[[StructureDefinition-dicom-general-equipment.html GeneralEquipmentDevice (Device)]]" as general_equipment_device
+general_equipment_ie --> general_equipment_device: Create Device from General Equipment IE
+activate general_equipment_device
+
+participant "[[StructureDefinition-dicom-participant-device.html ParticipantDevice (Device)]]" as participant_device
+participant_sequence --> participant_sequence: Check ObserverType
+alt ObserverType = DEV
+    participant_sequence --> participant_device: Create Device from ParticipantSequence
+    activate participant_device
+end
+
+participant "[[StructureDefinition-algorithm-identification.html AlgorithmIdentification (Device)]]" as imaging_measurements_container_device
+container_algorithm_identification -> container_algorithm_identification: Check if exists
+alt Imaging Measurements Container\nAlgorithmIdentification exists
+    container_algorithm_identification -> imaging_measurements_container_device: Create Device from AlgorithmIdentification
+    activate imaging_measurements_container_device
+end
+
+participant "[[StructureDefinition-algorithm-identification.html AlgorithmIdentification (Device)]]" as imaging_measurement_group_device
+participant "[[StructureDefinition-imaging-measurement-group.html ImagingMeasurementGroup (Observation)]]" as imaging_measurement_group
+measurement_group_algorithm_identification -> measurement_group_algorithm_identification: Check if exists
+alt Imaging Measurement Group\nAlgorithmIdentification exists
+    measurement_group_algorithm_identification -> imaging_measurement_group_device: Create Device from AlgorithmIdentification
+    activate imaging_measurement_group_device
+    imaging_measurement_group_device -> imaging_measurement_group: Set device
+    activate imaging_measurement_group
+else Imaging Measurements Container\nAlgorithmIdentification exists
+    imaging_measurements_container_device -> imaging_measurement_group: Set device
+else ParticipantDevice exists
+    participant_device -> imaging_measurement_group: Set device
+else
+    general_equipment_device -> imaging_measurement_group: Set device
+end
+
+
+@enduml

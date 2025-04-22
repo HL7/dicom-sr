@@ -1,0 +1,27 @@
+@startuml dicom_sr_measurement_report_inheritance.png
+
+Object "DICOM SR Instance" as dicom_sr_instance
+dicom_sr_instance : Patient.identifier = "Patient ID"
+dicom_sr_instance : ImagingStudy.identifier = "Study Instance UID"
+dicom_sr_instance : ServiceRequest.identifier = "Accession Number"
+dicom_sr_instance : Device = "[[StructureDefinition-dicom-general-equipment.html General Equipment Device]]"
+
+Object "Document IE" as document_ie
+document_ie : status = "Preliminary Flag"
+document_ie : Device = "ParticipantSequence"
+document_ie : Person = "ParticipantSequence"
+
+Object "Imaging Measurements Container" as imaging_measurements_container
+imaging_measurements_container : Device = "[[StructureDefinition-algorithm-identification.html AlgorithmIdentification]"
+
+Object "[[StructureDefinition-imaging-measurement-group.html ImagingMeasurementGroup (Observation)" as imaging_measurement_group
+imaging_measurement_group : Device = "[[StructureDefinition-algorithm-identification.html AlgorithmIdentification]"
+imaging_measurement_group : BodyStructure = "[[StructureDefinition-dicom-sr-tracking-identifiers.html BodyStructureTrackingIdentifiers]"
+imaging_measurement_group : BodyStructure = "[[StructureDefinition-dicom-sr-tracking-identifiers.html BodyStructureTrackingIdentifiers]"
+
+dicom_sr_instance --> document_ie: contains
+document_ie --> imaging_measurements_container: contains
+
+
+
+@enduml

@@ -66,42 +66,42 @@ Description:    "DICOM® SR Base Observation for Imaging Measurement Groups, Ima
 * focus ^slicing.ordered = false
 * focus ^slicing.description = "Observation foci"
 
-* focus contains trackingIdentifiers 0..* MS
+* focus contains trackingIdentifiers 0..1 MS
 * focus[trackingIdentifiers] only Reference(BodyStructureTrackingIdentifiers)
 
-* focus contains imageRegion2d 0..* MS
+* focus contains imageRegion2d 0..1 MS
 * focus[imageRegion2d] only Reference(ImagingSelection2dImageRegion)
 * focus[imageRegion2d] ^short = "2D Image Region"
 
-* focus contains imageRegion3d 0..* MS
+* focus contains imageRegion3d 0..1 MS
 * focus[imageRegion3d] only Reference(ImagingSelection3dImageRegion)
 * focus[imageRegion3d] ^short = "3D Image Region"
 
-* focus contains referencedSegment 0..* MS
+* focus contains referencedSegment 0..1 MS
 * focus[referencedSegment] only Reference(ImagingSelectionReferencedSegment)
 * focus[referencedSegment] ^short = "Referenced Segment"
 
-* focus contains referencedSegmentationFrame 0..* MS
+* focus contains referencedSegmentationFrame 0..1 MS
 * focus[referencedSegmentationFrame] only Reference(ImagingSelectionReferencedSegmentationFrame)
 * focus[referencedSegmentationFrame] ^short = "Referenced Segmentation Frame"
 
-* focus contains regionInSpace 0..* MS
+* focus contains regionInSpace 0..1 MS
 * focus[regionInSpace] only Reference(ImagingSelectionRegionInSpace)
 * focus[regionInSpace] ^short = "RegionInSpace"
 
-* focus contains volumeSurface 0..* MS
+* focus contains volumeSurface 0..1 MS
 * focus[volumeSurface] only Reference(ImagingSelectionVolumeSurface)
 * focus[volumeSurface] ^short = "Volume Surface"
 
-* focus contains realWorldValueMap 0..* MS
+* focus contains realWorldValueMap 0..1 MS
 * focus[realWorldValueMap] only Reference(ImagingSelectionRealWorldValueMap)
 * focus[realWorldValueMap] ^short = "Real World Value Map"
 
-* focus contains illustrationOfRoi 0..* MS
+* focus contains illustrationOfRoi 0..1 MS
 * focus[illustrationOfRoi] only Reference(ImagingSelectionIllustrationOfROI)
 * focus[illustrationOfRoi] ^short = "Illustration of ROI"
 
-* focus contains visualExplanation 0..* MS
+* focus contains visualExplanation 0..1 MS
 * focus[visualExplanation] only Reference(ImagingSelectionVisualExplanation)
 * focus[visualExplanation] ^short = "VisualExplanation"
 
