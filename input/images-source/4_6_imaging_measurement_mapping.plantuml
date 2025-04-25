@@ -1,0 +1,40 @@
+@startuml imaging_measurement_mapping
+
+map "[[mapping.html#imaging-measurement-group-mapping Inputs from Imaging Measurements Group Mapping]]" as inputs {
+   subject => Patient
+   partOf => ImagingStudy
+   basedOn => ServiceRequest
+   focus => ImagingSelection and / or BodyStructureTrackingIdentifiers
+   bodyStructure => BodyStructureFindingSite
+   device => Algorithm Identification or EquipmentDevice
+   method => Measurement Method
+}
+
+object "Device - AlgorithmIdentification" as AlgorithmIdentification {
+    parent = EquipmentDevice
+}
+
+object "Body Structure - BodyStructureFindingSite" as BodyStructureFindingSite {
+    includedStructure.structure = Finding Site
+}
+
+object "ImagingMeasurement Observation" as imagingMeasurement {
+    subject = Patient
+    partOf = ImagingStudy
+    basedOn = ServiceRequest
+    device = AlgorithmIdentification or parent device
+    focus = parent focus values
+    bodyStructure = BodyStructureFindingSite or parent BodyStructureFindingSite
+    code = Concept Name Code Sequence
+    issued = Observation DateTime
+    method = Measurement Method or parent method
+    valueQuantity = Measured Value Sequence
+}
+
+imagingMeasurement --> AlgorithmIdentification: Create AlgorithmIdentification from Algorithm Identification content item
+imagingMeasurement --> BodyStructureFindingSite: Create BodyStructure from Finding Site
+
+inputs --> imagingMeasurement
+
+
+@enduml

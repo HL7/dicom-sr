@@ -1,0 +1,56 @@
+@startuml imaging_measurements_container_mapping
+left to right direction
+
+map "[[mapping.html#document-ie-mapping Inputs from DICOM Document IE Mapping]]" as inputs {
+   subject => Patient
+   partOf => ImagingStudy
+   basedOn => ServiceRequest
+   device => EquipmentDevice
+}
+
+package "Imaging Measurements Container" as imagingMeasurementGroup {
+   object "Algorithm Identification" as algorithm
+   object "Measurement Group" as measurementGroup
+   package "Derived Imaging Measurements" {
+      object "Derived Imaging Measurement" as derivedMeasurement
+   }
+   package "Qualitative Evaluations" {
+      object "Qualitative Evaluation" as qualitativeEvaluations
+   }
+}
+
+object "Device - AlgorithmIdentification" as AlgorithmIdentification {
+    parent = EquipmentDevice
+}
+
+algorithm --> AlgorithmIdentification: Create AlgorithmIdentification from Algorithm Identification content item
+
+map "[[mapping.html#imaging-measurement-group-mapping Imaging Measurement Group Mapping]]" as measurementGroupMap {
+    subject => Patient
+    partOf => ImagingStudy
+    basedOn => ServiceRequest
+    device => AlgorithmIdentification or EquipmentDevice
+}
+
+map "[[mapping.html#derived-imaging-measurement-mapping Derived Imaging Measurement Mapping]]" as derivedMeasurementsMap {
+    subject => Patient
+    partOf => ImagingStudy
+    basedOn => ServiceRequest
+    device => AlgorithmIdentification or EquipmentDevice
+}
+
+map "[[mapping.html#imaging-qualitative-evaluation-mapping Imaging Qualitative Evaluation Mapping]]" as qualitativeEvaluationsMap {
+    subject => Patient
+    partOf => ImagingStudy
+    basedOn => ServiceRequest
+    device => AlgorithmIdentification or EquipmentDevice
+}
+
+inputs -> measurementGroupMap
+inputs -> derivedMeasurementsMap
+inputs -> qualitativeEvaluationsMap
+measurementGroup --> measurementGroupMap: Map contents of Measurement Group Container
+derivedMeasurement --> derivedMeasurementsMap: Map contents of Derived Measurements Container
+qualitativeEvaluations -> qualitativeEvaluationsMap: Map contents of Qualitative Evaluations Container
+
+@enduml

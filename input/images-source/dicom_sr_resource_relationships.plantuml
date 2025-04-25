@@ -1,0 +1,101 @@
+@startuml dicom_sr_resource_relationships
+left to right direction
+
+class Patient
+class ImagingStudy
+class ServiceRequest
+class Device
+class Practitioner
+class Observation
+class ImagingSelection
+class BodyStructure
+
+package "Resource Profiles in this IG" {
+    package "Device -- One per observation" {
+        class GeneralEquipmentDevice
+        class ParticipantDevice
+        class AlgorithmIdentification
+    }
+
+    class ParticipantPractitioner
+
+    abstract ObservationImagingSelection
+    package "ImagingSelection -- Only one per observation" {
+        class IllustrationOfRoi
+        class ImageRegion2d
+        Class ImageRegion3d
+        class RealWorldValueMap
+        class ReferencedSegment
+        class ReferencedSegmentationFrame
+        class RegionInSpace
+        class VisualExplanation
+        class VolumeSurface
+    }
+
+    class FindingSite
+    class TrackingIdentifiers
+
+    abstract ImagingObservation
+    class ImagingMeasurementGroup
+    class ImagingMeasurement
+    class ImagingQualitativeEvaluation
+    class DerivedImagingMeasurement
+}
+GeneralEquipmentDevice <|-- Device
+ParticipantDevice <|-- Device
+AlgorithmIdentification <|-- Device
+
+ParticipantPractitioner <|-- Practitioner
+
+ImagingObservation <|-- Observation
+ImagingMeasurementGroup <|-- ImagingObservation
+ImagingMeasurement <|-- ImagingObservation
+ImagingQualitativeEvaluation <|-- ImagingObservation
+DerivedImagingMeasurement <|-- Observation
+
+ObservationImagingSelection <|-- ImagingSelection
+IllustrationOfRoi <|-- ObservationImagingSelection
+ImageRegion2d <|-- ObservationImagingSelection
+ImageRegion3d <|-- ObservationImagingSelection
+RealWorldValueMap <|-- ObservationImagingSelection
+ReferencedSegment <|-- ObservationImagingSelection
+ReferencedSegmentationFrame <|-- ObservationImagingSelection
+RegionInSpace <|-- ObservationImagingSelection
+VisualExplanation <|-- ObservationImagingSelection
+VolumeSurface <|-- ObservationImagingSelection
+
+FindingSite <|-- BodyStructure
+TrackingIdentifiers <|-- BodyStructure
+
+Observation --> Patient: subject
+Observation --> ImagingStudy: basedOn
+Observation --> ServiceRequest: derivedFrom
+
+ImagingObservation --> GeneralEquipmentDevice: device
+ImagingObservation --> ParticipantDevice: device
+ImagingObservation --> AlgorithmIdentification: device
+ImagingObservation --> ParticipantPractitioner: performer
+DerivedImagingMeasurement --> GeneralEquipmentDevice: device
+DerivedImagingMeasurement --> ParticipantDevice: device
+DerivedImagingMeasurement --> AlgorithmIdentification: device
+DerivedImagingMeasurement --> ParticipantPractitioner: performer
+
+ImagingObservation --> FindingSite: bodyStructure
+ImagingObservation --> TrackingIdentifiers: focus
+
+ImagingObservation --> IllustrationOfRoi: focus
+ImagingObservation --> ImageRegion2d: focus
+ImagingObservation --> ImageRegion3d: focus
+ImagingObservation --> RealWorldValueMap: focus
+ImagingObservation --> ReferencedSegment: focus
+ImagingObservation --> ReferencedSegmentationFrame: focus
+ImagingObservation --> RegionInSpace: focus
+ImagingObservation --> VisualExplanation: focus
+ImagingObservation --> VolumeSurface: focus
+
+ImagingMeasurementGroup --> ImagingMeasurement: hasMember
+ImagingMeasurementGroup --> ImagingQualitativeEvaluation: hasMember
+
+DerivedImagingMeasurement --> ImagingMeasurementGroup: derivedFrom
+
+@enduml

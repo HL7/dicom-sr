@@ -1,0 +1,48 @@
+@startuml derived_imaging_measurement_mapping
+
+map "[[mapping.html#imaging-measurements-container-mapping Inputs from Imaging Measurements Container Mapping]]" as inputs {
+   subject => Patient
+   partOf => ImagingStudy
+   basedOn => ServiceRequest
+   device => EquipmentDevice
+}
+
+package "Derived Imaging Measurement" as derivedMeasurement {
+   object "Algorithm Identification" as algorithm
+   package "Measurement Groups" {
+    object "Measurement Group" as measurementGroup
+   }
+}
+
+object "Device - AlgorithmIdentification" as AlgorithmIdentification {
+    parent = EquipmentDevice
+}
+
+object "Observation - Derived Imaging Measurement" as derivedImagingMeasurement {
+    subject = Patient
+    partOf = ImagingStudy
+    basedOn = ServiceRequest
+    device = EquipmentDevice or AlgorithmIdentification
+    code = Concept Name Code Sequence
+    valueCodeableConcept = Finding
+    valueQuantity = Measured Value Sequence
+    derivedFrom = ImagingMeasurementGroup
+}
+
+map "[[mapping.html#imaging-measurement-group-mapping Imaging Measurement Group Mapping]]" as imagingMeasurementGroupMap {
+    subject => Patient
+    partOf => ImagingStudy
+    basedOn => ServiceRequest
+    device => AlgorithmIdentification or EquipmentDevice
+}
+
+algorithm --> AlgorithmIdentification: Create AlgorithmIdentification from Algorithm Identification content item
+
+inputs --> derivedImagingMeasurement
+AlgorithmIdentification --> derivedImagingMeasurement
+derivedMeasurement --> derivedImagingMeasurement
+
+inputs --> imagingMeasurementGroupMap
+measurementGroup --> imagingMeasurementGroupMap: Map measurement group children to ImagingMeasurementGroup Observations
+derivedImagingMeasurement <-- imagingMeasurementGroupMap: derivedFrom
+@enduml

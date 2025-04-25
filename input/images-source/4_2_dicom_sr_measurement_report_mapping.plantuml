@@ -1,0 +1,36 @@
+@startuml dicom_sr_measurement_report_mapping
+left to right direction
+package "DICOM SR Measurement Report" {
+    object "Patient IE" as patientIE
+    object "Study IE" as studyIE
+    object "General Equipment IE" as equipmentIE
+    object "Document IE" as documentIE
+}
+object Patient {
+    identifier = PatientID
+}
+object ImagingStudy {
+    identifier = StudyInstanceUID
+}
+object ServiceRequest {
+    identifier = AccessionNumber
+}
+object "Device - EquipmentDevice" as equipmentDevice {
+    identifier = Device UID
+    displayName = Manufacturer Model Name
+}
+
+map "[[mapping.html#document-ie-mapping Document IE Mapping]]" as documentIEMapping {
+    subject => Patient
+    partOf => ImagingStudy
+    basedOn => ServiceRequest
+    device => EquipmentDevice
+}
+
+patientIE --> Patient: Create Patient Reference from Patient IE
+studyIE --> ImagingStudy: Create Patient Reference from Study IE
+studyIE --> ServiceRequest: Create Patient Reference from Study IE
+equipmentIE --> equipmentDevice: Create EquipmentDevice from General Equipment IE
+
+documentIE --> documentIEMapping: Map contents of Document IE
+@enduml

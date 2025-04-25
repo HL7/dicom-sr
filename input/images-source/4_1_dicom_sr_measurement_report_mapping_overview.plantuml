@@ -1,0 +1,42 @@
+@startuml dicom_sr_measurement_report_mapping_overview
+skinparam componentStyle rectangle
+allowmixing
+left to right direction
+package "DICOM SR Measurement Report" as measurementReport {
+    package "Document IE" as documentIE {
+        package "SR Content Sequence" as srContentSequence {
+            package "Imaging Measurements Container" as imagingMeasurementsContainer {
+                package "0..* Measurements Group" as measurementsGroup {
+                    object "0..* Numerical Measurement" as numericalMeasurement
+                    object "0..* Qualitative Evaluation" as measurementGroupQualitativeEvaluation
+                }
+                package "0..* Derived Imaging Measurements" as derivedImagingMeasurements {
+                    object "0..* Measurements Group" as derivedMeasurementsGroup
+                }
+                package "Qualitative Evaluations" as qualitativeEvaluations {
+                    object "0..* Qualitative Evaluation" as qualitativeEvaluation
+                }
+            }
+        }
+    }
+}
+
+component "[[mapping.html#dicom-sr-measurement-report-instance-mapping DICOM SR Measurement Report Instance Mapping]]" as measurementReportInstanceMapping
+component "[[mapping.html#document-ie-mapping Document IE Mapping]]" as documentIEMapping
+component "[[mapping.html#imaging-measurements-container-mapping Imaging Measurements Container Mapping]]" as imagingMeasurementsContainerMapping
+component "[[mapping.html#imaging-measurement-group-mapping Imaging Measurements Group Mapping]]" as imagingMeasurementGroupMapping
+component "[[mapping.html#imaging-measurement-mapping Imaging Measurement Mapping]]" as imagingMeasurementMapping
+component "[[mapping.html#imaging-qualitative-evaluation-mapping Qualitative Evaluation Mapping]]" as qualitativeEvaluationMapping
+component "[[mapping.html#derived-imaging-measurement-mapping Derived Imaging Measurements Mapping]]" as derivedImagingMeasurementsMapping
+
+measurementReport --> measurementReportInstanceMapping: Map contents of Measurement Report Instance
+documentIE --> documentIEMapping: Map contents of Document IE
+imagingMeasurementsContainer --> imagingMeasurementsContainerMapping: Map contents of Imaging Measurements Container
+measurementsGroup --> imagingMeasurementGroupMapping: Map contents of Measurements Group
+numericalMeasurement --> imagingMeasurementMapping: Map contents of Imaging Measurement
+measurementGroupQualitativeEvaluation --> qualitativeEvaluationMapping: Map contents of Qualitative Evaluation
+derivedImagingMeasurements --> derivedImagingMeasurementsMapping: Map contents of Derived Imaging Measurements
+derivedMeasurementsGroup --> imagingMeasurementGroupMapping: Map contents of Measurements Group
+qualitativeEvaluation --> qualitativeEvaluationMapping: Map contents of Qualitative Evaluation
+
+@enduml

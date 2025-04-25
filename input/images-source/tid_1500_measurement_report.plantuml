@@ -1,0 +1,31 @@
+@startuml tid_1500_measurement_report
+left to right direction
+
+class "Imaging Measurement Group" as ImagingMeasurementGroup <<Observation>> #d5e8d4 ##green
+class "Imaging Measurement" as ImagingMeasurement <<Observation>> #d5e8d4 ##green
+class "Derived Imaging Measurement" as DerivedImagingMeasurement <<Observation>> #d5e8d4 ##green
+class "Imaging Qualitative Evaluation" as ImagingQualitativeEvaluation <<Observation>> #d5e8d4 ##green
+
+package TID.1500.measurement.report #EEEEEE {
+    package CONTAINER.imaging.measurements {
+        package 0..n.CONTAINER.imaging.measurement.group {
+            Object 0..n.imaging.measurement
+            Object 0..n.imaging.qualitative.evaluation
+        }
+    }
+    package CONTAINER.derived.imaging.measurements {
+        Object 0..n.derived.imaging.measurement
+    }
+    package CONTAINER.qualitative.evaluations {
+        Object 0..n.qualitative.evaluation
+    }
+}
+
+"0..n.CONTAINER.imaging.measurement.group" -> ImagingMeasurementGroup : maps to
+"0..n.derived.imaging.measurement" --> DerivedImagingMeasurement : maps to
+"0..n.qualitative.evaluation" --> ImagingQualitativeEvaluation : maps to
+
+ImagingMeasurementGroup --> ImagingMeasurement : hasMember[0..*]
+ImagingMeasurementGroup --> ImagingQualitativeEvaluation : hasMember[0..*]
+DerivedImagingMeasurement --> ImagingMeasurementGroup : derivedFrom[0..*]
+@enduml
