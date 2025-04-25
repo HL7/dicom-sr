@@ -13,26 +13,26 @@ note "If Measurement Group Algorithm is not present device is Equipment." as MGN
 note "If Measurement Algorithm is not present device is Equipment." as MNote
 note "If Qualitative Evaluation Algorithm is not present device is Equipment." as QENote
 
-package DICOM.equipment.ie #EEEEEE {
-    package DICOM.document.ie #EEEEEE {
-        package TID.1500.measurement.report #EEEEEE {
-            package CONTAINER.imaging.measurements {
-                package 0..n.CONTAINER.imaging.measurement.group {
-                    Object 0..n.imaging.measurement
-                    Object 0..n.imaging.qualitative.evaluation
+package equipment_ie as "DICOM Equipment IE" #EEEEEE {
+    package document_ie as "DICOM Document IE" #EEEEEE {
+        package measurement_report as "TID 1500 Measurement Report" #EEEEEE {
+            package imaging_measurements_container as "CONTAINER - Imaging Measurements" {
+                package imaging_measurement_group as "0..n CONTAINER - Imaging Measurement Group" {
+                    Object imaging_measurement
+                    Object imaging_qualitative_evaluation
                     }
             }
-            package CONTAINER.qualitative.evaluations {
-                Object 0..n.qualitative.evaluation
+            package qualitative_evaluations as "CONTAINER - Qualitative Evaluations" {
+                Object qualitative_evaluation
             }
         }
     }
 }
 
-DICOM.equipment.ie --> EquipmentDevice: maps to
+equipment_ie --> EquipmentDevice: maps to
 
-CONTAINER.imaging.measurements --> ImagingMeasurementGroup : contains[0..*]
-CONTAINER.qualitative.evaluations --> ImagingQualitativeEvaluation : contains[0..*]
+imaging_measurements_container --> ImagingMeasurementGroup : contains[0..*]
+qualitative_evaluations --> ImagingQualitativeEvaluation : contains[0..*]
 
 ImagingMeasurementGroup --> ImagingMeasurement : hasMember[0..*]
 ImagingMeasurementGroup --> ImagingQualitativeEvaluation : hasMember[0..*]
