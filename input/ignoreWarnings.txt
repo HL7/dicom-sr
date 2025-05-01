@@ -34,4 +34,4 @@ The repeating element has a pattern. The pattern will apply to all the repeats (
 The canonical URL for an Implementation Guide must point directly to the implementation guide resource, not to the Implementation Guide as a whole
 
 # The FHIR DICOM Package is not strongly tied to a specific FHIR version
-This IG is version 5.0.0, while the IG 'fhir.dicom' is from version 4.0.1
+%This IG is version 5.0.0, while the IG 'fhir.dicom' is from version 4.0.1%
