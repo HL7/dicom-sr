@@ -106,7 +106,7 @@ This IG Contains the following dependencies on other IGs.
 
 ### Global Profiles
 
-{% include globals-table.xhtml %}
+
 
 ### Copyrights
 
