@@ -28,8 +28,8 @@ map "[[mapping.html#document-ie-mapping Document IE Mapping]]" as documentIEMapp
 }
 
 patientIE --> Patient: Create Patient Reference from Patient IE
-studyIE --> ImagingStudy: Create Patient Reference from Study IE
-studyIE --> ServiceRequest: Create Patient Reference from Study IE
+studyIE --> ImagingStudy: Create ImagingStudy Reference from Study IE
+studyIE --> ServiceRequest: Create ServiceRequest Reference from Study IE
 equipmentIE --> equipmentDevice: Create EquipmentDevice from General Equipment IE
 
 documentIE --> documentIEMapping: Map contents of Document IE
