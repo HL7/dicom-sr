@@ -1,4 +1,7 @@
 == Suppressed Messages ==
+# The FHIR DICOM Package is not a standard IG and it fails this validation check
+The URL should refer directly to the ImplementationGuide resource (e.g. include '/ImplementationGuide/')
+The canonical URL for an Implementation Guide must point directly to the implementation guide resource, not to the Implementation Guide as a whole
 
 # Base FHIR generated StructuredDefinition references deprecated item
 Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
