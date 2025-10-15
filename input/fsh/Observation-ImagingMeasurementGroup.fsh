@@ -129,7 +129,7 @@ Description: "Example of Observation representing a DICOM SR Measurement Group"
   * status = #generated
   * div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
   <pre>
-{{
+{
    \"0040A010\": { \"vr\": \"CS\", \"Value\": [ \"CONTAINS\" ] },
    \"0040A040\": { \"vr\": \"CS\", \"Value\": [ \"CONTAINER\" ] },
    \"0040A043\": { \"vr\": \"SQ\", \"Value\": [ {
