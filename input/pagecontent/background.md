@@ -17,7 +17,7 @@ and describes the use cases supported by this implementation guide.
 
 DICOM® Structured Report (DICOM® SR) is a standard for recording clinical imaging observations made regarding a diagnostic or interventional imaging procedure. Imaging Observations are made by humans, such as a sonographer making measurements on recently acquired ultrasound image, a Radiologist recording observations on suspected lesions, or by a machine, such as an automated AI Algorithm providing qualitative and quantitative observations.
 
-DICOM® SR is widely adopted by Imaging-based devices and IT systems. Non-imaging based Healthcare IT Systems, generally, do not support DICOM® SR. Non-imaging healthcare systems support HL7 standards, such as FHIR. HL7 has defined the Observation resource as the standardized method for recording clinical observations. Bridging the two standards for clinical imaging observations is necessary for interoperability between these type of systems.
+DICOM® SR is widely adopted by Imaging-based devices and IT systems. Healthcare IT Systems, generally, do not support DICOM® SR. Non-imaging healthcare systems support HL7 standards, such as FHIR. HL7 has defined the Observation resource as the standardized method for recording clinical observations. Bridging the two standards for clinical imaging observations is necessary for interoperability between these types of systems.
 
 ### Scope
 
@@ -27,7 +27,7 @@ DICOM SR defines a multitude of templates for capturing Diagnostic imaging Obser
 
 The transformation described is one direction. It may not be possible to reconstruct a complete DICOM SR from a set of FHIR resources created based on this IG.
 
-DICOM SR mapping is limited to the Observation Resource and a small set of related resources. The resultant mapping is provided, as a minimum, a composition or bundle of Observations. Depending on the use case, the observations may be part of or contained in a Diagnostic Report. Use case-specific requirements to construct a diagnostic report(e.g. Mammography) may require the transformation described by this IG. However, the specification of those use cases is not in scope for this IG.
+DICOM SR mapping is limited to the Observation Resource and a small set of related resources. The resultant mapping is provided, as a minimum, a composition or bundle of Observations. Depending on the use case, the observations may be part of or contained in a Diagnostic Report. Use case-specific requirements to construct a diagnostic report(e.g., Mammography) may require the transformation described by this IG. However, the specification of those use cases is not in scope for this IG.
 
 Therefore, Observations created according to this IG may not include all context relevant to their interpretation.
 
@@ -36,7 +36,7 @@ This Implementation Guide is intended for
 
 * clinical users of structured imaging data,
 * implementers of other health information systems wishing to use imaging data encapsulated using DICOM SR.
-* imaging device, image analysis and AI algorithm developers and imaging gateway system developers creating DICOM SR.
+* imaging device, image analysis and AI algorithm developers, and imaging gateway system developers creating DICOM SR.
 
 
 ### Use cases
@@ -70,27 +70,28 @@ The `ImagingSelection` resource is used to provide specific imaging context for 
 
 The following terms and acronyms are used within the DICOM SR IG:
 
-|Term|Definition|
-|-----|-----------------|
-|AIR| AI Results |
-|ATNA| Audit Trail and Node Authentication |
-|CID| Context Identifier |
-|DICOM| Digital Imaging and Communications in Medicine |
-|DLP| Dose Length Product |
-|EHR| Electronic Health Record |
-|EMR| Electronic Medical Record |
-|FHIR| Fast Healthcare Interoperability Resources |
-|HL7| Health Level Seven|
-|IG| Implementation Guide |
-|IHE| Integrating the Healthcare Enterprise |
-|IOD| Information Object Definition |
-|RIS| Radiology Information System |
-|SR| Structured Report |
-|TID| Template ID |
-|TLS| Transport Layer Security |
-|UID| Unique identifier |
-|URL| Uniform Resource Locator |
-|URN| Uniform Resource Name |
+| Term  | Definition                                     |
+|-------|------------------------------------------------|
+| AIR   | AI Results                                     |
+| ATNA  | IHE Audit Trail and Node Authentication        |
+| CID   | DICOM Context Identifier                       |
+| DICOM | Digital Imaging and Communications in Medicine |
+| DLP   | Dose Length Product                            |
+| EHR   | Electronic Health Record                       |
+| EMR   | Electronic Medical Record                      |
+| FHIR  | Fast Healthcare Interoperability Resources     |
+| HL7   | Health Level Seven                             |
+| IG    | Implementation Guide                           |
+| IE    | DICOM Information Entity                       |
+| IHE   | Integrating the Healthcare Enterprise          |
+| IOD   | DICOM Information Object Definition            |
+| RIS   | Radiology Information System                   |
+| SR    | Structured Report                              |
+| TID   | DICOM Template ID                              |
+| TLS   | Transport Layer Security                       |
+| UID   | Unique identifier                              |
+| URL   | Uniform Resource Locator                       |
+| URN   | Uniform Resource Name                          |
 
 ### References
 
