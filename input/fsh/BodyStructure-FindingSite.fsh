@@ -13,16 +13,40 @@ Description:    "DICOM® SR Finding Site Mapping to BodyStructure"
 * ^abstract = false
 * insert DICOMSRStructureDefinitionContent
 * includedStructure.laterality MS
+* includedStructure.qualifier MS
 
-Mapping: dicom-sr-for-findingSiteProfile
-Id: dicom-sr
-Title: "DICOM SR Finding Site"
+Mapping: dicom-sr-for-TID300FindingSiteProfile
+Id: dicom-sr-tid-300-finding-site
+Title: "DICOM SR TID 300 Finding Site"
 Source: BodyStructureFindingSite
 Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_300"
-Description: "The FindingSiteBodyStructure can be extracted from TID 300 EV(363698007, SCT, Finding Site) and EV (272741003, SCT, Laterality)."
+Description: "The FindingSiteBodyStructure can be extracted from TID 300 EV(363698007, SCT, Finding Site), EV (272741003, SCT, Laterality) and DT (106233006, SCT, Topographical modifier)."
 * -> "TID300(FindingSite)"
 * includedStructure.structure.coding -> "TID300.EV(363698007, SCT, Finding Site)"
 * includedStructure.laterality -> "TID300.EV(272741003, SCT, Laterality)"
+* includedStructure.qualifier -> "TID300.DT(106233006, SCT, Topographical modifier)"
+
+Mapping: dicom-sr-for-TID1419FindingSiteProfile
+Id: dicom-sr-tid-1419-finding-site
+Title: "DICOM SR TID 1419 Finding Site"
+Source: BodyStructureFindingSite
+Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1419"
+Description: "The FindingSiteBodyStructure can be extracted from TID 1419 EV(363698007, SCT, Finding Site), EV (272741003, SCT, Laterality) and DT (106233006, SCT, Topographical modifier)."
+* -> "TID1419(FindingSite)"
+* includedStructure.structure.coding -> "TID1419.EV(363698007, SCT, Finding Site)"
+* includedStructure.laterality -> "TID1419.EV(272741003, SCT, Laterality)"
+* includedStructure.qualifier -> "TID1419.DT(106233006, SCT, Topographical modifier)"
+
+Mapping: dicom-sr-for-TID1501FindingSiteProfile
+Id: dicom-sr-tid-1501-finding-site
+Title: "DICOM SR TID 1501 Finding Site"
+Source: BodyStructureFindingSite
+Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1501"
+Description: "The FindingSiteBodyStructure can be extracted from TID 1501 EV(363698007, SCT, Finding Site), EV (272741003, SCT, Laterality) and DT (106233006, SCT, Topographical modifier)."
+* -> "TID1501(FindingSite)"
+* includedStructure.structure.coding -> "TID1501.EV(363698007, SCT, Finding Site)"
+* includedStructure.laterality -> "TID1501.EV(272741003, SCT, Laterality)"
+* includedStructure.qualifier -> "TID1501.DT(106233006, SCT, Topographical modifier)"
 
 Instance: Example-BodyStructure-FindingSite
 InstanceOf: BodyStructureFindingSite

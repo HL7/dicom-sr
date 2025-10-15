@@ -31,6 +31,8 @@ object "Body Structure - BodyStructureTrackingIdentifiers" as TrackingBodyStruct
 
 object "Body Structure - BodyStructureFindingSite" as BodyStructureFindingSite {
     includedStructure.structure = Finding Site
+    includedStrucutre.laterality = Laterality
+    includedStructure.qualifier = Topographical modifier
 }
 
 object ImagingSelection 
