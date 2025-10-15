@@ -110,6 +110,6 @@ This IG Contains the following dependencies on other IGs.
 
 ### Copyrights
 
-{% capture ip-statement %}{% include ip-statements.xhtml %}{% endcapture %}
+
 
 {{ ip-statement | remove: '<p>' | remove: '</p>'}}
