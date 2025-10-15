@@ -104,7 +104,7 @@ The following terms and acronyms are used within the DICOM SR IG:
 
 This IG Contains the following dependencies on other IGs.
 
-{% include dependency-table.xhtml %}
+[//]: # ({% include dependency-table-short.xhtml %})
 
 ### Global Profiles
 
