@@ -17,7 +17,9 @@ Description:    "DICOM® SR Algorithm Identification to Device"
 * type 0..* MS
 * version 0..* MS
 * property 0..* MS
-* parent 0..1 MS
+
+* parent MS
+* parent only Reference(GeneralEquipmentDevice)
 
 Mapping: dicom-sr-for-AlgorithmIdentification
 Id: dicom-sr
