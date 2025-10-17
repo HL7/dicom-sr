@@ -9,7 +9,7 @@ This chapter describes the architecture of this implementation guide.
 </figure>
 
 ##### Observation
-The mapping of the core DICOM SR measurement groups, measurements and qualitative analysis content items are covered by the following resource profiles:
+The mapping of the core DICOM SR measurement groups, measurements, and qualitative analysis content items are covered by the following resource profiles:
 
 * [Imaging Measurement Group](StructureDefinition-imaging-measurement-group.html) profiles the Observation resource representing DICOM SR measurement group templates:
     * [DTID 1410 “Planar ROI Measurements and Qualitative Evaluations”](https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1410)
@@ -20,7 +20,7 @@ The mapping of the core DICOM SR measurement groups, measurements and qualitativ
     * [DTID 300 “Measurement”](https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_300)
     * [DTID 1419 “ROI Measurements”](https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1419)
     
-* [Derived Imaging Measurement](StructureDefinition-derived-imaging-measurement.html) profiles the Observation resource representing the DICOM SR derived measurement template [DTID 1420 “Measurements Derived From Multiple ROI Measurements”](https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1420)
+* [Derived Imaging Measurement](StructureDefinition-derived-imaging-measurement.html) profiles the Observation resource representing the DICOM SR-derived measurement template [DTID 1420 “Measurements Derived From Multiple ROI Measurements”](https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1420)
 
 * [Imaging Qualitative Evaluation](StructureDefinition-imaging-qualitative-evaluation.html) profiles the Observation resource representing qualitative evaluation content items extracted from DICOM SR measurement templates:
     * [DTID 1500 “Measurement Report”](https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1500)
@@ -48,14 +48,14 @@ The above resource profiles depend on the following resource profiles:
 * [Finding Site](StructureDefinition-dicom-sr-finding-site.html) profiles the BodyStructure resource representing a finding site content item with concept name [SCT#363698007 "Finding Site"](http://snomed.info/id/363698007)
 
 #### Supporting DataType Profiles
-There is no special supporting DataType profiles defined by this IG.
+There are no special supporting DataType profiles defined by this IG.
 
 #### Supporting Extensions
-There is no special supporting extensions defined by this IG.
+There are no special supporting extensions defined by this IG.
 
 #### Profile Relationships
 ##### DICOM SR Basics
-The content of a DICOM SR is a tree of "content items". Each content item has:
+The content of a DICOM SR is a tree of "content items." Each content item has:
 * a coded "Concept Name" describing the content item
 * a "Value Type"
 * a value (for most value types)
@@ -73,13 +73,13 @@ This implementation guide maps content items contained within the DICOM TID 1500
 
 All mapped content items are children of the following `CONTAINER` content items:
 
-| Container Concept Name | Child FHIR Resource Profile | Notes |
-| ----------------- | --------------------- | ----- |
-| DCM#126010 "Imaging Measurements" | [Imaging Measurement Group](StructureDefinition-imaging-measurement-group.html) | See [Imaging Measurement Group relationship](#imaging-measurement-group-relationship) | 
-| DCM#126011 "Derived Imaging Measurements" | [Derived Imaging Measurements](StructureDefinition-derived-imaging-measurement.html) | See [Derived Imaging Measurements relationship](#derived-imaging-measurements-relationship) |
-| UMLS#C0034375 "Qualitative Evaluations" | [Imaging Qualitative Evaluation](StructureDefinition-imaging-qualitative-evaluation.html) | See [Imaging Qualitative Evaluations relationship](#imaging-qualitative-evaluations-relationship) |
+| Container Concept Name                    | Child FHIR Resource Profile                                                               | Notes                                                                                             |
+|-------------------------------------------|-------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------|
+| DCM#126010 "Imaging Measurements"         | [Imaging Measurement Group](StructureDefinition-imaging-measurement-group.html)           | See [Imaging Measurement Group relationship](#imaging-measurement-group-relationship)             | 
+| DCM#126011 "Derived Imaging Measurements" | [Derived Imaging Measurements](StructureDefinition-derived-imaging-measurement.html)      | See [Derived Imaging Measurements relationship](#derived-imaging-measurements-relationship)       |
+| UMLS#C0034375 "Qualitative Evaluations"   | [Imaging Qualitative Evaluation](StructureDefinition-imaging-qualitative-evaluation.html) | See [Imaging Qualitative Evaluations relationship](#imaging-qualitative-evaluations-relationship) |
 
-e.g. the children of the `CONTAINER` with a Concept Name of DCM#126010 "Imaging Measurements" are mapped to [Measurement Group](StructureDefinition-imaging-measurement-group.html) Observations.
+e.g., the children of the `CONTAINER` with a Concept Name of DCM#126010 "Imaging Measurements" are mapped to [Measurement Group](StructureDefinition-imaging-measurement-group.html) Observations.
 
 <figure>
   {% include tid_1500_measurement_report.svg %}
@@ -92,7 +92,7 @@ An Imaging Measurement Group `CONTAINER` contains 0-n `NUM` content items repres
 
 An Imaging Measurement Group `CONTAINER` contains 0-n `TEXT` or `CODE` content items representing qualitative evaluations. Each of these is mapped to an [Imaging Qualitative Evaluation](StructureDefinition-imaging-qualitative-evaluation.html) Observation. 
 
-The Imaging Measurement Group `CONTAINER` is mapped to a [Imaging Measurement Group](StructureDefinition-imaging-measurement-group.html) Observation. 
+The Imaging Measurement Group `CONTAINER` is mapped to an [Imaging Measurement Group](StructureDefinition-imaging-measurement-group.html) Observation. 
 
 The [Imaging Measurement Group](StructureDefinition-imaging-measurement-group.html) Observation `hasMember` element references the child [Imaging Measurement](StructureDefinition-imaging-measurement.html) and [Imaging Qualitative Evaluation](StructureDefinition-imaging-qualitative-evaluation.html) Observations.
 
@@ -107,6 +107,8 @@ A `TEXT` or `CODE` child content item should only be interpreted as a qualitativ
 * SCT#276214006 "Finding Category"
 * SCT#363698007 "Finding Site"
 * SCT#370129005 "Measurement Method"
+
+The mapping of relevant child items in this list is described in Imaging Measurement Group Mapping (see [Imaging Measurement Group Mapping](mapping.html#imaging-measurement-group-mapping)).
 
 
 ###### Derived Imaging Measurements Relationship
@@ -126,7 +128,7 @@ A FHIR Observation can only have a single `device` value. However, a DICOM SR ca
 * The equipment that created the SR
 * An algorithm used to create the Observation
   
-The DICOM SR General Equipment Module attributes are mapped to an [General Equipment](StructureDefinition-dicom-general-equipment.html) Device.
+The DICOM SR General Equipment Module attributes are mapped to a [General Equipment](StructureDefinition-dicom-general-equipment.html) Device.
 
 If an [Imaging Measurement Group](StructureDefinition-imaging-measurement-group.html), [Imaging Measurement](StructureDefinition-imaging-measurement.html) or [Imaging Qualitative Evaluation](StructureDefinition-imaging-qualitative-evaluation.html) has a child with Concept Name DCM#111001 "Algorithm Name" then it is mapped to an [Algorithm Identification](StructureDefinition-algorithm-identification.html) Device.
 
@@ -148,17 +150,25 @@ e.g.
 
 All DICOM SOP Instances include information relating to the patient, service request, procedure, etc.
 
-Typically, these resources are managed by the EMR and the imaging system is not able to create or update these resources in the FHIR server.
+Typically, these resources are managed by the EMR, and the imaging system is not able to create or update these resources in the FHIR server.
 
 Therefore, this implementation guide assumes that these resources already exist in the destination FHIR server and does not include a full mapping between their DICOM representation and their FHIR representation.
 
-Instead, it specifies the identifier mapping to allow newly-created resources to be associated with the appropriate existing FHIR resources.
+Instead, it specifies the identifier mapping to allow newly created resources to be associated with the appropriate existing FHIR resources.
 
 See [DICOM SR Information Object Definition (IOD) Mapping to FHIR](ConceptMap-dicom-sr-measurement-report-to-fhir.html) and [DICOM SR Document Information Entity (IE) Mapping to FHIR](ConceptMap-dicom-document-ie-to-fhir.html).
 
 ### Actors
 
 ### Terminology
+
+#### Value Sets Used
+These Value Sets are used in this implementation guide.
+
+(To be added)
+
+
+
 
 ### Security Consideration
 Exchanging imaging measurement report resources makes use of patient-specific information which could be exploited by malicious actors resulting in exposure of patient data. For these reasons, all data exchange between the different actors must be secured appropriately with access to limited authorized individuals, data protected in transit, and appropriate audit measures taken. 
@@ -179,4 +189,4 @@ These security requirements are highlighted in the context of this IG:
 * Systems **SHALL** conform to FHIR [Communications Security requirements](http://hl7.org/fhir/R5/security.html#http){:target="_blank"}.
 * Systems **SHALL** implement consent requirements per their country, state, local, and institutional policies.
 
-[^1]: D. Clunie, DICOM Structured Reporting, PixelMed Publishing, 2000, p. 32 [E-book](http://www.pixelmed.com/srbook.html)
+[^1]: D. Clunie, DICOM Structured Reporting, PixelMed Publishing, 2000, p. 32 [E-book](http://www.pixelmed.com/srbook.html)
