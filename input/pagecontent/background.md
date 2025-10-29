@@ -9,9 +9,10 @@ and describes the use cases supported by this implementation guide.
 6. [FHIR Version 4 compatibility](#fhir-version-4-compatibility) - Compatibility with FHIR R4
 7. [Glossary](#glossary) - Glossary of terms used in this IG
 8. [References](#references) - Useful references
-9. [IG Dependencies](background.html#ig-dependencies) - Dependencies on other IGs
-10. [Global Profiles](background.html#global-profiles) - Global profiles used in this IG
-11. [Copyrights](background.html#copyrights) - Copyrights and acknowledgments
+9. [IG Dependencies](#ig-dependencies) - Dependencies on other IGs
+10. [Global Profiles](#global-profiles) - Global profiles used in this IG
+11. [Copyrights](#copyrights) - Copyrights and acknowledgments
+12. [Expansion Parameters](#expansion-parameters) - Expansion parameters used in ValueSets
 
 ### Problem
 
@@ -47,12 +48,14 @@ This Implementation Guide is intended for
   <figcaption><b>Figure: Use Case 1 Overview</b></figcaption>
   <p></p>
 </figure>
+
 #### Use case 2: Extracting imaging results for FHIRcast content sharing
 <figure>
   {% include fhircast_content_sharing.svg %}
   <figcaption><b>Figure: Use Case 2 Overview</b></figcaption>
   <p></p>
 </figure>
+
 ### Excluded use cases
 The following use cases are not covered by this Implementation Guide:
 * DICOM SR templates other than TID1500
