@@ -104,18 +104,18 @@ The following terms and acronyms are used within the DICOM SR IG:
 
 This IG Contains the following dependencies on other IGs.
 
-({% include dependency-table-short.xhtml %})
+({% include dependency-table-short-en.xhtml %})
 
 ### Global Profiles
 
-{% include globals-table.xhtml %}
+{% include globals-table-en.xhtml %}
 
 ### Copyrights
 
-{% capture ip-statement %}{% include ip-statements.xhtml %}{% endcapture %}
+{% capture ip-statement %}{% include ip-statements0en.xhtml %}{% endcapture %}
 
 {{ ip-statement | remove: '<p>' | remove: '</p>'}}
 
 ### Expansion Parameters
 
-{% include expansion-params.xhtml %}
+{% include expansion-params-en.xhtml %}
