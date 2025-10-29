@@ -112,7 +112,7 @@ This IG Contains the following dependencies on other IGs.
 
 ### Copyrights
 
-{% capture ip-statement %}{% include ip-statements0en.xhtml %}{% endcapture %}
+{% capture ip-statement %}{% include ip-statements-en.xhtml %}{% endcapture %}
 
 {{ ip-statement | remove: '<p>' | remove: '</p>'}}
 
