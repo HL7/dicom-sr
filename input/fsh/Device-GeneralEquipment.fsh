@@ -42,6 +42,7 @@ Description: "An example of the Device resource corresponding to the DICOM® Gen
 * manufacturer = "Example Device Manufacturer"
 * displayName = "Example Imaging Measurement Device"
 * udiCarrier
+  * deviceIdentifier = "00844588003288"
   * issuer = "http://hl7.org/fhir/NamingSystem/gs1"
   * carrierHRF = "{01}00844588003288{17}141120{10}7654321D{21}10987654d329"
 * text
