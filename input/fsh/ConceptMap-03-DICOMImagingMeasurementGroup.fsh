@@ -33,14 +33,7 @@ Usage: #definition
   * target[+]
     * relationship = #equivalent
     * code = #identifier
-    * display = "BodyStructureTrackingIdentifiers.identifier"
-    * dependsOn[+]
-      * attribute = #IdentifierType
-      * valueCoding = http://dicom.nema.org/resources/ontology/DCM#112039
-  * target[+]
-    * relationship = #equivalent
-    * code = #identifier
-    * display = "ImagingMeasurementGroup.focus.identifier"
+    * display = "BodyStructureFindingSite.identifier"
     * dependsOn[+]
       * attribute = #IdentifierType
       * valueCoding = http://dicom.nema.org/resources/ontology/DCM#112039
@@ -51,14 +44,7 @@ Usage: #definition
   * target[+]
     * relationship = #equivalent
     * code = #identifier
-    * display = "BodyStructureTrackingIdentifiers.identifier"
-    * dependsOn[+]
-      * attribute = #IdentifierType
-      * valueCoding = http://dicom.nema.org/resources/ontology/DCM#112040
-  * target[+]
-    * relationship = #equivalent
-    * code = #identifier
-    * display = "ImagingMeasurementGroup.focus.identifier"
+    * display = "BodyStructureFindingSite.identifier"
     * dependsOn[+]
       * attribute = #IdentifierType
       * valueCoding = http://dicom.nema.org/resources/ontology/DCM#112040
@@ -98,8 +84,8 @@ Usage: #definition
       * valueCoding = http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-value-type#scoord3d
   * target[+]
     * relationship = #equivalent
-    * code = #focus
-    * display = "ImagingMeasurementGroup.focus"
+    * code = #derivedFrom
+    * display = "ImagingMeasurementGroup.derivedFrom"
 
 * group[+].element[+]
   * code = http://dicom.nema.org/resources/ontology/DCM#121214
@@ -110,8 +96,8 @@ Usage: #definition
     * display = "ImagingSelectionReferencedSegmentationFrame"
   * target[+]
     * relationship = #equivalent
-    * code = #focus
-    * display = "ImagingMeasurementGroup.focus"
+    * code = #derivedFrom
+    * display = "ImagingMeasurementGroup.derivedFrom"
 
 * group[+].element[+]
   * code = http://dicom.nema.org/resources/ontology/DCM#130488
@@ -122,8 +108,8 @@ Usage: #definition
     * display = "ImagingSelectionRegionInSpace"
   * target[+1]
     * relationship = #equivalent
-    * code = #focus
-    * display = "ImagingMeasurementGroup.focus"
+    * code = #derivedFrom
+    * display = "ImagingMeasurementGroup.derivedFrom"
 
 * group[+].element[+]
   * code = http://dicom.nema.org/resources/ontology/DCM#121200
@@ -134,8 +120,8 @@ Usage: #definition
     * display = "ImagingSelectionIllustrationOfROI"
   * target[+]
     * relationship = #equivalent
-    * code = #focus
-    * display = "ImagingMeasurementGroup.focus"
+    * code = #derivedFrom
+    * display = "ImagingMeasurementGroup.derivedFrom"
 
 * group[+].element[+]
   * code = http://dicom.nema.org/resources/ontology/DCM#130401
@@ -146,8 +132,8 @@ Usage: #definition
     * display = "ImagingSelectionVisualExplanation"
   * target[+]
     * relationship = #equivalent
-    * code = #focus
-    * display = "ImagingMeasurementGroup.focus"
+    * code = #derivedFrom
+    * display = "ImagingMeasurementGroup.derivedFrom"
 
 * group[+].element[+]
   * code = http://dicom.nema.org/resources/ontology/DCM#126100
@@ -158,8 +144,8 @@ Usage: #definition
     * display = "ImagingSelectionRealWorldValueMap"
   * target[+]
     * relationship = #equivalent
-    * code = #focus
-    * display = "ImagingMeasurementGroup.focus"
+    * code = #derivedFrom
+    * display = "ImagingMeasurementGroup.derivedFrom"
 
 * group[+].element[+]
   * code = http://dicom.nema.org/resources/ontology/DCM#121191
@@ -170,8 +156,8 @@ Usage: #definition
     * display = "ImagingSelectionReferencedSegment"
   * target[+]
     * relationship = #equivalent
-    * code = #focus
-    * display = "ImagingMeasurementGroup.focus"
+    * code = #derivedFrom
+    * display = "ImagingMeasurementGroup.derivedFrom"
 
 * group[+].element[+]
   * code = http://dicom.nema.org/resources/ontology/DCM#121231
@@ -182,8 +168,8 @@ Usage: #definition
     * display = "ImagingSelectionVolumeSurface"
   * target[+]
     * relationship = #equivalent
-    * code = #focus
-    * display = "ImagingMeasurementGroup.focus"
+    * code = #derivedFrom
+    * display = "ImagingMeasurementGroup.derivedFrom"
 
 * group[+].element[+]
   * code = http://snomed.info/sct#370129005
@@ -200,10 +186,6 @@ Usage: #definition
     * relationship = #source-is-narrower-than-target
     * code = #BodyStructureFindingSite
     * display = "BodyStructureFindingSite"
-  * target[+]
-    * relationship = #equivalent
-    * code = #bodyStructure
-    * display = "ImagingMeasurementGroup.bodyStructure"
 * group[=].element[+]
   * code = http://snomed.info/sct#272741003
   * display = "Laterality"
@@ -211,10 +193,6 @@ Usage: #definition
     * relationship = #source-is-narrower-than-target
     * code = #BodyStructureFindingSite
     * display = "BodyStructureFindingSite"
-  * target[+]
-    * relationship = #source-is-narrower-than-target
-    * code = #bodyStructure
-    * display = "ImagingMeasurementGroup.bodyStructure"
 * group[=].element[+]
   * code = http://snomed.info/sct#106233006
   * display = "Topographical modifier"
@@ -222,10 +200,6 @@ Usage: #definition
     * relationship = #source-is-narrower-than-target
     * code = #BodyStructureFindingSite
     * display = "BodyStructureFindingSite"
-  * target[+]
-    * relationship = #source-is-narrower-than-target
-    * code = #bodyStructure
-    * display = "ImagingMeasurementGroup.bodyStructure"
 
 * group[+].element[+]
   * code = http://dicom.nema.org/resources/ontology/DCM#TID4019

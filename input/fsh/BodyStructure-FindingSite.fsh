@@ -8,10 +8,30 @@ Profile:        BodyStructureFindingSite
 Parent:         BodyStructure
 Id:             dicom-sr-finding-site
 Title:          "Body Structure - DICOM SR Finding Site Mapping"
-Description:    "DICOM® SR Finding Site Mapping to BodyStructure"
+Description:    "DICOM® SR Finding Site Mapping to BodyStructure. Used to represent the finding site and tracking identifiers associated with a measurement or qualitative evaluation."
 
 * ^abstract = false
 * insert DICOMSRStructureDefinitionContent
+
+* identifier ^slicing.discriminator.type = #value
+* identifier ^slicing.discriminator.path = "type"
+* identifier ^slicing.rules = #open
+* identifier ^slicing.ordered = false
+* identifier ^slicing.description = "Tracking Identifiers"
+
+* identifier contains trackingIdentifier 0..1
+* identifier[trackingIdentifier].type = http://dicom.nema.org/resources/ontology/DCM#112039 "Tracking Identifier"
+* identifier[trackingIdentifier].value 1..1
+* identifier[trackingIdentifier] ^short = "Tracking ID"
+* identifier[trackingIdentifier] ^definition = "An identifier used for tracking a finding or feature, potentially across multiple reporting objects, over time."
+
+* identifier contains trackingUid 0..1
+* identifier[trackingUid].type = http://dicom.nema.org/resources/ontology/DCM#112040 "Tracking Unique Identifier"
+* identifier[trackingUid].value 1..1
+* identifier[trackingUid] ^short = "Tracking UID"
+* identifier[trackingUid].system = "urn:dicom:uid"
+* identifier[trackingUid] ^definition = "A unique identifier used for tracking a finding or feature, potentially across multiple reporting objects, over time."
+
 * includedStructure.laterality MS
 * includedStructure.qualifier MS
 
@@ -22,6 +42,9 @@ Source: BodyStructureFindingSite
 Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_300"
 Description: "The FindingSiteBodyStructure can be extracted from TID 300 EV(363698007, SCT, Finding Site), EV (272741003, SCT, Laterality) and DT (106233006, SCT, Topographical modifier)."
 * -> "TID300(FindingSite)"
+* patient -> "tag(0010,0020) [Patient ID]"
+* identifier[trackingIdentifier] -> "DT (112039, DCM, Tracking Identifier)"
+* identifier[trackingUid] -> "EV (112040, DCM, Tracking Unique Identifier)"
 * includedStructure.structure.coding -> "TID300.EV(363698007, SCT, Finding Site)"
 * includedStructure.laterality -> "TID300.EV(272741003, SCT, Laterality)"
 * includedStructure.qualifier -> "TID300.DT(106233006, SCT, Topographical modifier)"
@@ -33,6 +56,9 @@ Source: BodyStructureFindingSite
 Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1419"
 Description: "The FindingSiteBodyStructure can be extracted from TID 1419 EV(363698007, SCT, Finding Site), EV (272741003, SCT, Laterality) and DT (106233006, SCT, Topographical modifier)."
 * -> "TID1419(FindingSite)"
+* patient -> "tag(0010,0020) [Patient ID]"
+* identifier[trackingIdentifier] -> "DT (112039, DCM, Tracking Identifier)"
+* identifier[trackingUid] -> "EV (112040, DCM, Tracking Unique Identifier)"
 * includedStructure.structure.coding -> "TID1419.EV(363698007, SCT, Finding Site)"
 * includedStructure.laterality -> "TID1419.EV(272741003, SCT, Laterality)"
 * includedStructure.qualifier -> "TID1419.DT(106233006, SCT, Topographical modifier)"
@@ -44,6 +70,9 @@ Source: BodyStructureFindingSite
 Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1501"
 Description: "The FindingSiteBodyStructure can be extracted from TID 1501 EV(363698007, SCT, Finding Site), EV (272741003, SCT, Laterality) and DT (106233006, SCT, Topographical modifier)."
 * -> "TID1501(FindingSite)"
+* patient -> "tag(0010,0020) [Patient ID]"
+* identifier[trackingIdentifier] -> "DT (112039, DCM, Tracking Identifier)"
+* identifier[trackingUid] -> "EV (112040, DCM, Tracking Unique Identifier)"
 * includedStructure.structure.coding -> "TID1501.EV(363698007, SCT, Finding Site)"
 * includedStructure.laterality -> "TID1501.EV(272741003, SCT, Laterality)"
 * includedStructure.qualifier -> "TID1501.DT(106233006, SCT, Topographical modifier)"
@@ -55,6 +84,14 @@ Description: "Example of BodySite representing a DICOM SR Finding Site"
 
 * id = "measurement-report-finding-site"
 
+* identifier[trackingIdentifier]
+  * type = http://dicom.nema.org/resources/ontology/DCM#112039 "Tracking Identifier"
+  * value = "Nodule 1"
+* identifier[trackingUid]
+  * type = http://dicom.nema.org/resources/ontology/DCM#112040 "Tracking Unique Identifier"
+  * system = "urn:dicom:uid"
+  * value = "urn:oid:1.2.840.113747.20080222.83311413144566317081790268995.100"
+
 * patient = Reference(Example-Patient)
 * includedStructure
   * structure
@@ -64,8 +101,28 @@ Description: "Example of BodySite representing a DICOM SR Finding Site"
       * display = "Left lung structure"
 * text
   * status = #generated
-  * div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
+  * div = "<div xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en\" lang=\"en\">
   <pre>
+{
+  \"0040A010\": { \"vr\": \"CS\", \"Value\": [ \"HAS OBS CONTEXT\" ] },
+  \"0040A040\": { \"vr\": \"CS\", \"Value\": [ \"TEXT\" ] },
+  \"0040A043\": { \"vr\": \"SQ\", \"Value\": [ {
+    \"00080100\": { \"vr\": \"SH\", \"Value\": [ \"112039\" ] },
+    \"00080102\": { \"vr\": \"SH\", \"Value\": [ \"DCM\" ] },
+    \"00080104\": { \"vr\": \"LO\", \"Value\": [ \"Tracking Identifier\" ] }
+  } ] },
+  \"0040A160\": { \"vr\": \"UT\", \"Value\": [ \"Nodule 1\" ] }
+},
+{
+  \"0040A010\": { \"vr\": \"CS\", \"Value\": [ \"HAS OBS CONTEXT\" ] },
+  \"0040A040\": { \"vr\": \"CS\", \"Value\": [ \"UIDREF\" ] },
+  \"0040A043\": { \"vr\": \"SQ\", \"Value\": [ {
+    \"00080100\": { \"vr\": \"SH\", \"Value\": [ \"112040\" ] },
+    \"00080102\": { \"vr\": \"SH\", \"Value\": [ \"DCM\" ] },
+    \"00080104\": { \"vr\": \"LO\", \"Value\": [ \"Tracking Unique Identifier\" ] }
+  } ] },
+  \"0040A124\": { \"vr\": \"UI\", \"Value\": [ \"1.2.840.113747.20080222.83311413144566317081790268995.100\" ] }
+},
 {
   \"0040A010\": { \"vr\": \"CS\", \"Value\": [ \"HAS CONCEPT MOD\" ] },
   \"0040A040\": { \"vr\": \"CS\", \"Value\": [ \"CODE\" ] },

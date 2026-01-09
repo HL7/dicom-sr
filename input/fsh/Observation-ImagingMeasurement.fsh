@@ -15,9 +15,6 @@ Description:    "DICOM® SR Imaging Measurement Mapping to Observation"
 
 * referenceRange MS
 
-* bodyStructure MS
-* bodyStructure only Reference(BodyStructureFindingSite)
-
 * valueQuantity 1..1 MS
 
 Mapping: dicom-sr-for-TID300MeasurementProfile
@@ -68,8 +65,7 @@ Description: "Example of Observation representing a DICOM® SR Imaging Measureme
     * system = "http://snomed.info/sct"
     * code = #118565006 "Volume"
     * display = "Volume"
-* focus[referencedSegment] = Reference(Example-ImagingSelection-ReferencedSegment)
-* focus[trackingIdentifiers] = Reference(Example-BodyStructure-TrackingIdentifiers)
+* derivedFrom[referencedSegment] = Reference(Example-ImagingSelection-ReferencedSegment)
 * bodyStructure = Reference(Example-BodyStructure-FindingSite)
 * device = Reference(Example-Device-AlgorithmIdentification)
 * valueQuantity
@@ -96,8 +92,7 @@ Description: "Example of Observation representing a DICOM® SR Imaging Measureme
     * system = "http://snomed.info/sct"
     * code = #81827009 "Diameter"
     * display = "Diameter"
-* focus[referencedSegment] = Reference(Example-ImagingSelection-ReferencedSegment)
-* focus[trackingIdentifiers] = Reference(Example-BodyStructure-TrackingIdentifiers)
+* derivedFrom[referencedSegment] = Reference(Example-ImagingSelection-ReferencedSegment)
 * bodyStructure = Reference(Example-BodyStructure-FindingSite)
 * device = Reference(Example-Device-AlgorithmIdentification)
 * valueQuantity
@@ -124,8 +119,7 @@ Description: "Example of Observation representing a DICOM® SR Imaging Measureme
     * system = "http://snomed.info/sct"
     * code = #301898006 "Body surface area"
     * display = "Body surface area"
-* focus[referencedSegment] = Reference(Example-ImagingSelection-ReferencedSegment)
-* focus[trackingIdentifiers] = Reference(Example-BodyStructure-TrackingIdentifiers)
+* derivedFrom[referencedSegment] = Reference(Example-ImagingSelection-ReferencedSegment)
 * bodyStructure = Reference(Example-BodyStructure-FindingSite)
 * device = Reference(Example-Device-GeneralEquipment)
 * valueQuantity

@@ -38,7 +38,7 @@ releaseLabel: STU1 Ballot
 dependencies:
   fhir.dicom:
     uri: http://fhir.org/packages/fhir.dicom
-    version: 2025.2.20250411
+    version: 2025.3.20250714
 parameters:
   show-inherited-invariants: false
   usage-stats-opt-out: true

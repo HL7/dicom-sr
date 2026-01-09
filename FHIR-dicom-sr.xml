@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-               ballotUrl="http://hl7.org/fhir/uv/dicom-sr/2024Sep"
-               ciUrl="https://build.fhir.org/ig/HL7/dicom-sr"
-               defaultVersion="1.0.0-ballot"
-               defaultWorkgroup="ii"
-               gitUrl="https://github.com/HL7/dicom-sr"
-               url="http://hl7.org/fhir/uv/dicom-sr">
+<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ballotUrl="http://hl7.org/fhir/uv/dicom-sr/2024Sep" ciUrl="https://build.fhir.org/ig/HL7/dicom-sr" defaultVersion="1.0.0" defaultWorkgroup="" gitUrl="https://github.com/HL7/dicom-sr" url="http://hl7.org/fhir/uv/dicom-sr">
 <version code="current" url="https://build.fhir.org/ig/HL7/dicom-sr"/>
+<version code="1.0.0" url="http://hl7.org/fhir/uv/dicom-sr/STU1"/>
 <version code="1.0.0-ballot" url="http://hl7.org/fhir/uv/dicom-sr/2024Sep"/>
 <artifactPageExtension value="-definitions"/>
 <artifactPageExtension value="-examples"/>
@@ -15,7 +10,7 @@
 <artifact deprecated="true" id="StructureDefinition/ImageRegion3d" key="StructureDefinition-ImagingSelection-ImageRegion3d" name="3D Image Region"/>
 <artifact deprecated="true" id="StructureDefinition/AlgorithmIdentification" key="StructureDefinition-Device-AlgorithmIdentification" name="Algorithm Identification"/>
 <artifact id="StructureDefinition/dicom-sr-finding-site" key="StructureDefinition-dicom-sr-finding-site" name="Body Structure - DICOM SR Finding Site Mapping"/>
-<artifact id="StructureDefinition/dicom-sr-tracking-identifiers" key="StructureDefinition-dicom-sr-tracking-identifiers" name="Body Structure - DICOM SR Observation Tracking Identifier Mapping"/>
+<artifact deprecated="true" id="StructureDefinition/dicom-sr-tracking-identifiers" key="StructureDefinition-dicom-sr-tracking-identifiers" name="Body Structure - DICOM SR Observation Tracking Identifier Mapping"/>
 <artifact id="ConceptMap/dicom-derived-imaging-measurement-to-fhir" key="ConceptMap-dicom-derived-imaging-measurement-to-fhir" name="ConceptMap - DICOM Derived Imaging Measurement to FHIR Mapping"/>
 <artifact id="ConceptMap/dicom-document-ie-to-fhir" key="ConceptMap-dicom-document-ie-to-fhir" name="ConceptMap - DICOM Document IE to FHIR Mapping"/>
 <artifact id="ConceptMap/dicom-imaging-measurement-group-to-fhir" key="ConceptMap-dicom-imaging-measurement-group-to-fhir" name="ConceptMap - DICOM Imaging Measurement Group to FHIR Mapping"/>
@@ -26,12 +21,15 @@
 <artifact deprecated="true" id="ConceptMap/DicomDocumentIE" key="ConceptMap-DicomDocumentIE" name="DICOM Document IE to Observation Map"/>
 <artifact deprecated="true" id="CodeSystem/DicomIdentifierType" key="CodeSystem-DicomIdentifierType" name="DICOM Identifier Types"/>
 <artifact deprecated="true" id="ConceptMap/DicomSrIod" key="ConceptMap-DicomSrIod" name="DICOM SR IOD to Observation Map"/>
-<artifact id="StructureDefinition/dicom-general-equipment" key="StructureDefinition-dicom-general-equipment" name="Device - DICOM General Equipment"/>
-<artifact id="StructureDefinition/algorithm-identification" key="StructureDefinition-algorithm-identification" name="Device - DICOM SR TID 4019 Algorithm Identification Mapping"/>
+<artifact id="StructureDefinition/dicom-general-equipment" key="StructureDefinition-dicom-general-equipment" name="Device - DICOM General Equipment Mapping"/>
+<artifact id="StructureDefinition/dicom-participant-device" key="StructureDefinition-dicom-participant-device" name="Device - DICOM Participant Device Mapping"/>
+<artifact id="StructureDefinition/dicom-participant-person" key="StructureDefinition-dicom-participant-person" name="Device - DICOM Participant Practitioner Mapping"/>
+<artifact id="StructureDefinition/algorithm-identification" key="StructureDefinition-algorithm-identification" name="Device - DICOM SR Algorithm Identification Mapping"/>
 <artifact id="BodyStructure/measurement-report-finding-site" key="BodyStructure-measurement-report-finding-site" name="Example-BodyStructure-FindingSite"/>
 <artifact id="BodyStructure/measurement-report-tracking-identifier" key="BodyStructure-measurement-report-tracking-identifier" name="Example-BodyStructure-TrackingIdentifiers"/>
 <artifact id="Device/measurement-report-algorithm" key="Device-measurement-report-algorithm" name="Example-Device-AlgorithmIdentification"/>
 <artifact id="Device/measurement-report-general-equipment" key="Device-measurement-report-general-equipment" name="Example-Device-GeneralEquipment"/>
+<artifact id="Device/measurement-report-participant-device" key="Device-measurement-report-participant-device" name="Example-Device-Participant"/>
 <artifact id="DiagnosticReport/dicom-sr-measurement-report" key="DiagnosticReport-dicom-sr-measurement-report" name="Example-DiagnosticReport-DICOMSRMeasurementReport"/>
 <artifact id="ImagingSelection/measurement-report-illustration-of-roi" key="ImagingSelection-measurement-report-illustration-of-roi" name="Example-ImagingSelection-IllustrationOfROI"/>
 <artifact id="ImagingSelection/measurement-report-2d-image-region" key="ImagingSelection-measurement-report-2d-image-region" name="Example-ImagingSelection-ImageRegion2D"/>

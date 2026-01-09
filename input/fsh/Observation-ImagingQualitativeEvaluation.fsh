@@ -46,13 +46,11 @@ Description: "Example of Observation representing a DICOM® SR Measurement Quali
 * performer = Reference(Example-Practitioner)
 * code
   * coding
-    * system = "https://ncit.nci.nih.gov"
+    * system = "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl" //"https://ncit.nci.nih.gov"
     * code = #C45992 "Subtlety score"
     * display = "Subtlety score"
 * category = http://terminology.hl7.org/CodeSystem/umls#C0034375 "Qualitative Evaluations"
-* focus[referencedSegment] = Reference(Example-ImagingSelection-ReferencedSegment)
-* focus[trackingIdentifiers] = Reference(Example-BodyStructure-TrackingIdentifiers)
-* bodyStructure = Reference(Example-BodyStructure-FindingSite)
+* derivedFrom[referencedSegment] = Reference(Example-ImagingSelection-ReferencedSegment)
 * device = Reference(Example-Device-GeneralEquipment)
 * valueCodeableConcept
   * coding
@@ -78,9 +76,7 @@ Description: "Example of Observation representing a DICOM® SR Measurement Quali
     * system = "http://radlex.org"
     * code = #RID36042 "Malignancy"
 * category = http://terminology.hl7.org/CodeSystem/umls#C0034375 "Qualitative Evaluations"
-* focus[referencedSegment] = Reference(Example-ImagingSelection-ReferencedSegment)
-* focus[trackingIdentifiers] = Reference(Example-BodyStructure-TrackingIdentifiers)
-* bodyStructure = Reference(Example-BodyStructure-FindingSite)
+* derivedFrom[referencedSegment] = Reference(Example-ImagingSelection-ReferencedSegment)
 * device = Reference(Example-Device-GeneralEquipment)
 * valueCodeableConcept
   * coding

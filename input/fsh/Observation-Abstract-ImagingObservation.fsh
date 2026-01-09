@@ -60,50 +60,47 @@ Description:    "DICOM® SR Base Observation for Imaging Measurement Groups, Ima
 * subject only Reference(Patient)
 * subject 1..1 MS
 
-* focus ^slicing.discriminator.type = #profile
-* focus ^slicing.discriminator.path = "resolve()"
-* focus ^slicing.rules = #open
-* focus ^slicing.ordered = false
-* focus ^slicing.description = "Observation foci"
+* derivedFrom ^slicing.discriminator.type = #profile
+* derivedFrom ^slicing.discriminator.path = "resolve()"
+* derivedFrom ^slicing.rules = #open
+* derivedFrom ^slicing.ordered = false
+* derivedFrom ^slicing.description = "Observed imaging selection(s)"
 
-* focus contains trackingIdentifiers 0..1 MS
-* focus[trackingIdentifiers] only Reference(BodyStructureTrackingIdentifiers)
+* derivedFrom contains imageRegion2d 0..1 MS
+* derivedFrom[imageRegion2d] only Reference(ImagingSelection2dImageRegion)
+* derivedFrom[imageRegion2d] ^short = "2D Image Region"
 
-* focus contains imageRegion2d 0..1 MS
-* focus[imageRegion2d] only Reference(ImagingSelection2dImageRegion)
-* focus[imageRegion2d] ^short = "2D Image Region"
+* derivedFrom contains imageRegion3d 0..1 MS
+* derivedFrom[imageRegion3d] only Reference(ImagingSelection3dImageRegion)
+* derivedFrom[imageRegion3d] ^short = "3D Image Region"
 
-* focus contains imageRegion3d 0..1 MS
-* focus[imageRegion3d] only Reference(ImagingSelection3dImageRegion)
-* focus[imageRegion3d] ^short = "3D Image Region"
+* derivedFrom contains referencedSegment 0..1 MS
+* derivedFrom[referencedSegment] only Reference(ImagingSelectionReferencedSegment)
+* derivedFrom[referencedSegment] ^short = "Referenced Segment"
 
-* focus contains referencedSegment 0..1 MS
-* focus[referencedSegment] only Reference(ImagingSelectionReferencedSegment)
-* focus[referencedSegment] ^short = "Referenced Segment"
+* derivedFrom contains referencedSegmentationFrame 0..1 MS
+* derivedFrom[referencedSegmentationFrame] only Reference(ImagingSelectionReferencedSegmentationFrame)
+* derivedFrom[referencedSegmentationFrame] ^short = "Referenced Segmentation Frame"
 
-* focus contains referencedSegmentationFrame 0..1 MS
-* focus[referencedSegmentationFrame] only Reference(ImagingSelectionReferencedSegmentationFrame)
-* focus[referencedSegmentationFrame] ^short = "Referenced Segmentation Frame"
+* derivedFrom contains regionInSpace 0..1 MS
+* derivedFrom[regionInSpace] only Reference(ImagingSelectionRegionInSpace)
+* derivedFrom[regionInSpace] ^short = "RegionInSpace"
 
-* focus contains regionInSpace 0..1 MS
-* focus[regionInSpace] only Reference(ImagingSelectionRegionInSpace)
-* focus[regionInSpace] ^short = "RegionInSpace"
+* derivedFrom contains volumeSurface 0..1 MS
+* derivedFrom[volumeSurface] only Reference(ImagingSelectionVolumeSurface)
+* derivedFrom[volumeSurface] ^short = "Volume Surface"
 
-* focus contains volumeSurface 0..1 MS
-* focus[volumeSurface] only Reference(ImagingSelectionVolumeSurface)
-* focus[volumeSurface] ^short = "Volume Surface"
+* derivedFrom contains realWorldValueMap 0..1 MS
+* derivedFrom[realWorldValueMap] only Reference(ImagingSelectionRealWorldValueMap)
+* derivedFrom[realWorldValueMap] ^short = "Real World Value Map"
 
-* focus contains realWorldValueMap 0..1 MS
-* focus[realWorldValueMap] only Reference(ImagingSelectionRealWorldValueMap)
-* focus[realWorldValueMap] ^short = "Real World Value Map"
+* derivedFrom contains illustrationOfRoi 0..1 MS
+* derivedFrom[illustrationOfRoi] only Reference(ImagingSelectionIllustrationOfROI)
+* derivedFrom[illustrationOfRoi] ^short = "Illustration of ROI"
 
-* focus contains illustrationOfRoi 0..1 MS
-* focus[illustrationOfRoi] only Reference(ImagingSelectionIllustrationOfROI)
-* focus[illustrationOfRoi] ^short = "Illustration of ROI"
-
-* focus contains visualExplanation 0..1 MS
-* focus[visualExplanation] only Reference(ImagingSelectionVisualExplanation)
-* focus[visualExplanation] ^short = "VisualExplanation"
+* derivedFrom contains visualExplanation 0..1 MS
+* derivedFrom[visualExplanation] only Reference(ImagingSelectionVisualExplanation)
+* derivedFrom[visualExplanation] ^short = "VisualExplanation"
 
 // Observation Date Time
 * issued 1..1 MS
@@ -136,18 +133,16 @@ Description: "Example of the base Imaging Observation"
     * code = #241053004 "Radiographic measurement of lung volume"
     * display = "Radiographic measurement of lung volume"
 
-* focus[trackingIdentifiers] = Reference(Example-BodyStructure-TrackingIdentifiers)
-
 // Test of all imaging selection profiles
-* focus[illustrationOfRoi] = Reference(Example-ImagingSelection-IllustrationOfROI)
-* focus[imageRegion2d] = Reference(Example-ImagingSelection-ImageRegion2D)
-* focus[imageRegion3d] = Reference(Example-ImagingSelection-ImageRegion3D)
-* focus[realWorldValueMap] = Reference(Example-ImagingSelection-RealWorldValueMap)
-* focus[referencedSegment] = Reference(Example-ImagingSelection-ReferencedSegment)
-* focus[referencedSegmentationFrame] = Reference(Example-ImagingSelection-ReferencedSegmentationFrame)
-* focus[regionInSpace] = Reference(Example-ImagingSelection-RegionInSpace)
-* focus[visualExplanation] = Reference(Example-ImagingSelection-VisualExplanation)
-* focus[volumeSurface] = Reference(Example-ImagingSelection-VolumeSurface)
+* derivedFrom[illustrationOfRoi] = Reference(Example-ImagingSelection-IllustrationOfROI)
+* derivedFrom[imageRegion2d] = Reference(Example-ImagingSelection-ImageRegion2D)
+* derivedFrom[imageRegion3d] = Reference(Example-ImagingSelection-ImageRegion3D)
+* derivedFrom[realWorldValueMap] = Reference(Example-ImagingSelection-RealWorldValueMap)
+* derivedFrom[referencedSegment] = Reference(Example-ImagingSelection-ReferencedSegment)
+* derivedFrom[referencedSegmentationFrame] = Reference(Example-ImagingSelection-ReferencedSegmentationFrame)
+* derivedFrom[regionInSpace] = Reference(Example-ImagingSelection-RegionInSpace)
+* derivedFrom[visualExplanation] = Reference(Example-ImagingSelection-VisualExplanation)
+* derivedFrom[volumeSurface] = Reference(Example-ImagingSelection-VolumeSurface)
 
 * bodyStructure = Reference(Example-BodyStructure-FindingSite)
 * device = Reference(Example-Device-GeneralEquipment)

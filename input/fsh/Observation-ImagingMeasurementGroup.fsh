@@ -110,8 +110,7 @@ Description: "Example of Observation representing a DICOM SR Measurement Group"
     * system = "http://dicom.nema.org/resources/ontology/DCM"
     * code = #125007 "Measurement Group"
     * display = "Measurement Group"
-* focus[referencedSegment] = Reference(Example-ImagingSelection-ReferencedSegment)
-* focus[trackingIdentifiers] = Reference(Example-BodyStructure-TrackingIdentifiers)
+* derivedFrom[referencedSegment] = Reference(Example-ImagingSelection-ReferencedSegment)
 * bodyStructure = Reference(Example-BodyStructure-FindingSite)
 * device = Reference(Example-Device-GeneralEquipment)
 * valueCodeableConcept
@@ -127,7 +126,7 @@ Description: "Example of Observation representing a DICOM SR Measurement Group"
 
 * text
   * status = #generated
-  * div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
+  * div = "<div xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en\" lang=\"en\">
   <pre>
 {
    \"0040A010\": { \"vr\": \"CS\", \"Value\": [ \"CONTAINS\" ] },

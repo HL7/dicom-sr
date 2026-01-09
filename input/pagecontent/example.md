@@ -545,7 +545,7 @@ See [Example Device](Device-measurement-report-general-equipment.html).
   {
     "resource": {
       "resourceType": "BodyStructure",
-      "id": "measurement-report-tracking-identifier",
+      "id": "measurement-report-finding-site",
       "identifier": [
         {
           "type": {
@@ -573,20 +573,6 @@ See [Example Device](Device-measurement-report-general-equipment.html).
           "value": "urn:oid:1.2.840.113747.20080222.83311413144566317081790268995.100"
         }
       ],
-      "patient": {
-        "reference": "Patient/measurement-report-patient"
-      },
-      "includedStructure": [
-        "structure": {
-          "text": "Nodule 1"
-        }
-      ]
-    }
-  },
-  {
-    "resource": {
-      "resourceType": "BodyStructure",
-      "id": "measurement-report-finding-site",
       "patient": {
         "reference": "Patient/measurement-report-patient"
       },
@@ -665,12 +651,9 @@ See [Example Device](Device-measurement-report-general-equipment.html).
         "display" : "Measurement Group"
         }]
       }],
-      "focus": [
+      "derivedFrom": [
         {
           "reference": "ImagingSelection/measurement-report-referenced-segment"
-        },
-        {
-          "reference": "BodyStructure/measurement-report-tracking-identifier"
         }
       ],
       "bodyStructure": {
@@ -712,11 +695,11 @@ See [Example Device](Device-measurement-report-general-equipment.html).
 </table>
 
 For each Measurement Group:
-1. Create BodyStructure resources for tracking and finding site (if not already existing)
+1. Create BodyStructure resource for tracking and finding site (if not already existing)
 2. Create ImagingSelection resource for segment (if not already existing)
 3. Create Observation resource for ImagingMeasurementGroup
    1. Set `code` to value of Finding Category
-   2. Set `focus` to reference ImagingSelection and tracking BodyStructure resources
+   2. Set `derivedFrom` to reference ImagingSelection resource
    3. Set `bodyStructure` to reference finding site BodyStructure resource
    4. Set `hasMember` to reference Observation resources for imaging measurements and qualitative evaluations\
       *Note: Not yet created*
@@ -725,7 +708,6 @@ For each Measurement Group:
    6. Set `valueCodeableConcept` to value of Finding
 
 See:
-- [Example Tracking Identifier BodyStructure](BodyStructure-measurement-report-tracking-identifier.html)
 - [Example Finding Site BodyStructure](BodyStructure-measurement-report-finding-site.html)
 - [Example Referenced Segment ImagingSelection](ImagingSelection-measurement-report-referenced-segment.html)
 - [Example Imaging Measurement Group Observation](Observation-imaging-measurement-group.html)
@@ -739,7 +721,7 @@ See:
 - Created
    - Device (GeneralEquipment)
    - Observation (ImagingMeasurementGroup)
-   - BodyStructure (Tracking, FindingSite)
+   - BodyStructure (FindingSite)
    - ImagingSelection (Segment)
 
 ### Example Imaging Measurement Mapping 
@@ -833,12 +815,9 @@ See:
   "subject" : {
     "reference" : "Patient/measurement-report-patient"
   },
-  "focus" : [
+  "derivedFrom" : [
     {
       "reference" : "ImagingSelection/measurement-report-referenced-segment"
-    },
-    {
-      "reference" : "BodyStructure/measurement-report-tracking-identifier"
     }
   ],
   "effectiveDateTime" : "2024-07-24T08:23:42+00:00",
@@ -869,7 +848,7 @@ See:
 For each Numerical Measurement:
 1. Use the Algorithm Identification fields to create a new AlgorithmIdentification Device resource (if not already present).\
    This Device resource should have the general equipment device as its parent.
-2. Copy `focus` values from the parent Measurement Group
+2. Copy `derivedFrom` values from the parent Measurement Group
 3. Copy `bodyStructure` value from the parent Measurement Group unless a Finding Site is defined for the specific Numerical Measurement
 4. Set the `valueQuantity` to the value of the Numerical Measurement
 
@@ -888,7 +867,7 @@ See:
 - Created
     - Device (GeneralEquipment, AlgorithmIdentification)
     - Observation (ImagingMeasurementGroup, ImagingMeasurement x 3)
-    - BodyStructure (Tracking, FindingSite)
+    - BodyStructure (FindingSite)
     - ImagingSelection (Segment)
 
 ### Example Imaging Qualitative Evaluation Mapping 
@@ -957,12 +936,9 @@ See:
   "subject" : {
     "reference" : "Patient/measurement-report-patient"
   },
-  "focus" : [
+  "derivedFrom" : [
     {
       "reference" : "ImagingSelection/measurement-report-referenced-segment"
-    },
-    {
-      "reference" : "BodyStructure/measurement-report-tracking-identifier"
     }
   ],
   "effectiveDateTime" : "2024-07-24T08:23:42+00:00",
@@ -995,7 +971,7 @@ See:
 For each Qualitative Evaluation:
 1. Use the Algorithm Identification fields to create a new AlgorithmIdentification Device resource (if not already present).\
    This Device resource should have the general equipment device as its parent.
-2. Copy `focus` values from the parent Measurement Group
+2. Copy `derifedFrom` values from the parent Measurement Group
 3. Copy `bodyStructure` value from the parent Measurement Group unless a Finding Site is defined for the specific Numerical Measurement
 4. Set the `valueCodeableConcept` to the value of the Value Code in the Qualitative Evaluation
 
@@ -1012,7 +988,7 @@ See:
 - Created
     - Device (GeneralEquipment, AlgorithmIdentification)
     - Observation (ImagingMeasurementGroup, ImagingMeasurement x 3, QualitativeEvaluation x 2)
-    - BodyStructure (Tracking, FindingSite)
+    - BodyStructure (FindingSite)
     - ImagingSelection (Segment)
 
 ### Example Measurement Report

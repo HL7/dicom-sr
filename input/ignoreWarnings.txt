@@ -18,7 +18,6 @@ No Target Code System, so the target codes cannot be checked
 # This code table is required by the ImagingSelection resource but is not a well-defined code system. This is addressed with a resource change in R6.
 ValueSet 'http://dicom.nema.org/medical/dicom/current/output/chtml/part04/sect_B.5.html#table_B.5-1' not found
 A definition for CodeSystem 'https://dicom.nema.org/medical/dicom/current/output/chtml/part04/sect_B.5' could not be found, so the code cannot be validated
-URL value 'https://dicom.nema.org/medical/dicom/current/output/chtml/part04/sect_B.5' does not resolve
 
 # A DICOM CP will be created to add code value for the sole code in DICOM Identifiers. The DICOM value type codes only make sense in the context of this IG.
 Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
@@ -27,14 +26,22 @@ Most code systems defined in HL7 IGs will need to move to THO later during the p
 None of the codings provided are in the value set 'LOINC Diagnostic Report Codes' (http://hl7.org/fhir/ValueSet/report-codes|5.0.0), and a coding is recommended to come from this value set (codes = http://dicom.nema.org/resources/ontology/DCM#126000)
 
 # This CodeSystem is used in an example and does not need to be defined in FHIR terminology
-A definition for CodeSystem 'https://ncit.nci.nih.gov' could not be found, so the code cannot be validated
 A definition for CodeSystem 'http://cancerimagingarchive.net' could not be found, so the code cannot be validated
 
 # The application of the pattern to repeats is intended.
 The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
 
-# The FHIR DICOM Package is not a standard IG and it fails this validation check
-The canonical URL for an Implementation Guide must point directly to the implementation guide resource, not to the Implementation Guide as a whole
-
 # The FHIR DICOM Package is not strongly tied to a specific FHIR version
 %This IG is version 5.0.0, while the IG 'fhir.dicom' is from version 4.0.1%
+
+# Use of SHALL appropriate for architectural requirements
+The html source contains the word 'SHOULD' but it is not in a text phrase marked as a conformance clause
+
+# Device issuer URI taken directly from Device resource specification and examples
+No definition could be found for URL value 'http://hl7.org/fhir/NamingSystem/gs1'
+
+# Part of current IG template
+Reference to experimental CodeSystem http://hl7.org/fhir/guide-parameter-code|5.0.0
+
+# Code system used in example only
+Reference to draft CodeSystem http://radlex.org|4.1.0 from fhir.tx.support.r4#0.31.0 (from https://tx.fhir.org/r5)
