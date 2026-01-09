@@ -130,11 +130,11 @@ A FHIR Observation can only have a single `device` value. However, a DICOM SR ca
   
 The DICOM SR General Equipment Module attributes are mapped to a [General Equipment](StructureDefinition-dicom-general-equipment.html) Device.
 
-If an [Imaging Measurement Group](StructureDefinition-imaging-measurement-group.html), [Imaging Measurement](StructureDefinition-imaging-measurement.html) or [Imaging Qualitative Evaluation](StructureDefinition-imaging-qualitative-evaluation.html) has a child with Concept Name DCM#111001 "Algorithm Name" then it is mapped to an [Algorithm Identification](StructureDefinition-algorithm-identification.html) Device.
+If an [Imaging Measurement Group](StructureDefinition-imaging-measurement-group.html), [Imaging Measurement](StructureDefinition-imaging-measurement.html), [Imaging Qualitative Evaluation](StructureDefinition-imaging-qualitative-evaluation.html) or [Derived Imaging Measurement](StructureDefinition-derived-imaging-measurement.html) has a child with Concept Name DCM#111001 "Algorithm Name" then it is mapped to an [Algorithm Identification](StructureDefinition-algorithm-identification.html) Device.
 
 All algorithm devices will use the [General Equipment](StructureDefinition-dicom-general-equipment.html) Device to populate the `parent` element.
 
-If an [Imaging Measurement Group](StructureDefinition-imaging-measurement-group.html), [Imaging Measurement](StructureDefinition-imaging-measurement.html) or [Imaging Qualitative Evaluation](StructureDefinition-imaging-qualitative-evaluation.html) does not have a defined device then the `device` element references the [Equipment](StructureDefinition-dicom-general-equipment.html) Device.
+If an [Imaging Measurement Group](StructureDefinition-imaging-measurement-group.html), [Imaging Measurement](StructureDefinition-imaging-measurement.html), [Imaging Qualitative Evaluation](StructureDefinition-imaging-qualitative-evaluation.html) or [Derived Imaging Measurement](StructureDefinition-derived-imaging-measurement.html) does not have a defined device then the `device` element will reference the [General Equipment](StructureDefinition-dicom-general-equipment.html) Device.
 
 <figure>
   {% include dicom_sr_device.svg %}
@@ -161,11 +161,27 @@ See [DICOM SR Information Object Definition (IOD) Mapping to FHIR](ConceptMap-di
 ### Actors
 
 ### Terminology
+#### Code Systems Used
+This implementation guide draws on a number of formal code systems.
+
+The following table presents the external code systems used in this implementation guide:
+
+|Code System|Code System Name|Code System URL|Description|
+|-----------|----------------|---------------|-----------|
+| SCT       | SNOMED CT      | http://snomed.info/sct | A comprehensive clinical terminology used for clinical concepts including body structures, findings, procedures, and qualitative evaluations|
+| DCM       | DICOM Controlled Terminology | http://dicom.nema.org/resources/ontology/DCM | A controlled terminology defined by the DICOM Standards Committee for use in DICOM Information Object Definitions (IODs) and Service-Object Pair (SOP) Classes. |
+| UMLS      | Unified Medical Language System (UMLS) | https://www.nlm.nih.gov/research/umls/ | A compendium of many controlled vocabularies in the biomedical sciences, created by the U.S. National Library of Medicine. |
+| NCIt      | NCI Thesaurus  | https://ncithesaurus.nci.nih.gov/ncitbrowser/ | A reference terminology and biomedical ontology used in cancer research and clinical care, developed by the National Cancer Institute. |
+| LOINC     | Logical Observation Identifiers Names and Codes | http://loinc.org | A universal standard for identifying medical laboratory observations, clinical measurements, and documents. |
+| UCUM      | Unified Code for Units of Measure | http://unitsofmeasure.org | A code system for unambiguously representing units of measure. |
+
+
 
 #### Value Sets Used
 These Value Sets are used in this implementation guide.
 
-(To be added)
+* [Concrete FHIR Resource Types](http://hl7.org/fhir/valueset-resource-types.html)
+* 
 
 
 
