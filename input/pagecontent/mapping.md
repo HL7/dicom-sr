@@ -4,7 +4,7 @@ This chapter describes the mapping between a DICOM® SR Measurement Report and F
 
 The mapping between DICOM® SR Measurement Report contents and FHIR Resources is split into several sections as follows:
 * [DICOM® SR Measurement Report Instance Mapping](#dicom-sr-measurement-report-instance-mapping)
-* [Document IE Mapping](#document-ie-mapping)
+* [Document Information Entity (IE) Mapping](#document-ie-mapping)
 * [Imaging Measurements Container Mapping](#imaging-measurements-container-mapping)
 * [Imaging Measurement Group Mapping](#imaging-measurement-group-mapping)
 * [Imaging Measurement Mapping](#imaging-measurement-mapping)
@@ -37,7 +37,7 @@ See also the [DICOM SR IOD to FHIR ConceptMap](ConceptMap-dicom-sr-measurement-r
 ### Document IE Mapping
 
 
-The DICOM SR Document IE contains:
+The DICOM SR Document Information Entity (IE) contains:
 * The PreliminaryFlag attribute which may indicate whether the contained observations are `preliminary` or `final`
 * The ParticipantSequence attribute which may indicate:
     * A person who may be the `performer` of created observations
