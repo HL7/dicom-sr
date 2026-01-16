@@ -33,7 +33,7 @@ Description:    "DICOM® SR Base Imaging Selection. Not used directly."
 * derivedFrom ^slicing.rules = #open
 * derivedFrom ^slicing.description = "Description of the related ImagingStudy" 
 
-* derivedFrom contains imagingStudyRef 1..1 MS
+* derivedFrom contains imagingStudyRef 0..1 MS
 * derivedFrom[imagingStudyRef] only Reference(ImagingStudy)
 * derivedFrom[imagingStudyRef] ^short = "Related ImagingStudy"
 * derivedFrom[imagingStudyRef].identifier.type 1..1
@@ -42,5 +42,17 @@ Description:    "DICOM® SR Base Imaging Selection. Not used directly."
 * derivedFrom[imagingStudyRef].identifier.value 1..1
 * derivedFrom[imagingStudyRef].identifier ^short = "Identifier related to Study Instance UID"
 
+* studyUid MS
+
 * subject only Reference(Patient)
 * subject 1..1 MS
+
+* focus ^slicing.discriminator.type = #profile
+* focus ^slicing.discriminator.path = "resolve()"
+* focus ^slicing.rules = #open
+* focus ^slicing.ordered = false
+* focus ^slicing.description = "Imaging Selection foci"
+
+* focus contains sourceSRContentItem 0..1 MS
+* focus[sourceSRContentItem] only Reference(ImagingSelectionSourceSRContentItem)
+* focus[sourceSRContentItem] ^short = "Source SR Content Item"

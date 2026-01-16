@@ -111,6 +111,7 @@ Description: "Example of Observation representing a DICOM SR Measurement Group"
     * code = #125007 "Measurement Group"
     * display = "Measurement Group"
 * derivedFrom[referencedSegment] = Reference(Example-ImagingSelection-ReferencedSegment)
+* derivedFrom[sourceSRContentItem] = Reference(Example-ImagingSelection-SourceSRContentItem)
 * bodyStructure = Reference(Example-BodyStructure-FindingSite)
 * device = Reference(Example-Device-GeneralEquipment)
 * valueCodeableConcept
@@ -252,6 +253,7 @@ Description: "Example of Observation representing a DICOM SR Measurement Group"
          \"0040A010\": { \"vr\": \"CS\", \"Value\": [ \"CONTAINS\" ] },
          \"0040A040\": { \"vr\": \"CS\", \"Value\": [ \"CODE\" ] },
          ...
-       } ] }
+       } ] },
+   \"0040A171\": { \"vr\": \"UI\", \"Value\": [ \"1.2.840.113747.20080222.83341314456631405221767081790268995.10.1.1\" ] }
  }
   </pre></div>"

@@ -81,6 +81,10 @@ Description:    "DICOM® SR Derived Imaging Measurement Mapping to Observation"
 * derivedFrom[imagingMeasurementGroupRef] only Reference(ImagingMeasurementGroup)
 * derivedFrom[imagingMeasurementGroupRef] ^short = "Source Imaging Measurement Groups"
 
+* derivedFrom contains sourceSRContentItem 0..1 MS
+* derivedFrom[sourceSRContentItem] only Reference(ImagingSelectionSourceSRContentItem)
+* derivedFrom[sourceSRContentItem] ^short = "Source SR Content Item"
+
 Mapping: dicom-sr-for-TID1420DerivedMeasurementProfile
 Id: dicom-sr-tid-1420
 Title: "DICOM SR TID 1420 Measurements Derived From Multiple ROI Measurements"

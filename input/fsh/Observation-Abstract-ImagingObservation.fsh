@@ -66,6 +66,10 @@ Description:    "DICOM® SR Base Observation for Imaging Measurement Groups, Ima
 * derivedFrom ^slicing.ordered = false
 * derivedFrom ^slicing.description = "Observed imaging selection(s)"
 
+* derivedFrom contains sourceSRContentItem 0..1 MS
+* derivedFrom[sourceSRContentItem] only Reference(ImagingSelectionSourceSRContentItem)
+* derivedFrom[sourceSRContentItem] ^short = "Source SR Content Item"
+
 * derivedFrom contains imageRegion2d 0..1 MS
 * derivedFrom[imageRegion2d] only Reference(ImagingSelection2dImageRegion)
 * derivedFrom[imageRegion2d] ^short = "2D Image Region"

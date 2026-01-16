@@ -78,6 +78,7 @@
 <artifact deprecated="true" id="StructureDefinition/RegionInSpace" key="StructureDefinition-ImagingSelection-RegionInSpace" name="Region In Space"/>
 <artifact id="StructureDefinition/SourceImageForSegmentation" key="StructureDefinition-ImagingSelection-SourceImageForSegmentation" name="Source Image For Segmentation"/>
 <artifact deprecated="true" id="StructureDefinition/SourceSeriesForSegmentation" key="StructureDefinition-ImagingSelection-SourceSeriesForSegmentation" name="Source Series For Segmentation"/>
+<artifact id="StructureDefinition/SourceSRContentItem" key="StructureDefinition-ImagingSelection-SourceSRContentItem" name="Source SR Content Item"/>
 <artifact id="CodeSystem/dicom-value-type" key="CodeSystem-dicom-value-type" name="Value Types -- DICOM SR Content Item Value Types"/>
 <artifact deprecated="true" id="StructureDefinition/VisualExplanation" key="StructureDefinition-ImagingSelection-VisualExplanation" name="Visual Explanation"/>
 <artifact deprecated="true" id="StructureDefinition/VolumeSurface" key="StructureDefinition-ImagingSelection-VolumeSurface" name="Volume Surface"/>

@@ -16,12 +16,6 @@ Description:    "DICOM® SR Referenced Segmentation Frame Mapping to ImagingSele
 * code MS
 * code.coding = DCM#121214 "Referenced Segmentation Frame"
 
-* focus ^slicing.discriminator.type = #profile
-* focus ^slicing.discriminator.path = "resolve()"
-* focus ^slicing.rules = #open
-* focus ^slicing.ordered = false
-* focus ^slicing.description = "Imaging Selection foci"
-
 * focus contains sourceImageForSegmentation 0..1 MS
 * focus[sourceImageForSegmentation] only Reference(ImagingSelectionSourceImageForSegmentation)
 * focus[sourceImageForSegmentation] ^short = "Source Image For Selection"
