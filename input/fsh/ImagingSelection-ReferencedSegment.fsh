@@ -16,6 +16,16 @@ Description:    "DICOM® SR Referenced Segment Mapping to ImagingSelection"
 * code MS
 * code.coding = DCM#121191 "Referenced Segment"
 
+* focus ^slicing.discriminator.type = #profile
+* focus ^slicing.discriminator.path = "resolve()"
+* focus ^slicing.rules = #open
+* focus ^slicing.ordered = false
+* focus ^slicing.description = "Imaging Selection foci"
+
+* focus contains sourceImageForSegmentation 0..1 MS
+* focus[sourceImageForSegmentation] only Reference(ImagingSelectionSourceImageForSegmentation)
+* focus[sourceImageForSegmentation] ^short = "Source Image For Selection"
+
 * instance ^slicing.discriminator.type = #value
 * instance ^slicing.discriminator.path = "sopClass"
 * instance ^slicing.rules = #open
@@ -33,6 +43,7 @@ Source: ImagingSelectionReferencedSegment
 Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1411"
 Description: "The ImagingSelectionReferencedSegment can be extracted from TID 1411.EV(121191, DCM, Referenced Segment)."
 * -> "TID1411(Referenced Segment)"
+* seriesUid -> "TID1410.EV(121232, DCM, Source series for segmentation).tag(0040,A124) [UID]"
 * instance[segmentationInstance].uid -> "tag(0008,1155) [Referenced SOP Instance UID]"
 * instance[segmentationInstance].subset -> "tag(0062,000B) [Referenced Segment Number]"
 
@@ -52,13 +63,14 @@ Description: "An example of an Segmentation SOP Instance referenced from a measu
     * code = #121191 "Referenced Segment"
     * display = "Referenced Segment"
 * seriesUid = "1.2.840.113747.20080222.83341314456631405221767081790268995.2"
+* focus[sourceImageForSegmentation] = Reference(Example-ImagingSelection-SourceImageForSegmentation)
 * instance[segmentationInstance]
   * uid = "1.2.840.113747.20080222.83341314456631405221767081790268995.2.1"
   * sopClass = https://dicom.nema.org/medical/dicom/current/output/chtml/part04/sect_B.5#1.2.840.10008.5.1.4.1.1.66.4 "Segmentation Storage"
   * subset = "1"
 * text
   * status = #generated
-  * div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
+  * div = "<div xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en\" lang=\"en\">
   <pre>
 {
 \"00081199\": { \"vr\": \"SQ\", \"Value\": [ {

@@ -16,6 +16,16 @@ Description:    "DICOM® SR Referenced Segmentation Frame Mapping to ImagingSele
 * code MS
 * code.coding = DCM#121214 "Referenced Segmentation Frame"
 
+* focus ^slicing.discriminator.type = #profile
+* focus ^slicing.discriminator.path = "resolve()"
+* focus ^slicing.rules = #open
+* focus ^slicing.ordered = false
+* focus ^slicing.description = "Imaging Selection foci"
+
+* focus contains sourceImageForSegmentation 0..1 MS
+* focus[sourceImageForSegmentation] only Reference(ImagingSelectionSourceImageForSegmentation)
+* focus[sourceImageForSegmentation] ^short = "Source Image For Selection"
+
 * instance ^slicing.discriminator.type = #value
 * instance ^slicing.discriminator.path = "sopClass"
 * instance ^slicing.rules = #open
@@ -52,6 +62,7 @@ Description: "An example of an Segmentation Frame referenced from a measurement 
     * code = #121214 "Referenced Segmentation Frame"
     * display = "Referenced Segmentation Frame"
 * seriesUid = "1.2.840.113747.20080222.83341314456631405221767081790268995.2"
+* focus[sourceImageForSegmentation] = Reference(Example-ImagingSelection-SourceImageForSegmentation)
 * instance[referencedSegmentationFrame]
   * uid = "1.2.840.113747.20080222.83341314456631405221767081790268995.2.1"
   * sopClass = https://dicom.nema.org/medical/dicom/current/output/chtml/part04/sect_B.5#1.2.840.10008.5.1.4.1.1.66.4 "Segmentation Storage"

@@ -18,7 +18,17 @@ Description:    "DICOM® SR Image Volume Surface Mapping to ImagingSelection"
 
 * frameOfReferenceUid 1..1 MS
 
-// NOTE: Commented out until FHIR-41429 is resolved
+* focus ^slicing.discriminator.type = #profile
+* focus ^slicing.discriminator.path = "resolve()"
+* focus ^slicing.rules = #open
+* focus ^slicing.ordered = false
+* focus ^slicing.description = "Imaging Selection foci"
+
+* focus contains sourceImageForSegmentation 0..1 MS
+* focus[sourceImageForSegmentation] only Reference(ImagingSelectionSourceImageForSegmentation)
+* focus[sourceImageForSegmentation] ^short = "Source Image For Selection"
+
+// NOTE: Commented out until FHIR R6
 // * imageRegion3D 1..1 MS
 
 Mapping: dicom-tid-1411-for-VolumeSurfaceProfile
@@ -28,8 +38,9 @@ Source: ImagingSelectionVolumeSurface
 Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1411"
 Description: "The ImagingSelectionVolumeSurface can be extracted from TID 1411.EV(121231, DCM, Volume Surface)."
 * -> "TID1411(VolumeSurface)"
+* seriesUid -> "TID1410.EV(121232, DCM, Source series for segmentation).tag(0040,A124) [UID]"
 * frameOfReferenceUid -> "tag(3006,0024) [Referenced Frame of Reference UID]"
-// NOTE: Commented out until FHIR-41429 is resolved
+// NOTE: Commented out until FHIR R6
 // * imageRegion3D.regionType -> "tag(0070,0023) [Graphic Type]"
 // * imageRegion3D.coordinate -> "tag(0070,0022) [Graphic Data]"
 
@@ -49,7 +60,8 @@ Description: "An example of an Volume Surface referenced from a measurement repo
     * code = DCM#121231 "Volume Surface"
     * display = "Volume Surface"
 * frameOfReferenceUid = "1.2.840.113747.20080222.83341314456631405221767081790268995.5"
-// NOTE: Commented out until FHIR-41429 is resolved
+* focus[sourceImageForSegmentation] = Reference(Example-ImagingSelection-SourceImageForSegmentation)
+// NOTE: Commented out until FHIR R6
 // * imageRegion3D
 //   * regionType = #ellipse
 //   * coordinate[+] = -50.0
