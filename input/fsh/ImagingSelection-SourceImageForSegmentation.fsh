@@ -10,7 +10,7 @@ Id:             source-image-for-segmentation
 Title:          "Imaging Selection - DICOM SR Source Image and Series For Segmentation Mapping"
 Description:    "DICOM SR Source Image and Series For Segmentation Mapping to ImagingSelection"
 
-* ^abstract = true
+* ^abstract = false
 * insert DICOMSRStructureDefinitionContent
 
 * code MS
