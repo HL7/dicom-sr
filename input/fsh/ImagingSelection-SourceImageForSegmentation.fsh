@@ -30,7 +30,7 @@ Source: ImagingSelectionSourceImageForSegmentation
 Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1410"
 Description: "The ImagingSelectionSourceImageForSegmentation can be extracted from TID 1410.EV(121233, DCM, Source Image for Segmentation)."
 * -> "TID1410(SourceImageForSegmentation)"
-* instance -> "TID1411.EV(121233, DCM, Source Image for Segmentation).tag(0008,1199) [Referenced SOP Sequence]"
+* instance -> "TID1410.EV(121233, DCM, Source Image for Segmentation).tag(0008,1199) [Referenced SOP Sequence]"
 
 Mapping: dicom-tid-1411-for-sourceImageForSegmentation
 Id: dicom-tid-1411-source-segmentation-image
