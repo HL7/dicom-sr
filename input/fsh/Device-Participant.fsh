@@ -8,7 +8,7 @@ Profile:        ParticipantDevice
 Parent:         Device
 Id:             dicom-participant-device
 Title:          "Device - DICOM Participant Device Mapping"
-Description:    "DICOM® Participant to Device Mapping"
+Description:    "DICOM® Participant to Device Mapping. Used to represent the device that participated in the acquisition or processing of images or other data."
 
 * ^abstract = false
 * insert DICOMSRStructureDefinitionContent
@@ -45,7 +45,7 @@ Description: "An example of the Device resource corresponding to the DICOM® Par
 * displayName = "Example Imaging Measurement Device"
 * text
   * status = #generated
-  * div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
+  * div = "<div xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en\" lang=\"en\">
   <pre>
 {
   \"00080070\": { \"vr\": \"LO\", \"Value\": [ \"Example Device Manufacturer\" ] },

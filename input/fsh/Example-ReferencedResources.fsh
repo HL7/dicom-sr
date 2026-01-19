@@ -17,7 +17,7 @@ Description: "An example of a Patient referenced from a measurement report."
   * value = "PID-12345"
 * text
   * status = #generated
-  * div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
+  * div = "<div xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en\" lang=\"en\">
   <pre>
 {
   \"00100010\": { \"vr\": \"PN\", \"Value\": [ { \"Alphabetic\": \"EXAMPLE^MEASUREMENT^PATIENT}\" } ]},
@@ -50,7 +50,7 @@ Description: "An example of a ServiceRequest referenced from a measurement repor
 * intent = #order
 * text
   * status = #generated
-  * div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
+  * div = "<div xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en\" lang=\"en\">
   <pre>
 {
   \"00080050\": { \"vr\": \"SH\" , \"Value\": \"ACSN-235813\" },
@@ -78,7 +78,7 @@ Description: "An example of an ImagingStudy referenced from a measurement report
 * status = #available
 * text
   * status = #generated
-  * div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
+  * div = "<div xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en\" lang=\"en\">
   <pre>
 {
   \"0020000D\": { \"vr\": \"UI\", \"Value\": [ \"1.2.840.113747.20080222.83311413144566317081790268995\" ] }

@@ -13,7 +13,7 @@ Description: "An example of a DICOM® SR measurement report."
 * subject = Reference(Example-Patient)
 * text
   * status = #generated
-  * div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
+  * div = "<div xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en\" lang=\"en\">
   <pre>
 {
   \"00080012\": { \"vr\": \"DA\", \"Value\": [ \"20190323\" ] },

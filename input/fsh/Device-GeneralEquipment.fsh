@@ -8,7 +8,7 @@ Profile:        GeneralEquipmentDevice
 Parent:         Device
 Id:             dicom-general-equipment
 Title:          "Device - DICOM General Equipment Mapping"
-Description:    "DICOM® General Equipment to Device Mapping"
+Description:    "DICOM® General Equipment to Device Mapping. Used to represent the equipment that produced the measurements or qualitative evaluations reported in a DICOM® SR document."
 
 * ^abstract = false
 * insert DICOMSRStructureDefinitionContent
@@ -47,7 +47,7 @@ Description: "An example of the Device resource corresponding to the DICOM® Gen
   * carrierHRF = "{01}00844588003288{17}141120{10}7654321D{21}10987654d329"
 * text
   * status = #generated
-  * div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
+  * div = "<div xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en\" lang=\"en\">
   <pre>
 {
   \"00080070\": { \"vr\": \"LO\", \"Value\": [ \"Example Device Manufacturer\" ] },

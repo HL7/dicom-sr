@@ -46,7 +46,7 @@ Description: "An example of the Device resource corresponding to an Algorithm Id
 * parent = Reference(Example-Device-GeneralEquipment)
 * text
   * status = #generated
-  * div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">
+  * div = "<div xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en\" lang=\"en\">
   <pre>
 {
   \"0040A730\": { \"vr\": \"SQ\", \"Value\": [ {
