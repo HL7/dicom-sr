@@ -31,6 +31,7 @@ Description: "The TID300Measurement can be extracted from TID 300 - Measurement.
 * method -> "TID1501.EV(370129005, SCT, Measurement Method)"
 * device -> "TID4019(Algorithm Identification)"
 * valueQuantity -> "TID300.$Measurement.tag(0040,A300) [Measured Value Sequence]"
+* bodySite -> "TID301.EV(363698007, SCT, Finding Site) -- Only if Laterality and Topographical Modifier are not used"
 
 Mapping: dicom-sr-for-TID1419MeasurementProfile
 Id: dicom-sr-tid-1419
@@ -45,6 +46,7 @@ Description: "The TID1419Measurement can be extracted from TID 1419 - ROI Measur
 * issued -> "tag(0040,A032) [Observation DateTime]"
 * method -> "TID1501.EV(370129005, SCT, Measurement Method)"
 * device -> "TID4019(Algorithm Identification)"
+* bodySite -> "TID1419.$Measurement.EV(363698007, SCT, Finding Site) -- Only if Laterality and Topographical Modifier are not used"
 * valueQuantity -> "TID1419.$Measurement.tag(0040,A300) [Measured Value Sequence]"
 
 Instance: Example-Observation-ImagingMeasurement-001

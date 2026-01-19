@@ -53,6 +53,12 @@ Usage: #definition
     * relationship = #source-is-narrower-than-target
     * code = #BodyStructureFindingSite
     * display = "BodyStructureFindingSite"
+    * comment = "A BodyStructureFindingSite will be created if the Finding Site includes Laterality and / or Topographical Modifier."
+  * target[+]
+    * relationship = #equivalent
+    * code = #findingSite
+    * display = "ImagingMeasurement.findingSite"
+    * comment = "The findingSite element will be populated if the Finding Site does not include Laterality and / or Topographical Modifier."
 * group[=].element[+]
   * code = http://snomed.info/sct#272741003
   * display = "Laterality"

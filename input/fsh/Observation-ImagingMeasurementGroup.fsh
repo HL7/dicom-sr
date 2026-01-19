@@ -54,6 +54,7 @@ Description: "The TID1410PlanarROIMeasurementGroup can be extracted from TID 141
 * method -> "TID1501.EV(370129005, SCT, Measurement Method)"
 * interpretation -> "TID1410.$QualType, TID.1410QualModType$"
 * device -> "TID4019(Algorithm Identification)"
+* bodySite -> "TID1419.EV(363698007, SCT, Finding Site) -- Only if Laterality and Topographical Modifier are not used"
 
 Mapping: dicom-sr-for-TID1411VolumetricROIMeasurementGroup
 Id: dicom-sr-tid-1411
@@ -70,6 +71,7 @@ Description: "The TID1411PlanarROIMeasurementGroup can be extracted from TID 141
 * method -> "TID1501.EV(370129005, SCT, Measurement Method)"
 * interpretation -> "TID1411.$QualType, TID.1411QualModType$"
 * device -> "TID4019(Algorithm Identification)"
+* bodySite -> "TID1419.EV(363698007, SCT, Finding Site) -- Only if Laterality and Topographical Modifier are not used"
 
 Mapping: dicom-sr-for-TID1501PlanarROIMeasurementGroupProfile
 Id: dicom-sr-tid-1501
@@ -86,6 +88,7 @@ Description: "The TID1501PlanarROIMeasurementGroup can be extracted from TID 150
 * method -> "TID1501.EV(370129005, SCT, Measurement Method)"
 * interpretation -> "TID1501.$QualType, TID.1501QualModType$"
 * device -> "TID4019(Algorithm Identification)"
+* bodySite -> "TID1501.EV(363698007, SCT, Finding Site) -- Only if Laterality and Topographical Modifier are not used"
 
 Instance: Example-Observation-ImagingMeasurementGroup
 InstanceOf: ImagingMeasurementGroup
