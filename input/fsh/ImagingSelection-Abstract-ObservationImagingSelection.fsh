@@ -47,6 +47,15 @@ Description:    "DICOM® SR Base Imaging Selection. Not used directly."
 * subject only Reference(Patient)
 * subject 1..1 MS
 
+* bodySite ^slicing.discriminator.type = #profile
+* bodySite ^slicing.discriminator.path = "resolve()"
+* bodySite ^slicing.rules = #open
+* bodySite ^slicing.ordered = false
+* bodySite ^slicing.description = "Imaging Selection Body Site"
+
+* bodySite contains imagingSelectionBodyStructure 0..1 MS
+* bodySite[imagingSelectionBodyStructure] only Reference(BodyStructureFindingSite)
+
 * focus ^slicing.discriminator.type = #profile
 * focus ^slicing.discriminator.path = "resolve()"
 * focus ^slicing.rules = #open

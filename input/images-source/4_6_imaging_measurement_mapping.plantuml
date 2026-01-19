@@ -4,7 +4,7 @@ map "[[mapping.html#imaging-measurement-group-mapping Inputs from Imaging Measur
    subject => Patient
    partOf => ImagingStudy
    basedOn => ServiceRequest
-   focus => ImagingSelection and / or BodyStructureTrackingIdentifiers
+   derivedFrom => ImagingSelection
    bodyStructure => BodyStructureFindingSite
    device => Algorithm Identification or EquipmentDevice
    method => Measurement Method
@@ -23,7 +23,7 @@ object "ImagingMeasurement Observation" as imagingMeasurement {
     partOf = ImagingStudy
     basedOn = ServiceRequest
     device = AlgorithmIdentification or parent device
-    focus = parent focus values
+    derivedFrom = parent derivedFrom values
     bodyStructure = BodyStructureFindingSite or parent BodyStructureFindingSite
     code = Concept Name Code Sequence
     issued = Observation DateTime

@@ -57,6 +57,7 @@ Description: "An example of an Segmentation SOP Instance referenced from a measu
     * code = #121191 "Referenced Segment"
     * display = "Referenced Segment"
 * seriesUid = "1.2.840.113747.20080222.83341314456631405221767081790268995.2"
+* bodySite[imagingSelectionBodyStructure = Reference(Example-BodyStructure-FindingSite)
 * focus[sourceImageForSegmentation] = Reference(Example-ImagingSelection-SourceImageForSegmentation)
 * focus[sourceSRContentItem] = Reference(Example-ImagingSelection-SourceSRContentItem)
 * instance[segmentationInstance]

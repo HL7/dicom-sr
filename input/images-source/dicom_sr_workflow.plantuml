@@ -1,20 +1,20 @@
 @startuml dicom_sr_workflow
 start
-:Create Patient Reference from Patient IE|
-:Patient Reference>
-:Create ImagingStudy Reference from Study IE|
-:ImagingStudy Reference>
-:Create ServiceRequest Reference from Study IE|
-:ServiceRequest Reference>
-:Create EquipmentDevice from General Equipment IE|
-:EquipmentDevice>
-:Find Imaging Measurements Container|
-:Process Imaging Measurements Container|
+:Create Patient Reference from Patient IE; <<procedure>>
+:Patient Reference; <<output>>
+:Create ImagingStudy Reference from Study IE; <<procedure>>
+:ImagingStudy Reference; <<output>>
+:Create ServiceRequest Reference from Study IE; <<procedure>>
+:ServiceRequest Reference; <<output>>
+:Create EquipmentDevice from General Equipment IE; <<procedure>>
+:EquipmentDevice; <<output>>
+:Find Imaging Measurements Container; <<procedure>>
+:Process Imaging Measurements Container; <<procedure>>
 partition "Inputs" {
-    :Patient Reference<
-    :ImagingStudy Reference<
-    :ImagingStudy Reference<
-    :EquipmentDevice<
+    :Patient Reference; <<input>>
+    :ImagingStudy Reference; <<input>>
+    :ImagingStudy Reference; <<input>>
+    :EquipmentDevice; <<input>>
 }
 end
 

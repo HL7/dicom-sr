@@ -33,7 +33,6 @@ package "Resource Profiles in this IG" {
     }
 
     class FindingSite
-    class TrackingIdentifiers
 
     abstract ImagingObservation
     class ImagingMeasurementGroup
@@ -65,7 +64,6 @@ VisualExplanation <|-- ObservationImagingSelection
 VolumeSurface <|-- ObservationImagingSelection
 
 FindingSite <|-- BodyStructure
-TrackingIdentifiers <|-- BodyStructure
 
 Observation --> Patient: subject
 Observation --> ImagingStudy: basedOn
@@ -81,17 +79,16 @@ DerivedImagingMeasurement --> AlgorithmIdentification: device
 DerivedImagingMeasurement --> ParticipantPractitioner: performer
 
 ImagingObservation --> FindingSite: bodyStructure
-ImagingObservation --> TrackingIdentifiers: focus
 
-ImagingObservation --> IllustrationOfRoi: focus
-ImagingObservation --> ImageRegion2d: focus
-ImagingObservation --> ImageRegion3d: focus
-ImagingObservation --> RealWorldValueMap: focus
-ImagingObservation --> ReferencedSegment: focus
-ImagingObservation --> ReferencedSegmentationFrame: focus
-ImagingObservation --> RegionInSpace: focus
-ImagingObservation --> VisualExplanation: focus
-ImagingObservation --> VolumeSurface: focus
+ImagingObservation --> IllustrationOfRoi: derivedFrom
+ImagingObservation --> ImageRegion2d: derivedFrom
+ImagingObservation --> ImageRegion3d: derivedFrom
+ImagingObservation --> RealWorldValueMap: derivedFrom
+ImagingObservation --> ReferencedSegment: derivedFrom
+ImagingObservation --> ReferencedSegmentationFrame: derivedFrom
+ImagingObservation --> RegionInSpace: derivedFrom
+ImagingObservation --> VisualExplanation: derivedFrom
+ImagingObservation --> VolumeSurface: derivedFrom
 
 ImagingMeasurementGroup --> ImagingMeasurement: hasMember
 ImagingMeasurementGroup --> ImagingQualitativeEvaluation: hasMember

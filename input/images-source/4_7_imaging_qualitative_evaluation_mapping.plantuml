@@ -4,7 +4,7 @@ map "[[mapping.html#imaging-measurements-container-mapping Inputs from Imaging M
    subject => Patient
    partOf => ImagingStudy
    basedOn => ServiceRequest
-   focus => ImagingSelection and / or BodyStructureTrackingIdentifiers
+   derivedFrom => ImagingSelection
    bodyStructure => BodyStructureFindingSite
    device => Algorithm Identification or EquipmentDevice
    method => Measurement Method
@@ -23,7 +23,7 @@ object "ImagingQualitativeEvaluation Observation" as imagingQualitativeEvaluatio
     partOf = ImagingStudy
     basedOn = ServiceRequest
     device = AlgorithmIdentification or parent device
-    focus = parent focus values
+    derivedFrom = parent derivedFrom values
     bodyStructure = parent FindingSite
     code = Concept Name Code Sequence
     issued = Observation DateTime
