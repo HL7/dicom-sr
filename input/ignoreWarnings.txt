@@ -27,6 +27,8 @@ None of the codings provided are in the value set 'LOINC Diagnostic Report Codes
 
 # This CodeSystem is used in an example and does not need to be defined in FHIR terminology
 A definition for CodeSystem 'http://cancerimagingarchive.net' could not be found, so the code cannot be validated
+The concept '349358000' has a status of inactive and its use should be reviewed%
+None of the codings provided are in the value set 'Pregnancy Status - IPS' (http://hl7.org/fhir/uv/ips/ValueSet/pregnancy-status-uv-ips|2.0.0), and a coding is recommended to come from this value set (codes = http://loinc.org#LA26683-5)
 
 # The application of the pattern to repeats is intended.
 The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
@@ -35,7 +37,7 @@ The repeating element has a pattern. The pattern will apply to all the repeats (
 %This IG is version 5.0.0, while the IG 'fhir.dicom' is from version 4.0.1%
 
 # Use of SHALL appropriate for architectural requirements
-The html source contains the word 'SHOULD' but it is not in a text phrase marked as a conformance clause
+The html source contains the word 'SHALL' but it is not in a text phrase marked as a conformance clause: 'The RDSP actor SHALL adhere to the security considerations in the security section. Sharing PHI SHALL comply with the local security requirements of the deploying facility.'
 
 # Device issuer URI taken directly from Device resource specification and examples
 No definition could be found for URL value 'http://hl7.org/fhir/NamingSystem/gs1'
