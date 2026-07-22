@@ -16,62 +16,84 @@ Title:          "ConceptMap - DICOM SR Measurement Report to FHIR Mapping"
 * sourceScopeUri = "http://dicom.nema.org/resources/ontology/DCM#126000"
 * targetScopeUri = "http://hl7.org/fhir/ValueSet/resource-types#Bundle"
 
-* property[0]
+* property[+]
   * code = #references
   * type = #string
-* property[1]
+* property[+]
   * code = #imaging-measurement-group-map
+  * type = #string
+* property[+]
+  * code = #subject
+  * type = #string
+* property[+]
+  * code = #partOf
+  * type = #string
+* property[+]
+  * code = #basedOn
+  * type = #string
+* property[+]
+  * code = #device
+  * type = #string
+* property[+]
+  * code = #identifier
   * type = #string
 
 // Patient IE Mapping
+* group[0].target = "http://hl7.org/fhir/resource-types"
 * group[0].element[0]
   * code = #DICOM.Patient
   * display = "Patient IE"
   * target
     * relationship = #equivalent
-    * code = #Patient[1]
-    * display = "Patient[1]"
+    * code = #Patient
+    * display = "Patient"
     * comment = "The DICOM® SR Patient IE is mapped to a FHIR Patient resource"
+    * property[0]
+      * code = #identifier
+      * valueString = "PatientID (0010,0020) and IssuerOfPatientID (0010,0021) are mapped to Patient.identifier[0].value and Patient.identifier[0].assigner respectively"
 
 // Study IE Mapping
+* group[1].target = "http://hl7.org/fhir/resource-types"
 * group[1].element[0]
   * code = #DICOM.Study
   * display = "Study IE"
   * target[+]
     * relationship = #equivalent
-    * code = #ImagingStudy[1]
-    * display = "ImagingStudy[1]"
+    * code = #ImagingStudy
+    * display = "ImagingStudy"
     * comment = "The DICOM® SR Study IE is mapped to a FHIR ImagingStudy resource"
     * property[0]
       * code = #identifier
-      * valueString = "ImagingStudy.identifier[0].value=StudyInstanceUID"
+      * valueString = "StudyInstanceUID (0020,000D) is mapped to ImagingStudy.identifier[0].value"
 * group[1].element[1]
   * code = #DICOM.Study
   * display = "Study IE"
   * target
     * relationship = #related-to
-    * code = #ServiceRequest[1]
-    * display = "ServiceRequest[1]"
+    * code = #ServiceRequest
+    * display = "ServiceRequest"
     * comment = "The DICOM® SR Study IE is mapped to a FHIR ServiceRequest resource"
 
 // Equipment IE Mapping
+* group[2].target = "http://hl7.org/fhir/resource-types"
 * group[2].element[0]
   * code = #DICOM.Equipment
   * display = "Equipment IE"
   * target
     * relationship = #equivalent
-    * code = #Device[1]
-    * display = "Device[1]"
+    * code = #Device
+    * display = "Device"
     * comment = "The DICOM® SR Equipment IE may result in the creation of a new Device resource"
 
 // Document IE Mapping
+* group[3].target = "http://hl7.org/fhir/resource-types"
 * group[3].element[0]
   * code = #DICOM.Document
   * display = "Document IE"
   * target
     * relationship = #source-is-narrower-than-target
-    * code = #Observation[1]
-    * display = "Observation[1]"
+    * code = #Observation
+    * display = "Observation"
     * comment = "Processing of the Document IE will result in the creation one or more new Observation resources"
     * property[0]
       * code = #imaging-measurement-group-map
