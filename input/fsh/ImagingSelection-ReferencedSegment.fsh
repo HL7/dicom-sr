@@ -4,8 +4,8 @@ Alias: LOINC =  http://loinc.org
 Alias: DCMIdType = http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-identifier-type
 Alias: HL7IdType = http://terminology.hl7.org/CodeSystem/v2-0203
 
-Profile:        ImagingSelectionReferencedSegment
-Parent:         ImagingSelectionObservationImagingSelection
+Profile:        ReferencedSegment
+Parent:         ObservationImagingSelection
 Id:             referenced-segment
 Title:          "Imaging Selection - DICOM SR Referenced Segment Mapping"
 Description:    "DICOM® SR Referenced Segment Mapping to ImagingSelection"
@@ -33,16 +33,16 @@ Description:    "DICOM® SR Referenced Segment Mapping to ImagingSelection"
 Mapping: dicom-tid-1411-for-referencedSegmentProfile
 Id: dicom-tid-1411-referenced-segment
 Title: "DICOM TID 1411 Referenced Segment"
-Source: ImagingSelectionReferencedSegment
+Source: ReferencedSegment
 Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1411"
-Description: "The ImagingSelectionReferencedSegment can be extracted from TID 1411.EV(121191, DCM, Referenced Segment)."
+Description: "The ReferencedSegment can be extracted from TID 1411.EV(121191, DCM, Referenced Segment)."
 * -> "TID1411(Referenced Segment)"
 * seriesUid -> "TID1410.EV(121232, DCM, Source series for segmentation).tag(0040,A124) [UID]"
 * instance[segmentationInstance].uid -> "tag(0008,1155) [Referenced SOP Instance UID]"
 * instance[segmentationInstance].subset -> "tag(0062,000B) [Referenced Segment Number]"
 
 Instance: Example-ImagingSelection-ReferencedSegment
-InstanceOf: ImagingSelectionReferencedSegment
+InstanceOf: ReferencedSegment
 Usage: #example
 Description: "An example of an Segmentation SOP Instance referenced from a measurement report."
 
@@ -50,6 +50,7 @@ Description: "An example of an Segmentation SOP Instance referenced from a measu
 
 * subject = Reference(Example-Patient)
 * derivedFrom = Reference(Example-ImagingStudy)
+* studyUid = "1.2.840.113747.20080222.83311413144566317081790268995"
 * status = #available
 * code
   * coding
@@ -93,3 +94,4 @@ Description: "An example of an Segmentation SOP Instance referenced from a measu
 \"0040A124\": { \"vr\": \"UI\", \"Value\": [ \"1.3.6.1.4.1.14519.5.2.1.6279.6001.273525289046256012743471155680\" ] }
 }
   </pre></div>"
+

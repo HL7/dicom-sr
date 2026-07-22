@@ -71,53 +71,53 @@ Description:    "DICOM® SR Base Observation for Imaging Measurement Groups, Ima
 * derivedFrom[sourceSRContentItem] ^short = "Source SR Content Item"
 
 * derivedFrom contains imageRegion2d 0..1 MS
-* derivedFrom[imageRegion2d] only Reference(ImagingSelection2dImageRegion)
+* derivedFrom[imageRegion2d] only Reference(ImageRegion2d)
 * derivedFrom[imageRegion2d] ^short = "2D Image Region"
 
 * derivedFrom contains imageRegion3d 0..1 MS
-* derivedFrom[imageRegion3d] only Reference(ImagingSelection3dImageRegion)
+* derivedFrom[imageRegion3d] only Reference(ImageRegion3d)
 * derivedFrom[imageRegion3d] ^short = "3D Image Region"
 
 * derivedFrom contains referencedSegment 0..1 MS
-* derivedFrom[referencedSegment] only Reference(ImagingSelectionReferencedSegment)
+* derivedFrom[referencedSegment] only Reference(ReferencedSegment)
 * derivedFrom[referencedSegment] ^short = "Referenced Segment"
 
 * derivedFrom contains referencedSegmentationFrame 0..1 MS
-* derivedFrom[referencedSegmentationFrame] only Reference(ImagingSelectionReferencedSegmentationFrame)
+* derivedFrom[referencedSegmentationFrame] only Reference(ReferencedSegmentationFrame)
 * derivedFrom[referencedSegmentationFrame] ^short = "Referenced Segmentation Frame"
 
 * derivedFrom contains regionInSpace 0..1 MS
-* derivedFrom[regionInSpace] only Reference(ImagingSelectionRegionInSpace)
+* derivedFrom[regionInSpace] only Reference(RegionInSpace)
 * derivedFrom[regionInSpace] ^short = "RegionInSpace"
 
 * derivedFrom contains volumeSurface 0..1 MS
-* derivedFrom[volumeSurface] only Reference(ImagingSelectionVolumeSurface)
+* derivedFrom[volumeSurface] only Reference(VolumeSurface)
 * derivedFrom[volumeSurface] ^short = "Volume Surface"
 
 * derivedFrom contains realWorldValueMap 0..1 MS
-* derivedFrom[realWorldValueMap] only Reference(ImagingSelectionRealWorldValueMap)
+* derivedFrom[realWorldValueMap] only Reference(RealWorldValueMap)
 * derivedFrom[realWorldValueMap] ^short = "Real World Value Map"
 
 * derivedFrom contains illustrationOfRoi 0..1 MS
-* derivedFrom[illustrationOfRoi] only Reference(ImagingSelectionIllustrationOfROI)
+* derivedFrom[illustrationOfRoi] only Reference(IllustrationOfROI)
 * derivedFrom[illustrationOfRoi] ^short = "Illustration of ROI"
 
 * derivedFrom contains visualExplanation 0..1 MS
-* derivedFrom[visualExplanation] only Reference(ImagingSelectionVisualExplanation)
+* derivedFrom[visualExplanation] only Reference(VisualExplanation)
 * derivedFrom[visualExplanation] ^short = "VisualExplanation"
 
 // Observation Date Time
-* issued 1..1 MS
-* issued ^short = "Observation Date Time"
+* effectiveDateTime 1..1 MS
+* effectiveDateTime ^short = "Observation Date Time"
 
 * interpretation MS
 
-* device 1..1 MS
+* device 0..1 MS
 * device only Reference(AlgorithmIdentification or GeneralEquipmentDevice or ParticipantDevice)
 
 * bodySite MS
 * bodyStructure MS
-* bodyStructure only Reference(BodyStructureFindingSite)
+* bodyStructure only Reference(FindingSite)
 
 Instance: Example-Observation-ImagingObservation
 InstanceOf: ImagingObservationProfile
@@ -128,7 +128,7 @@ Description: "Example of the base Imaging Observation"
 * subject = Reference(Example-Patient)
 * basedOn = Reference(Example-ServiceRequest)
 * partOf = Reference(Example-ImagingStudy)
-* issued = "2024-07-24T08:23:42+00:00"
+* effectiveDateTime = "2024-07-24T08:23:42+00:00"
 * effectiveDateTime = "2024-07-24T08:23:42+00:00"
 * status = #final
 * performer = Reference(Example-Practitioner)

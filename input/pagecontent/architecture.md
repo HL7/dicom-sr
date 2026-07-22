@@ -76,10 +76,10 @@ All mapped content items are children of the following `CONTAINER` content items
 | Container Concept Name                    | Child FHIR Resource Profile                                                               | Notes                                                                                             |
 |-------------------------------------------|-------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------|
 | DCM#126010 "Imaging Measurements"         | [Imaging Measurement Group](StructureDefinition-imaging-measurement-group.html)           | See [Imaging Measurement Group relationship](#imaging-measurement-group-relationship)             | 
-| DCM#126011 "Derived Imaging Measurements" | [Derived Imaging Measurements](StructureDefinition-derived-imaging-measurement.html)      | See [Derived Imaging Measurements relationship](#derived-imaging-measurements-relationship)       |
+| DCM#126011 "Derived Imaging Measurements" | [Derived Imaging Measurement](StructureDefinition-derived-imaging-measurement.html)      | See [Derived Imaging Measurements relationship](#derived-imaging-measurements-relationship)       |
 | UMLS#C0034375 "Qualitative Evaluations"   | [Imaging Qualitative Evaluation](StructureDefinition-imaging-qualitative-evaluation.html) | See [Imaging Qualitative Evaluations relationship](#imaging-qualitative-evaluations-relationship) |
 
-e.g., the children of the `CONTAINER` with a Concept Name of DCM#126010 "Imaging Measurements" are mapped to [Measurement Group](StructureDefinition-imaging-measurement-group.html) Observations.
+e.g., the children of the `CONTAINER` with a Concept Name of DCM#126010 "Imaging Measurements" are mapped to [Imaging Measurement Group](StructureDefinition-imaging-measurement-group.html) Observations.
 
 <figure>
   {% include tid_1500_measurement_report.svg %}
@@ -111,16 +111,16 @@ A `TEXT` or `CODE` child content item should only be interpreted as a qualitativ
 The mapping of relevant child items in this list is described in Imaging Measurement Group Mapping (see [Imaging Measurement Group Mapping](mapping.html#imaging-measurement-group-mapping)).
 
 
-###### Derived Imaging Measurements Relationship
-A Derived Imaging Measurement `CONTAINER` contains 0-n `NUM` content items representing derived numerical measurements. Each of these is mapped to a [Derived Measurement](StructureDefinition-derived-imaging-measurement.html) Observation.
+###### Derived Imaging Measurement Relationship
+A Derived Imaging Measurement `CONTAINER` contains 0-n `NUM` content items representing derived numerical measurements. Each of these is mapped to a [Derived Imaging Measurement](StructureDefinition-derived-imaging-measurement.html) Observation.
 
 A Derived Imaging Measurement `CONTAINER` contains 0-n Imaging Measurement Group `CONTAINER` content items. Each of these is mapped to an [Imaging Measurement Group](StructureDefinition-imaging-measurement-group.html) Observation (see [Imaging Measurement Group relationship](#imaging-measurement-group-relationship)).
 
-The [Derived Imaging Measurements](StructureDefinition-derived-imaging-measurement.html) Observation `derivedFrom` element references the child [Imaging Measurement Group](StructureDefinition-imaging-measurement-group.html) Observations. 
+The [Derived Imaging Measurement](StructureDefinition-derived-imaging-measurement.html) Observation `derivedFrom` element references the child [Imaging Measurement Group](StructureDefinition-imaging-measurement-group.html) Observations.
 
 
-###### Imaging Qualitative Evaluations Relationship
-An Imaging Qualitative Evaluations `CONTAINER` contains 0-n `TEXT` or `CODE` content items representing qualitative evaluations. Each of these is mapped to an [Imaging Qualitative Evaluation](StructureDefinition-imaging-qualitative-evaluation.html) Observation.
+###### Imaging Qualitative Evaluation Relationship
+An Imaging Qualitative Evaluation `CONTAINER` contains 0-n `TEXT` or `CODE` content items representing qualitative evaluations. Each of these is mapped to an [Imaging Qualitative Evaluation](StructureDefinition-imaging-qualitative-evaluation.html) Observation.
 
 
 ##### Device Relationship

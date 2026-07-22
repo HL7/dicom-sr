@@ -13,8 +13,13 @@ Description:    "DICOM® SR Imaging Qualitative Evaluation Mapping to Observatio
 * ^abstract = false
 * insert DICOMSRStructureDefinitionContent
 
-* category 1..* MS
-* category = http://terminology.hl7.org/CodeSystem/umls#C0034375 "Qualitative Evaluations"
+* category MS
+* category ^slicing.discriminator.type = #pattern
+* category ^slicing.discriminator.path = "coding"
+* category ^slicing.rules = #open
+* category ^slicing.description = "Observation category for DICOM SR Qualitative Evaluation"
+* category contains qualitativeEvaluationCategory 1..1 MS
+* category[qualitativeEvaluationCategory].coding = http://terminology.hl7.org/CodeSystem/umls#C0034375 "Qualitative Evaluations"
 
 * valueCodeableConcept 1..1 MS
 
@@ -28,8 +33,9 @@ Description: "The Qualitative Evaluation can be extracted from TID 1500 - Measur
 * identifier[observationUID] -> "tag(0040,A171) [Observation UID]"
 * subject -> "tag(0010,0020) [Patient ID]"
 * code -> "TID1500.EV(C0034375, UMLS, Qualitative Evaluations)[n].tag(0040,A043) [Concept Name Code Sequence]"
-* issued -> "tag(0040,A032) [Observation DateTime]"
-* valueCodeableConcept -> "TID1500.EV(C0034375, UMLS, Qualitative Evaluations)[n].tag(0040,A160) [Text Value] or .tag(0040,A168) [Concept Code Sequence]"
+* effectiveDateTime -> "tag(0040,A032) [Observation DateTime]"
+* valueCodeableConcept.coding -> "TID1500.EV(C0034375, UMLS, Qualitative Evaluations)[n].tag(0040,A168) [Concept Code Sequence]"
+* valueCodeableConcept.text -> "TID1500.EV(C0034375, UMLS, Qualitative Evaluations)[n].tag(0040,A160) [Text Value]"
 
 Instance: Example-Observation-ImagingQualitativeEvaluation-001
 InstanceOf: ImagingQualitativeEvaluation
@@ -40,7 +46,7 @@ Description: "Example of Observation representing a DICOM® SR Measurement Quali
 * subject = Reference(Example-Patient)
 * basedOn = Reference(Example-ServiceRequest)
 * partOf = Reference(Example-ImagingStudy)
-* issued = "2024-07-24T08:23:42+00:00"
+* effectiveDateTime = "2024-07-24T08:23:42+00:00"
 * effectiveDateTime = "2024-07-24T08:23:42+00:00"
 * status = #final
 * performer = Reference(Example-Practitioner)
@@ -49,7 +55,7 @@ Description: "Example of Observation representing a DICOM® SR Measurement Quali
     * system = "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl" //"https://ncit.nci.nih.gov"
     * code = #C45992 "Subtlety score"
     * display = "Subtlety score"
-* category = http://terminology.hl7.org/CodeSystem/umls#C0034375 "Qualitative Evaluations"
+* category[qualitativeEvaluationCategory] = http://terminology.hl7.org/CodeSystem/umls#C0034375 "Qualitative Evaluations"
 * derivedFrom[referencedSegment] = Reference(Example-ImagingSelection-ReferencedSegment)
 * device = Reference(Example-Device-GeneralEquipment)
 * valueCodeableConcept
@@ -67,7 +73,7 @@ Description: "Example of Observation representing a DICOM® SR Measurement Quali
 * subject = Reference(Example-Patient)
 * basedOn = Reference(Example-ServiceRequest)
 * partOf = Reference(Example-ImagingStudy)
-* issued = "2024-07-24T08:23:42+00:00"
+* effectiveDateTime = "2024-07-24T08:23:42+00:00"
 * effectiveDateTime = "2024-07-24T08:23:42+00:00"
 * status = #final
 * performer = Reference(Example-Practitioner)
@@ -75,7 +81,7 @@ Description: "Example of Observation representing a DICOM® SR Measurement Quali
   * coding
     * system = "http://radlex.org"
     * code = #RID36042 "Malignancy"
-* category = http://terminology.hl7.org/CodeSystem/umls#C0034375 "Qualitative Evaluations"
+* category[qualitativeEvaluationCategory] = http://terminology.hl7.org/CodeSystem/umls#C0034375 "Qualitative Evaluations"
 * derivedFrom[referencedSegment] = Reference(Example-ImagingSelection-ReferencedSegment)
 * device = Reference(Example-Device-GeneralEquipment)
 * valueCodeableConcept

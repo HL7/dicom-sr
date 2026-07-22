@@ -66,8 +66,8 @@ VolumeSurface <|-- ObservationImagingSelection
 FindingSite <|-- BodyStructure
 
 Observation --> Patient: subject
-Observation --> ImagingStudy: basedOn
-Observation --> ServiceRequest: derivedFrom
+Observation --> ImagingStudy: derivedFrom
+Observation --> ServiceRequest: basedOn
 
 ImagingObservation --> GeneralEquipmentDevice: device
 ImagingObservation --> ParticipantDevice: device

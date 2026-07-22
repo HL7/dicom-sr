@@ -4,11 +4,11 @@ Alias: LOINC =  http://loinc.org
 Alias: DCMIdType = http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-identifier-type
 Alias: HL7IdType = http://terminology.hl7.org/CodeSystem/v2-0203
 
-Profile:        ImagingSelectionObservationImagingSelection
+Profile:        ObservationImagingSelection
 Parent:         ImagingSelection
 Id:             observation-imaging-selection
-Title:          "Imaging Selection - DICOM SR Base Imaging Selection"
-Description:    "DICOM® SR Base Imaging Selection. Not used directly."
+Title:          "Imaging Selection - DICOM SR Observation Imaging Selection"
+Description:    "DICOM® SR Observation Imaging Selection. Not used directly."
 
 * ^abstract = true
 * insert DICOMSRStructureDefinitionContent
@@ -42,13 +42,13 @@ Description:    "DICOM® SR Base Imaging Selection. Not used directly."
 * derivedFrom[imagingStudyRef].identifier.value 1..1
 * derivedFrom[imagingStudyRef].identifier ^short = "Identifier related to Study Instance UID"
 
-* studyUid MS
+* studyUid 1..1 MS
 
 * subject only Reference(Patient)
 * subject 1..1 MS
 
 * bodySite MS
-* bodySite only CodeableReference(BodyStructureFindingSite)
+* bodySite only CodeableReference(FindingSite)
 
 * focus ^slicing.discriminator.type = #profile
 * focus ^slicing.discriminator.path = "resolve()"
@@ -59,3 +59,12 @@ Description:    "DICOM® SR Base Imaging Selection. Not used directly."
 * focus contains sourceSRContentItem 0..1 MS
 * focus[sourceSRContentItem] only Reference(ImagingSelectionSourceSRContentItem)
 * focus[sourceSRContentItem] ^short = "Source SR Content Item"
+
+Mapping: dicom-sr-image-reference-source-study
+Id: dicom-sr-image-reference-source-study
+Title: "DICOM SR Image Reference Source Study"
+Source: ObservationImagingSelection
+Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.2.html"
+Description: "The ObservationImagingSelection study context can be extracted from the DICOM Study IE."
+* -> "Study"
+* studyUid -> "tag(0020,000D) [Study Instance UID]"

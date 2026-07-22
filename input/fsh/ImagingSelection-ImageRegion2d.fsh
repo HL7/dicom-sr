@@ -4,8 +4,8 @@ Alias: LOINC =  http://loinc.org
 Alias: DCMIdType = http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-identifier-type
 Alias: HL7IdType = http://terminology.hl7.org/CodeSystem/v2-0203
 
-Profile:        ImagingSelection2dImageRegion
-Parent:         ImagingSelectionObservationImagingSelection
+Profile:        ImageRegion2d
+Parent:         ObservationImagingSelection
 Id:             image-region-2d
 Title:          "Imaging Selection - DICOM SR 2D Image Region Mapping"
 Description:    "DICOM® SR Image 2D Region Mapping to ImagingSelection"
@@ -28,9 +28,9 @@ Description:    "DICOM® SR Image 2D Region Mapping to ImagingSelection"
 Mapping: dicom-tid-1410-for-2dImageRegionProfile
 Id: dicom-tid-1410-2d-image-region
 Title: "DICOM TID 1410 2D Image Region"
-Source: ImagingSelection2dImageRegion
+Source: ImageRegion2d
 Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1410"
-Description: "The ImagingSelection2dImageRegion can be extracted from TID 1410.EV(111030, DCM, Image Region)."
+Description: "The ImageRegion2d can be extracted from TID 1410.EV(111030, DCM, Image Region)."
 * -> "TID1410(2DImageRegion)"
 * instance[imageInstance].uid -> "tag(0008,1155) [Referenced SOP Instance UID]"
 * instance[imageInstance].imageRegion2D.regionType -> "tag(0070,0023) [Graphic Type]"
@@ -39,16 +39,16 @@ Description: "The ImagingSelection2dImageRegion can be extracted from TID 1410.E
 Mapping: dicom-tid-1411-for-2dImageRegionProfile
 Id: dicom-tid-1411-2d-image-region
 Title: "DICOM TID 1411 2D Image Region"
-Source: ImagingSelection2dImageRegion
+Source: ImageRegion2d
 Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1411"
-Description: "The ImagingSelection2dImageRegion can be extracted from TID 1411.EV(111030, DCM, Image Region)."
+Description: "The ImageRegion2d can be extracted from TID 1411.EV(111030, DCM, Image Region)."
 * -> "TID1411(2DImageRegion)"
 * instance[imageInstance].uid -> "tag(0008,1155) [Referenced SOP Instance UID]"
 * instance[imageInstance].imageRegion2D.regionType -> "tag(0070,0023) [Graphic Type]"
 * instance[imageInstance].imageRegion2D.coordinate -> "tag(0070,0022) [Graphic Data]"
 
 Instance: Example-ImagingSelection-ImageRegion2D
-InstanceOf: ImagingSelection2dImageRegion
+InstanceOf: ImageRegion2d
 Usage: #example
 Description: "An example of a 2D Image Region referenced from a measurement report."
 
@@ -56,6 +56,7 @@ Description: "An example of a 2D Image Region referenced from a measurement repo
 
 * subject = Reference(Example-Patient)
 * derivedFrom = Reference(Example-ImagingStudy)
+* studyUid = "1.2.840.113747.20080222.83311413144566317081790268995"
 * status = #available
 * code
   * coding

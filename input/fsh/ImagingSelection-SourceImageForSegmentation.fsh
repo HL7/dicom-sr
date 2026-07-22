@@ -5,7 +5,7 @@ Alias: DCMIdType = http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-identifier-t
 Alias: HL7IdType = http://terminology.hl7.org/CodeSystem/v2-0203
 
 Profile:        ImagingSelectionSourceImageForSegmentation
-Parent:         ImagingSelectionObservationImagingSelection
+Parent:         ObservationImagingSelection
 Id:             source-image-for-segmentation
 Title:          "Imaging Selection - DICOM SR Source Image and Series For Segmentation Mapping"
 Description:    "DICOM SR Source Image and Series For Segmentation Mapping to ImagingSelection"
@@ -51,6 +51,7 @@ Description: "An example of an source image for segmentation referenced from a m
 
 * subject = Reference(Example-Patient)
 * derivedFrom = Reference(Example-ImagingStudy)
+* studyUid = "1.2.840.113747.20080222.83311413144566317081790268995"
 * status = #available
 * code
   * coding

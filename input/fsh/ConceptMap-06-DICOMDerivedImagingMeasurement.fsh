@@ -12,54 +12,54 @@ Usage: #definition
 * contact[0].telecom[0].value = "http://www.hl7.org/Special/committees/imagemgt"
 * extension[0].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * extension[0].valueCoding = #ii
-* sourceScopeUri = "DICOM-Imaging-Measurement"
-* targetScopeUri = "Observation"
+// * sourceScopeUri = "http://dicom.nema.org/resources/ontology/DCM#126011"
+* targetScopeUri = "http://hl7.org/fhir/ValueSet/resource-types#Observation"
 
-* additionalAttribute[0]
+* additionalAttribute[+]
   * code = #IdentifierType
   * description = "DICOM Controlled Terminology"
   * uri = "http://dicom.nema.org/resources/ontology/DCM"
   * type = #Coding
 
-* additionalAttribute[1]
+* additionalAttribute[+]
   * code = #ValueType
   * description = "DICOM Value Type"
   * uri = "http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-value-type"
   * type = #Coding
 
-* group[0].element[0]
+* group[+].element[+]
   * code = #CID7465
   * display = "Measurement Derived From Multiple ROI Measurements"
-  * target[0]
+  * target[+]
     * relationship = #equivalent
     * code = #valueQuantity
     * display = "DerivedImagingMeasurement.valueQuantity"
-    * dependsOn[0]
+    * dependsOn[+]
       * attribute = #ValueType
       * valueCoding = http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-value-type#num
 
-* group[1].element[0]
+* group[+].element[+]
   * code = http://dicom.nema.org/resources/ontology/DCM#TID4019
   * display = "Algorithm Identification"
-  * target[0]
+  * target[+]
     * relationship = #equivalent
     * code = #AlgrithmIdentification
     * display = "AlgorithmIdentification"
     * comment = "Content from the Algorithm Identification template will be used to create a FHIR AlgorithmIdentification Device."
-  * target[0]
+  * target[+]
     * relationship = #equivalent
     * code = #device
     * display = "DerivedImagingMeasurement.device"
 
-* group[2].element[0]
+* group[+].element[+]
   * code = http://dicom.nema.org/resources/ontology/DCM#125007
   * display = "Measurement Group"
-  * target[0]
+  * target[+]
     * relationship = #equivalent
     * code = #ImagingMeasurementGroup
     * display = "ImagingMeasurementGroup"
     * comment = "Measurement Group children of a derived imaging measurement content item are mapped to new ImagingMeasurementGroup observations."
-  * target[1]
+  * target[+]
     * relationship = #equivalent
     * code = #derivedFrom
     * display = "DerivedImagingMeasurement.derivedFrom"

@@ -4,7 +4,7 @@ Alias: LOINC =  http://loinc.org
 Alias: DCMIdType = http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-identifier-type
 Alias: HL7IdType = http://terminology.hl7.org/CodeSystem/v2-0203
 
-Profile:        DerivedImagingMeasurementProfile
+Profile:        DerivedImagingMeasurement
 Parent:         Observation
 Id:             derived-imaging-measurement
 Title:          "Observation - DICOM SR Derived Imaging Measurement Mapping to Observation"
@@ -55,7 +55,12 @@ Description:    "DICOM® SR Derived Imaging Measurement Mapping to Observation"
 * partOf[imagingStudyRef].identifier ^short = "Identifier related to Study Instance UID"
 
 * category MS
-* category = DCM#126011 "Derived Imaging Measurements"
+* category ^slicing.discriminator.type = #pattern
+* category ^slicing.discriminator.path = "coding"
+* category ^slicing.rules = #open
+* category ^slicing.description = "Observation category for DICOM SR Derived Imaging Measurement"
+* category contains derivedImagingMeasurementCategory 1..1 MS
+* category[derivedImagingMeasurementCategory].coding = DCM#126011 "Derived Imaging Measurements"
 
 * code MS
 
@@ -63,10 +68,10 @@ Description:    "DICOM® SR Derived Imaging Measurement Mapping to Observation"
 * subject 1..1 MS
 
 // Observation Date Time
-* issued 1..1 MS
-* issued ^short = "Observation Date Time"
+* effectiveDateTime 1..1 MS
+* effectiveDateTime ^short = "Observation Date Time"
 
-* device 1..1 MS
+* device 0..1 MS
 * device only Reference(AlgorithmIdentification or GeneralEquipmentDevice)
 
 * referenceRange MS
@@ -88,21 +93,21 @@ Description:    "DICOM® SR Derived Imaging Measurement Mapping to Observation"
 Mapping: dicom-sr-for-TID1420DerivedMeasurementProfile
 Id: dicom-sr-tid-1420
 Title: "DICOM SR TID 1420 Measurements Derived From Multiple ROI Measurements"
-Source: DerivedImagingMeasurementProfile
+Source: DerivedImagingMeasurement
 Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1420"
 Description: "The TID300Measurement can be extracted from TID 1420 - Measurements Derived From Multiple ROI Measurements."
 * -> "TID1420(DerivedImagingMeasurement)"
 * subject -> "tag(0010,0020) [Patient ID]"
 * identifier[observationUID] -> "tag(0040,A171) [Observation UID]"
 * code -> "TID1420.DCID7465.tag(0040,A043) [Concept Name Code Sequence]"
-* issued -> "tag(0040,A032) [Observation DateTime]"
+* effectiveDateTime -> "tag(0040,A032) [Observation DateTime]"
 * referenceRange -> "TID1420.TID310"
 * device -> "TID1420.TID4019"
 * valueQuantity -> "TID1420.DCID7465.tag(0040,A300) [Measured Value Sequence]"
 * derivedFrom -> "TID1420.TID1410 or TID1420.TID1411"
 
 Instance: Example-Observation-DerivedImagingMeasurement
-InstanceOf: DerivedImagingMeasurementProfile
+InstanceOf: DerivedImagingMeasurement
 Usage: #example
 Description: "Example of Observation representing a DICOM SR Derived Imaging Measurement."
 
@@ -110,7 +115,7 @@ Description: "Example of Observation representing a DICOM SR Derived Imaging Mea
 * subject = Reference(Example-Patient)
 * basedOn = Reference(Example-ServiceRequest)
 * partOf = Reference(Example-ImagingStudy)
-* issued = "2024-07-24T08:23:42+00:00"
+* effectiveDateTime = "2024-07-24T08:23:42+00:00"
 * effectiveDateTime = "2024-07-24T08:23:42+00:00"
 * status = #final
 * performer = Reference(Example-Practitioner)
@@ -119,6 +124,7 @@ Description: "Example of Observation representing a DICOM SR Derived Imaging Mea
     * system = "http://dicom.nema.org/resources/ontology/DCM"
     * code = #126031 "Peak Value Within ROI"
     * display = "Peak Value Within ROI"
+* category[derivedImagingMeasurementCategory] = DCM#126011 "Derived Imaging Measurements"
 * device = Reference(Example-Device-GeneralEquipment)
 * valueQuantity
   * value = 123.45

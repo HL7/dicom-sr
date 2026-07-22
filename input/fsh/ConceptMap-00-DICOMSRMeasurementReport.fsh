@@ -13,8 +13,8 @@ Title:          "ConceptMap - DICOM SR Measurement Report to FHIR Mapping"
 * contact[0].telecom[0].value = "http://www.hl7.org/Special/committees/imagemgt"
 * extension[0].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * extension[0].valueCode = #ii
-* sourceScopeUri = "DICOM-SR-Measurement-Report"
-* targetScopeUri = "Bundle"
+// * sourceScopeUri = "DICOM-SR-Measurement-Report"
+* targetScopeUri = "http://hl7.org/fhir/ValueSet/resource-types#Bundle"
 
 * property[0]
   * code = #references
@@ -37,11 +37,14 @@ Title:          "ConceptMap - DICOM SR Measurement Report to FHIR Mapping"
 * group[1].element[0]
   * code = #DICOM.Study
   * display = "Study IE"
-  * target
+  * target[+]
     * relationship = #equivalent
     * code = #ImagingStudy[1]
     * display = "ImagingStudy[1]"
     * comment = "The DICOM® SR Study IE is mapped to a FHIR ImagingStudy resource"
+    * property[0]
+      * code = #identifier
+      * valueString = "ImagingStudy.identifier[0].value=StudyInstanceUID"
 * group[1].element[1]
   * code = #DICOM.Study
   * display = "Study IE"

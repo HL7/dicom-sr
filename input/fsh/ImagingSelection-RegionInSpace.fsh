@@ -4,10 +4,10 @@ Alias: LOINC =  http://loinc.org
 Alias: DCMIdType = http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-identifier-type
 Alias: HL7IdType = http://terminology.hl7.org/CodeSystem/v2-0203
 
-Profile:        ImagingSelectionRegionInSpace
-Parent:         ImagingSelectionObservationImagingSelection
+Profile:        RegionInSpace
+Parent:         ObservationImagingSelection
 Id:             region-in-space
-Title:          "Imaging Selection - DICOM SR Region In Space"
+Title:          "Imaging Selection - DICOM SR Region In Space Mapping"
 Description:    "DICOM® SR Region In Space Mapping to ImagingSelection"
 
 * ^abstract = false
@@ -29,9 +29,9 @@ Description:    "DICOM® SR Region In Space Mapping to ImagingSelection"
 Mapping: dicom-tid-1410-for-regionInSpaceProfile
 Id: dicom-tid-1410-region-in-space
 Title: "DICOM TID 1410 Region In Space"
-Source: ImagingSelectionRegionInSpace
+Source: RegionInSpace
 Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1410"
-Description: "The ImagingSelectionRegionInSpace can be extracted from TID 1410.EV(130488, DCM, Region In Space)."
+Description: "The RegionInSpace can be extracted from TID 1410.EV(130488, DCM, Region In Space)."
 * -> "TID1410(RegionInSpace)"
 * instance[rtStructureInstance].uid -> "tag(0008,1155) [Referenced SOP Instance UID]"
 * instance[rtStructureInstance].subset -> "CID130488.CID130489.tag(0040,A160) [Text Value]"
@@ -39,15 +39,15 @@ Description: "The ImagingSelectionRegionInSpace can be extracted from TID 1410.E
 Mapping: dicom-tid-1411-for-regionInSpaceProfile
 Id: dicom-tid-1411-region-in-space
 Title: "DICOM TID 1411 Region In Space"
-Source: ImagingSelectionRegionInSpace
+Source: RegionInSpace
 Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1411"
-Description: "The ImagingSelectionRegionInSpace can be extracted from TID 1411.EV(130488, DCM, Region In Space)."
+Description: "The RegionInSpace can be extracted from TID 1411.EV(130488, DCM, Region In Space)."
 * -> "TID1411(RegionInSpace)"
 * instance[rtStructureInstance].uid -> "tag(0008,1155) [Referenced SOP Instance UID]"
 * instance[rtStructureInstance].subset -> "CID130488.CID130489.tag(0040,A160) [Text Value]"
 
 Instance: Example-ImagingSelection-RegionInSpace
-InstanceOf: ImagingSelectionRegionInSpace
+InstanceOf: RegionInSpace
 Usage: #example
 Description: "An example of an region in space referenced from a measurement report."
 
@@ -55,6 +55,7 @@ Description: "An example of an region in space referenced from a measurement rep
 
 * subject = Reference(Example-Patient)
 * derivedFrom = Reference(Example-ImagingStudy)
+* studyUid = "1.2.840.113747.20080222.83311413144566317081790268995"
 * status = #available
 * code
   * coding

@@ -4,8 +4,8 @@ Alias: LOINC =  http://loinc.org
 Alias: DCMIdType = http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-identifier-type
 Alias: HL7IdType = http://terminology.hl7.org/CodeSystem/v2-0203
 
-Profile:        ImagingSelectionVolumeSurface
-Parent:         ImagingSelectionObservationImagingSelection
+Profile:        VolumeSurface
+Parent:         ObservationImagingSelection
 Id:             volume-surface
 Title:          "Imaging Selection - DICOM SR Image Volume Surface Mapping"
 Description:    "DICOM® SR Image Volume Surface Mapping to ImagingSelection"
@@ -28,9 +28,9 @@ Description:    "DICOM® SR Image Volume Surface Mapping to ImagingSelection"
 Mapping: dicom-tid-1411-for-VolumeSurfaceProfile
 Id: dicom-tid-1411-volume-surface
 Title: "DICOM TID 1411 Volume Surface"
-Source: ImagingSelectionVolumeSurface
+Source: VolumeSurface
 Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1411"
-Description: "The ImagingSelectionVolumeSurface can be extracted from TID 1411.EV(121231, DCM, Volume Surface)."
+Description: "The VolumeSurface can be extracted from TID 1411.EV(121231, DCM, Volume Surface)."
 * -> "TID1411(VolumeSurface)"
 * seriesUid -> "TID1410.EV(121232, DCM, Source series for segmentation).tag(0040,A124) [UID]"
 * frameOfReferenceUid -> "tag(3006,0024) [Referenced Frame of Reference UID]"
@@ -39,7 +39,7 @@ Description: "The ImagingSelectionVolumeSurface can be extracted from TID 1411.E
 // * imageRegion3D.coordinate -> "tag(0070,0022) [Graphic Data]"
 
 Instance: Example-ImagingSelection-VolumeSurface
-InstanceOf: ImagingSelectionVolumeSurface
+InstanceOf: VolumeSurface
 Usage: #example
 Description: "An example of an Volume Surface referenced from a measurement report."
 
@@ -47,6 +47,7 @@ Description: "An example of an Volume Surface referenced from a measurement repo
 
 * subject = Reference(Example-Patient)
 * derivedFrom = Reference(Example-ImagingStudy)
+* studyUid = "1.2.840.113747.20080222.83311413144566317081790268995"
 * status = #available
 * code
   * coding

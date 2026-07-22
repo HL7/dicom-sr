@@ -5,7 +5,7 @@ map "[[mapping.html#imaging-measurement-group-mapping Inputs from Imaging Measur
    partOf => ImagingStudy
    basedOn => ServiceRequest
    derivedFrom => ImagingSelection
-   bodyStructure => BodyStructureFindingSite
+   bodyStructure => FindingSite
    device => Algorithm Identification or EquipmentDevice
    method => Measurement Method
 }
@@ -14,7 +14,7 @@ object "Device - AlgorithmIdentification" as AlgorithmIdentification {
     parent = EquipmentDevice
 }
 
-object "Body Structure - BodyStructureFindingSite" as BodyStructureFindingSite {
+object "Body Structure - FindingSite" as FindingSite {
     includedStructure.structure = Finding Site
 }
 
@@ -24,15 +24,15 @@ object "ImagingMeasurement Observation" as imagingMeasurement {
     basedOn = ServiceRequest
     device = AlgorithmIdentification or parent device
     derivedFrom = parent derivedFrom values
-    bodyStructure = BodyStructureFindingSite or parent BodyStructureFindingSite
+    bodyStructure = FindingSite or parent FindingSite
     code = Concept Name Code Sequence
-    issued = Observation DateTime
+    effectiveDateTime = Observation DateTime
     method = Measurement Method or parent method
     valueQuantity = Measured Value Sequence
 }
 
 imagingMeasurement --> AlgorithmIdentification: Create AlgorithmIdentification from Algorithm Identification content item
-imagingMeasurement --> BodyStructureFindingSite: Create BodyStructure from Finding Site
+imagingMeasurement --> FindingSite: Create BodyStructure from Finding Site
 
 inputs --> imagingMeasurement
 

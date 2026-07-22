@@ -4,7 +4,7 @@ Alias: LOINC =  http://loinc.org
 Alias: DCMIdType = http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-identifier-type
 Alias: HL7IdType = http://terminology.hl7.org/CodeSystem/v2-0203
 
-Profile:        BodyStructureFindingSite
+Profile:        FindingSite
 Parent:         BodyStructure
 Id:             dicom-sr-finding-site
 Title:          "Body Structure - DICOM SR Finding Site Mapping"
@@ -38,7 +38,7 @@ Description:    "DICOM® SR Finding Site Mapping to BodyStructure. Used to repre
 Mapping: dicom-sr-for-TID300FindingSiteProfile
 Id: dicom-sr-tid-300-finding-site
 Title: "DICOM SR TID 300 Finding Site"
-Source: BodyStructureFindingSite
+Source: FindingSite
 Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_300"
 Description: "The FindingSiteBodyStructure can be extracted from TID 300 EV(363698007, SCT, Finding Site), EV (272741003, SCT, Laterality) and DT (106233006, SCT, Topographical modifier)."
 * -> "TID300(FindingSite)"
@@ -52,7 +52,7 @@ Description: "The FindingSiteBodyStructure can be extracted from TID 300 EV(3636
 Mapping: dicom-sr-for-TID1419FindingSiteProfile
 Id: dicom-sr-tid-1419-finding-site
 Title: "DICOM SR TID 1419 Finding Site"
-Source: BodyStructureFindingSite
+Source: FindingSite
 Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1419"
 Description: "The FindingSiteBodyStructure can be extracted from TID 1419 EV(363698007, SCT, Finding Site), EV (272741003, SCT, Laterality) and DT (106233006, SCT, Topographical modifier)."
 * -> "TID1419(FindingSite)"
@@ -66,7 +66,7 @@ Description: "The FindingSiteBodyStructure can be extracted from TID 1419 EV(363
 Mapping: dicom-sr-for-TID1501FindingSiteProfile
 Id: dicom-sr-tid-1501-finding-site
 Title: "DICOM SR TID 1501 Finding Site"
-Source: BodyStructureFindingSite
+Source: FindingSite
 Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1501"
 Description: "The FindingSiteBodyStructure can be extracted from TID 1501 EV(363698007, SCT, Finding Site), EV (272741003, SCT, Laterality) and DT (106233006, SCT, Topographical modifier)."
 * -> "TID1501(FindingSite)"
@@ -78,7 +78,7 @@ Description: "The FindingSiteBodyStructure can be extracted from TID 1501 EV(363
 * includedStructure.qualifier -> "TID1501.DT(106233006, SCT, Topographical modifier)"
 
 Instance: Example-BodyStructure-FindingSite
-InstanceOf: BodyStructureFindingSite
+InstanceOf: FindingSite
 Usage: #example
 Description: "Example of BodySite representing a DICOM SR Finding Site"
 

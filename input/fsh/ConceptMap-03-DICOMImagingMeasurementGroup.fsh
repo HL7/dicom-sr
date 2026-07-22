@@ -33,7 +33,7 @@ Usage: #definition
   * target[+]
     * relationship = #equivalent
     * code = #identifier
-    * display = "BodyStructureFindingSite.identifier"
+    * display = "FindingSite.identifier"
     * dependsOn[+]
       * attribute = #IdentifierType
       * valueCoding = http://dicom.nema.org/resources/ontology/DCM#112039
@@ -44,7 +44,7 @@ Usage: #definition
   * target[+]
     * relationship = #equivalent
     * code = #identifier
-    * display = "BodyStructureFindingSite.identifier"
+    * display = "FindingSite.identifier"
     * dependsOn[+]
       * attribute = #IdentifierType
       * valueCoding = http://dicom.nema.org/resources/ontology/DCM#112040
@@ -70,15 +70,15 @@ Usage: #definition
   * display = "Image Region"
   * target[+]
     * relationship = #equivalent
-    * code = #ImagingSelection2dImageRegion
-    * display = "ImagingSelection2dImageRegion"
+    * code = #ImageRegion2d
+    * display = "ImageRegion2d"
     * dependsOn[+]
       * attribute = #ValueType
       * valueCoding = http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-value-type#scoord
   * target[+]
     * relationship = #equivalent
-    * code = #ImagingSelection3dImageRegion
-    * display = "ImagingSelection3dImageRegion"
+    * code = #ImageRegion3d
+    * display = "ImageRegion3d"
     * dependsOn[+]
       * attribute = #ValueType
       * valueCoding = http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-value-type#scoord3d
@@ -92,8 +92,8 @@ Usage: #definition
   * display = "Referenced Segmentation Frame"
   * target[+]
     * relationship = #equivalent
-    * code = #ImagingSelectionReferencedSegmentationFrame
-    * display = "ImagingSelectionReferencedSegmentationFrame"
+    * code = #ReferencedSegmentationFrame
+    * display = "ReferencedSegmentationFrame"
   * target[+]
     * relationship = #equivalent
     * code = #derivedFrom
@@ -104,8 +104,8 @@ Usage: #definition
   * display = "Region in Space"
   * target[+]
     * relationship = #equivalent
-    * code = #ImagingSelectionRegionInSpace
-    * display = "ImagingSelectionRegionInSpace"
+    * code = #RegionInSpace
+    * display = "RegionInSpace"
   * target[+1]
     * relationship = #equivalent
     * code = #derivedFrom
@@ -116,8 +116,8 @@ Usage: #definition
   * display = "Illustration of ROI"
   * target[+]
     * relationship = #equivalent
-    * code = #ImagingSelectionIllustrationOfROI
-    * display = "ImagingSelectionIllustrationOfROI"
+    * code = #IllustrationOfROI
+    * display = "IllustrationOfROI"
   * target[+]
     * relationship = #equivalent
     * code = #derivedFrom
@@ -128,8 +128,8 @@ Usage: #definition
   * display = "Visual explanation"
   * target[+]
     * relationship = #equivalent
-    * code = #ImagingSelectionVisualExplanation
-    * display = "ImagingSelectionVisualExplanation"
+    * code = #VisualExplanation
+    * display = "VisualExplanation"
   * target[+]
     * relationship = #equivalent
     * code = #derivedFrom
@@ -140,8 +140,8 @@ Usage: #definition
   * display = "Real World Value Map used for measurement"
   * target[+]
     * relationship = #equivalent
-    * code = #ImagingSelectionRealWorldValueMap
-    * display = "ImagingSelectionRealWorldValueMap"
+    * code = #RealWorldValueMap
+    * display = "RealWorldValueMap"
   * target[+]
     * relationship = #equivalent
     * code = #derivedFrom
@@ -152,8 +152,8 @@ Usage: #definition
   * display = "Referenced Segment"
   * target[+]
     * relationship = #equivalent
-    * code = #ImagingSelectionReferencedSegment
-    * display = "ImagingSelectionReferencedSegment"
+    * code = #ReferencedSegment
+    * display = "ReferencedSegment"
   * target[+]
     * relationship = #equivalent
     * code = #derivedFrom
@@ -164,8 +164,8 @@ Usage: #definition
   * display = "Volume Surface"
   * target[+]
     * relationship = #equivalent
-    * code = #ImagingSelectionVolumeSurface
-    * display = "ImagingSelectionVolumeSurface"
+    * code = #VolumeSurface
+    * display = "VolumeSurface"
   * target[+]
     * relationship = #equivalent
     * code = #derivedFrom
@@ -184,9 +184,9 @@ Usage: #definition
   * display = "Finding Site"
   * target[+]
     * relationship = #source-is-narrower-than-target
-    * code = #BodyStructureFindingSite
-    * display = "BodyStructureFindingSite"
-    * comment = "A BodyStructureFindingSite will be created if the Finding Site includes Laterality and / or Topographical Modifier."
+    * code = #FindingSite
+    * display = "FindingSite"
+    * comment = "A FindingSite will be created if the Finding Site includes Laterality and / or Topographical Modifier."
   * target[+]
     * relationship = #equivalent
     * code = #findingSite
@@ -197,15 +197,15 @@ Usage: #definition
   * display = "Laterality"
   * target[+]
     * relationship = #source-is-narrower-than-target
-    * code = #BodyStructureFindingSite
-    * display = "BodyStructureFindingSite"
+    * code = #FindingSite
+    * display = "FindingSite"
 * group[=].element[+]
   * code = http://snomed.info/sct#106233006
   * display = "Topographical modifier"
   * target[+]
     * relationship = #source-is-narrower-than-target
-    * code = #BodyStructureFindingSite
-    * display = "BodyStructureFindingSite"
+    * code = #FindingSite
+    * display = "FindingSite"
 
 * group[+].element[+]
   * code = http://dicom.nema.org/resources/ontology/DCM#TID4019

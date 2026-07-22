@@ -290,7 +290,7 @@ See [Example Device](Device-measurement-report-general-equipment.html).
       "type": "ImagingStudy",
       "reference": "ImagingStudy/measurement-report-imaging-study"
     }],
-    "issued": "2024-07-24T08:23:42",
+    "effectiveDateTime": "2024-07-24T08:23:42",
     "status": "final",
     "performer": [{
       "type": "Practitioner",
@@ -306,8 +306,8 @@ See [Example Device](Device-measurement-report-general-equipment.html).
 
 1. Extract `ContentDate`, `ContentTime`, and `PreliminaryFlag` values
 2. Extract `ObserverType` and `PersonObserverName` values to identify the `Practitioner` resource
-3. Use these values to populate the `issued`, `status` and `performer` fields in the created FHIR Observation resources\
-   `issued` may be overridden by more specific values in specific content items
+3. Use these values to populate the `effectiveDateTime`, `status` and `performer` fields in the created FHIR Observation resources\
+   `effectiveDateTime` may be overridden by more specific values in specific content items
 
 #### FHIR Resources
 - Referenced
@@ -369,7 +369,7 @@ See [Example Device](Device-measurement-report-general-equipment.html).
          "type": "ImagingStudy",
          "reference": "ImagingStudy/measurement-report-imaging-study"
        }],
-      "issued": "2024-07-24T08:23:42"
+      "effectiveDateTime": "2024-07-24T08:23:42"
       "status": "final",
       "category" : [{ "coding" : [{
         "system" : "http://dicom.nema.org/resources/ontology/DCM",
@@ -637,7 +637,7 @@ See [Example Device](Device-measurement-report-general-equipment.html).
          "type": "ImagingStudy",
          "reference": "ImagingStudy/measurement-report-imaging-study"
        }],
-      "issued": "2024-07-24T08:23:42+00:00"
+      "effectiveDateTime": "2024-07-24T08:23:42+00:00"
       "status": "final",
       "code" : { "coding" : [{
         "system" : "http://snomed.info/sct/MAIN/version/2024-07-01",
@@ -821,7 +821,7 @@ See:
     }
   ],
   "effectiveDateTime" : "2024-07-24T08:23:42+00:00",
-  "issued" : "2024-07-24T08:23:42+00:00",
+  "effectiveDateTime" : "2024-07-24T08:23:42+00:00",
   "performer" : [
     {
       "reference" : "Practitioner/measurement-report-practitioner"
@@ -942,7 +942,7 @@ See:
     }
   ],
   "effectiveDateTime" : "2024-07-24T08:23:42+00:00",
-  "issued" : "2024-07-24T08:23:42+00:00",
+  "effectiveDateTime" : "2024-07-24T08:23:42+00:00",
   "performer" : [
     {
       "reference" : "Practitioner/measurement-report-practitioner"

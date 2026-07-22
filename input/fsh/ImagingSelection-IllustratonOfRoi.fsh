@@ -4,8 +4,8 @@ Alias: LOINC =  http://loinc.org
 Alias: DCMIdType = http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-identifier-type
 Alias: HL7IdType = http://terminology.hl7.org/CodeSystem/v2-0203
 
-Profile:        ImagingSelectionIllustrationOfROI
-Parent:         ImagingSelectionObservationImagingSelection
+Profile:        IllustrationOfROI
+Parent:         ObservationImagingSelection
 Id:             illustration-of-roi
 Title:          "Imaging Selection - DICOM SR Illustration Of ROI Mapping"
 Description:    "DICOM® SR Illustration Of ROI Mapping to ImagingSelection"
@@ -21,9 +21,9 @@ Description:    "DICOM® SR Illustration Of ROI Mapping to ImagingSelection"
 Mapping: dicom-tid-1410-for-illustrationOfRoi
 Id: dicom-tid-1410-illustration-of-roi
 Title: "DICOM TID 1410 Illustration of ROI"
-Source: ImagingSelectionIllustrationOfROI
+Source: IllustrationOfROI
 Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1410"
-Description: "The ImagingSelectionIllustrationOfROI can be extracted from TID 1410.EV(121200, DCM, Illustration of ROI)."
+Description: "The IllustrationOfROI can be extracted from TID 1410.EV(121200, DCM, Illustration of ROI)."
 * -> "TID1410(IllustrationOfROI)"
 * instance.uid -> "tag(0008,1155) [Referenced SOP Instance UID]"
 * instance.sopClass -> "tag(0008,1150) [Referenced SOP Class UID]"
@@ -31,15 +31,15 @@ Description: "The ImagingSelectionIllustrationOfROI can be extracted from TID 14
 Mapping: dicom-tid-1411-for-illustrationOfRoi
 Id: dicom-tid-1411-illustration-of-roi
 Title: "DICOM TID 1411 Illustration of ROI"
-Source: ImagingSelectionIllustrationOfROI
+Source: IllustrationOfROI
 Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1411"
-Description: "The ImagingSelectionIllustrationOfROI can be extracted from TID 1411.EV(121200, DCM, Illustration of ROI)."
+Description: "The IllustrationOfROI can be extracted from TID 1411.EV(121200, DCM, Illustration of ROI)."
 * -> "TID1411(IllustrationOfROI)"
 * instance.uid -> "tag(0008,1155) [Referenced SOP Instance UID]"
 * instance.sopClass -> "tag(0008,1150) [Referenced SOP Class UID]"
 
 Instance: Example-ImagingSelection-IllustrationOfROI
-InstanceOf: ImagingSelectionIllustrationOfROI
+InstanceOf: IllustrationOfROI
 Usage: #example
 Description: "An example of an Illustration of ROI referenced from a measurement report."
 
@@ -47,6 +47,7 @@ Description: "An example of an Illustration of ROI referenced from a measurement
 
 * subject = Reference(Example-Patient)
 * derivedFrom = Reference(Example-ImagingStudy)
+* studyUid = "1.2.840.113747.20080222.83311413144566317081790268995"
 * status = #available
 * code
   * coding

@@ -4,8 +4,8 @@ Alias: LOINC =  http://loinc.org
 Alias: DCMIdType = http://hl7.org/fhir/uv/dicom-sr/CodeSystem/dicom-identifier-type
 Alias: HL7IdType = http://terminology.hl7.org/CodeSystem/v2-0203
 
-Profile:        ImagingSelectionReferencedSegmentationFrame
-Parent:         ImagingSelectionObservationImagingSelection
+Profile:        ReferencedSegmentationFrame
+Parent:         ObservationImagingSelection
 Id:             referenced-segmentation-frame
 Title:          "Imaging Selection - DICOM SR Referenced Segmentation Frame Mapping"
 Description:    "DICOM® SR Referenced Segmentation Frame Mapping to ImagingSelection"
@@ -33,15 +33,15 @@ Description:    "DICOM® SR Referenced Segmentation Frame Mapping to ImagingSele
 Mapping: dicom-tid-1410-for-referencedSegmentationFrame
 Id: dicom-tid-1410-referenced-segmentation-frame
 Title: "DICOM TID 1410 Referenced Segmentation Frame"
-Source: ImagingSelectionReferencedSegmentationFrame
+Source: ReferencedSegmentationFrame
 Target: "https://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_A.html#sect_TID_1410"
-Description: "The ImagingSelectionReferencedSegmentationFrame can be extracted from TID 1410.EV(121214, DCM, Referenced Segmentation Frame)."
+Description: "The ReferencedSegmentationFrame can be extracted from TID 1410.EV(121214, DCM, Referenced Segmentation Frame)."
 * -> "TID1410(ReferencedSegmentationFrame)"
 * instance[referencedSegmentationFrame].uid -> "tag(0008,1155) [Referenced SOP Instance UID]"
 * instance[referencedSegmentationFrame].subset -> "tag(0062,000B) [Referenced Segment Number]"
 
 Instance: Example-ImagingSelection-ReferencedSegmentationFrame
-InstanceOf: ImagingSelectionReferencedSegmentationFrame
+InstanceOf: ReferencedSegmentationFrame
 Usage: #example
 Description: "An example of an Segmentation Frame referenced from a measurement report."
 
@@ -49,6 +49,7 @@ Description: "An example of an Segmentation Frame referenced from a measurement 
 
 * subject = Reference(Example-Patient)
 * derivedFrom = Reference(Example-ImagingStudy)
+* studyUid = "1.2.840.113747.20080222.83311413144566317081790268995"
 * status = #available
 * code
   * coding

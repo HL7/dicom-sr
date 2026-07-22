@@ -3,7 +3,6 @@
   <version code="current" url="https://build.fhir.org/ig/HL7/uv/dicom-sr"/>
   <version code="0.1.0" url="http://hl7.org/fhir/uv/dicom-sr/2024May"/>
   <artifactPageExtension value="-definitions"/>
-  <!-- <artifactPageExtension value="-examples"/> -->
   <artifactPageExtension value="-mappings"/>
   <artifact id="CodeSystem/DicomIdentifierType" key="CodeSystem-DicomIdentifierType" name="DICOM Identifier Types"/>
   <artifact id="ConceptMap/DicomDocumentIE" key="ConceptMap-DicomDocumentIE" name="DICOM Document IE to Observation Map"/>

@@ -70,7 +70,7 @@ tracking_identifiers : identifier = TrackingIdentifier
 tracking_identifiers : identifier = TrackingUniqueIdentifier
 imaging_measurement_group_container --> tracking_identifiers: Create BodyStructure from TrackingIdentifier / TrackingUniqueIdentifier
 
-class "[[StructureDefinition-dicom-sr-finding-site.html BodyStructureFindingSite (BodyStructure)]]" as imaging_measurement_group_finding_site
+class "[[StructureDefinition-dicom-sr-finding-site.html FindingSite (BodyStructure)]]" as imaging_measurement_group_finding_site
 imaging_measurement_group_finding_site : structure = FindingSite
 imaging_measurement_group_finding_site : laterality = Laterality
 imaging_measurement_group_container --> imaging_measurement_group_finding_site: Create BodyStructure from FindingSite

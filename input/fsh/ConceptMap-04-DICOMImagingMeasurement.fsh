@@ -51,9 +51,9 @@ Usage: #definition
   * display = "Finding Site"
   * target[+]
     * relationship = #source-is-narrower-than-target
-    * code = #BodyStructureFindingSite
-    * display = "BodyStructureFindingSite"
-    * comment = "A BodyStructureFindingSite will be created if the Finding Site includes Laterality and / or Topographical Modifier."
+    * code = #FindingSite
+    * display = "FindingSite"
+    * comment = "A FindingSite will be created if the Finding Site includes Laterality and / or Topographical Modifier."
   * target[+]
     * relationship = #equivalent
     * code = #findingSite
@@ -64,15 +64,15 @@ Usage: #definition
   * display = "Laterality"
   * target[+]
     * relationship = #source-is-narrower-than-target
-    * code = #BodyStructureFindingSite
-    * display = "BodyStructureFindingSite"
+    * code = #FindingSite
+    * display = "FindingSite"
 * group[=].element[+]
   * code = http://snomed.info/sct#106233006
   * display = "Topographical modifier"
   * target[+]
     * relationship = #source-is-narrower-than-target
-    * code = #BodyStructureFindingSite
-    * display = "BodyStructureFindingSite"
+    * code = #FindingSite
+    * display = "FindingSite"
 
 * group[+].element[+]
   * code = http://dicom.nema.org/resources/ontology/DCM#TID4019

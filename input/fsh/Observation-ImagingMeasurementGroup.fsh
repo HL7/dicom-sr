@@ -19,7 +19,12 @@ Description:    "DICOM® SR Imaging Measurement Group Mapping to Observation"
 * insert DICOMSRStructureDefinitionContent
 
 * category MS
-* category = DCM#125007 "Measurement Group"
+* category ^slicing.discriminator.type = #pattern
+* category ^slicing.discriminator.path = "coding"
+* category ^slicing.rules = #open
+* category ^slicing.description = "Observation category for DICOM SR Measurement Group"
+* category contains measurementGroupCategory 1..1 MS
+* category[measurementGroupCategory].coding = DCM#125007 "Measurement Group"
 
 * hasMember ^slicing.discriminator.type = #profile
 * hasMember ^slicing.discriminator.path = "resolve()"
@@ -50,7 +55,7 @@ Description: "The TID1410PlanarROIMeasurementGroup can be extracted from TID 141
 * subject -> "tag(0010,0020) [Patient ID]"
 * code -> "TID1410.EV(276214006, SCT, Finding category) > DCM#125007 'Measurement Group'"
 * valueCodeableConcept -> "TID1410.EV(121071, DCM, Finding)"
-* issued -> "tag(0040,A032) [Observation DateTime]"
+* effectiveDateTime -> "tag(0040,A032) [Observation DateTime]"
 * method -> "TID1501.EV(370129005, SCT, Measurement Method)"
 * interpretation -> "TID1410.$QualType, TID.1410QualModType$"
 * device -> "TID4019(Algorithm Identification)"
@@ -67,7 +72,7 @@ Description: "The TID1411PlanarROIMeasurementGroup can be extracted from TID 141
 * subject -> "tag(0010,0020) [Patient ID]"
 * code -> "TID1411.EV(276214006, SCT, Finding category) > DCM#125007 'Measurement Group'"
 * valueCodeableConcept -> "TID1411.EV(121071, DCM, Finding)"
-* issued -> "tag(0040,A032) [Observation DateTime]"
+* effectiveDateTime -> "tag(0040,A032) [Observation DateTime]"
 * method -> "TID1501.EV(370129005, SCT, Measurement Method)"
 * interpretation -> "TID1411.$QualType, TID.1411QualModType$"
 * device -> "TID4019(Algorithm Identification)"
@@ -84,7 +89,7 @@ Description: "The TID1501PlanarROIMeasurementGroup can be extracted from TID 150
 * subject -> "tag(0010,0020) [Patient ID]"
 * code -> "TID1501.EV(276214006, SCT, Finding category) > DCM#125007 'Measurement Group'"
 * valueCodeableConcept -> "TID1501.EV(121071, DCM, Finding)"
-* issued -> "tag(0040,A032) [Observation DateTime]"
+* effectiveDateTime -> "tag(0040,A032) [Observation DateTime]"
 * method -> "TID1501.EV(370129005, SCT, Measurement Method)"
 * interpretation -> "TID1501.$QualType, TID.1501QualModType$"
 * device -> "TID4019(Algorithm Identification)"
@@ -99,7 +104,7 @@ Description: "Example of Observation representing a DICOM SR Measurement Group"
 * subject = Reference(Example-Patient)
 * basedOn = Reference(Example-ServiceRequest)
 * partOf = Reference(Example-ImagingStudy)
-* issued = "2024-07-24T08:23:42+00:00"
+* effectiveDateTime = "2024-07-24T08:23:42+00:00"
 * effectiveDateTime = "2024-07-24T08:23:42+00:00"
 * status = #final
 * performer = Reference(Example-Practitioner)
@@ -108,7 +113,7 @@ Description: "Example of Observation representing a DICOM SR Measurement Group"
     * system = "http://snomed.info/sct"
     * code = #241053004 "Radiographic measurement of lung volume"
     * display = "Radiographic measurement of lung volume"
-* category
+* category[measurementGroupCategory]
   * coding
     * system = "http://dicom.nema.org/resources/ontology/DCM"
     * code = #125007 "Measurement Group"

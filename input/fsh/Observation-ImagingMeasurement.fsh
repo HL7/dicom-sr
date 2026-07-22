@@ -27,7 +27,7 @@ Description: "The TID300Measurement can be extracted from TID 300 - Measurement.
 * identifier[observationUID] -> "tag(0040,A171) [Observation UID]"
 * subject -> "tag(0010,0020) [Patient ID]"
 * code -> "TID300.$Measurement.tag(0040,A043) [Concept Name Code Sequence]"
-* issued -> "tag(0040,A032) [Observation DateTime]"
+* effectiveDateTime -> "tag(0040,A032) [Observation DateTime]"
 * method -> "TID1501.EV(370129005, SCT, Measurement Method)"
 * device -> "TID4019(Algorithm Identification)"
 * valueQuantity -> "TID300.$Measurement.tag(0040,A300) [Measured Value Sequence]"
@@ -43,7 +43,7 @@ Description: "The TID1419Measurement can be extracted from TID 1419 - ROI Measur
 * identifier[observationUID] -> "tag(0040,A171) [Observation UID]"
 * subject -> "tag(0010,0020) [Patient ID]"
 * code -> "TID1419.$Measurement.tag(0040,A043) [Concept Name Code Sequence]"
-* issued -> "tag(0040,A032) [Observation DateTime]"
+* effectiveDateTime -> "tag(0040,A032) [Observation DateTime]"
 * method -> "TID1501.EV(370129005, SCT, Measurement Method)"
 * device -> "TID4019(Algorithm Identification)"
 * bodySite -> "TID1419.$Measurement.EV(363698007, SCT, Finding Site) -- Only if Laterality and Topographical Modifier are not used"
@@ -58,7 +58,7 @@ Description: "Example of Observation representing a DICOM® SR Imaging Measureme
 * subject = Reference(Example-Patient)
 * basedOn = Reference(Example-ServiceRequest)
 * partOf = Reference(Example-ImagingStudy)
-* issued = "2024-07-24T08:23:42+00:00"
+* effectiveDateTime = "2024-07-24T08:23:42+00:00"
 * effectiveDateTime = "2024-07-24T08:23:42+00:00"
 * status = #final
 * performer = Reference(Example-Practitioner)
@@ -85,7 +85,7 @@ Description: "Example of Observation representing a DICOM® SR Imaging Measureme
 * subject = Reference(Example-Patient)
 * basedOn = Reference(Example-ServiceRequest)
 * partOf = Reference(Example-ImagingStudy)
-* issued = "2024-07-24T08:23:42+00:00"
+* effectiveDateTime = "2024-07-24T08:23:42+00:00"
 * effectiveDateTime = "2024-07-24T08:23:42+00:00"
 * status = #final
 * performer = Reference(Example-Practitioner)
@@ -112,7 +112,7 @@ Description: "Example of Observation representing a DICOM® SR Imaging Measureme
 * subject = Reference(Example-Patient)
 * basedOn = Reference(Example-ServiceRequest)
 * partOf = Reference(Example-ImagingStudy)
-* issued = "2024-07-24T08:23:42+00:00"
+* effectiveDateTime = "2024-07-24T08:23:42+00:00"
 * effectiveDateTime = "2024-07-24T08:23:42+00:00"
 * status = #final
 * performer = Reference(Example-Practitioner)

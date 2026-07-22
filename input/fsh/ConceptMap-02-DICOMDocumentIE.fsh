@@ -12,20 +12,20 @@ Usage: #definition
 * contact.telecom.value = "http://www.hl7.org/Special/committees/imagemgt"
 * extension[0].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * extension[0].valueCode = #ii
-* sourceScopeUri = "DICOM-Document"
-* targetScopeUri = "Bundle"
+// * sourceScopeUri = "DICOM-Document"
+* targetScopeUri = "http://hl7.org/fhir/ValueSet/resource-types#Bundle"
 
 // Additional Attributes used in concept map
 * additionalAttribute[0]
   * code = #OverserverType
   * description = "DICOM.ParticipantSequence.ObserverType"
-  * uri = "https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.17.2.4.html#table_C.17-3b"
+//  * uri = "https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.17.2.4.html#table_C.17-3b"
   * type = #code
 
 * additionalAttribute[1]
   * code = #DICOMConceptNameCodeSequence
   * description = "DICOM Concept Name Code Sequence (0040,A043)"
-  * uri = "https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.17.3.3.html#table_C.17-5"
+//  * uri = "http://dicom.nema.org/resources/CodeSystem/DICOM_Elements#ConceptNameCodeSequence"
   * type = #Coding
 
 * property[0]
