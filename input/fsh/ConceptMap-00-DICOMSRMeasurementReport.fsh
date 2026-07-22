@@ -13,7 +13,7 @@ Title:          "ConceptMap - DICOM SR Measurement Report to FHIR Mapping"
 * contact[0].telecom[0].value = "http://www.hl7.org/Special/committees/imagemgt"
 * extension[0].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * extension[0].valueCode = #ii
-// * sourceScopeUri = "DICOM-SR-Measurement-Report"
+* sourceScopeUri = "http://dicom.nema.org/resources/ontology/DCM#126000"
 * targetScopeUri = "http://hl7.org/fhir/ValueSet/resource-types#Bundle"
 
 * property[0]

@@ -12,7 +12,7 @@ Usage: #definition
 * contact.telecom.value = "http://www.hl7.org/Special/committees/imagemgt"
 * extension[0].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * extension[0].valueCode = #ii
-// * sourceScopeUri = "DICOM-Document"
+* sourceScopeUri = "urn:dicom-sr:document-ie"
 * targetScopeUri = "http://hl7.org/fhir/ValueSet/resource-types#Bundle"
 
 // Additional Attributes used in concept map

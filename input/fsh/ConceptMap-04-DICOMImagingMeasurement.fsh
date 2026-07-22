@@ -12,7 +12,7 @@ Usage: #definition
 * contact[0].telecom[0].value = "http://www.hl7.org/Special/committees/imagemgt"
 * extension[0].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg"
 * extension[0].valueCoding = #ii
-// * sourceScopeUri = "DICOM-Imaging-Measurement"
+* sourceScopeUri = "urn:dicom-sr:imaging-measurement"
 * targetScopeUri = "http://hl7.org/fhir/ValueSet/resource-types#Observation"
 
 * additionalAttribute[+]
