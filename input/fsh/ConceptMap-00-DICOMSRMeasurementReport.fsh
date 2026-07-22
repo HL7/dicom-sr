@@ -77,14 +77,14 @@ Title:          "ConceptMap - DICOM SR Measurement Report to FHIR Mapping"
       * code = #imaging-measurement-group-map
       * valueString = "dicom-imaging-measurement-group-to-fhir"
     * property[1]
-      * code = #references
+      * code = #subject
       * valueString = "Observation.subject.reference=Patient[1].id"
     * property[2]
-      * code = #references
+      * code = #partOf
       * valueString = "Observation.partOf.reference=ImagingStudy[1].id"
     * property[3]
-      * code = #references
+      * code = #basedOn
       * valueString = "Observation.basedOn.reference=ServiceRequest[1].id"
     * property[4]
-      * code = #references
+      * code = #device
       * valueString = "Observation.device.reference=Device[1]"

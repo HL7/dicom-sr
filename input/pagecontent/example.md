@@ -2,6 +2,13 @@ This chapter describes the complete mapping of a DICOM SR Measurement Report int
 
 The source DICOM SR Measurement Report is in DICOM JSON format. See the [DICOM PS3.18 Section F](https://dicom.nema.org/medical/dicom/current/output/chtml/part18/chapter_F.html) for more information.
 
+The example mapping distinguishes between resources that are _created_ and those that are only _referenced_ from newly-created resources.
+
+The implementor can use the specified DICOM attribute mapping to link new resources to referenced resources by either:
+
+1. Finding existing FHIR resources and include a reference to those resources in newly-created resources
+2. Including a _logical_ reference to other resources by including the `identifier` of referenced resources
+
 ### Example Patient Mapping
 <table>
 <tr>
