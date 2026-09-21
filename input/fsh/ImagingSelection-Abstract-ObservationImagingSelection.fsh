@@ -8,7 +8,7 @@ Profile:        ObservationImagingSelection
 Parent:         ImagingSelection
 Id:             observation-imaging-selection
 Title:          "Imaging Selection - DICOM SR Observation Imaging Selection"
-Description:    "DICOM® SR Observation Imaging Selection. Not used directly."
+Description:    "DICOM® SR base ImagingSelection profile for observation-linked image references. Provides shared study, subject, body site, and source-item constraints for derived imaging selection profiles and is not used directly."
 
 * ^abstract = true
 * insert DICOMSRStructureDefinitionContent

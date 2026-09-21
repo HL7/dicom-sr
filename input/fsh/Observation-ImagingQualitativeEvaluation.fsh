@@ -8,7 +8,7 @@ Profile:        ImagingQualitativeEvaluation
 Parent:         ImagingObservationProfile
 Id:             imaging-qualitative-evaluation
 Title:          "Observation - DICOM SR Imaging Qualitative Evaluation Mapping to Observation"
-Description:    "DICOM® SR Imaging Qualitative Evaluation Mapping to Observation"
+Description:    "DICOM® SR Imaging Qualitative Evaluation Mapping to Observation. Used to represent qualitative imaging findings with coded or textual result values within a measurement report context."
 
 * ^abstract = false
 * insert DICOMSRStructureDefinitionContent

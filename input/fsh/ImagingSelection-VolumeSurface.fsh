@@ -8,7 +8,7 @@ Profile:        VolumeSurface
 Parent:         ObservationImagingSelection
 Id:             volume-surface
 Title:          "Imaging Selection - DICOM SR Image Volume Surface Mapping"
-Description:    "DICOM® SR Image Volume Surface Mapping to ImagingSelection"
+Description:    "DICOM® SR Volume Surface Mapping to ImagingSelection. Used to represent referenced 3D volume surfaces, typically in segmentation workflows, with frame-of-reference context."
 
 * ^abstract = false
 * insert DICOMSRStructureDefinitionContent

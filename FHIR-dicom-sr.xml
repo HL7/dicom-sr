@@ -21,7 +21,7 @@
 <artifact deprecated="true" id="ConceptMap/DicomDocumentIE" key="ConceptMap-DicomDocumentIE" name="DICOM Document IE to Observation Map"/>
 <artifact deprecated="true" id="CodeSystem/DicomIdentifierType" key="CodeSystem-DicomIdentifierType" name="DICOM Identifier Types"/>
 <artifact deprecated="true" id="ConceptMap/DicomSrIod" key="ConceptMap-DicomSrIod" name="DICOM SR IOD to Observation Map"/>
-<artifact id="StructureDefinition/dicom-general-equipment" key="StructureDefinition-dicom-general-equipment" name="Device - DICOM General Equipment Mapping"/>
+<artifact deprecated="true" id="StructureDefinition/dicom-general-equipment" key="StructureDefinition-dicom-general-equipment" name="Device - DICOM General Equipment Mapping"/>
 <artifact id="StructureDefinition/dicom-participant-device" key="StructureDefinition-dicom-participant-device" name="Device - DICOM Participant Device Mapping"/>
 <artifact id="StructureDefinition/dicom-participant-person" key="StructureDefinition-dicom-participant-person" name="Device - DICOM Participant Practitioner Mapping"/>
 <artifact id="StructureDefinition/algorithm-identification" key="StructureDefinition-algorithm-identification" name="Device - DICOM SR Algorithm Identification Mapping"/>

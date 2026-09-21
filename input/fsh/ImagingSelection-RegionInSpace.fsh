@@ -8,7 +8,7 @@ Profile:        RegionInSpace
 Parent:         ObservationImagingSelection
 Id:             region-in-space
 Title:          "Imaging Selection - DICOM SR Region In Space Mapping"
-Description:    "DICOM® SR Region In Space Mapping to ImagingSelection"
+Description:    "DICOM® SR Region in Space Mapping to ImagingSelection. Used to represent named or indexed spatial regions (for example, RT Structure Set references) used as measurement context."
 
 * ^abstract = false
 * insert DICOMSRStructureDefinitionContent

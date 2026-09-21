@@ -8,7 +8,7 @@ Profile:        VisualExplanation
 Parent:         ObservationImagingSelection
 Id:             visual-explanation
 Title:          "Imaging Selection - DICOM SR Visual Explanation Mapping"
-Description:    "DICOM® SR Visual Explanation Mapping to ImagingSelection"
+Description:    "DICOM® SR Visual Explanation Mapping to ImagingSelection. Used to represent referenced visual explanation images associated with measurements or qualitative evaluations."
 
 * ^abstract = false
 * insert DICOMSRStructureDefinitionContent

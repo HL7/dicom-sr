@@ -8,7 +8,7 @@ Profile:        RealWorldValueMap
 Parent:         ObservationImagingSelection
 Id:             real-world-value-map
 Title:          "Imaging Selection - DICOM SR Real World Value Map Mapping"
-Description:    "DICOM® SR Real World Value Map Mapping to ImagingSelection"
+Description:    "DICOM® SR Real World Value Map Mapping to ImagingSelection. Used to represent referenced Real World Value Map instances that define measurement value transformation context."
 
 * ^abstract = false
 * insert DICOMSRStructureDefinitionContent

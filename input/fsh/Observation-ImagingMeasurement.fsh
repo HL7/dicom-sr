@@ -8,7 +8,7 @@ Profile:        ImagingMeasurement
 Parent:         ImagingObservationProfile
 Id:             imaging-measurement
 Title:          "Observation - DICOM SR Imaging Measurement Mapping to Observation"
-Description:    "DICOM® SR Imaging Measurement Mapping to Observation"
+Description:    "DICOM® SR Imaging Measurement Mapping to Observation. Used to represent a single quantitative imaging measurement with method, device, anatomic context, and imaging references."
 
 * ^abstract = false
 * insert DICOMSRStructureDefinitionContent

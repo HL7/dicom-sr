@@ -8,7 +8,7 @@ Profile:        ImageRegion2d
 Parent:         ObservationImagingSelection
 Id:             image-region-2d
 Title:          "Imaging Selection - DICOM SR 2D Image Region Mapping"
-Description:    "DICOM® SR Image 2D Region Mapping to ImagingSelection"
+Description:    "DICOM® SR 2D Image Region Mapping to ImagingSelection. Used to represent planar regions of interest using 2D graphic coordinates on referenced image instances."
 
 * ^abstract = false
 * insert DICOMSRStructureDefinitionContent

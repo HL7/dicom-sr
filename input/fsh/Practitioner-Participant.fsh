@@ -8,7 +8,7 @@ Profile:        ParticipantPractitioner
 Parent:         Practitioner
 Id:             dicom-participant-person
 Title:          "Device - DICOM Participant Practitioner Mapping"
-Description:    "DICOM® Participant to Practitioner Mapping"
+Description:    "DICOM® Participant Mapping to Practitioner. Used to represent a person participant (observer) from the DICOM® SR Participant Sequence for acquisition or interpretation context."
 
 * ^abstract = false
 * insert DICOMSRStructureDefinitionContent

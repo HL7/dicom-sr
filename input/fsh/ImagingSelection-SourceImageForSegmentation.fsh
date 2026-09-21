@@ -8,7 +8,7 @@ Profile:        ImagingSelectionSourceImageForSegmentation
 Parent:         ObservationImagingSelection
 Id:             source-image-for-segmentation
 Title:          "Imaging Selection - DICOM SR Source Image and Series For Segmentation Mapping"
-Description:    "DICOM SR Source Image and Series For Segmentation Mapping to ImagingSelection"
+Description:    "DICOM® SR Source Image and Series for Segmentation Mapping to ImagingSelection. Used to represent source image instances and optional source series context from which a referenced segmentation was derived."
 
 * ^abstract = false
 * insert DICOMSRStructureDefinitionContent
@@ -90,3 +90,4 @@ Description: "An example of an source image for segmentation referenced from a m
 \"0040A124\": { \"vr\": \"UI\", \"Value\": [ \"1.2.840.113747.20080222.83341314456631405221767081790268995.1\" ] }
 }
   </pre></div>"
+

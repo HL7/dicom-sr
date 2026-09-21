@@ -8,7 +8,7 @@ Profile:        AlgorithmIdentification
 Parent:         Device
 Id:             algorithm-identification
 Title:          "Device - DICOM SR Algorithm Identification Mapping"
-Description:    "DICOM® SR Algorithm Identification to Device"
+Description:    "DICOM® SR Algorithm Identification Mapping to Device. Used to represent algorithm identity details (name, family, version, and parameters) and to link the algorithm to the equipment context for reported measurements."
 
 * ^abstract = false
 * insert DICOMSRStructureDefinitionContent

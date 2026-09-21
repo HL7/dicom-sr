@@ -8,7 +8,7 @@ Profile:        ImagingSelectionSourceSRContentItem
 Parent:         ImagingSelection
 Id:             source-sr-content-item
 Title:          "Imaging Selection - DICOM SR Source SR Content Item Mapping"
-Description:    "DICOM® SR Source SR Content Item Mapping to ImagingSelection"
+Description:    "DICOM® SR Source SR Content Item Mapping to ImagingSelection. Used to represent the originating SR SOP instance and observation UID for a specific source content item referenced by derived resources."
 
 * ^abstract = false
 * insert DICOMSRStructureDefinitionContent
@@ -141,3 +141,4 @@ Description: "An example of a selected source node in a DICOM SR instance."
    ...
 }
   </pre></div>"
+

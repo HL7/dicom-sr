@@ -8,7 +8,7 @@ Profile:        IllustrationOfROI
 Parent:         ObservationImagingSelection
 Id:             illustration-of-roi
 Title:          "Imaging Selection - DICOM SR Illustration Of ROI Mapping"
-Description:    "DICOM® SR Illustration Of ROI Mapping to ImagingSelection"
+Description:    "DICOM® SR Illustration of ROI Mapping to ImagingSelection. Used to represent referenced illustration instances associated with a region of interest for review and interpretation."
 
 * ^abstract = false
 * insert DICOMSRStructureDefinitionContent

@@ -8,7 +8,7 @@ Profile:        ReferencedSegment
 Parent:         ObservationImagingSelection
 Id:             referenced-segment
 Title:          "Imaging Selection - DICOM SR Referenced Segment Mapping"
-Description:    "DICOM® SR Referenced Segment Mapping to ImagingSelection"
+Description:    "DICOM® SR Referenced Segment Mapping to ImagingSelection. Used to represent a referenced segment within a segmentation object, including segment subset and optional source image linkage."
 
 * ^abstract = false
 * insert DICOMSRStructureDefinitionContent
@@ -94,4 +94,6 @@ Description: "An example of an Segmentation SOP Instance referenced from a measu
 \"0040A124\": { \"vr\": \"UI\", \"Value\": [ \"1.3.6.1.4.1.14519.5.2.1.6279.6001.273525289046256012743471155680\" ] }
 }
   </pre></div>"
+
+
 

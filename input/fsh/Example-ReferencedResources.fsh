@@ -84,3 +84,62 @@ Description: "An example of an ImagingStudy referenced from a measurement report
   \"0020000D\": { \"vr\": \"UI\", \"Value\": [ \"1.2.840.113747.20080222.83311413144566317081790268995\" ] }
 }
   </pre></div>"
+
+Instance: Example-CurrentRequestedProcedureEvidenceSequence-ImagingStudy
+InstanceOf: ImagingStudy
+Usage: #example
+Description: "An example of an ImagingStudy referenced from a measurement report as part of the Current Requested Procedure Evidence Sequence."
+
+* id = "measurement-report-evidence-sequence-imaging-study"
+* identifier
+  * system = "urn:dicom:uid"
+  * value = "urn:oid:1.2.840.113747.20080222.83311413144566317081790268995"
+* subject = Reference(Example-Patient)
+* basedOn = Reference(Example-ServiceRequest)
+* status = #available
+* modality = #CT
+* numberOfSeries = 2
+* numberOfInstances = 2
+* series[+]
+  * uid = "1.2.840.113747.20080222.83311413144566317081790268995.1"
+  * modality = #CT
+  * number = 1
+  * numberOfInstances = 1
+  * instance[+]
+    * uid = "1.2.840.113747.20080222.83311413144566317081790268995.1.1"
+    * sopClass = #CTImageStorage
+    * number = 1
+* series[+]
+  * uid = "1.2.840.113747.20080222.83311413144566317081790268995.2"
+  * modality = #CT
+  * number = 2
+  * numberOfInstances = 1
+  * instance[+]
+    * uid = "1.2.840.113747.20080222.83311413144566317081790268995.2.1"
+    * sopClass = #CTImageStorage
+    * number = 1
+* text
+  * status = #generated
+  * div = "<div xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en\" lang=\"en\">
+  <pre>
+{
+  \"0020000D\": { \"vr\": \"UI\", \"Value\": [ \"1.2.840.113747.20080222.83311413144566317081790268995\" ] },
+  \"0040A375\": { \"vr\": \"SQ\", \"Value\": [ {
+        \"0020000D\": { \"vr\": \"UI\", \"Value\": [ \"1.2.840.113747.20080222.83311413144566317081790268995\" ] },
+        \"00081115\": { \"vr\": \"SQ\", \"Value\": [ {
+          \"0020000E\": { \"vr\": \"UI\", \"Value\": [ \"1.2.840.113747.20080222.83311413144566317081790268995.1\" ] },
+          \"00081199\": { \"vr\": \"SQ\", \"Value\": [ {
+            \"00081150\": { \"vr\": \"UI\", \"Value\": [ \"1.2.840.10008.5.1.4.1.1.2\" ] },
+            \"00081155\": { \"vr\": \"UI\", \"Value\": [ \"1.2.840.113747.20080222.83311413144566317081790268995.1.1\" ] }
+          } ] }
+      },
+      {
+        \"0020000D\": { \"vr\": \"UI\", \"Value\": [ \"1.2.840.113747.20080222.83311413144566317081790268995\" ] },
+        \"00081115\": { \"vr\": \"SQ\", \"Value\": [ {
+          \"0020000E\": { \"vr\": \"UI\", \"Value\": [ \"1.2.840.113747.20080222.83311413144566317081790268995.2\" ] },
+          \"00081199\": { \"vr\": \"SQ\", \"Value\": [ {
+            \"00081150\": { \"vr\": \"UI\", \"Value\": [ \"1.2.840.10008.5.1.4.1.1.2\" ] },
+            \"00081155\": { \"vr\": \"UI\", \"Value\": [ \"1.2.840.113747.20080222.83311413144566317081790268995.2.1\" ] }
+      } ]
+}
+  </pre></div>"

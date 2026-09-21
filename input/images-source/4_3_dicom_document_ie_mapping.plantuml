@@ -13,6 +13,12 @@ package "Document IE" {
         PreliminaryFlag
         ParticipantSequence
     }
+    package "Current Requested Procedure Evidence Sequence" as evidenceSequence {
+        object "0..* Referenced Studies" as referencedStudies {
+          ReferencedSeriesSequence
+          ReferencedSOPSequence
+        }
+    }
     package "SR Content Sequence" as srContentSequence {
         object "Imaging Measurements Container" as imagingMeasurements
     }
@@ -27,7 +33,14 @@ map "[[mapping.html#imaging-measurements-container-mapping Imaging Measurements 
     status => PreliminaryFlag
 }
 
+object "ImagingStudy - Current Requested Procedure Evidence Sequence" as evidenceSequenceImagingStudy {
+    identifier = StudyInstanceUID
+    series = ReferencedSeriesSequence
+    instances = ReferencedSOPSequence
+}
+
 imagingMeasurements --> imagingMeasurementsMapping: Map contents of Imaging Measurements Container
 inputs --> imagingMeasurementsMapping
 documentGeneralModule --> imagingMeasurementsMapping
+evidenceSequence --> evidenceSequenceImagingStudy: Map contents of Current Requested Procedure Evidence Sequence (0..n)
 @enduml

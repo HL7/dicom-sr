@@ -4,6 +4,9 @@ allowmixing
 left to right direction
 package "DICOM SR Measurement Report" as measurementReport {
     package "Document IE" as documentIE {
+        package "Current Requested Procedure Evidence Sequence" as evidenceSequence {
+            object "0..* Referenced Studies" as referencedStudies
+        }
         package "SR Content Sequence" as srContentSequence {
             package "Imaging Measurements Container" as imagingMeasurementsContainer {
                 package "0..* Measurements Group" as measurementsGroup {

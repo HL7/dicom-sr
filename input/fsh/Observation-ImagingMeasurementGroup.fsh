@@ -13,7 +13,7 @@ Profile:        ImagingMeasurementGroup
 Parent:         ImagingObservationProfile
 Id:             imaging-measurement-group
 Title:          "Observation - DICOM SR Imaging Measurement Group Mapping"
-Description:    "DICOM® SR Imaging Measurement Group Mapping to Observation"
+Description:    "DICOM® SR Imaging Measurement Group Mapping to Observation. Used to represent a measurement group container that organizes related imaging measurements and qualitative evaluations for a single finding context."
 
 * ^abstract = false
 * insert DICOMSRStructureDefinitionContent
@@ -265,3 +265,4 @@ Description: "Example of Observation representing a DICOM SR Measurement Group"
    \"0040A171\": { \"vr\": \"UI\", \"Value\": [ \"1.2.840.113747.20080222.83341314456631405221767081790268995.10.1.1\" ] }
  }
   </pre></div>"
+
