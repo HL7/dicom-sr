@@ -151,8 +151,8 @@ Description: "Example of the base Imaging Observation"
 
 * bodyStructure = Reference(Example-BodyStructure-FindingSite)
 * device = Reference(Example-Device-GeneralEquipment)
-* valueCodeableConcept
-  * coding
-    * system = "http://snomed.info/sct"
-    * code = #427359005 "Solitary nodule of lung"
-    * display = "Solitary nodule of lung"
+* valueQuantity
+  * value = 6705.54990898997
+  * unit = "cubic millimeter"
+  * system = "http://unitsofmeasure.org"
+  * code = #mm3
