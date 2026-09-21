@@ -46,9 +46,9 @@ object "Observation - Imaging Measurement Group" as imagingMeasurementGroup {
     device = EquipmentDevice or AlgorithmIdentification
     derivedFrom = ImagingSelection
     bodyStructure = FindingSite
-    code = Finding Category or DCM#125007 "Measurement Group"
+    category = Finding Category
+    code = Finding
     method = Measurement Method
-    valueCodeableConcept = Finding
     hasMember = ImagingMeasurement
 }
 

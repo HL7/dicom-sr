@@ -54,16 +54,16 @@ Usage: #definition
   * display = "Finding Category"
   * target
     * relationship = #equivalent
-    * code = #code
-    * display = "ImagingMeasurementGroup.code"
+    * code = #category
+    * display = "ImagingMeasurementGroup.category"
 
 * group[+].element[+]
   * code = http://dicom.nema.org/resources/ontology/DCM#121071
   * display = "Finding"
   * target
     * relationship = #equivalent
-    * code = #valueCodeableConcept
-    * display = "ImagingMeasurementGroup.valueCodeableConcept"
+    * code = #code
+    * display = "ImagingMeasurementGroup.code"
 
 * group[+].element[+]
   * code = http://dicom.nema.org/resources/ontology/DCM#111030

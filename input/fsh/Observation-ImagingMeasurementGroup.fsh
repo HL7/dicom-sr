@@ -23,8 +23,9 @@ Description:    "DICOM® SR Imaging Measurement Group Mapping to Observation. Us
 * category ^slicing.discriminator.path = "coding"
 * category ^slicing.rules = #open
 * category ^slicing.description = "Observation category for DICOM SR Measurement Group"
-* category contains measurementGroupCategory 1..1 MS
+* category contains measurementGroupCategory 1..1 MS and findingCategory 0..1 MS
 * category[measurementGroupCategory].coding = DCM#125007 "Measurement Group"
+* category[findingCategory] ^short = "Finding category for the grouped observation"
 
 * hasMember ^slicing.discriminator.type = #profile
 * hasMember ^slicing.discriminator.path = "resolve()"
@@ -40,9 +41,7 @@ Description:    "DICOM® SR Imaging Measurement Group Mapping to Observation. Us
 * hasMember contains qualitativeEvaluation 0..* MS
 * hasMember[qualitativeEvaluation] only Reference(ImagingQualitativeEvaluation)
 
-* value[x] MS
-* value[x] only CodeableConcept
-* value[x] ^short = "Observation finding"
+* value[x] 0..0
 
 Mapping: dicom-sr-for-TID1410PlanarROIMeasurementGroup
 Id: dicom-sr-tid-1410
@@ -53,8 +52,8 @@ Description: "The TID1410PlanarROIMeasurementGroup can be extracted from TID 141
 * -> "TID1410(Planar ROI Measurements and Qualitative Evaluations)"
 * identifier[observationUID] -> "tag(0040,A171) [Observation UID]"
 * subject -> "tag(0010,0020) [Patient ID]"
-* code -> "TID1410.EV(276214006, SCT, Finding category) > DCM#125007 'Measurement Group'"
-* valueCodeableConcept -> "TID1410.EV(121071, DCM, Finding)"
+* category -> "TID1410.EV(276214006, SCT, Finding category)"
+* code -> "TID1410.EV(121071, DCM, Finding)"
 * effectiveDateTime -> "tag(0040,A032) [Observation DateTime]"
 * method -> "TID1501.EV(370129005, SCT, Measurement Method)"
 * interpretation -> "TID1410.$QualType, TID.1410QualModType$"
@@ -70,8 +69,8 @@ Description: "The TID1411PlanarROIMeasurementGroup can be extracted from TID 141
 * -> "TID1411(Volumetric ROI Measurements and Qualitative Evaluations)"
 * identifier[observationUID] -> "tag(0040,A171) [Observation UID]"
 * subject -> "tag(0010,0020) [Patient ID]"
-* code -> "TID1411.EV(276214006, SCT, Finding category) > DCM#125007 'Measurement Group'"
-* valueCodeableConcept -> "TID1411.EV(121071, DCM, Finding)"
+* category -> "TID1411.EV(276214006, SCT, Finding category)"
+* code -> "TID1411.EV(121071, DCM, Finding)"
 * effectiveDateTime -> "tag(0040,A032) [Observation DateTime]"
 * method -> "TID1501.EV(370129005, SCT, Measurement Method)"
 * interpretation -> "TID1411.$QualType, TID.1411QualModType$"
@@ -87,8 +86,8 @@ Description: "The TID1501PlanarROIMeasurementGroup can be extracted from TID 150
 * -> "TID1501(Measurement and Qualitative Evaluation Group)"
 * identifier[observationUID] -> "tag(0040,A171) [Observation UID]"
 * subject -> "tag(0010,0020) [Patient ID]"
-* code -> "TID1501.EV(276214006, SCT, Finding category) > DCM#125007 'Measurement Group'"
-* valueCodeableConcept -> "TID1501.EV(121071, DCM, Finding)"
+* category -> "TID1501.EV(276214006, SCT, Finding category)"
+* code -> "TID1501.EV(121071, DCM, Finding)"
 * effectiveDateTime -> "tag(0040,A032) [Observation DateTime]"
 * method -> "TID1501.EV(370129005, SCT, Measurement Method)"
 * interpretation -> "TID1501.$QualType, TID.1501QualModType$"
@@ -108,25 +107,25 @@ Description: "Example of Observation representing a DICOM SR Measurement Group"
 * effectiveDateTime = "2024-07-24T08:23:42+00:00"
 * status = #final
 * performer = Reference(Example-Practitioner)
-* code
-  * coding
-    * system = "http://snomed.info/sct"
-    * code = #241053004 "Radiographic measurement of lung volume"
-    * display = "Radiographic measurement of lung volume"
 * category[measurementGroupCategory]
   * coding
     * system = "http://dicom.nema.org/resources/ontology/DCM"
     * code = #125007 "Measurement Group"
     * display = "Measurement Group"
-* derivedFrom[referencedSegment] = Reference(Example-ImagingSelection-ReferencedSegment)
-* derivedFrom[sourceSRContentItem] = Reference(Example-ImagingSelection-SourceSRContentItem)
-* bodyStructure = Reference(Example-BodyStructure-FindingSite)
-* device = Reference(Example-Device-GeneralEquipment)
-* valueCodeableConcept
+* category[findingCategory]
+  * coding
+    * system = "http://snomed.info/sct"
+    * code = #241053004 "Radiographic measurement of lung volume"
+    * display = "Radiographic measurement of lung volume"
+* code
   * coding
     * system = "http://snomed.info/sct"
     * code = #427359005 "Solitary nodule of lung"
     * display = "Solitary nodule of lung"
+* derivedFrom[referencedSegment] = Reference(Example-ImagingSelection-ReferencedSegment)
+* derivedFrom[sourceSRContentItem] = Reference(Example-ImagingSelection-SourceSRContentItem)
+* bodyStructure = Reference(Example-BodyStructure-FindingSite)
+* device = Reference(Example-Device-GeneralEquipment)
 * hasMember[imagingMeasurement][+] = Reference(Example-Observation-ImagingMeasurement-001)
 * hasMember[imagingMeasurement][+] = Reference(Example-Observation-ImagingMeasurement-002)
 * hasMember[imagingMeasurement][+] = Reference(Example-Observation-ImagingMeasurement-003)

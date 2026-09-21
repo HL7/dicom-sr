@@ -481,44 +481,6 @@ See [Example Device](Device-measurement-report-general-equipment.html).
             } ] }
       },
       {
-        "00081199": { "vr": "SQ", "Value": [ {
-              "00081150": { "vr": "UI", "Value": [ "1.2.840.10008.5.1.4.1.1.66.4" ] },
-              "00081155": { "vr": "UI", "Value": [ "1.2.276.0.7230010.3.1.4.0.57823.1553343864.578878" ] },
-              "0062000B": { "vr": "US", "Value": [ 1 ] }
-            } ] },
-        "0040A010": { "vr": "CS", "Value": [ "CONTAINS" ] },
-        "0040A040": { "vr": "CS", "Value": [ "IMAGE" ] },
-        "0040A043": { "vr": "SQ", "Value": [ {
-              "00080100": { "vr": "SH", "Value": [ "121191" ] },
-              "00080102": { "vr": "SH", "Value": [ "DCM" ] },
-              "00080104": { "vr": "LO", "Value": [ "Referenced Segment" ] }
-            } ] }
-      },
-      {
-        "0040A010": { "vr": "CS", "Value": [ "CONTAINS" ] },
-        "0040A040": { "vr": "CS", "Value": [ "UIDREF" ] },
-        "0040A043": { "vr": "SQ", "Value": [ {
-              "00080100": { "vr": "SH", "Value": [ "121232" ] },
-              "00080102": { "vr": "SH", "Value": [ "DCM" ] },
-              "00080104": { "vr": "LO", "Value": [ "Source series for segmentation" ] }
-            } ] },
-        "0040A124": { "vr": "UI", "Value": [ "1.3.6.1.4.1.14519.5.2.1.6279.6001.273525289046256012743471155680" ] }
-      },
-      {
-        "0040A010": { "vr": "CS", "Value": [ "HAS CONCEPT MOD" ] },
-        "0040A040": { "vr": "CS", "Value": [ "CODE" ] },
-        "0040A043": { "vr": "SQ", "Value": [ {
-              "00080100": { "vr": "SH", "Value": [ "363698007" ] },
-              "00080102": { "vr": "SH", "Value": [ "SCT" ] },
-              "00080104": { "vr": "LO", "Value": [ "Finding Site" ] }
-            } ] },
-        "0040A168": { "vr": "SQ", "Value": [ {
-              "00080100": { "vr": "SH", "Value": [ "39607008" ] },
-              "00080102": { "vr": "SH", "Value": [ "SCT" ] },
-              "00080104": { "vr": "LO", "Value": [ "Lung" ] }
-            } ] }
-      },
-      {
         "0040A010": { "vr": "CS", "Value": [ "CONTAINS" ] },
         "0040A040": { "vr": "CS", "Value": [ "NUM" ] },
         ...
@@ -657,6 +619,12 @@ See [Example Device](Device-measurement-report-general-equipment.html).
         "code" : "125007",
         "display" : "Measurement Group"
         }]
+      },
+      { "coding" : [{
+        "system" : "http://snomed.info/sct",
+        "code" : "241053004",
+        "display" : "Radiographic measurement of lung volume"
+        }]
       }],
       "derivedFrom": [
         {
@@ -668,13 +636,6 @@ See [Example Device](Device-measurement-report-general-equipment.html).
       },
      "device": {
         "reference": "Device/measurement-report-general-equipment"
-      },
-      "valueCodeableConcept": {
-        "coding": [{
-            "system": "http://snomed.info/sct",
-            "code": "427359005",
-            "display": "Solitary nodule of lung"
-          }]
       },
       "hasMember": [
         {
@@ -705,14 +666,14 @@ For each Measurement Group:
 1. Create BodyStructure resource for tracking and finding site (if not already existing)
 2. Create ImagingSelection resource for segment (if not already existing)
 3. Create Observation resource for ImagingMeasurementGroup
-   1. Set `code` to value of Finding Category
-   2. Set `derivedFrom` to reference ImagingSelection resource
-   3. Set `bodyStructure` to reference finding site BodyStructure resource
-   4. Set `hasMember` to reference Observation resources for imaging measurements and qualitative evaluations\
+   1. Set `category` to the value of Finding Category
+   2. Set `code` to the value of Finding
+   3. Set `derivedFrom` to reference ImagingSelection resource
+   4. Set `bodyStructure` to reference finding site BodyStructure resource
+   5. Set `hasMember` to reference Observation resources for imaging measurements and qualitative evaluations\
       *Note: Not yet created*
-   5. Set `device` to reference general equipment Device resource\
+   6. Set `device` to reference general equipment Device resource\
       No Algorithm Identification is specified at the group level so the general equipment device is used
-   6. Set `valueCodeableConcept` to value of Finding
 
 See:
 - [Example Finding Site BodyStructure](BodyStructure-measurement-report-finding-site.html)
@@ -1000,3 +961,8 @@ See:
 
 ### Example Measurement Report
 See [Example Measurement Report](DiagnosticReport-dicom-sr-measurement-report.html) for a complete example of a Measurement Report containing the above resources.
+
+
+
+
+
